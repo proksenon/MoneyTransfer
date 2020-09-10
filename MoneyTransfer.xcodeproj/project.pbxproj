@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D50F50FB24DD6F760042BAD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50FA24DD6F760042BAD2 /* AppDelegate.swift */; };
+		D50F50FD24DD6F760042BAD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50FC24DD6F760042BAD2 /* SceneDelegate.swift */; };
+		D50F510224DD6F760042BAD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50F510024DD6F760042BAD2 /* Main.storyboard */; };
+		D50F510424DD6F790042BAD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50F510324DD6F790042BAD2 /* Assets.xcassets */; };
+		D50F510724DD6F790042BAD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50F510524DD6F790042BAD2 /* LaunchScreen.storyboard */; };
+		D50F511024DD72E00042BAD2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F510F24DD72E00042BAD2 /* MainViewController.swift */; };
+		D50F511224DD72EB0042BAD2 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F511124DD72EB0042BAD2 /* MainPresenter.swift */; };
+		D50F511424DD72FA0042BAD2 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F511324DD72FA0042BAD2 /* MainInteractor.swift */; };
+		D50F511624DD73050042BAD2 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F511524DD73050042BAD2 /* MainRouter.swift */; };
+		D50F511824DD730F0042BAD2 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F511724DD730F0042BAD2 /* MainConfigurator.swift */; };
+		D520450B25050C90007B746A /* ContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520450A25050C90007B746A /* ContactPresenter.swift */; };
+		D520450D25050C9B007B746A /* ContactInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520450C25050C9B007B746A /* ContactInteractor.swift */; };
+		D520450F25050CA9007B746A /* ContactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520450E25050CA9007B746A /* ContactRouter.swift */; };
+		D520451125050CB5007B746A /* ContactConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520451025050CB5007B746A /* ContactConfigurator.swift */; };
+		D520451825050D2E007B746A /* ContactViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520451725050D2E007B746A /* ContactViewOutput.swift */; };
+		D520451A25050D3A007B746A /* ContactViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520451925050D3A007B746A /* ContactViewInput.swift */; };
+		D520451C25050D4A007B746A /* ContactModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520451B25050D4A007B746A /* ContactModuleInput.swift */; };
+		D520451E25050D5A007B746A /* ContactModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520451D25050D5A007B746A /* ContactModuleOutput.swift */; };
+		D520452025050D80007B746A /* ContactInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520451F25050D80007B746A /* ContactInteractorOutput.swift */; };
+		D520452225050D8D007B746A /* ContactInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520452125050D8D007B746A /* ContactInteractorInput.swift */; };
+		D520452425050DA1007B746A /* ContactRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520452325050DA1007B746A /* ContactRouterInput.swift */; };
+		D520452625050DCF007B746A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520452525050DCF007B746A /* ContactViewController.swift */; };
+		D5204528250511E0007B746A /* ContactConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5204527250511E0007B746A /* ContactConfigureProtocol.swift */; };
+		D5A0BF66250774510080737E /* MoneyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF65250774510080737E /* MoneyOperation.swift */; };
+		D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */; };
+		D5A0BF6D25079BF20080737E /* TransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6C25079BF20080737E /* TransactionInteractor.swift */; };
+		D5A0BF6F25079BFE0080737E /* TransactionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6E25079BFE0080737E /* TransactionRouter.swift */; };
+		D5A0BF7125079C0D0080737E /* TransactionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF7025079C0D0080737E /* TransactionConfigurator.swift */; };
+		D5A0BF7825079CEF0080737E /* TransactionViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF7725079CEF0080737E /* TransactionViewInput.swift */; };
+		D5A0BF7A25079CF90080737E /* TransactionViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF7925079CF90080737E /* TransactionViewOutput.swift */; };
+		D5A0BF7C25079D990080737E /* TransactionModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF7B25079D990080737E /* TransactionModuleInput.swift */; };
+		D5A0BF7E25079DC10080737E /* TransactionModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF7D25079DC10080737E /* TransactionModuleOutput.swift */; };
+		D5A0BF8025079DD40080737E /* TransactionInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF7F25079DD40080737E /* TransactionInteractorInput.swift */; };
+		D5A0BF8225079DE00080737E /* TransactionInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF8125079DE00080737E /* TransactionInteractorOutput.swift */; };
+		D5A0BF8425079DF50080737E /* TransactionRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF8325079DF50080737E /* TransactionRouterInput.swift */; };
+		D5A0BF8625079E060080737E /* TransactionConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF8525079E060080737E /* TransactionConfiguratorProtocol.swift */; };
+		D5A0BF8825079EC20080737E /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF8725079EC20080737E /* TransactionViewController.swift */; };
+		D5A0BF8B250904E00080737E /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF8A250904E00080737E /* ContainerViewController.swift */; };
+		D5A0BF8D2509FC3E0080737E /* UserDefaulsWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF8C2509FC3E0080737E /* UserDefaulsWork.swift */; };
+		D5A0BF902509FD1B0080737E /* UserDefaultsWorkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF8F2509FD1B0080737E /* UserDefaultsWorkProtocol.swift */; };
+		D5A0BF93250A034B0080737E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF92250A034B0080737E /* Status.swift */; };
+		D5A0BF95250A16870080737E /* TransationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF94250A16870080737E /* TransationView.swift */; };
+		D5B03FF024FBF76B0023E5DE /* MainViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FEF24FBF76B0023E5DE /* MainViewInput.swift */; };
+		D5B03FF224FBF7870023E5DE /* MainViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FF124FBF7870023E5DE /* MainViewOutput.swift */; };
+		D5B03FF424FBF8A60023E5DE /* MainConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FF324FBF8A60023E5DE /* MainConfiguratorProtocol.swift */; };
+		D5B03FF624FBF8CE0023E5DE /* MainInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FF524FBF8CE0023E5DE /* MainInteractorOutput.swift */; };
+		D5B03FF824FBF8D80023E5DE /* MainInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FF724FBF8D80023E5DE /* MainInteractorInput.swift */; };
+		D5B03FFA24FBF9260023E5DE /* MainRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FF924FBF9260023E5DE /* MainRouterInput.swift */; };
+		D5B03FFD24FBFB200023E5DE /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FFC24FBFB200023E5DE /* CustomTableView.swift */; };
+		D5B03FFF24FBFB420023E5DE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FFE24FBFB420023E5DE /* CustomTableViewCell.swift */; };
+		D5B0400324FCE7420023E5DE /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400224FCE7420023E5DE /* CardTableViewCell.swift */; };
+		D5B0400624FD091D0023E5DE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400524FD091D0023E5DE /* Person.swift */; };
+		D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */; };
+		D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D50F50F724DD6F760042BAD2 /* MoneyTransfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyTransfer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50F50FA24DD6F760042BAD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D50F50FC24DD6F760042BAD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D50F510124DD6F760042BAD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D50F510324DD6F790042BAD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D50F510624DD6F790042BAD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D50F510824DD6F790042BAD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D50F510F24DD72E00042BAD2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D50F511124DD72EB0042BAD2 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		D50F511324DD72FA0042BAD2 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		D50F511524DD73050042BAD2 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		D50F511724DD730F0042BAD2 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
+		D520450A25050C90007B746A /* ContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPresenter.swift; sourceTree = "<group>"; };
+		D520450C25050C9B007B746A /* ContactInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractor.swift; sourceTree = "<group>"; };
+		D520450E25050CA9007B746A /* ContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouter.swift; sourceTree = "<group>"; };
+		D520451025050CB5007B746A /* ContactConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactConfigurator.swift; sourceTree = "<group>"; };
+		D520451725050D2E007B746A /* ContactViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewOutput.swift; sourceTree = "<group>"; };
+		D520451925050D3A007B746A /* ContactViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewInput.swift; sourceTree = "<group>"; };
+		D520451B25050D4A007B746A /* ContactModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModuleInput.swift; sourceTree = "<group>"; };
+		D520451D25050D5A007B746A /* ContactModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModuleOutput.swift; sourceTree = "<group>"; };
+		D520451F25050D80007B746A /* ContactInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractorOutput.swift; sourceTree = "<group>"; };
+		D520452125050D8D007B746A /* ContactInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractorInput.swift; sourceTree = "<group>"; };
+		D520452325050DA1007B746A /* ContactRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouterInput.swift; sourceTree = "<group>"; };
+		D520452525050DCF007B746A /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		D5204527250511E0007B746A /* ContactConfigureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactConfigureProtocol.swift; sourceTree = "<group>"; };
+		D5A0BF65250774510080737E /* MoneyOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyOperation.swift; sourceTree = "<group>"; };
+		D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenter.swift; sourceTree = "<group>"; };
+		D5A0BF6C25079BF20080737E /* TransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInteractor.swift; sourceTree = "<group>"; };
+		D5A0BF6E25079BFE0080737E /* TransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRouter.swift; sourceTree = "<group>"; };
+		D5A0BF7025079C0D0080737E /* TransactionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfigurator.swift; sourceTree = "<group>"; };
+		D5A0BF7725079CEF0080737E /* TransactionViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewInput.swift; sourceTree = "<group>"; };
+		D5A0BF7925079CF90080737E /* TransactionViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewOutput.swift; sourceTree = "<group>"; };
+		D5A0BF7B25079D990080737E /* TransactionModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModuleInput.swift; sourceTree = "<group>"; };
+		D5A0BF7D25079DC10080737E /* TransactionModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModuleOutput.swift; sourceTree = "<group>"; };
+		D5A0BF7F25079DD40080737E /* TransactionInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInteractorInput.swift; sourceTree = "<group>"; };
+		D5A0BF8125079DE00080737E /* TransactionInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInteractorOutput.swift; sourceTree = "<group>"; };
+		D5A0BF8325079DF50080737E /* TransactionRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRouterInput.swift; sourceTree = "<group>"; };
+		D5A0BF8525079E060080737E /* TransactionConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		D5A0BF8725079EC20080737E /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		D5A0BF8A250904E00080737E /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		D5A0BF8C2509FC3E0080737E /* UserDefaulsWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaulsWork.swift; sourceTree = "<group>"; };
+		D5A0BF8F2509FD1B0080737E /* UserDefaultsWorkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWorkProtocol.swift; sourceTree = "<group>"; };
+		D5A0BF92250A034B0080737E /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		D5A0BF94250A16870080737E /* TransationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransationView.swift; sourceTree = "<group>"; };
+		D5B03FEF24FBF76B0023E5DE /* MainViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewInput.swift; sourceTree = "<group>"; };
+		D5B03FF124FBF7870023E5DE /* MainViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOutput.swift; sourceTree = "<group>"; };
+		D5B03FF324FBF8A60023E5DE /* MainConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		D5B03FF524FBF8CE0023E5DE /* MainInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorOutput.swift; sourceTree = "<group>"; };
+		D5B03FF724FBF8D80023E5DE /* MainInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorInput.swift; sourceTree = "<group>"; };
+		D5B03FF924FBF9260023E5DE /* MainRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterInput.swift; sourceTree = "<group>"; };
+		D5B03FFC24FBFB200023E5DE /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		D5B03FFE24FBFB420023E5DE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D5B0400224FCE7420023E5DE /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		D5B0400524FD091D0023E5DE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
+		D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerProtocol.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D50F50F424DD6F760042BAD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D50F50EE24DD6F760042BAD2 = {
+			isa = PBXGroup;
+			children = (
+				D50F50F924DD6F760042BAD2 /* MoneyTransfer */,
+				D50F50F824DD6F760042BAD2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D50F50F824DD6F760042BAD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D50F50F724DD6F760042BAD2 /* MoneyTransfer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D50F50F924DD6F760042BAD2 /* MoneyTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				D50F50FA24DD6F760042BAD2 /* AppDelegate.swift */,
+				D50F50FC24DD6F760042BAD2 /* SceneDelegate.swift */,
+				D5B0400424FD08B40023E5DE /* Entity */,
+				D5B0400724FD09AD0023E5DE /* Services */,
+				D50F510E24DD703B0042BAD2 /* Main */,
+				D5A0BF89250904C70080737E /* Container */,
+				D520450525050C16007B746A /* Contact */,
+				D5A0BF67250797BA0080737E /* Transaction */,
+				D50F510024DD6F760042BAD2 /* Main.storyboard */,
+				D5A0BF65250774510080737E /* MoneyOperation.swift */,
+				D50F510324DD6F790042BAD2 /* Assets.xcassets */,
+				D50F510524DD6F790042BAD2 /* LaunchScreen.storyboard */,
+				D50F510824DD6F790042BAD2 /* Info.plist */,
+			);
+			path = MoneyTransfer;
+			sourceTree = "<group>";
+		};
+		D50F510E24DD703B0042BAD2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D5B03FEA24FBF6F00023E5DE /* View */,
+				D5B03FEB24FBF6F80023E5DE /* Presenter */,
+				D5B03FEC24FBF7060023E5DE /* Interactor */,
+				D5B03FED24FBF70E0023E5DE /* Router */,
+				D5B03FEE24FBF7170023E5DE /* Configurator */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D520450525050C16007B746A /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				D520451225050CBB007B746A /* View */,
+				D520451325050CC3007B746A /* Presenter */,
+				D520451425050CCA007B746A /* Interactor */,
+				D520451525050CD1007B746A /* Router */,
+				D520451625050CD8007B746A /* Configurator */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		D520451225050CBB007B746A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D520452525050DCF007B746A /* ContactViewController.swift */,
+				D520451925050D3A007B746A /* ContactViewInput.swift */,
+				D520451725050D2E007B746A /* ContactViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D520451325050CC3007B746A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D520450A25050C90007B746A /* ContactPresenter.swift */,
+				D520451B25050D4A007B746A /* ContactModuleInput.swift */,
+				D520451D25050D5A007B746A /* ContactModuleOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D520451425050CCA007B746A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D520450C25050C9B007B746A /* ContactInteractor.swift */,
+				D520452125050D8D007B746A /* ContactInteractorInput.swift */,
+				D520451F25050D80007B746A /* ContactInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D520451525050CD1007B746A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D520450E25050CA9007B746A /* ContactRouter.swift */,
+				D520452325050DA1007B746A /* ContactRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D520451625050CD8007B746A /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D520451025050CB5007B746A /* ContactConfigurator.swift */,
+				D5204527250511E0007B746A /* ContactConfigureProtocol.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D520452925065EA9007B746A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D5B03FFE24FBFB420023E5DE /* CustomTableViewCell.swift */,
+				D5B0400224FCE7420023E5DE /* CardTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D5A0BF67250797BA0080737E /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF7225079C140080737E /* View */,
+				D5A0BF7325079C1B0080737E /* Presenter */,
+				D5A0BF7425079C220080737E /* Interactor */,
+				D5A0BF7525079C290080737E /* Router */,
+				D5A0BF7625079C300080737E /* Configurator */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		D5A0BF7225079C140080737E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF8725079EC20080737E /* TransactionViewController.swift */,
+				D5A0BF7725079CEF0080737E /* TransactionViewInput.swift */,
+				D5A0BF7925079CF90080737E /* TransactionViewOutput.swift */,
+				D5A0BF94250A16870080737E /* TransationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5A0BF7325079C1B0080737E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */,
+				D5A0BF7B25079D990080737E /* TransactionModuleInput.swift */,
+				D5A0BF7D25079DC10080737E /* TransactionModuleOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D5A0BF7425079C220080737E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF6C25079BF20080737E /* TransactionInteractor.swift */,
+				D5A0BF7F25079DD40080737E /* TransactionInteractorInput.swift */,
+				D5A0BF8125079DE00080737E /* TransactionInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D5A0BF7525079C290080737E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF6E25079BFE0080737E /* TransactionRouter.swift */,
+				D5A0BF8325079DF50080737E /* TransactionRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D5A0BF7625079C300080737E /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF7025079C0D0080737E /* TransactionConfigurator.swift */,
+				D5A0BF8525079E060080737E /* TransactionConfiguratorProtocol.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D5A0BF89250904C70080737E /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF8A250904E00080737E /* ContainerViewController.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		D5A0BF8E2509FC500080737E /* ContactManager */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */,
+				D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */,
+			);
+			path = ContactManager;
+			sourceTree = "<group>";
+		};
+		D5A0BF912509FD360080737E /* UserDefaultsWork */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF8C2509FC3E0080737E /* UserDefaulsWork.swift */,
+				D5A0BF8F2509FD1B0080737E /* UserDefaultsWorkProtocol.swift */,
+			);
+			path = UserDefaultsWork;
+			sourceTree = "<group>";
+		};
+		D5B03FEA24FBF6F00023E5DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5B03FFB24FBFAC60023E5DE /* Table */,
+				D50F510F24DD72E00042BAD2 /* MainViewController.swift */,
+				D5B03FEF24FBF76B0023E5DE /* MainViewInput.swift */,
+				D5B03FF124FBF7870023E5DE /* MainViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5B03FEB24FBF6F80023E5DE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D50F511124DD72EB0042BAD2 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D5B03FEC24FBF7060023E5DE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D50F511324DD72FA0042BAD2 /* MainInteractor.swift */,
+				D5B03FF724FBF8D80023E5DE /* MainInteractorInput.swift */,
+				D5B03FF524FBF8CE0023E5DE /* MainInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D5B03FED24FBF70E0023E5DE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D50F511524DD73050042BAD2 /* MainRouter.swift */,
+				D5B03FF924FBF9260023E5DE /* MainRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D5B03FEE24FBF7170023E5DE /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D50F511724DD730F0042BAD2 /* MainConfigurator.swift */,
+				D5B03FF324FBF8A60023E5DE /* MainConfiguratorProtocol.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D5B03FFB24FBFAC60023E5DE /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				D5B03FFC24FBFB200023E5DE /* CustomTableView.swift */,
+				D520452925065EA9007B746A /* Cells */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		D5B0400424FD08B40023E5DE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0400524FD091D0023E5DE /* Person.swift */,
+				D5A0BF92250A034B0080737E /* Status.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D5B0400724FD09AD0023E5DE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D5A0BF8E2509FC500080737E /* ContactManager */,
+				D5A0BF912509FD360080737E /* UserDefaultsWork */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D50F50F624DD6F760042BAD2 /* MoneyTransfer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50F510B24DD6F790042BAD2 /* Build configuration list for PBXNativeTarget "MoneyTransfer" */;
+			buildPhases = (
+				D50F50F324DD6F760042BAD2 /* Sources */,
+				D50F50F424DD6F760042BAD2 /* Frameworks */,
+				D50F50F524DD6F760042BAD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoneyTransfer;
+			productName = MoneyTransfer;
+			productReference = D50F50F724DD6F760042BAD2 /* MoneyTransfer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D50F50EF24DD6F760042BAD2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = 18579132;
+				TargetAttributes = {
+					D50F50F624DD6F760042BAD2 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D50F50F224DD6F760042BAD2 /* Build configuration list for PBXProject "MoneyTransfer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D50F50EE24DD6F760042BAD2;
+			productRefGroup = D50F50F824DD6F760042BAD2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D50F50F624DD6F760042BAD2 /* MoneyTransfer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D50F50F524DD6F760042BAD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50F510724DD6F790042BAD2 /* LaunchScreen.storyboard in Resources */,
+				D50F510424DD6F790042BAD2 /* Assets.xcassets in Resources */,
+				D50F510224DD6F760042BAD2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D50F50F324DD6F760042BAD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B03FF824FBF8D80023E5DE /* MainInteractorInput.swift in Sources */,
+				D5A0BF93250A034B0080737E /* Status.swift in Sources */,
+				D5B03FF224FBF7870023E5DE /* MainViewOutput.swift in Sources */,
+				D5A0BF8425079DF50080737E /* TransactionRouterInput.swift in Sources */,
+				D5A0BF7825079CEF0080737E /* TransactionViewInput.swift in Sources */,
+				D5B03FF424FBF8A60023E5DE /* MainConfiguratorProtocol.swift in Sources */,
+				D5A0BF7125079C0D0080737E /* TransactionConfigurator.swift in Sources */,
+				D5A0BF8D2509FC3E0080737E /* UserDefaulsWork.swift in Sources */,
+				D5A0BF902509FD1B0080737E /* UserDefaultsWorkProtocol.swift in Sources */,
+				D520451E25050D5A007B746A /* ContactModuleOutput.swift in Sources */,
+				D520451125050CB5007B746A /* ContactConfigurator.swift in Sources */,
+				D50F511024DD72E00042BAD2 /* MainViewController.swift in Sources */,
+				D5A0BF7C25079D990080737E /* TransactionModuleInput.swift in Sources */,
+				D50F50FB24DD6F760042BAD2 /* AppDelegate.swift in Sources */,
+				D5A0BF8825079EC20080737E /* TransactionViewController.swift in Sources */,
+				D5A0BF6D25079BF20080737E /* TransactionInteractor.swift in Sources */,
+				D520452025050D80007B746A /* ContactInteractorOutput.swift in Sources */,
+				D520450D25050C9B007B746A /* ContactInteractor.swift in Sources */,
+				D5A0BF6F25079BFE0080737E /* TransactionRouter.swift in Sources */,
+				D5A0BF8B250904E00080737E /* ContainerViewController.swift in Sources */,
+				D50F50FD24DD6F760042BAD2 /* SceneDelegate.swift in Sources */,
+				D5B03FFF24FBFB420023E5DE /* CustomTableViewCell.swift in Sources */,
+				D520452425050DA1007B746A /* ContactRouterInput.swift in Sources */,
+				D5A0BF7A25079CF90080737E /* TransactionViewOutput.swift in Sources */,
+				D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */,
+				D520451A25050D3A007B746A /* ContactViewInput.swift in Sources */,
+				D5A0BF95250A16870080737E /* TransationView.swift in Sources */,
+				D520451C25050D4A007B746A /* ContactModuleInput.swift in Sources */,
+				D50F511424DD72FA0042BAD2 /* MainInteractor.swift in Sources */,
+				D520451825050D2E007B746A /* ContactViewOutput.swift in Sources */,
+				D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */,
+				D520452625050DCF007B746A /* ContactViewController.swift in Sources */,
+				D520452225050D8D007B746A /* ContactInteractorInput.swift in Sources */,
+				D520450B25050C90007B746A /* ContactPresenter.swift in Sources */,
+				D5B03FF624FBF8CE0023E5DE /* MainInteractorOutput.swift in Sources */,
+				D5B03FF024FBF76B0023E5DE /* MainViewInput.swift in Sources */,
+				D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */,
+				D50F511824DD730F0042BAD2 /* MainConfigurator.swift in Sources */,
+				D5A0BF7E25079DC10080737E /* TransactionModuleOutput.swift in Sources */,
+				D50F511224DD72EB0042BAD2 /* MainPresenter.swift in Sources */,
+				D5204528250511E0007B746A /* ContactConfigureProtocol.swift in Sources */,
+				D5A0BF8225079DE00080737E /* TransactionInteractorOutput.swift in Sources */,
+				D5A0BF8025079DD40080737E /* TransactionInteractorInput.swift in Sources */,
+				D50F511624DD73050042BAD2 /* MainRouter.swift in Sources */,
+				D5A0BF66250774510080737E /* MoneyOperation.swift in Sources */,
+				D5B03FFA24FBF9260023E5DE /* MainRouterInput.swift in Sources */,
+				D5B0400624FD091D0023E5DE /* Person.swift in Sources */,
+				D520450F25050CA9007B746A /* ContactRouter.swift in Sources */,
+				D5A0BF8625079E060080737E /* TransactionConfiguratorProtocol.swift in Sources */,
+				D5B03FFD24FBFB200023E5DE /* CustomTableView.swift in Sources */,
+				D5B0400324FCE7420023E5DE /* CardTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D50F510024DD6F760042BAD2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D50F510124DD6F760042BAD2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D50F510524DD6F790042BAD2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D50F510624DD6F790042BAD2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D50F510924DD6F790042BAD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D50F510A24DD6F790042BAD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D50F510C24DD6F790042BAD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D5RK3QAMV;
+				INFOPLIST_FILE = MoneyTransfer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.MoneyTransfer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D50F510D24DD6F790042BAD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D5RK3QAMV;
+				INFOPLIST_FILE = MoneyTransfer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.MoneyTransfer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D50F50F224DD6F760042BAD2 /* Build configuration list for PBXProject "MoneyTransfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50F510924DD6F790042BAD2 /* Debug */,
+				D50F510A24DD6F790042BAD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D50F510B24DD6F790042BAD2 /* Build configuration list for PBXNativeTarget "MoneyTransfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50F510C24DD6F790042BAD2 /* Debug */,
+				D50F510D24DD6F790042BAD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D50F50EF24DD6F760042BAD2 /* Project object */;
+}
