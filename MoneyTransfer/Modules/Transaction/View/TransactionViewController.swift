@@ -20,7 +20,6 @@ class TransactionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 		guard let output = output else { return }
 		output.configureView()
     }
@@ -30,6 +29,7 @@ class TransactionViewController: UIViewController {
 extension TransactionViewController: TransactionViewInput {
 
 	func setView() {
+		view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 350)
 		view.roundedCorner(with: 20)
 		view.backgroundColor = .white
 	}

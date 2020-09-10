@@ -101,6 +101,7 @@ extension ContactViewController: ContactViewInput {
 		requestMoneyButton = UIButton()
 		guard let requestMoneyButton = requestMoneyButton else { return }
 		view.addSubview(requestMoneyButton)
+		requestMoneyButton.roundedCorner(with: 4)
 
 		requestMoneyButton.translatesAutoresizingMaskIntoConstraints = false
 		guard let phoneNumberLabel = phoneNumberLabel else { return }
@@ -122,6 +123,7 @@ extension ContactViewController: ContactViewInput {
 		sendMoneyButton = UIButton()
 		guard let sendMoneyButton = sendMoneyButton else { return }
 		view.addSubview(sendMoneyButton)
+		sendMoneyButton.roundedCorner(with: 4)
 
 		sendMoneyButton.translatesAutoresizingMaskIntoConstraints = false
 		guard let requestMoneyButton = requestMoneyButton else { return }

@@ -157,7 +157,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		output.didChosePerson(indexPath: indexPath)
+		if indexPath.section != 0 {
+			output.didChosePerson(indexPath: indexPath)
+		}
 	}
 
 }

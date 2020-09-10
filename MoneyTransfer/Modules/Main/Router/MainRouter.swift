@@ -27,7 +27,10 @@ class MainRouter: MainRouterInput {
 	func pushContainer(with person: Person) {
 		guard let viewController = viewController else { return }
 		let containerVC = ContainerViewController()
-		containerVC.configureContactViewController(with: person)
+		let containerConfigurator = ContainerConfigurator()
+		containerConfigurator.configure(with: containerVC)
+		containerVC.moduleInput?.configure(with: person)
+//		containerVC.configureContactViewController(with: person)
 		viewController.navigationController?.pushViewController(containerVC, animated: true)
 	}
 }
