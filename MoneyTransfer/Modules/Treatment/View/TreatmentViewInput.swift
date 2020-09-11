@@ -9,5 +9,10 @@
 import Foundation
 
 protocol TreatmentViewInput: class {
-	
+	func setView()
+	func setupTreatmentImageView()
+	func setupStatusLabel()
+	func setupAtributeTransactionLabel()
+	func setupAmountOfMoneyLabel()
+	func setupOperationButton()
 }

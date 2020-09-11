@@ -20,7 +20,15 @@ class TreatmentPresenter {
 }
 
 extension TreatmentPresenter: TreatmentViewOutput {
-
+	func configureView() {
+		guard let view = view else { return }
+		view.setView()
+		view.setupTreatmentImageView()
+		view.setupStatusLabel()
+		view.setupAtributeTransactionLabel()
+		view.setupAmountOfMoneyLabel()
+		view.setupOperationButton()
+	}
 }
 
 extension TreatmentPresenter: TreatmentInteractorOutput {

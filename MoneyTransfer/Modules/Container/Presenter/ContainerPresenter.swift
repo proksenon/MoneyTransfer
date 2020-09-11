@@ -37,6 +37,8 @@ extension ContainerPresenter: ContainerViewOutput {
 		isShow = !isShow
 		view.showTransactionView(show: isShow, y: nil)
 	}
+
+
 	func moveTransaction(on viewSize: ViewSize) {
 		guard let view = view else { return }
 		view.showTransactionView(show: true, y: viewSize.size)

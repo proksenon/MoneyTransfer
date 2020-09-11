@@ -78,7 +78,7 @@ extension TransactionViewController: TransactionViewInput {
 	}
 
 	@IBAction func exitButtonDidTapped() {
-		moduleOutput?.toggle()
+		moduleOutput?.toggleTransaction()
 	}
 
 	//MARK: -MoneyTextfield
@@ -115,11 +115,12 @@ extension TransactionViewController: TransactionViewInput {
 	}
 	//MARK: -OperationButton
 	func setupOperationButton() {
-		guard let moneyTextfield = moneyTextfield else { return }
+//		guard let moneyTextfield = moneyTextfield else { return }
 		let operationButton = UIButton()
 		view.addSubview(operationButton)
 		operationButton.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([operationButton.topAnchor.constraint(equalTo: moneyTextfield.bottomAnchor, constant: 40),
+		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
+//									 operationButton.topAnchor.constraint(equalTo: moneyTextfield.bottomAnchor, constant: 40),
 									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
 									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
 									 operationButton.heightAnchor.constraint(equalToConstant: 40)])

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TransactionViewDelegate {
-	func toggle()
+	func toggleTransaction()
 	func moveTransactionView(on y: CGFloat)
 }
 
@@ -20,7 +20,9 @@ class ContainerViewController: UIViewController {
 	var moduleInput: ContainerModuleInput?
 	var contactViewController: UIViewController?
 	var transactionViewController: UIViewController?
-	var isShow: Bool = false
+	var treatmentViewController: UIViewController?
+	var shouldShowController: UIViewController?
+//	var isShow: Bool = false
 	private lazy var dimmView: UIView = {
 		let view = UIView()
 		view.backgroundColor = UIColor.black.withAlphaComponent(1)
@@ -55,6 +57,15 @@ class ContainerViewController: UIViewController {
 		self.transactionViewController = transactionViewController
 	}
 
+	func configureTreatmentViewController() {
+		let treatmentViewController = TreatmentViewController()
+		let treatmentConfigurator = TreatmentConfigurator()
+		treatmentConfigurator.configure(with: treatmentViewController)
+		treatmentViewController.view.frame.origin.y = self.view.frame.height
+		add(treatmentViewController)
+		self.treatmentViewController = treatmentViewController
+	}
+
 
 	func setupDimmView() {
 		guard let contactViewController = contactViewController else { return }
@@ -72,7 +83,7 @@ class ContainerViewController: UIViewController {
 	}
 
 	@objc func tapGestureDone(){
-		toggle()
+		toggleTransaction()
 	}
 
 	func transactionViewEndEditing(_ isEnd: Bool) {
@@ -83,6 +94,7 @@ class ContainerViewController: UIViewController {
 		guard let transactionViewController = transactionViewController else { return }
 		showTransaction(show: show, showViewController: transactionViewController, y: y)
 	}
+
 	
 	private func showTransaction(show: Bool, showViewController: UIViewController, y: CGFloat? = nil) {
 		if show {
@@ -123,7 +135,7 @@ extension ContainerViewController: ContainerViewInput {
 }
 
 extension ContainerViewController: TransactionViewDelegate {
-	func toggle() {
+	func toggleTransaction() {
 		output?.togleTransaction()
 	}
 

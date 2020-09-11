@@ -463,14 +463,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		D59DB6D1250A56F30068888D /* Treatment */ = {
+		D59DB6D1250A56F30068888D /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 				D5A0BF9F250A1EAC0080737E /* TreatmentInteractor.swift */,
 				D5A0BFAD250A1FFB0080737E /* TreatmentInteractorInput.swift */,
 				D5A0BFAF250A20060080737E /* TreatmentInteractorOutput.swift */,
 			);
-			path = Treatment;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		D59DB6D2250A57000068888D /* Router */ = {
@@ -586,7 +586,7 @@
 			children = (
 				D59DB6CF250A56E00068888D /* View */,
 				D59DB6D0250A56E70068888D /* Presenter */,
-				D59DB6D1250A56F30068888D /* Treatment */,
+				D59DB6D1250A56F30068888D /* Interactor */,
 				D59DB6D2250A57000068888D /* Router */,
 				D59DB6D3250A57080068888D /* Configurator */,
 			);
