@@ -16,6 +16,7 @@ class TreatmentConfigurator {
 		let router = TreatmentRouter(viewController: viewController)
 
 		viewController.output = presenter
+		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router
 	}

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SuccessOperationViewOutput: class {
-
+	func configureView()
 }

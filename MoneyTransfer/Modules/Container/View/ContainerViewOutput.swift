@@ -10,6 +10,10 @@ import Foundation
 
 protocol ContainerViewOutput: class {
 	func configureView()
-	func togleTransaction()
+	func togleTransaction(on vc: ChildsController?)
 	func moveTransaction(on viewSize: ViewSize)
+	func transactionMoneyIs(amount: String?)
+	func dissmis()
+	func succesOperation()
+	func setBalance(balance: String?)
 }

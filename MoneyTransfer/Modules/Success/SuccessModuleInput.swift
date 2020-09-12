@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SuccessOperationModuleInput: class {
-
+	func configure(with balance: Balance)
 }

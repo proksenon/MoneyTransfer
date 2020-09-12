@@ -16,6 +16,7 @@ class SuccessOperationConfigurator {
 		let router = SuccessOperationRouter(viewController: viewController)
 
 		viewController.output = presenter
+		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router
 	}

@@ -22,14 +22,14 @@ class ContactPrsenter {
 
 extension ContactPrsenter: ContactViewOutput {
 	func configureView() {
-		guard let view = view, let person = person else { return }
+		guard let view = view else { return }
 		view.setBackgroundColor()
 		view.setupAvatarImageView()
 		view.setupFullNameLabel()
-		view.setDataToAvatar(with: person.avatarData)
-		view.setFullName(with: person.fullName ?? "Unknown")
+//		view.setDataToAvatar(with: person.avatarData)
+//		view.setFullName(with: person.fullName ?? "Unknown")
 		view.setupPhoneNumberLabel()
-		view.setPhoneNumber(with: person.phoneNumber ?? "will be phone here")
+//		view.setPhoneNumber(with: person.phoneNumber ?? "will be phone here")
 		view.setupRequestMoneyButton()
 		view.setupSendMoneyButton()
 		view.setupDimmView()
@@ -46,7 +46,11 @@ extension ContactPrsenter: ContactInteractorOutput {
 
 extension ContactPrsenter: ContactModuleInput {
 	func configure(with person: Person) {
-		self.person = person
+//		self.person = person
+		guard let view = view else { return }
+		view.setDataToAvatar(with: person.avatarData)
+		view.setFullName(with: person.fullName ?? "Unknown")
+		view.setPhoneNumber(with: person.phoneNumber ?? "will be phone here")
 	}
 
 	func exitFromTranstion() {

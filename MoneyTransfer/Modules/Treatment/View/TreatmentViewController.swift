@@ -11,6 +11,8 @@ import UIKit
 class TreatmentViewController: UIViewController {
 
 	var output: TreatmentViewOutput?
+	var moduleInput: TreatmentModuleInput?
+	var moduleOutput: TransactionViewDelegate?
 	var treatmentImageView: UIImageView?
 	var statusLabel: UILabel?
 	var atributeTransactionLabel: UILabel?
@@ -41,10 +43,11 @@ extension TreatmentViewController: TreatmentViewInput {
 		treatmentImageView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([treatmentImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 treatmentImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-									 treatmentImageView.heightAnchor.constraint(equalToConstant: 40)])
+									 treatmentImageView.heightAnchor.constraint(equalToConstant: 60),
+									 treatmentImageView.widthAnchor.constraint(equalToConstant: 60)])
 
-		treatmentImageView.image = UIImage(systemName: "clock")
-		treatmentImageView.image?.withTintColor(.systemGray2)
+
+		treatmentImageView.image = UIImage(systemName: "clock")?.withTintColor(.gray, renderingMode: .alwaysOriginal)
 		self.treatmentImageView = treatmentImageView
 	}
 
@@ -56,9 +59,11 @@ extension TreatmentViewController: TreatmentViewInput {
 		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: 20),
 									 statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 statusLabel.heightAnchor.constraint(equalToConstant: 20),
-									 statusLabel.widthAnchor.constraint(equalToConstant: 100)])
+									 statusLabel.widthAnchor.constraint(equalToConstant: 300)])
 		statusLabel.backgroundColor = .clear
 		statusLabel.font = UIFont(name: "Futura Medium", size: 18)
+		statusLabel.textAlignment = .center
+		statusLabel.textColor = .black
 		statusLabel.text = "Перевод в обработке..."
 		self.statusLabel = statusLabel
 	}
@@ -70,12 +75,13 @@ extension TreatmentViewController: TreatmentViewInput {
 		atributeTransactionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 20),
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 atributeTransactionLabel.heightAnchor.constraint(equalToConstant: 10),
-									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: 100)])
+									 atributeTransactionLabel.heightAnchor.constraint(equalToConstant: 15),
+									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: 300)])
 
 		atributeTransactionLabel.backgroundColor = .clear
-		atributeTransactionLabel.font = atributeTransactionLabel.font.withSize(10)
-		atributeTransactionLabel.textColor = .systemGray6
+		atributeTransactionLabel.font = atributeTransactionLabel.font.withSize(14)
+		atributeTransactionLabel.textColor = .gray
+		atributeTransactionLabel.textAlignment = .center
 		atributeTransactionLabel.text = "Сумма перевода"
 		self.atributeTransactionLabel = atributeTransactionLabel
 	}
@@ -88,32 +94,37 @@ extension TreatmentViewController: TreatmentViewInput {
 		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: 10),
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 amountOfMoneyLabel.heightAnchor.constraint(equalToConstant: 20),
-									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: 100)])
+									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: 300)])
 
 		amountOfMoneyLabel.backgroundColor = .clear
 		amountOfMoneyLabel.font = amountOfMoneyLabel.font.withSize(18)
 		amountOfMoneyLabel.textColor = .black
+		amountOfMoneyLabel.textAlignment = .center
 		amountOfMoneyLabel.text = money
 		self.amountOfMoneyLabel = amountOfMoneyLabel
 	}
+	func setTitleAmountOfMoneyLable(with amount: String) {
+		guard let amountOfMoneyLabel = amountOfMoneyLabel else { return }
+		amountOfMoneyLabel.text = amount
+	}
 
 	func setupOperationButton() {
-			let operationButton = UIButton()
-			view.addSubview(operationButton)
-			operationButton.translatesAutoresizingMaskIntoConstraints = false
-			NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
-										 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-										 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
-										 operationButton.heightAnchor.constraint(equalToConstant: 40)])
-			operationButton.backgroundColor = .systemGray2
-			operationButton.setTitle("Перевести", for: .normal)
-			operationButton.titleLabel?.textColor = .white
-			operationButton.isUserInteractionEnabled = false
-			operationButton.roundedCorner(with: 15)
-			operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
-			self.operationButton = operationButton
-		}
+		let operationButton = UIButton()
+		view.addSubview(operationButton)
+		operationButton.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
+									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
+									 operationButton.heightAnchor.constraint(equalToConstant: 40)])
+		operationButton.backgroundColor = .green
+		operationButton.setTitle("Перейти в контакты", for: .normal)
+		operationButton.titleLabel?.textColor = .white
+		operationButton.roundedCorner(with: 15)
+		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
+		self.operationButton = operationButton
+	}
 	@IBAction func operationButtonDidTapped() {
+		moduleOutput?.backToContacts()
 		print("goToContact")
 	}
 

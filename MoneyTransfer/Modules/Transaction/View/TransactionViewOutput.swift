@@ -11,4 +11,5 @@ import Foundation
 protocol TransactionViewOutput: class {
 	func configureView()
 	func checkBalance(transaction: String?)
+	func getBalance() -> String? 
 }

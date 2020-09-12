@@ -13,6 +13,7 @@ class TransactionPresenter {
 	weak var view: TransactionViewInput?
 	var interactor: TransactionInteractorInput?
 	var router: TransactionRouterInput?
+	var amountOfTransaction: String?
 
 	init(view: TransactionViewInput) {
 		self.view = view
@@ -41,6 +42,9 @@ extension TransactionPresenter: TransactionViewOutput {
 				view.operationButtonIsEnabled(isEnabled: false)
 			}
 		}
+	}
+	func getBalance() -> String? {
+		interactor?.getBalance()
 	}
 }
 

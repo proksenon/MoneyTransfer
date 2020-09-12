@@ -9,5 +9,16 @@
 import Foundation
 
 protocol SuccessOperationViewInput: class {
-	
+	func setView()
+	func setupTreatmentImageView()
+	func setupStatusLabel()
+	func setupAtributeTransactionLabel()
+	func setupAmountOfMoneyLabel()
+	func setupOperationButton()
+	func setTitleAmountOfMoneyLable(with amount: String)
+	func setupChangeBalanceLabel()
+	func setupBeforeTransactionBalanceLabel()
+	func setOldBalance(oldBalance: String)
+	func setupCurrentBalanceLabel()
+	func setCurrentBalance(balance: String)
 }

@@ -16,4 +16,7 @@ class ContainerRouter: ContainerRouterInput {
 		self.viewController = viewController
 	}
 
+	func dissmis() {
+		viewController?.navigationController?.popViewController(animated: true)
+	}
 }

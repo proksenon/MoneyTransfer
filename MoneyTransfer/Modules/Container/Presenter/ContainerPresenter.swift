@@ -12,8 +12,16 @@ class ContainerPresenter {
 	weak var view: ContainerViewInput?
 	var interactor: ContainerInteractorInput?
 	var router: ContainerRouterInput?
-	var person: Person?
+	var person: Person? {
+		didSet {
+			guard let view = view, let person = person else { return }
+			view.setPersonAtContactView(with: person)
+		}
+	}
 	var isShow: Bool = false
+	var isShowingController: ChildsController?
+	var amountMoneyForTransaction: String?
+	var balance: String?
 
 	init(view: ContainerViewInput) {
 		self.view = view
@@ -23,25 +31,55 @@ class ContainerPresenter {
 
 extension ContainerPresenter: ContainerViewOutput {
 	func configureView() {
-		guard let view = view, let person = person else { return }
-		view.configureContactViewController(with: person)
-		view.setupDimmView()
-		view.tapOutSite()
+		guard let view = view else { return }
+//		view.setPersonAtContactView(with: person)
+//		view.setupDimmView()
+//		view.tapOutSite()
 	}
 
-	func togleTransaction() {
+	func togleTransaction(on vc: ChildsController?) {
 		guard let view = view else { return }
-		if !isShow {
-			view.configureTransactionViewController()
+		var viewController: ChildsController?
+		if let vc = vc {
+			viewController = vc
 		}
+		if let isShowingController = isShowingController {
+			view.showTransactionView(show: false, y: nil, showVC: isShowingController)
+			self.isShowingController = nil
+			isShow = !isShow
+		}
+		guard let showVC = viewController else { return }
+		isShowingController = showVC
 		isShow = !isShow
-		view.showTransactionView(show: isShow, y: nil)
+		view.showTransactionView(show: isShow, y: nil, showVC: showVC)
 	}
 
 
 	func moveTransaction(on viewSize: ViewSize) {
+		guard let view = view, let isShowingController = isShowingController else { return }
+		view.showTransactionView(show: true, y: viewSize.size, showVC: isShowingController)
+	}
+
+	func transactionMoneyIs(amount: String?) {
 		guard let view = view else { return }
-		view.showTransactionView(show: true, y: viewSize.size)
+		amountMoneyForTransaction = amount
+		view.setAmountAtTreatmentController(with: amount ?? "so bad balance")
+	}
+
+	func dissmis() {
+		router?.dissmis()
+	}
+
+	func succesOperation() {
+		DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+			self.togleTransaction(on: .successOperationViewController)
+		}
+	}
+	func setBalance(balance: String?) {
+		guard let balance = balance else {return}
+		self.balance = balance
+		guard let amountMoneyForTransaction = amountMoneyForTransaction else {return}
+		view?.setDataAtSuccesViewController(with: Balance(balance: balance, transactionMoney: amountMoneyForTransaction))
 	}
 }
 
@@ -51,6 +89,10 @@ extension ContainerPresenter: ContainerInteractorOutput {
 
 extension ContainerPresenter: ContainerModuleInput {
 	func configure(with person: Person) {
-		self.person = person
+//		self.person = person
+		guard let view = view else { return }
+		view.setPersonAtContactView(with: person)
+		view.setupDimmView()
+		view.tapOutSite()
 	}
 }

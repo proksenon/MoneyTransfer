@@ -12,6 +12,7 @@ class TreatmentPresenter {
 	weak var view: TreatmentViewInput?
 	var interactor: TreatmentInteractorInput?
 	var router: TreatmentRouterInput?
+	var amountOfTransaction: String?
 
 	init(view: TreatmentViewInput) {
 		self.view = view
@@ -28,6 +29,8 @@ extension TreatmentPresenter: TreatmentViewOutput {
 		view.setupAtributeTransactionLabel()
 		view.setupAmountOfMoneyLabel()
 		view.setupOperationButton()
+		guard let amountOfTransaction = amountOfTransaction else { return }
+		view.setTitleAmountOfMoneyLable(with: amountOfTransaction)
 	}
 }
 
@@ -36,5 +39,10 @@ extension TreatmentPresenter: TreatmentInteractorOutput {
 }
 
 extension TreatmentPresenter: TreatmentModuleInput {
+	func configure(amountOfTransaction: String) {
+		self.amountOfTransaction = amountOfTransaction
+		guard let view = view else { return }
+		view.setTitleAmountOfMoneyLable(with: amountOfTransaction)
+	}
 
 }

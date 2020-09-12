@@ -45,6 +45,7 @@
 		D59DB6BE250A47890068888D /* ContainerViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6B1250A47890068888D /* ContainerViewOutput.swift */; };
 		D59DB6C6250A48D40068888D /* ChildAddAndRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6C5250A48D40068888D /* ChildAddAndRemove.swift */; };
 		D59DB6C8250A50160068888D /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6C7250A50160068888D /* ViewSize.swift */; };
+		D59DB6D5250D470D0068888D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6D4250D470D0068888D /* Balance.swift */; };
 		D5A0BF66250774510080737E /* MoneyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF65250774510080737E /* MoneyOperation.swift */; };
 		D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */; };
 		D5A0BF6D25079BF20080737E /* TransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6C25079BF20080737E /* TransactionInteractor.swift */; };
@@ -143,6 +144,7 @@
 		D59DB6B1250A47890068888D /* ContainerViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewOutput.swift; sourceTree = "<group>"; };
 		D59DB6C5250A48D40068888D /* ChildAddAndRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildAddAndRemove.swift; sourceTree = "<group>"; };
 		D59DB6C7250A50160068888D /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
+		D59DB6D4250D470D0068888D /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		D5A0BF65250774510080737E /* MoneyOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyOperation.swift; sourceTree = "<group>"; };
 		D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenter.swift; sourceTree = "<group>"; };
 		D5A0BF6C25079BF20080737E /* TransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInteractor.swift; sourceTree = "<group>"; };
@@ -404,9 +406,9 @@
 		D59DB6CB250A56850068888D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D5A0BFD7250A40F10080737E /* SuccessPresenter.swift */,
 				D5A0BFDE250A40F10080737E /* SuccessModuleInput.swift */,
 				D5A0BFDB250A40F10080737E /* SuccessModuleOutput.swift */,
-				D5A0BFD7250A40F10080737E /* SuccessPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -666,6 +668,7 @@
 			children = (
 				D5B0400524FD091D0023E5DE /* Person.swift */,
 				D5A0BF92250A034B0080737E /* Status.swift */,
+				D59DB6D4250D470D0068888D /* Balance.swift */,
 				D59DB6C7250A50160068888D /* ViewSize.swift */,
 			);
 			path = Entity;
@@ -756,6 +759,7 @@
 				D5A0BF93250A034B0080737E /* Status.swift in Sources */,
 				D59DB6BA250A47890068888D /* ContainerPresenter.swift in Sources */,
 				D59DB6B8250A47890068888D /* ContainerConfiguratorProtocol.swift in Sources */,
+				D59DB6D5250D470D0068888D /* Balance.swift in Sources */,
 				D59DB6B9250A47890068888D /* ContainerRouter.swift in Sources */,
 				D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */,
 				D5B03FF224FBF7870023E5DE /* MainViewOutput.swift in Sources */,

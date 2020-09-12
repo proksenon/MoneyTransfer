@@ -152,7 +152,7 @@ extension ContactViewController: ContactViewInput {
 	@IBAction func sendMoney() {
 		print("sendMoney")
 //		dimmViewIsHidden(false)
-		moduleOutput?.toggleTransaction()
+		moduleOutput?.toggleTransaction(on: .transactionViewController)
 //		output?.pushTransition()
 	}
 }

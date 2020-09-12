@@ -78,7 +78,7 @@ extension TransactionViewController: TransactionViewInput {
 	}
 
 	@IBAction func exitButtonDidTapped() {
-		moduleOutput?.toggleTransaction()
+		moduleOutput?.toggleTransaction(on: nil)
 	}
 
 	//MARK: -MoneyTextfield
@@ -144,6 +144,9 @@ extension TransactionViewController: TransactionViewInput {
 	}
 
 	@IBAction func operationButtonDidTapped() {
+		moduleOutput?.transactionMoney(amount: moneyTextfield?.text)
+		moduleOutput?.balance(balance: output?.getBalance())
+		moduleOutput?.toggleTransaction(on: .treatmentViewController)
 		print("operationButtonDidTapped")
 	}
 

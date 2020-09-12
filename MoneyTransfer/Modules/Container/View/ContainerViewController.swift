@@ -9,19 +9,28 @@
 import UIKit
 
 protocol TransactionViewDelegate {
-	func toggleTransaction()
+	func toggleTransaction(on vc: ChildsController?)
 	func moveTransactionView(on y: CGFloat)
+	func transactionMoney(amount: String?)
+	func backToContacts()
+	func balance(balance: String?)
 }
 
+enum ChildsController {
+	case transactionViewController
+	case treatmentViewController
+	case successOperationViewController
+}
 
 class ContainerViewController: UIViewController {
 
 	var output: ContainerViewOutput?
 	var moduleInput: ContainerModuleInput?
-	var contactViewController: UIViewController?
-	var transactionViewController: UIViewController?
-	var treatmentViewController: UIViewController?
-	var shouldShowController: UIViewController?
+	var contactViewController: ContactViewController?
+	var transactionViewController: TransactionViewController?
+	var treatmentViewController: TreatmentViewController?
+	var successOperationViewController: SuccessOperationViewController?
+	var isShowingController: ChildsController = .transactionViewController
 //	var isShow: Bool = false
 	private lazy var dimmView: UIView = {
 		let view = UIView()
@@ -36,36 +45,52 @@ class ContainerViewController: UIViewController {
 		output.configureView()
         // Do any additional setup after loading the view.
     }
-	func configureContactViewController(with person: Person) {
-		let contactViewController = ContactViewController()
-		let configuratorContactModule = ContactConfigurator()
-		configuratorContactModule.configure(with: contactViewController)
+//	func configureContactViewController(with person: Person) {
+//		let contactViewController = ContactViewController()
+//		let configuratorContactModule = ContactConfigurator()
+//		configuratorContactModule.configure(with: contactViewController)
+//		contactViewController.moduleInput?.configure(with: person)
+//		contactViewController.moduleOutput = self
+//		contactViewController.view.frame = view.frame
+//		add(contactViewController)
+//		self.contactViewController = contactViewController
+//	}
+//
+//	func configureTransactionViewController() {
+//		let transactionViewController = TransactionViewController()
+//		let	transactionConfigurator = TransactionConfigurator()
+//		transactionConfigurator.configure(with: transactionViewController)
+//		transactionViewController.view.frame.origin.y = self.view.frame.height
+//		transactionViewController.moduleOutput = self
+//		add(transactionViewController)
+//		self.transactionViewController = transactionViewController
+//	}
+//
+//	func configureTreatmentViewController(amountOfTransaction: String) {
+//		let treatmentViewController = TreatmentViewController()
+//		let treatmentConfigurator = TreatmentConfigurator()
+//		treatmentConfigurator.configure(with: treatmentViewController)
+//		treatmentViewController.moduleInput?.configure(amountOfTransaction: amountOfTransaction)
+//		treatmentViewController.view.frame.origin.y = self.view.frame.height
+//		add(treatmentViewController)
+//		self.treatmentViewController = treatmentViewController
+//	}
+
+	func setPersonAtContactView(with person: Person) {
+		guard let contactViewController = contactViewController else { return }
 		contactViewController.moduleInput?.configure(with: person)
-		contactViewController.moduleOutput = self
-		contactViewController.view.frame = view.frame
-		add(contactViewController)
-		self.contactViewController = contactViewController
 	}
 
-	func configureTransactionViewController() {
-		let transactionViewController = TransactionViewController()
-		let	transactionConfigurator = TransactionConfigurator()
-		transactionConfigurator.configure(with: transactionViewController)
-		transactionViewController.view.frame.origin.y = self.view.frame.height
-		transactionViewController.moduleOutput = self
-		add(transactionViewController)
-		self.transactionViewController = transactionViewController
+	func setAmountAtTreatmentController(with amount: String) {
+		guard let treatmentViewController = treatmentViewController else { return }
+		treatmentViewController.moduleInput?.configure(amountOfTransaction: amount)
 	}
 
-	func configureTreatmentViewController() {
-		let treatmentViewController = TreatmentViewController()
-		let treatmentConfigurator = TreatmentConfigurator()
-		treatmentConfigurator.configure(with: treatmentViewController)
-		treatmentViewController.view.frame.origin.y = self.view.frame.height
-		add(treatmentViewController)
-		self.treatmentViewController = treatmentViewController
+	func setDataAtSuccesViewController(with balance: Balance) {
+		guard let successOperationViewController = successOperationViewController else {return}
+		successOperationViewController.moduleInput?.configure(with: balance)
 	}
-
+	
 
 	func setupDimmView() {
 		guard let contactViewController = contactViewController else { return }
@@ -83,16 +108,34 @@ class ContainerViewController: UIViewController {
 	}
 
 	@objc func tapGestureDone(){
-		toggleTransaction()
+		output?.togleTransaction(on: nil)
 	}
 
 	func transactionViewEndEditing(_ isEnd: Bool) {
 		guard let transactionViewController = transactionViewController else { return }
 		transactionViewController.view.endEditing(isEnd)
 	}
-	func showTransactionView(show: Bool, y: CGFloat? = nil) {
-		guard let transactionViewController = transactionViewController else { return }
-		showTransaction(show: show, showViewController: transactionViewController, y: y)
+	func showTransactionView(show: Bool, y: CGFloat? = nil, showVC: ChildsController) {
+		var nextViewController: UIViewController
+		switch showVC {
+		case .transactionViewController:
+			guard let transactionViewController = transactionViewController else { return }
+			nextViewController = transactionViewController
+		case .treatmentViewController:
+			guard let treatmentViewController = treatmentViewController else { return }
+			nextViewController = treatmentViewController
+			output?.succesOperation()
+		case .successOperationViewController:
+			guard let successOperationViewController = successOperationViewController else { return }
+			nextViewController = successOperationViewController
+		}
+		showTransaction(show: show, showViewController: nextViewController, y: y)
+	}
+	
+
+	func showTreatmentView(show: Bool, y: CGFloat? = nil) {
+		guard let treatmentViewController = treatmentViewController else { return }
+		showTransaction(show: show, showViewController: treatmentViewController, y: y)
 	}
 
 	
@@ -123,7 +166,7 @@ class ContainerViewController: UIViewController {
 							self.dimmViewIsHidden(show)
 							showViewController.view.frame.origin.y = self.view.frame.height
 			}) { (_) in
-				showViewController.remove()
+//				showViewController.remove()
 			}
 		}
 	}
@@ -131,15 +174,28 @@ class ContainerViewController: UIViewController {
 }
 
 extension ContainerViewController: ContainerViewInput {
+
 	
 }
 
 extension ContainerViewController: TransactionViewDelegate {
-	func toggleTransaction() {
-		output?.togleTransaction()
+	func toggleTransaction(on vc: ChildsController?) {
+		output?.togleTransaction(on: vc)
 	}
 
 	func moveTransactionView(on y: CGFloat) {
 		output?.moveTransaction(on: ViewSize(size: y))
+	}
+
+	func transactionMoney(amount: String?) {
+		output?.transactionMoneyIs(amount: amount)
+	}
+	func balance(balance: String?) {
+		output?.setBalance(balance: balance)
+	}
+
+
+	func backToContacts() {
+		output?.dissmis()
 	}
 }
