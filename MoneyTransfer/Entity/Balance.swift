@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+///		Информация о балансе
 struct Balance {
 	var balance: String
 	var transactionMoney: String

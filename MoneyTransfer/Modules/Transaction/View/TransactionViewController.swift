@@ -8,15 +8,15 @@
 
 import UIKit
 
-class TransactionViewController: UIViewController {
+final class TransactionViewController: UIViewController {
 
 	typealias TransactionDelegate = TogleTransactionDelegate & TransactionViewDelegate
 	var output: TransactionViewOutput?
 	var moduleInput: TransactionModuleInput?
 	var moduleOutput: TransactionDelegate?
-	var nameOperationLabel: UILabel?
-	var operationButton: UIButton?
-	var moneyTextfield: UITextField?
+	private var nameOperationLabel: UILabel?
+	private var operationButton: UIButton?
+	private var moneyTextfield: UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()

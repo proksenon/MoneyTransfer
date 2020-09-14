@@ -9,7 +9,10 @@
 import Foundation
 
 protocol MainRouterInput: class {
+	///  Переходит на модуль Container
 	func pushContainer(with person: Person)
+	///  Показывает успешный статус операци
 	func showSuccess(with balance: Balance)
+	///  Закрывает статус успешной операии
 	func dissmisSucces()
 }

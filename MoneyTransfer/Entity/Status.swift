@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+///	Статус операции
 enum Status {
 	case success
 	case failure

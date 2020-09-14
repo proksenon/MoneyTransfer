@@ -9,11 +9,18 @@
 import Foundation
 
 protocol MainViewOutput: class {
+	///  Конвигурирует View
 	func configureView()
+	///  Возвращает количество контактов
 	func countOfPersons()->Int
+	///	 Получает контакт
 	func getPerson(with indexPath: IndexPath)-> Person
+	///	 Первая ячейка с картой покидает экран
 	func cardInfromationLeft(_ isLeft: Bool)
+	///  Выбран контакт
 	func didChosePerson(indexPath: IndexPath)
+	///  Получает баланс
 	func getBalance()-> String
+	///  Закрывает StatusOperation
 	func dissmissStatusOperation()
 }

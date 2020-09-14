@@ -10,9 +10,9 @@ import UIKit
 
 class CardTableViewCell: UITableViewCell {
 
-	let cardView = UIView()
-	let balanceLabel = UILabel()
-	let curencyBalanceLabel = UILabel()
+	private let cardView = UIView()
+	private let balanceLabel = UILabel()
+	private let curencyBalanceLabel = UILabel()
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,8 +31,7 @@ class CardTableViewCell: UITableViewCell {
 		cardView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
 		cardView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
 		cardView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-		cardView.layer.cornerRadius = 10
-		cardView.clipsToBounds = true
+		cardView.roundedCorner(with: 10)
 
 	}
 
@@ -63,13 +62,13 @@ class CardTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+	func configureCell(with balance: String) {
+		balanceLabel.text = balance
+	}
 }

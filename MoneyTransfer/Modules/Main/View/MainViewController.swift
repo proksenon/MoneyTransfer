@@ -34,33 +34,19 @@ final class MainViewController: UIViewController {
 		navigationTitleIsHidden(false)
 	}
 
-	func presentSettingsActionSheet() {
-		let alert = UIAlertController(title: "Permission to Contacts", message: "This app needs access to contacts in order to ...", preferredStyle: .actionSheet)
-		alert.addAction(UIAlertAction(title: "Go to Settings", style: .default) { _ in
-			let url = URL(string: UIApplication.openSettingsURLString)!
-			UIApplication.shared.open(url)
-		})
-		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-		present(alert, animated: true)
-	}
 }
 //MARK: -MainViewInput
 extension MainViewController: MainViewInput {
-	
-	func tableViewReload() {
-		DispatchQueue.main.async {
-			self.tableView.reloadData()
-		}
-	}
 
+	//MARK: -ТavigationTitle
 	func setupBalanceTitle() {
 		balanceTitleLabel = UILabel()
 		guard let balanceTitleLabel = balanceTitleLabel, let navigationController = navigationController else { return }
 		balanceTitleLabel.text = "Текущий баланс" + " " + "103 527,5 р"
 		navigationController.navigationBar.insertSubview(balanceTitleLabel, at: 0)
 		balanceTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([balanceTitleLabel.centerYAnchor.constraint(equalTo: navigationController.navigationBar.centerYAnchor), balanceTitleLabel.centerXAnchor.constraint(equalTo: navigationController.navigationBar.centerXAnchor)])
-		print("asd")
+		NSLayoutConstraint.activate([balanceTitleLabel.centerYAnchor.constraint(equalTo: navigationController.navigationBar.centerYAnchor),
+									 balanceTitleLabel.centerXAnchor.constraint(equalTo: navigationController.navigationBar.centerXAnchor)])
 	}
 
 	func setBalanceTitleWith(balance: String) {
@@ -82,7 +68,7 @@ extension MainViewController: MainViewInput {
 	func navigationWithScrollAtTop() {
 		navigationItem.leftBarButtonItem = scrollAtTopButton
 	}
-
+	//MARK: -TableView
 	func setScrollAtTopButton() {
 		scrollAtTopButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .done, target: self, action: #selector(scrollAtTheTop))
 	}
@@ -103,6 +89,13 @@ extension MainViewController: MainViewInput {
 		tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 	}
 
+	func tableViewReload() {
+		DispatchQueue.main.async {
+			self.tableView.reloadData()
+		}
+	}
+
+	//MARK: -MainViewInput
 	func setupDimmView() {
 		dimmView.frame = view.frame
 		view.addSubview(dimmView)
@@ -147,7 +140,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 			return cell
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! CardTableViewCell
-			cell.balanceLabel.text = output.getBalance()
+			cell.configureCell(with: output.getBalance())
 			return cell
 		}
 	}
@@ -195,5 +188,4 @@ extension MainViewController: ExitDelegate {
 	func backToContacts() {
 		output.dissmissStatusOperation()
 	}
-
 }

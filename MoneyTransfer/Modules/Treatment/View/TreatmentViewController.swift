@@ -8,29 +8,29 @@
 
 import UIKit
 
-class TreatmentViewController: UIViewController {
+final class TreatmentViewController: UIViewController {
 
 	var output: TreatmentViewOutput?
 	var moduleInput: TreatmentModuleInput?
 	var moduleOutput: ExitDelegate?
-	var treatmentImageView: UIImageView?
-	var statusLabel: UILabel?
-	var atributeTransactionLabel: UILabel?
-	var amountOfMoneyLabel: UILabel?
-	var operationButton: UIButton?
-	var money: String = "100000"
+	private var treatmentImageView: UIImageView?
+	private var statusLabel: UILabel?
+	private var atributeTransactionLabel: UILabel?
+	private var amountOfMoneyLabel: UILabel?
+	private var operationButton: UIButton?
+	private let money: String = "100000"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		guard let output = output else { return }
 		output.configureView()
-        // Do any additional setup after loading the view.
     }
 
 
 }
 
 extension TreatmentViewController: TreatmentViewInput {
+
 	func setView() {
 		view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
 		view.backgroundColor = .white
@@ -106,6 +106,7 @@ extension TreatmentViewController: TreatmentViewInput {
 		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
 		self.operationButton = operationButton
 	}
+	
 	@IBAction func operationButtonDidTapped() {
 		moduleOutput?.backToContacts()
 		print("goToContact")

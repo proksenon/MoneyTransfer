@@ -7,12 +7,12 @@
 //
 
 import Foundation
-class TreatmentPresenter {
+final class TreatmentPresenter {
 
 	weak var view: TreatmentViewInput?
 	var interactor: TreatmentInteractorInput?
 	var router: TreatmentRouterInput?
-	var amountOfTransaction: String?
+	private var amountOfTransaction: String?
 
 	init(view: TreatmentViewInput) {
 		self.view = view

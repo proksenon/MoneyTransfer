@@ -8,12 +8,12 @@
 
 import Foundation
 
-class TransactionPresenter {
+final class TransactionPresenter {
 
 	weak var view: TransactionViewInput?
 	var interactor: TransactionInteractorInput?
 	var router: TransactionRouterInput?
-	var amountOfTransaction: String?
+	private var amountOfTransaction: String?
 
 	init(view: TransactionViewInput) {
 		self.view = view
@@ -23,7 +23,6 @@ extension TransactionPresenter: TransactionViewOutput {
 	func configureView() {
 		guard let view = view else { return }
 		view.setView()
-//		view.setupExitButton()
 		view.setupNameOperationLabel()
 		view.setupMoneyTextfield()
 		view.setupOperationButton()

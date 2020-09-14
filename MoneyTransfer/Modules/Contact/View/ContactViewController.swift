@@ -8,23 +8,21 @@
 
 import UIKit
 
-class ContactViewController: UIViewController {
+final class ContactViewController: UIViewController {
 
 	var output: ContactViewOutput?
 	var moduleInput: ContactModuleInput?
 	var moduleOutput: TogleTransactionDelegate?
-	var avatarImageView: UIImageView?
-	var requestMoneyButton: UIButton?
-	var sendMoneyButton: UIButton?
-	var fullNameLabel: UILabel?
-	var phoneNumberLabel: UILabel?
+	private var avatarImageView: UIImageView?
+	private var requestMoneyButton: UIButton?
+	private var sendMoneyButton: UIButton?
+	private var fullNameLabel: UILabel?
+	private var phoneNumberLabel: UILabel?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		guard let output = output else { return }
 		output.configureView()
-
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -48,6 +46,7 @@ extension ContactViewController: ContactViewInput {
 		avatarImageView.image = UIImage(named: "defaultImage")
 		avatarImageView.contentMode = .scaleAspectFit
 	}
+
 	func setDataToAvatar(with data: Data?) {
 		guard let avatarImageView = avatarImageView, let data = data else { return }
 
@@ -85,6 +84,7 @@ extension ContactViewController: ContactViewInput {
 		phoneNumberLabel.textColor = .darkGray
 		phoneNumberLabel.font = phoneNumberLabel.font.withSize(15)
 	}
+
 	func setPhoneNumber(with phone: String) {
 		guard let phoneNumberLabel = phoneNumberLabel else { return }
 
@@ -103,9 +103,9 @@ extension ContactViewController: ContactViewInput {
 									 requestMoneyButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
 									 requestMoneyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
 									 requestMoneyButton.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height/10)])
+
 		requestMoneyButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
 		requestMoneyButton.setTitle("Запросить деньги", for: .normal)
-		requestMoneyButton.titleLabel?.text = "Запросить деньги"
 		requestMoneyButton.titleLabel?.textColor = .black
 		requestMoneyButton.addTarget(self, action: #selector(requestMoney), for: .touchUpInside)
 	}

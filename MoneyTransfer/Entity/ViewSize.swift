@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+///		Размер вью
 struct ViewSize {
 	let size: CGFloat
 }

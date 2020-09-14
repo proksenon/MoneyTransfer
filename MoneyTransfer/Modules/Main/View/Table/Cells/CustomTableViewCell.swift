@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+final class CustomTableViewCell: UITableViewCell {
 
-	let avatarImageView = UIImageView()
-	let fullNameLabel = UILabel()
-	let phoneNumberLabel = UILabel()
-	let size = UIScreen.main.bounds.height/11
-	let defaultImage = UIImage(named: "defaultImage")
+	private let avatarImageView = UIImageView()
+	private let fullNameLabel = UILabel()
+	private let phoneNumberLabel = UILabel()
+	private let size = UIScreen.main.bounds.height/11
+	private let defaultImage = UIImage(named: "defaultImage")
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,11 +35,8 @@ class CustomTableViewCell: UITableViewCell {
 		avatarImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		avatarImageView.image = defaultImage
 		avatarImageView.contentMode = .scaleAspectFill
-		avatarImageView.layer.cornerRadius = 25
+		avatarImageView.roundedCorner(with: 25)
 		avatarImageView.layer.masksToBounds = false
-		avatarImageView.clipsToBounds = true
-//	  avatarImageView.layer.borderColor = UIColor.magenta.cgColor // цвет рамки
-//	  avatarImageView.layer.borderWidth = 1 // толщина рамки
 	}
 
 	func setFullNameLabel() {

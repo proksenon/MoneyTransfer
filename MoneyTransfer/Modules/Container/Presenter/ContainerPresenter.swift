@@ -7,23 +7,22 @@
 //
 
 import Foundation
-class ContainerPresenter {
+final class ContainerPresenter {
 
 	weak var view: ContainerViewInput?
 	var interactor: ContainerInteractorInput?
 	var router: ContainerRouterInput?
-	var person: Person? {
+	private var person: Person? {
 		didSet {
 			guard let view = view, let person = person else { return }
 			view.setPersonAtContactView(with: person)
 		}
 	}
-	var isShow: Bool = false
-	var isShowingController: ChildsController?
-	var amountMoneyForTransaction: String?
-	var balanceString: String?
-	var balance: Balance?
-	var statusShow: Bool = true
+	private var isShow: Bool = false
+	private var isShowingController: ChildsController?
+	private var amountMoneyForTransaction: String?
+	private var balance: Balance?
+	private var statusShow: Bool = true
 
 	init(view: ContainerViewInput) {
 		self.view = view
@@ -32,9 +31,7 @@ class ContainerPresenter {
 }
 
 extension ContainerPresenter: ContainerViewOutput {
-	func configureView() {
-
-	}
+	func configureView() {}
 
 	func togleTransaction(on vc: ChildsController?) {
 		guard let view = view else { return }
@@ -54,7 +51,6 @@ extension ContainerPresenter: ContainerViewOutput {
 		view.showTransactionView(show: isShow, y: nil, showVC: showVC)
 	}
 
-
 	func moveTransaction(on viewSize: ViewSize) {
 		guard let view = view, let isShowingController = isShowingController else { return }
 		view.showTransactionView(show: true, y: viewSize.size, showVC: isShowingController)
@@ -71,21 +67,23 @@ extension ContainerPresenter: ContainerViewOutput {
 	}
 
 	func succesOperation() {
-		DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
 			self.togleTransaction(on: .successOperationViewController)
 			self.statusShow = false
 		}
 	}
+
 	func setBalance(balance: String?) {
-		guard let balance = balance else {return}
-		self.balanceString = balance
-		guard let amountMoneyForTransaction = amountMoneyForTransaction else {return}
-		self.balance = Balance(balance: balance, transactionMoney: amountMoneyForTransaction)
-		view?.setDataAtSuccesViewController(with: Balance(balance: balance, transactionMoney: amountMoneyForTransaction))
+		guard let balance = balance, let amountMoneyForTransaction = amountMoneyForTransaction else {return}
+		let balanceWithTransaction = Balance(balance: balance, transactionMoney: amountMoneyForTransaction)
+		view?.setDataAtSuccesViewController(with: balanceWithTransaction)
+		self.balance = balanceWithTransaction
 	}
+
 	func getBalance() ->Balance? {
 		return balance
 	}
+
 	func showStatus() -> Bool {
 		return statusShow
 	}

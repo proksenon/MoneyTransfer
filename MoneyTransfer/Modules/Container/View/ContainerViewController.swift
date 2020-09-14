@@ -48,6 +48,11 @@ final class ContainerViewController: UIViewController {
 		moduleOutput?.statusTransaction(with: output?.getBalance(), show: output!.showStatus())
 	}
 
+
+}
+
+extension ContainerViewController: ContainerViewInput {
+
 	func setPersonAtContactView(with person: Person) {
 		guard let contactViewController = contactViewController else { return }
 		contactViewController.moduleInput?.configure(with: person)
@@ -62,7 +67,6 @@ final class ContainerViewController: UIViewController {
 		guard let successOperationViewController = successOperationViewController else {return}
 		successOperationViewController.moduleInput?.configure(with: balance)
 	}
-	
 
 	func setupDimmView() {
 		guard let contactViewController = contactViewController else { return }
@@ -83,7 +87,6 @@ final class ContainerViewController: UIViewController {
 		output?.togleTransaction(on: nil)
 	}
 
-
 	func showTransactionView(show: Bool, y: CGFloat? = nil, showVC: ChildsController) {
 		var nextViewController: UIViewController
 		switch showVC {
@@ -103,7 +106,6 @@ final class ContainerViewController: UIViewController {
 		showTransaction(show: show, showViewController: nextViewController, y: y)
 	}
 
-	
 	private func showTransaction(show: Bool, showViewController: UIViewController, y: CGFloat? = nil) {
 		if show {
 			UIView.animate(withDuration: 0.5,
@@ -135,10 +137,6 @@ final class ContainerViewController: UIViewController {
 			}
 		}
 	}
-
-}
-
-extension ContainerViewController: ContainerViewInput {
 
 	
 }

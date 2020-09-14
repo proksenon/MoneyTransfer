@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+///		Информация о человеке
 struct Person {
 	let fullName: String?
 	let phoneNumber: String?

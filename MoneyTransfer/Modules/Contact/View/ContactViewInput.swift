@@ -18,6 +18,4 @@ protocol ContactViewInput: class {
 	func setPhoneNumber(with phone: String)
 	func setupRequestMoneyButton()
 	func setupSendMoneyButton()
-//	func setupDimmView()
-//	func dimmViewIsHidden(_ isHidden: Bool)
 }

@@ -7,13 +7,13 @@
 //
 
 import Foundation
-class SuccessOperationPresenter {
+final class SuccessOperationPresenter {
 
 	weak var view: SuccessOperationViewInput?
 	var interactor: SuccessOperationInteractorInput?
 	var router: SuccessOperationRouterInput?
-	var amountOfTransaction: String?
-	var currentBalance: String?
+	private var amountOfTransaction: String?
+	private var currentBalance: String?
 
 	init(view: SuccessOperationViewInput) {
 		self.view = view
@@ -38,8 +38,6 @@ extension SuccessOperationPresenter: SuccessOperationViewOutput {
 		view.setupChangeBalanceLabel()
 		view.setupBeforeTransactionBalanceLabel()
 		view.setupCurrentBalanceLabel()
-//		guard let amountOfTransaction = amountOfTransaction else { return }
-//		view.setTitleAmountOfMoneyLable(with: amountOfTransaction)
 	}
 
 }
@@ -49,6 +47,7 @@ extension SuccessOperationPresenter: SuccessOperationInteractorOutput {
 }
 
 extension SuccessOperationPresenter: SuccessOperationModuleInput {
+	
 	func configure(with balance: Balance) {
 		self.currentBalance = balance.balance
 		self.amountOfTransaction = balance.transactionMoney

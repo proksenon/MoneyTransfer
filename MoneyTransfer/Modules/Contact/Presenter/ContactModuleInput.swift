@@ -10,5 +10,4 @@ import Foundation
 
 protocol ContactModuleInput {
 	func configure(with person: Person)
-//	func exitFromTranstion()
 }

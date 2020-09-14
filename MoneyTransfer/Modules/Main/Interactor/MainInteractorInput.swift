@@ -9,7 +9,10 @@
 import Foundation
 
 protocol MainInteractorInput: class {
+	///  Получает контакты
 	func getContatcs(completion: @escaping ([Person])->Void)
+	///  Получает баланс
 	func getBalance()-> String?
+	///  Устанавливает баланс
 	func setBalance(balance: String)
 }

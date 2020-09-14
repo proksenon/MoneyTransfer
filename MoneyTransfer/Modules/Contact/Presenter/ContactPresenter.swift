@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContactPrsenter {
+final class ContactPrsenter {
 
 	weak var view: ContactViewInput?
 	var interactor: ContactInteractorInput?
@@ -26,13 +26,9 @@ extension ContactPrsenter: ContactViewOutput {
 		view.setBackgroundColor()
 		view.setupAvatarImageView()
 		view.setupFullNameLabel()
-//		view.setDataToAvatar(with: person.avatarData)
-//		view.setFullName(with: person.fullName ?? "Unknown")
 		view.setupPhoneNumberLabel()
-//		view.setPhoneNumber(with: person.phoneNumber ?? "will be phone here")
 		view.setupRequestMoneyButton()
 		view.setupSendMoneyButton()
-//		view.setupDimmView()
 	}
 
 	func pushTransition() {
@@ -46,15 +42,10 @@ extension ContactPrsenter: ContactInteractorOutput {
 
 extension ContactPrsenter: ContactModuleInput {
 	func configure(with person: Person) {
-//		self.person = person
 		guard let view = view else { return }
 		view.setDataToAvatar(with: person.avatarData)
 		view.setFullName(with: person.fullName ?? "Unknown")
 		view.setPhoneNumber(with: person.phoneNumber ?? "will be phone here")
 	}
 
-//	func exitFromTranstion() {
-//		guard let view = view else { return }
-//		view.dimmViewIsHidden(true)
-//	}
 }

@@ -9,9 +9,9 @@
 import Foundation
 import Contacts
 
-class ContactsManager: ContactsManagerProtocol {
+final class ContactsManager: ContactsManagerProtocol {
 
-	var persons: [Person] = []
+	internal var persons: [Person] = []
 
 	func getContatcs(completion: @escaping ([Person])->Void) {
 		let store = CNContactStore()

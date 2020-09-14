@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+///  Child контроллеры модуля Container
 enum ChildsController {
 	case transactionViewController
 	case treatmentViewController

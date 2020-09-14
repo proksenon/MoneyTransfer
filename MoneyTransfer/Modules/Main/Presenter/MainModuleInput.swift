@@ -9,5 +9,6 @@
 import Foundation
 
 protocol MainMouduleInput {
+	///  Принимает баланс  и переменную шоу, если шоу = тру, то показывает статус операции по завершению
 	func statusTransaction(with balance: Balance?, show: Bool)
 }

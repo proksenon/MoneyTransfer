@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+///	Работа с ChildController
 extension UIViewController {
     func add(_ child: UIViewController) {
         addChild(child)

@@ -8,31 +8,27 @@
 
 import UIKit
 
-class SuccessOperationViewController: UIViewController {
+final class SuccessOperationViewController: UIViewController {
 
 	var output: SuccessOperationViewOutput?
 	var moduleInput: SuccessOperationModuleInput?
 	var moduleOutput: ExitDelegate?
-	var treatmentImageView: UIImageView?
-	var statusLabel: UILabel?
-	var atributeTransactionLabel: UILabel?
-	var amountOfMoneyLabel: UILabel?
-	var operationButton: UIButton?
-	var changeBalanceLabel: UILabel?
-	var beforeTransactionBalanceLabel: UILabel?
-	var currentBalanceLabel: UILabel?
-	var money: String = "100000"
+	private var treatmentImageView: UIImageView?
+	private var statusLabel: UILabel?
+	private var atributeTransactionLabel: UILabel?
+	private var amountOfMoneyLabel: UILabel?
+	private var operationButton: UIButton?
+	private var changeBalanceLabel: UILabel?
+	private var beforeTransactionBalanceLabel: UILabel?
+	private var currentBalanceLabel: UILabel?
+	private var money: String = "100000"
 	
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		print("1")
 		guard let output = output else { return }
 		output.configureView()
-		print("2")
-        // Do any additional setup after loading the view.
     }
-
 
 }
 
