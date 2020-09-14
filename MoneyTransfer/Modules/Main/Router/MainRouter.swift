@@ -29,8 +29,23 @@ class MainRouter: MainRouterInput {
 		let containerVC = ContainerViewController()
 		let containerConfigurator = ContainerConfigurator()
 		containerConfigurator.configure(with: containerVC)
+		containerVC.moduleOutput = (viewController as? MainViewController)?.moduleInput
 		containerVC.moduleInput?.configure(with: person)
 //		containerVC.configureContactViewController(with: person)
 		viewController.navigationController?.pushViewController(containerVC, animated: true)
 	}
+
+//	func showSuccess(with balance: Balance){
+//		guard let viewController = viewController else { return }
+//		let successViewController = SuccessOperationViewController()
+//		let successConfigurator = SuccessOperationConfigurator()
+//		successConfigurator.configure(with: successViewController)
+////		successViewController.moduleOutput = viewController
+////		successViewController.view.frame.origin.y = viewController.view.frame.height
+////		viewController.add(successViewController)
+////		viewController.successOperationViewController = successViewController
+//		successViewController.modalPresentationStyle = .popover
+////		viewController.showDetailViewController(successViewController, sender: nil)
+//		viewController.present(successViewController, animated: true, completion: nil)
+//	}
 }

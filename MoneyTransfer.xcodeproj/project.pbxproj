@@ -46,7 +46,8 @@
 		D59DB6C6250A48D40068888D /* ChildAddAndRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6C5250A48D40068888D /* ChildAddAndRemove.swift */; };
 		D59DB6C8250A50160068888D /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6C7250A50160068888D /* ViewSize.swift */; };
 		D59DB6D5250D470D0068888D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6D4250D470D0068888D /* Balance.swift */; };
-		D5A0BF66250774510080737E /* MoneyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF65250774510080737E /* MoneyOperation.swift */; };
+		D59DB6D7250E34350068888D /* MainModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6D6250E34350068888D /* MainModuleInput.swift */; };
+		D59DB6D9250E34440068888D /* MainModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6D8250E34440068888D /* MainModuleOutput.swift */; };
 		D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */; };
 		D5A0BF6D25079BF20080737E /* TransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6C25079BF20080737E /* TransactionInteractor.swift */; };
 		D5A0BF6F25079BFE0080737E /* TransactionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6E25079BFE0080737E /* TransactionRouter.swift */; };
@@ -145,7 +146,8 @@
 		D59DB6C5250A48D40068888D /* ChildAddAndRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildAddAndRemove.swift; sourceTree = "<group>"; };
 		D59DB6C7250A50160068888D /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
 		D59DB6D4250D470D0068888D /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
-		D5A0BF65250774510080737E /* MoneyOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyOperation.swift; sourceTree = "<group>"; };
+		D59DB6D6250E34350068888D /* MainModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleInput.swift; sourceTree = "<group>"; };
+		D59DB6D8250E34440068888D /* MainModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleOutput.swift; sourceTree = "<group>"; };
 		D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenter.swift; sourceTree = "<group>"; };
 		D5A0BF6C25079BF20080737E /* TransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInteractor.swift; sourceTree = "<group>"; };
 		D5A0BF6E25079BFE0080737E /* TransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRouter.swift; sourceTree = "<group>"; };
@@ -239,7 +241,6 @@
 				D5B0400724FD09AD0023E5DE /* Services */,
 				D59DB6CE250A56C80068888D /* Modules */,
 				D50F510024DD6F760042BAD2 /* Main.storyboard */,
-				D5A0BF65250774510080737E /* MoneyOperation.swift */,
 				D50F510324DD6F790042BAD2 /* Assets.xcassets */,
 				D50F510524DD6F790042BAD2 /* LaunchScreen.storyboard */,
 				D50F510824DD6F790042BAD2 /* Info.plist */,
@@ -622,6 +623,8 @@
 			isa = PBXGroup;
 			children = (
 				D50F511124DD72EB0042BAD2 /* MainPresenter.swift */,
+				D59DB6D6250E34350068888D /* MainModuleInput.swift */,
+				D59DB6D8250E34440068888D /* MainModuleOutput.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				D50F511024DD72E00042BAD2 /* MainViewController.swift in Sources */,
 				D5A0BF7C25079D990080737E /* TransactionModuleInput.swift in Sources */,
 				D50F50FB24DD6F760042BAD2 /* AppDelegate.swift in Sources */,
+				D59DB6D7250E34350068888D /* MainModuleInput.swift in Sources */,
 				D5A0BFEA250A40F10080737E /* SuccessInteractor.swift in Sources */,
 				D5A0BF8825079EC20080737E /* TransactionViewController.swift in Sources */,
 				D5A0BF6D25079BF20080737E /* TransactionInteractor.swift in Sources */,
@@ -809,6 +813,7 @@
 				D50F511424DD72FA0042BAD2 /* MainInteractor.swift in Sources */,
 				D520451825050D2E007B746A /* ContactViewOutput.swift in Sources */,
 				D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */,
+				D59DB6D9250E34440068888D /* MainModuleOutput.swift in Sources */,
 				D59DB6C6250A48D40068888D /* ChildAddAndRemove.swift in Sources */,
 				D520452625050DCF007B746A /* ContactViewController.swift in Sources */,
 				D5A0BFEB250A40F10080737E /* SuccessModuleInput.swift in Sources */,
@@ -832,7 +837,6 @@
 				D59DB6BD250A47890068888D /* ContainerViewInput.swift in Sources */,
 				D5A0BFE9250A40F10080737E /* SuccessRouterInput.swift in Sources */,
 				D50F511624DD73050042BAD2 /* MainRouter.swift in Sources */,
-				D5A0BF66250774510080737E /* MoneyOperation.swift in Sources */,
 				D59DB6B5250A47890068888D /* ContainerConfigurator.swift in Sources */,
 				D5B03FFA24FBF9260023E5DE /* MainRouterInput.swift in Sources */,
 				D5B0400624FD091D0023E5DE /* Person.swift in Sources */,

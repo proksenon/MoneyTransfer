@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
 
 	let configurator: MainConfiguratorProtocol = MainConfigurator()
 	var output: MainViewOutput!
+	var moduleInput: MainMouduleInput?
 	var tableView: UITableView!
 	var scrollAtTopButton: UIBarButtonItem!
 	var balanceTitleLabel: UILabel?
@@ -24,7 +25,7 @@ class MainViewController: UIViewController {
 	}
 	override func viewDidAppear(_ animated: Bool) {
 		navigationTitleIsHidden(false)
-
+		tableViewReload()
 	}
 
 	func presentSettingsActionSheet() {

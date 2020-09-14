@@ -10,7 +10,7 @@ import Foundation
 
 protocol TransactionViewInput: class {
 	func setupNameOperationLabel()
-	func setupExitButton()
+//	func setupExitButton()
 	func setupMoneyTextfield()
 	func setupOperationButton()
 	func setView()

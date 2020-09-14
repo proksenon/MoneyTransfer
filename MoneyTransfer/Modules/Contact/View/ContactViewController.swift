@@ -12,18 +12,18 @@ class ContactViewController: UIViewController {
 
 	var output: ContactViewOutput?
 	var moduleInput: ContactModuleInput?
-	var moduleOutput: TransactionViewDelegate?
+	var moduleOutput: TogleTransactionDelegate?
 	var avatarImageView: UIImageView?
 	var requestMoneyButton: UIButton?
 	var sendMoneyButton: UIButton?
 	var fullNameLabel: UILabel?
 	var phoneNumberLabel: UILabel?
-	private lazy var dimmView: UIView = {
-		let view = UIView()
-		view.backgroundColor = UIColor.black.withAlphaComponent(1)
-		view.alpha = 0
-		return view
-	}()
+//	private lazy var dimmView: UIView = {
+//		let view = UIView()
+//		view.backgroundColor = UIColor.black.withAlphaComponent(1)
+//		view.alpha = 0
+//		return view
+//	}()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,16 +138,16 @@ extension ContactViewController: ContactViewInput {
 		sendMoneyButton.titleLabel?.textColor = .black
 		sendMoneyButton.addTarget(self, action: #selector(sendMoney), for: .touchUpInside)
 	}
-	func setupDimmView() {
-		dimmView.frame = view.frame
-		view.addSubview(dimmView)
-	}
+//	func setupDimmView() {
+//		dimmView.frame = view.frame
+//		view.addSubview(dimmView)
+//	}
 
-	func dimmViewIsHidden(_ isHidden: Bool) {
-		UIView.animate(withDuration: 0.4) {
-			self.dimmView.alpha = isHidden ? 0 : 0.6
-		}
-	}
+//	func dimmViewIsHidden(_ isHidden: Bool) {
+//		UIView.animate(withDuration: 0.4) {
+//			self.dimmView.alpha = isHidden ? 0 : 0.6
+//		}
+//	}
 
 	@IBAction func sendMoney() {
 		print("sendMoney")

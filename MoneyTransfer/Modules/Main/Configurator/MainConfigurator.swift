@@ -16,6 +16,7 @@ class MainConfigurator: MainConfiguratorProtocol {
 		let router = MainRouter(viewController: viewController)
 
 		viewController.output = presenter
+		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router
 	}

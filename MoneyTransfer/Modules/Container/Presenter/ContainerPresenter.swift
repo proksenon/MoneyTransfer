@@ -21,7 +21,8 @@ class ContainerPresenter {
 	var isShow: Bool = false
 	var isShowingController: ChildsController?
 	var amountMoneyForTransaction: String?
-	var balance: String?
+	var balanceString: String?
+	var balance: Balance?
 
 	init(view: ContainerViewInput) {
 		self.view = view
@@ -77,9 +78,13 @@ extension ContainerPresenter: ContainerViewOutput {
 	}
 	func setBalance(balance: String?) {
 		guard let balance = balance else {return}
-		self.balance = balance
+		self.balanceString = balance
 		guard let amountMoneyForTransaction = amountMoneyForTransaction else {return}
+		self.balance = Balance(balance: balance, transactionMoney: amountMoneyForTransaction)
 		view?.setDataAtSuccesViewController(with: Balance(balance: balance, transactionMoney: amountMoneyForTransaction))
+	}
+	func getBalance() ->Balance? {
+		return balance
 	}
 }
 

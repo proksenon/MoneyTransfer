@@ -32,7 +32,7 @@ extension ContactPrsenter: ContactViewOutput {
 //		view.setPhoneNumber(with: person.phoneNumber ?? "will be phone here")
 		view.setupRequestMoneyButton()
 		view.setupSendMoneyButton()
-		view.setupDimmView()
+//		view.setupDimmView()
 	}
 
 	func pushTransition() {
@@ -53,8 +53,8 @@ extension ContactPrsenter: ContactModuleInput {
 		view.setPhoneNumber(with: person.phoneNumber ?? "will be phone here")
 	}
 
-	func exitFromTranstion() {
-		guard let view = view else { return }
-		view.dimmViewIsHidden(true)
-	}
+//	func exitFromTranstion() {
+//		guard let view = view else { return }
+//		view.dimmViewIsHidden(true)
+//	}
 }

@@ -23,7 +23,7 @@ extension TransactionPresenter: TransactionViewOutput {
 	func configureView() {
 		guard let view = view else { return }
 		view.setView()
-		view.setupExitButton()
+//		view.setupExitButton()
 		view.setupNameOperationLabel()
 		view.setupMoneyTextfield()
 		view.setupOperationButton()
@@ -45,6 +45,13 @@ extension TransactionPresenter: TransactionViewOutput {
 	}
 	func getBalance() -> String? {
 		interactor?.getBalance()
+	}
+	func setNewBalance(transaction: String?) {
+		if let oldBalance = getBalance(), let transaction = transaction {
+			guard let oldBalance = Int(oldBalance), let transaction = Int(transaction) else {return}
+			let newBalance = oldBalance - transaction
+			interactor?.setBalance(balance: String(newBalance))
+		}
 	}
 }
 

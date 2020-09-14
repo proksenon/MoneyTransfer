@@ -64,3 +64,12 @@ extension MainPresenter: MainViewOutput {
 
 extension MainPresenter: MainInteractorOutput {
 }
+
+extension MainPresenter: MainMouduleInput {
+	func statusTransaction(with balance: Balance?) {
+		guard let router = router, let balance = balance else {return}
+//		router.showSuccess(with: balance)
+	}
+
+	
+}

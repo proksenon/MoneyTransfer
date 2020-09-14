@@ -12,7 +12,7 @@ class TreatmentViewController: UIViewController {
 
 	var output: TreatmentViewOutput?
 	var moduleInput: TreatmentModuleInput?
-	var moduleOutput: TransactionViewDelegate?
+	var moduleOutput: ExitDelegate?
 	var treatmentImageView: UIImageView?
 	var statusLabel: UILabel?
 	var atributeTransactionLabel: UILabel?
@@ -32,7 +32,7 @@ class TreatmentViewController: UIViewController {
 
 extension TreatmentViewController: TreatmentViewInput {
 	func setView() {
-		view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 450)
+		view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
 		view.backgroundColor = .white
 		view.roundedCorner(with: 20)
 	}
@@ -58,13 +58,9 @@ extension TreatmentViewController: TreatmentViewInput {
 		statusLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: 20),
 									 statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 statusLabel.heightAnchor.constraint(equalToConstant: 20),
 									 statusLabel.widthAnchor.constraint(equalToConstant: 300)])
-		statusLabel.backgroundColor = .clear
-		statusLabel.font = UIFont(name: "Futura Medium", size: 18)
-		statusLabel.textAlignment = .center
-		statusLabel.textColor = .black
-		statusLabel.text = "Перевод в обработке..."
+		
+		statusLabel.mainLabel(title: "Перевод в обработке...")
 		self.statusLabel = statusLabel
 	}
 
@@ -75,14 +71,9 @@ extension TreatmentViewController: TreatmentViewInput {
 		atributeTransactionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 20),
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 atributeTransactionLabel.heightAnchor.constraint(equalToConstant: 15),
 									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: 300)])
 
-		atributeTransactionLabel.backgroundColor = .clear
-		atributeTransactionLabel.font = atributeTransactionLabel.font.withSize(14)
-		atributeTransactionLabel.textColor = .gray
-		atributeTransactionLabel.textAlignment = .center
-		atributeTransactionLabel.text = "Сумма перевода"
+		atributeTransactionLabel.subLabel(title: "Сумма перевода")
 		self.atributeTransactionLabel = atributeTransactionLabel
 	}
 
@@ -93,14 +84,9 @@ extension TreatmentViewController: TreatmentViewInput {
 		amountOfMoneyLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: 10),
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 amountOfMoneyLabel.heightAnchor.constraint(equalToConstant: 20),
 									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: 300)])
 
-		amountOfMoneyLabel.backgroundColor = .clear
-		amountOfMoneyLabel.font = amountOfMoneyLabel.font.withSize(18)
-		amountOfMoneyLabel.textColor = .black
-		amountOfMoneyLabel.textAlignment = .center
-		amountOfMoneyLabel.text = money
+		amountOfMoneyLabel.mainLabel(title: money)
 		self.amountOfMoneyLabel = amountOfMoneyLabel
 	}
 	func setTitleAmountOfMoneyLable(with amount: String) {
@@ -114,12 +100,9 @@ extension TreatmentViewController: TreatmentViewInput {
 		operationButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
 									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
-									 operationButton.heightAnchor.constraint(equalToConstant: 40)])
-		operationButton.backgroundColor = .green
-		operationButton.setTitle("Перейти в контакты", for: .normal)
-		operationButton.titleLabel?.textColor = .white
-		operationButton.roundedCorner(with: 15)
+									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)])
+		
+		operationButton.styleButton(title: "Перейти в контакты")
 		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
 		self.operationButton = operationButton
 	}

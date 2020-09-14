@@ -9,12 +9,21 @@
 import UIKit
 
 protocol TransactionViewDelegate {
-	func toggleTransaction(on vc: ChildsController?)
+//	func toggleTransaction(on vc: ChildsController?)
 	func moveTransactionView(on y: CGFloat)
 	func transactionMoney(amount: String?)
-	func backToContacts()
+//	func backToContacts()
 	func balance(balance: String?)
 }
+
+protocol TogleTransactionDelegate {
+	func toggleTransaction(on vc: ChildsController?)
+}
+
+protocol ExitDelegate {
+	func backToContacts()
+}
+
 
 enum ChildsController {
 	case transactionViewController
@@ -26,6 +35,7 @@ class ContainerViewController: UIViewController {
 
 	var output: ContainerViewOutput?
 	var moduleInput: ContainerModuleInput?
+	var moduleOutput: MainMouduleInput?
 	var contactViewController: ContactViewController?
 	var transactionViewController: TransactionViewController?
 	var treatmentViewController: TreatmentViewController?
@@ -178,10 +188,13 @@ extension ContainerViewController: ContainerViewInput {
 	
 }
 
-extension ContainerViewController: TransactionViewDelegate {
+extension ContainerViewController: TogleTransactionDelegate {
 	func toggleTransaction(on vc: ChildsController?) {
 		output?.togleTransaction(on: vc)
 	}
+}
+
+extension ContainerViewController: TransactionViewDelegate {
 
 	func moveTransactionView(on y: CGFloat) {
 		output?.moveTransaction(on: ViewSize(size: y))
@@ -193,9 +206,11 @@ extension ContainerViewController: TransactionViewDelegate {
 	func balance(balance: String?) {
 		output?.setBalance(balance: balance)
 	}
+}
 
-
+extension ContainerViewController: ExitDelegate {
 	func backToContacts() {
+		moduleOutput?.statusTransaction(with: output?.getBalance())
 		output?.dissmis()
 	}
 }
