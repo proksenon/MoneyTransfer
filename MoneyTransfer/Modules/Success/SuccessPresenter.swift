@@ -14,6 +14,7 @@ final class SuccessOperationPresenter {
 	var router: SuccessOperationRouterInput?
 	private var amountOfTransaction: String?
 	private var currentBalance: String?
+	private var operation: Operations?
 
 	init(view: SuccessOperationViewInput) {
 		self.view = view

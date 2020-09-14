@@ -23,6 +23,7 @@ final class ContainerPresenter {
 	private var amountMoneyForTransaction: String?
 	private var balance: Balance?
 	private var statusShow: Bool = true
+	private var operation: Operations?
 
 	init(view: ContainerViewInput) {
 		self.view = view
@@ -37,7 +38,11 @@ extension ContainerPresenter: ContainerViewOutput {
 		guard let view = view else { return }
 		var viewController: ChildsController?
 		if let vc = vc {
-			viewController = vc
+			if vc == .successOperationViewController, let operation = operation, operation == .request {
+
+			} else {
+				viewController = vc
+			}
 		}
 		if let isShowingController = isShowingController {
 			view.showTransactionView(show: false, y: nil, showVC: isShowingController)
@@ -57,9 +62,9 @@ extension ContainerPresenter: ContainerViewOutput {
 	}
 
 	func transactionMoneyIs(amount: String?) {
-		guard let view = view else { return }
+		guard let view = view, let operation = operation else { return }
 		amountMoneyForTransaction = amount
-		view.setAmountAtTreatmentController(with: amount ?? "so bad balance")
+		view.setAmountAtTreatmentController(with: amount ?? "so bad balance", operation: operation)
 	}
 
 	func dissmis() {
@@ -74,7 +79,7 @@ extension ContainerPresenter: ContainerViewOutput {
 	}
 
 	func setBalance(balance: String?) {
-		guard let balance = balance, let amountMoneyForTransaction = amountMoneyForTransaction else {return}
+		guard let balance = balance, let amountMoneyForTransaction = amountMoneyForTransaction else { return }
 		let balanceWithTransaction = Balance(balance: balance, transactionMoney: amountMoneyForTransaction)
 		view?.setDataAtSuccesViewController(with: balanceWithTransaction)
 		self.balance = balanceWithTransaction
@@ -85,7 +90,15 @@ extension ContainerPresenter: ContainerViewOutput {
 	}
 
 	func showStatus() -> Bool {
+		if let operation = operation, operation == .request {
+			return false
+		}
 		return statusShow
+	}
+
+	func setOperation(operation: Operations) {
+		self.operation = operation
+		view?.setOperationAtTransactionView(operation: operation)
 	}
 }
 

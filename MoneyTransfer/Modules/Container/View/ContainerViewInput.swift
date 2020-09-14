@@ -13,6 +13,7 @@ protocol ContainerViewInput: class {
 	func tapOutSite()
 	func showTransactionView(show: Bool, y: CGFloat?, showVC: ChildsController)
 	func setPersonAtContactView(with person: Person)
-	func setAmountAtTreatmentController(with amount: String)
+	func setAmountAtTreatmentController(with amount: String, operation: Operations)
 	func setDataAtSuccesViewController(with balance: Balance)
+	func setOperationAtTransactionView(operation: Operations)
 }

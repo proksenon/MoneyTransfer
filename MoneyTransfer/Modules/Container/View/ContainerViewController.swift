@@ -14,6 +14,10 @@ protocol TransactionViewDelegate {
 	func balance(balance: String?)
 }
 
+protocol OperationDelegate {
+	func chooseOperation(operation: Operations)
+}
+
 protocol TogleTransactionDelegate {
 	func toggleTransaction(on vc: ChildsController?)
 }
@@ -58,9 +62,14 @@ extension ContainerViewController: ContainerViewInput {
 		contactViewController.moduleInput?.configure(with: person)
 	}
 
-	func setAmountAtTreatmentController(with amount: String) {
+	func setOperationAtTransactionView(operation: Operations) {
+		guard let transactionViewController = transactionViewController else { return }
+		transactionViewController.moduleInput?.configure(with: operation)
+	}
+
+	func setAmountAtTreatmentController(with amount: String, operation: Operations) {
 		guard let treatmentViewController = treatmentViewController else { return }
-		treatmentViewController.moduleInput?.configure(amountOfTransaction: amount)
+		treatmentViewController.moduleInput?.configure(amountOfTransaction: amount, operation: operation)
 	}
 
 	func setDataAtSuccesViewController(with balance: Balance) {
@@ -164,5 +173,12 @@ extension ContainerViewController: TransactionViewDelegate {
 extension ContainerViewController: ExitDelegate {
 	func backToContacts() {
 		output?.dissmis()
+	}
+}
+
+extension ContainerViewController: OperationDelegate {
+
+	func chooseOperation(operation: Operations) {
+		output?.setOperation(operation: operation)
 	}
 }

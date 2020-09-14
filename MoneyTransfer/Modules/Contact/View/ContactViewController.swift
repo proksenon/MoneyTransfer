@@ -10,9 +10,10 @@ import UIKit
 
 final class ContactViewController: UIViewController {
 
+	typealias TogleView = TogleTransactionDelegate & OperationDelegate
 	var output: ContactViewOutput?
 	var moduleInput: ContactModuleInput?
-	var moduleOutput: TogleTransactionDelegate?
+	var moduleOutput: TogleView?
 	private var avatarImageView: UIImageView?
 	private var requestMoneyButton: UIButton?
 	private var sendMoneyButton: UIButton?
@@ -111,7 +112,8 @@ extension ContactViewController: ContactViewInput {
 	}
 	
 	@IBAction func requestMoney() {
-		print("request")
+		moduleOutput?.chooseOperation(operation: .request)
+		moduleOutput?.toggleTransaction(on: .transactionViewController)
 	}
 
 	func setupSendMoneyButton() {
@@ -134,7 +136,7 @@ extension ContactViewController: ContactViewInput {
 	}
 
 	@IBAction func sendMoney() {
-		print("sendMoney")
+		moduleOutput?.chooseOperation(operation: .transaction)
 		moduleOutput?.toggleTransaction(on: .transactionViewController)
 	}
 }

@@ -16,4 +16,5 @@ protocol TreatmentViewInput: class {
 	func setupAmountOfMoneyLabel()
 	func setupOperationButton()
 	func setTitleAmountOfMoneyLable(with amount: String)
+	func setTitleForStatusLabel(title: String)
 }

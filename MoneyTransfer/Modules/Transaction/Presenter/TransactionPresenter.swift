@@ -14,6 +14,7 @@ final class TransactionPresenter {
 	var interactor: TransactionInteractorInput?
 	var router: TransactionRouterInput?
 	private var amountOfTransaction: String?
+	private var operation: Operations?
 
 	init(view: TransactionViewInput) {
 		self.view = view
@@ -30,10 +31,10 @@ extension TransactionPresenter: TransactionViewOutput {
 	}
 
 	func checkBalance(transaction: String?) {
-		guard let transaction = transaction, let view = view, let interactor = interactor else { return }
+		guard let transaction = transaction, let view = view, let interactor = interactor, let operation = operation else { return }
 		if let balanceString = interactor.getBalance() {
 			guard let balanceInt = Int(balanceString) else { return }
-			if let transactionInt = Int(transaction), balanceInt >= transactionInt {
+			if let transactionInt = Int(transaction), balanceInt >= transactionInt || operation == .request {
 				view.changeCornerColorMoneyTextField(result: .success)
 				view.operationButtonIsEnabled(isEnabled: true)
 			} else {
@@ -46,7 +47,8 @@ extension TransactionPresenter: TransactionViewOutput {
 		interactor?.getBalance()
 	}
 	func setNewBalance(transaction: String?) {
-		if let oldBalance = getBalance(), let transaction = transaction {
+		guard let operation = operation else { return }
+		if let oldBalance = getBalance(), let transaction = transaction, operation == .transaction {
 			guard let oldBalance = Int(oldBalance), let transaction = Int(transaction) else {return}
 			let newBalance = oldBalance - transaction
 			interactor?.setBalance(balance: String(newBalance))
@@ -59,5 +61,14 @@ extension TransactionPresenter: TransactionInteractorOutput {
 }
 
 extension TransactionPresenter: TransactionModuleInput {
+	func configure(with operation: Operations) {
+		self.operation = operation
+		guard let view = view else {return}
+		if operation == .request {
+			view.setTitleForOperationLabel(title: "Запрос средств")
+			view.setTitleForOperationButton(title: "Запросить")
+		}
+	}
+
 	
 }

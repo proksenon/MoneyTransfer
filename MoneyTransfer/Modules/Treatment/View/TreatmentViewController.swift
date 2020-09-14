@@ -64,6 +64,11 @@ extension TreatmentViewController: TreatmentViewInput {
 		self.statusLabel = statusLabel
 	}
 
+	func setTitleForStatusLabel(title: String) {
+		guard let statusLabel = statusLabel else { return }
+		statusLabel.text = title
+	}
+
 	func setupAtributeTransactionLabel() {
 		guard let statusLabel = statusLabel else { return }
 		let atributeTransactionLabel = UILabel()
@@ -109,7 +114,6 @@ extension TreatmentViewController: TreatmentViewInput {
 	
 	@IBAction func operationButtonDidTapped() {
 		moduleOutput?.backToContacts()
-		print("goToContact")
 	}
 
 }

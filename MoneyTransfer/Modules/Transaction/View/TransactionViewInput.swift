@@ -10,11 +10,12 @@ import Foundation
 
 protocol TransactionViewInput: class {
 	func setupNameOperationLabel()
-//	func setupExitButton()
 	func setupMoneyTextfield()
 	func setupOperationButton()
 	func setView()
 	func setupNotificationKeyboard()
 	func changeCornerColorMoneyTextField(result: Status)
 	func operationButtonIsEnabled(isEnabled: Bool)
+	func setTitleForOperationButton(title: String)
+	func setTitleForOperationLabel(title: String)
 }

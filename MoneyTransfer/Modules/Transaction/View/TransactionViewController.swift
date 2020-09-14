@@ -62,6 +62,11 @@ extension TransactionViewController: TransactionViewInput {
 		self.nameOperationLabel = nameOperationLabel
 	}
 
+	func setTitleForOperationLabel(title: String) {
+		guard let nameOperationLabel = nameOperationLabel else { return }
+		nameOperationLabel.text = title
+	}
+
 	//MARK: -MoneyTextfield
 	func setupMoneyTextfield() {
 		guard let nameOperationLabel = nameOperationLabel else { return }
@@ -108,6 +113,10 @@ extension TransactionViewController: TransactionViewInput {
 		operationButton.styleButton(title: "Перевести", color: .systemGray2)
 		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
 		self.operationButton = operationButton
+	}
+	func setTitleForOperationButton(title: String) {
+		guard let operationButton = operationButton else { return }
+		operationButton.setTitle(title, for: .normal)
 	}
 
 	func operationButtonIsEnabled(isEnabled: Bool) {

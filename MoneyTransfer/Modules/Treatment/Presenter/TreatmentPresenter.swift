@@ -13,6 +13,7 @@ final class TreatmentPresenter {
 	var interactor: TreatmentInteractorInput?
 	var router: TreatmentRouterInput?
 	private var amountOfTransaction: String?
+	private var operation: Operations?
 
 	init(view: TreatmentViewInput) {
 		self.view = view
@@ -39,10 +40,14 @@ extension TreatmentPresenter: TreatmentInteractorOutput {
 }
 
 extension TreatmentPresenter: TreatmentModuleInput {
-	func configure(amountOfTransaction: String) {
+	func configure(amountOfTransaction: String, operation: Operations) {
 		self.amountOfTransaction = amountOfTransaction
+		self.operation = operation
 		guard let view = view else { return }
 		view.setTitleAmountOfMoneyLable(with: amountOfTransaction)
+		if operation == .request {
+			view.setTitleForStatusLabel(title: "Запрос в обработке")
+		}
 	}
 
 }

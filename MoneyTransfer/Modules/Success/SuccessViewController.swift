@@ -113,7 +113,6 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 
 	@IBAction func operationButtonDidTapped() {
 		moduleOutput?.backToContacts()
-		print("goToContact")
 	}
 
 	func setupChangeBalanceLabel() {
@@ -162,6 +161,7 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		currentBalanceLabel.textColor = .black
 		self.currentBalanceLabel = currentBalanceLabel
 	}
+
 	func setCurrentBalance(balance: String) {
 		guard let currentBalanceLabel = currentBalanceLabel else { return }
 		currentBalanceLabel.text = balance
