@@ -26,8 +26,10 @@ class SuccessOperationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		print("1")
 		guard let output = output else { return }
 		output.configureView()
+		print("2")
         // Do any additional setup after loading the view.
     }
 
@@ -171,52 +173,5 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 
 }
 
-extension UILabel {
-	func subLabel(title: String) {
-		self.backgroundColor = .clear
-		self.font = self.font.withSize(14)
-		self.textColor = .gray
-		self.textAlignment = .center
-		self.text = title
-		self.heightAnchor.constraint(equalToConstant: 15).isActive = true
-	}
 
-	func mainLabel(title: String) {
-		self.backgroundColor = .clear
-		self.font = UIFont(name: "Futura Medium", size: 18)
-		self.textAlignment = .center
-		self.textColor = .black
-		self.text = title
-		self.heightAnchor.constraint(equalToConstant: 20).isActive = true
-	}
-
-	func strikeThrough(_ isStrikeThrough:Bool) {
-    if isStrikeThrough {
-        if let lblText = self.text {
-            let attributeString =  NSMutableAttributedString(string: lblText)
-            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0,attributeString.length))
-            self.attributedText = attributeString
-        }
-    } else {
-        if let attributedStringText = self.attributedText {
-            let txt = attributedStringText.string
-            self.attributedText = nil
-            self.text = txt
-            return
-        }
-    }
-    }
-}
-
-extension UIButton {
-
-	func styleButton(title: String, color: UIColor = .green) {
-		self.backgroundColor = color
-		self.setTitle(title, for: .normal)
-		self.titleLabel?.textColor = .white
-		self.roundedCorner(with: 15)
-		self.heightAnchor.constraint(equalToConstant: 40).isActive = true
-	}
-
-}
 

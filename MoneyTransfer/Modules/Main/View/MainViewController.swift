@@ -9,23 +9,29 @@
 import UIKit
 import Contacts
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
-	let configurator: MainConfiguratorProtocol = MainConfigurator()
+	private let configurator: MainConfiguratorProtocol = MainConfigurator()
 	var output: MainViewOutput!
 	var moduleInput: MainMouduleInput?
-	var tableView: UITableView!
-	var scrollAtTopButton: UIBarButtonItem!
-	var balanceTitleLabel: UILabel?
+	private var tableView: UITableView!
+	private var scrollAtTopButton: UIBarButtonItem!
+	private var balanceTitleLabel: UILabel?
+	private lazy var dimmView: UIView = {
+		let view = UIView()
+		view.backgroundColor = UIColor.black.withAlphaComponent(1)
+		view.alpha = 0
+		return view
+	}()
 	
 
 	override func viewDidLoad() {
 		configurator.configure(with: self)
 		output.configureView()
 	}
+
 	override func viewDidAppear(_ animated: Bool) {
 		navigationTitleIsHidden(false)
-		tableViewReload()
 	}
 
 	func presentSettingsActionSheet() {
@@ -38,7 +44,7 @@ class MainViewController: UIViewController {
 		present(alert, animated: true)
 	}
 }
-
+//MARK: -MainViewInput
 extension MainViewController: MainViewInput {
 	
 	func tableViewReload() {
@@ -56,6 +62,7 @@ extension MainViewController: MainViewInput {
 		NSLayoutConstraint.activate([balanceTitleLabel.centerYAnchor.constraint(equalTo: navigationController.navigationBar.centerYAnchor), balanceTitleLabel.centerXAnchor.constraint(equalTo: navigationController.navigationBar.centerXAnchor)])
 		print("asd")
 	}
+
 	func setBalanceTitleWith(balance: String) {
 		guard let balanceTitleLabel = balanceTitleLabel else { return }
 		balanceTitleLabel.text = "Текущий баланс " + balance + " р"
@@ -74,7 +81,6 @@ extension MainViewController: MainViewInput {
 
 	func navigationWithScrollAtTop() {
 		navigationItem.leftBarButtonItem = scrollAtTopButton
-//		navigationItem.title = "Текущий баланс" + " " + "103 527,5 р"
 	}
 
 	func setScrollAtTopButton() {
@@ -96,8 +102,30 @@ extension MainViewController: MainViewInput {
 		tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 	}
-}
 
+	func setupDimmView() {
+		dimmView.frame = view.frame
+		view.addSubview(dimmView)
+	}
+
+	func dimmViewIsHidden(_ isShow: Bool) {
+		dimmView.alpha = isShow ? 0.6 : 0
+	}
+	func showDimmView(_ show: Bool) {
+		UIView.animate(withDuration: 2) {
+			self.dimmViewIsHidden(show)
+		}
+	}
+	func tapOutSite() {
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
+        dimmView.addGestureRecognizer(tapGesture)
+	}
+
+	@objc func tapGestureDone(){
+		output.dissmissStatusOperation()
+	}
+}
+//MARK: -TableWork
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -136,8 +164,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.black
 		header.textLabel?.font = header.textLabel?.font.withSize(20)
-//		header.textLabel?.lineBreakMode = .byClipping
-
 	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -164,5 +190,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 }
+//MARK: -ExitDelegate
+extension MainViewController: ExitDelegate {
+	func backToContacts() {
+		output.dissmissStatusOperation()
+	}
 
-
+}

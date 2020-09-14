@@ -14,5 +14,6 @@ protocol MainViewOutput: class {
 	func getPerson(with indexPath: IndexPath)-> Person
 	func cardInfromationLeft(_ isLeft: Bool)
 	func didChosePerson(indexPath: IndexPath)
-	func getBalance()-> String 
+	func getBalance()-> String
+	func dissmissStatusOperation()
 }

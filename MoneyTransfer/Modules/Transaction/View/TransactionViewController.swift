@@ -15,7 +15,6 @@ class TransactionViewController: UIViewController {
 	var moduleInput: TransactionModuleInput?
 	var moduleOutput: TransactionDelegate?
 	var nameOperationLabel: UILabel?
-//	var exitButton: UIButton?
 	var operationButton: UIButton?
 	var moneyTextfield: UITextField?
 
@@ -62,24 +61,6 @@ extension TransactionViewController: TransactionViewInput {
 		nameOperationLabel.mainLabel(title: "Перевод средств")
 		self.nameOperationLabel = nameOperationLabel
 	}
-//	//MARK: -ExitButton
-//	func setupExitButton() {
-//		let exitButton = UIButton()
-//		exitButton.translatesAutoresizingMaskIntoConstraints = false
-//		exitButton.titleLabel?.text = "exit"
-//		exitButton.backgroundColor = .lightGray
-//		view.addSubview(exitButton)
-//		NSLayoutConstraint.activate([exitButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-//									 exitButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
-//									 exitButton.widthAnchor.constraint(equalToConstant: 30),
-//									 exitButton.heightAnchor.constraint(equalToConstant: 30)])
-//		exitButton.addTarget(self, action: #selector(exitButtonDidTapped), for: .touchUpInside)
-//		self.exitButton = exitButton
-//	}
-//
-//	@IBAction func exitButtonDidTapped() {
-//		moduleOutput?.toggleTransaction(on: nil)
-//	}
 
 	//MARK: -MoneyTextfield
 	func setupMoneyTextfield() {
@@ -117,12 +98,10 @@ extension TransactionViewController: TransactionViewInput {
 	}
 	//MARK: -OperationButton
 	func setupOperationButton() {
-//		guard let moneyTextfield = moneyTextfield else { return }
 		let operationButton = UIButton()
 		view.addSubview(operationButton)
 		operationButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
-//									 operationButton.topAnchor.constraint(equalTo: moneyTextfield.bottomAnchor, constant: 40),
 									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
 									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)])
 		
@@ -146,7 +125,6 @@ extension TransactionViewController: TransactionViewInput {
 		moduleOutput?.transactionMoney(amount: moneyTextfield?.text)
 		moduleOutput?.balance(balance: output?.getBalance())
 		moduleOutput?.toggleTransaction(on: .treatmentViewController)
-		print("operationButtonDidTapped")
 	}
 
 }
@@ -180,11 +158,4 @@ extension TransactionViewController: UITextFieldDelegate {
 		output?.checkBalance(transaction: textField.text)
 	}
 
-}
-
-extension UIView {
-	func roundedCorner(with radius: CGFloat) {
-		self.layer.cornerRadius = radius
-		self.clipsToBounds = true
-	}
 }

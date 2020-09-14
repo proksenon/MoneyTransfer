@@ -8,12 +8,11 @@
 
 import Foundation
 
-class MainInteractor: MainInteractorInput {
+final class MainInteractor: MainInteractorInput {
 
 	weak var output: MainInteractorOutput!
-	let contactsManager: ContactsManagerProtocol
-	let userDefaultsWork: UserDefaultsWorkProtocol
-	var persons: [Person] = []
+	private let contactsManager: ContactsManagerProtocol
+	private let userDefaultsWork: UserDefaultsWorkProtocol
 
 	init(presenter: MainInteractorOutput,
 		 contactsManager: ContactsManagerProtocol = ContactsManager(),
@@ -24,7 +23,7 @@ class MainInteractor: MainInteractorInput {
 	}
 
 	func getContatcs(completion: @escaping ([Person])->Void) {
-		contactsManager.getContatcs { [weak output] (persons) in
+		contactsManager.getContatcs { (persons) in
 			completion(persons)
 		}
 	}

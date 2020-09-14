@@ -9,14 +9,9 @@
 import UIKit
 
 protocol ContainerViewInput: class {
-//	func configureContactViewController(with person: Person)
-//	func configureTransactionViewController()
-//	func configureTreatmentViewController(amountOfTransaction: String)
 	func setupDimmView()
 	func tapOutSite()
-	func dimmViewIsHidden(_ isShow: Bool)
 	func showTransactionView(show: Bool, y: CGFloat?, showVC: ChildsController)
-	func showTreatmentView(show: Bool, y: CGFloat?)
 	func setPersonAtContactView(with person: Person)
 	func setAmountAtTreatmentController(with amount: String)
 	func setDataAtSuccesViewController(with balance: Balance)

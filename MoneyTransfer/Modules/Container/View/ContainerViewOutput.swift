@@ -17,4 +17,5 @@ protocol ContainerViewOutput: class {
 	func succesOperation()
 	func setBalance(balance: String?)
 	func getBalance() ->Balance?
+	func showStatus() -> Bool
 }

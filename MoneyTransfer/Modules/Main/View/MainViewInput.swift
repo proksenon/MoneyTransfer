@@ -17,4 +17,8 @@ protocol MainViewInput: class {
 	func setupBalanceTitle()
 	func setBalanceTitleWith(balance: String)
 	func navigationTitleIsHidden(_ isHidden: Bool)
+	func setupDimmView()
+	func showDimmView(_ show: Bool)
+	func tapOutSite()
+	
 }

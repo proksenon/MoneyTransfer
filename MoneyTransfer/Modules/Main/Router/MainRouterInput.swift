@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MainRouterInput: class {
-	func pushPeron(with person: Person)
 	func pushContainer(with person: Person)
-//	func showSuccess(with balance: Balance)
+	func showSuccess(with balance: Balance)
+	func dissmisSucces()
 }

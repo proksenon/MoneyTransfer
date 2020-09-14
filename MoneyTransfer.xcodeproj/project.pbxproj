@@ -30,6 +30,10 @@
 		D520452425050DA1007B746A /* ContactRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520452325050DA1007B746A /* ContactRouterInput.swift */; };
 		D520452625050DCF007B746A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520452525050DCF007B746A /* ContactViewController.swift */; };
 		D5204528250511E0007B746A /* ContactConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5204527250511E0007B746A /* ContactConfigureProtocol.swift */; };
+		D52C3C75250F6A78001E34A0 /* StylesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C74250F6A78001E34A0 /* StylesLabel.swift */; };
+		D52C3C77250F6ABB001E34A0 /* StyleTransactionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C76250F6ABB001E34A0 /* StyleTransactionButtons.swift */; };
+		D52C3C79250F821D001E34A0 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C78250F821D001E34A0 /* RoundedCorners.swift */; };
+		D52C3C7B250F83E2001E34A0 /* ChildsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7A250F83E2001E34A0 /* ChildsController.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -130,6 +134,10 @@
 		D520452325050DA1007B746A /* ContactRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouterInput.swift; sourceTree = "<group>"; };
 		D520452525050DCF007B746A /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		D5204527250511E0007B746A /* ContactConfigureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactConfigureProtocol.swift; sourceTree = "<group>"; };
+		D52C3C74250F6A78001E34A0 /* StylesLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesLabel.swift; sourceTree = "<group>"; };
+		D52C3C76250F6ABB001E34A0 /* StyleTransactionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTransactionButtons.swift; sourceTree = "<group>"; };
+		D52C3C78250F821D001E34A0 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		D52C3C7A250F83E2001E34A0 /* ChildsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsController.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -381,6 +389,9 @@
 			isa = PBXGroup;
 			children = (
 				D59DB6C5250A48D40068888D /* ChildAddAndRemove.swift */,
+				D52C3C74250F6A78001E34A0 /* StylesLabel.swift */,
+				D52C3C76250F6ABB001E34A0 /* StyleTransactionButtons.swift */,
+				D52C3C78250F821D001E34A0 /* RoundedCorners.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -673,6 +684,7 @@
 				D5A0BF92250A034B0080737E /* Status.swift */,
 				D59DB6D4250D470D0068888D /* Balance.swift */,
 				D59DB6C7250A50160068888D /* ViewSize.swift */,
+				D52C3C7A250F83E2001E34A0 /* ChildsController.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -757,6 +769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52C3C77250F6ABB001E34A0 /* StyleTransactionButtons.swift in Sources */,
 				D59DB6BB250A47890068888D /* ContainerModuleInput.swift in Sources */,
 				D5B03FF824FBF8D80023E5DE /* MainInteractorInput.swift in Sources */,
 				D5A0BF93250A034B0080737E /* Status.swift in Sources */,
@@ -786,10 +799,12 @@
 				D50F50FB24DD6F760042BAD2 /* AppDelegate.swift in Sources */,
 				D59DB6D7250E34350068888D /* MainModuleInput.swift in Sources */,
 				D5A0BFEA250A40F10080737E /* SuccessInteractor.swift in Sources */,
+				D52C3C75250F6A78001E34A0 /* StylesLabel.swift in Sources */,
 				D5A0BF8825079EC20080737E /* TransactionViewController.swift in Sources */,
 				D5A0BF6D25079BF20080737E /* TransactionInteractor.swift in Sources */,
 				D520452025050D80007B746A /* ContactInteractorOutput.swift in Sources */,
 				D520450D25050C9B007B746A /* ContactInteractor.swift in Sources */,
+				D52C3C79250F821D001E34A0 /* RoundedCorners.swift in Sources */,
 				D5A0BF6F25079BFE0080737E /* TransactionRouter.swift in Sources */,
 				D5A0BFE5250A40F10080737E /* SuccessConfigurator.swift in Sources */,
 				D5A0BFAC250A1FE80080737E /* TreatmentModuleOutput.swift in Sources */,
@@ -798,6 +813,7 @@
 				D5A0BF9E250A1E9C0080737E /* TreatmentPresenter.swift in Sources */,
 				D5A0BFA4250A1ED40080737E /* TreatmentConfigurator.swift in Sources */,
 				D5A0BFE3250A40F10080737E /* SuccessViewController.swift in Sources */,
+				D52C3C7B250F83E2001E34A0 /* ChildsController.swift in Sources */,
 				D50F50FD24DD6F760042BAD2 /* SceneDelegate.swift in Sources */,
 				D5B03FFF24FBFB420023E5DE /* CustomTableViewCell.swift in Sources */,
 				D520452425050DA1007B746A /* ContactRouterInput.swift in Sources */,

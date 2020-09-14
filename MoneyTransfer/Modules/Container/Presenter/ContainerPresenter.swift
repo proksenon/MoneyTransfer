@@ -23,6 +23,7 @@ class ContainerPresenter {
 	var amountMoneyForTransaction: String?
 	var balanceString: String?
 	var balance: Balance?
+	var statusShow: Bool = true
 
 	init(view: ContainerViewInput) {
 		self.view = view
@@ -32,10 +33,7 @@ class ContainerPresenter {
 
 extension ContainerPresenter: ContainerViewOutput {
 	func configureView() {
-		guard let view = view else { return }
-//		view.setPersonAtContactView(with: person)
-//		view.setupDimmView()
-//		view.tapOutSite()
+
 	}
 
 	func togleTransaction(on vc: ChildsController?) {
@@ -48,6 +46,7 @@ extension ContainerPresenter: ContainerViewOutput {
 			view.showTransactionView(show: false, y: nil, showVC: isShowingController)
 			self.isShowingController = nil
 			isShow = !isShow
+			statusShow = true
 		}
 		guard let showVC = viewController else { return }
 		isShowingController = showVC
@@ -74,6 +73,7 @@ extension ContainerPresenter: ContainerViewOutput {
 	func succesOperation() {
 		DispatchQueue.main.asyncAfter(deadline: .now()+5) {
 			self.togleTransaction(on: .successOperationViewController)
+			self.statusShow = false
 		}
 	}
 	func setBalance(balance: String?) {
@@ -86,6 +86,9 @@ extension ContainerPresenter: ContainerViewOutput {
 	func getBalance() ->Balance? {
 		return balance
 	}
+	func showStatus() -> Bool {
+		return statusShow
+	}
 }
 
 extension ContainerPresenter: ContainerInteractorOutput {
@@ -94,7 +97,6 @@ extension ContainerPresenter: ContainerInteractorOutput {
 
 extension ContainerPresenter: ContainerModuleInput {
 	func configure(with person: Person) {
-//		self.person = person
 		guard let view = view else { return }
 		view.setPersonAtContactView(with: person)
 		view.setupDimmView()

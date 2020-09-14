@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MainMouduleInput {
-	func statusTransaction(with balance: Balance?)
+	func statusTransaction(with balance: Balance?, show: Bool)
 }
