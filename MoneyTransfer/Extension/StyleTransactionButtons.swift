@@ -9,12 +9,12 @@
 import UIKit
 
 extension UIButton {
-
 	func styleButton(title: String, color: UIColor = .green) {
 		self.backgroundColor = color
 		self.setTitle(title, for: .normal)
 		self.titleLabel?.textColor = .white
 		self.roundedCorner(with: 15)
+		self.translatesAutoresizingMaskIntoConstraints = false
 		self.heightAnchor.constraint(equalToConstant: 40).isActive = true
 	}
 

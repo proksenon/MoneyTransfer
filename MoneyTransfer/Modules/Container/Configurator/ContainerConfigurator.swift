@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContainerConfigurator {
+final class ContainerConfigurator {
 
 	func configure(with viewController: ContainerViewController) {
 		let presenter = ContainerPresenter(view: viewController)
@@ -24,16 +24,17 @@ class ContainerConfigurator {
 		configureTreatmentViewController(with: viewController)
 		configureSuccessViewController(with: viewController)
 	}
+	
 	private func configureContactViewController(with viewController: ContainerViewController) {
 		let contactViewController = ContactViewController()
 		let configuratorContactModule = ContactConfigurator()
 		configuratorContactModule.configure(with: contactViewController)
-//		contactViewController.moduleInput?.configure(with: person)
 		contactViewController.moduleOutput = viewController
 		contactViewController.view.frame = viewController.view.frame
 		viewController.add(contactViewController)
 		viewController.contactViewController = contactViewController
 	}
+
 	private func configureTransactionViewController(with viewController: ContainerViewController) {
 		let transactionViewController = TransactionViewController()
 		let	transactionConfigurator = TransactionConfigurator()
@@ -43,16 +44,17 @@ class ContainerConfigurator {
 		viewController.add(transactionViewController)
 		viewController.transactionViewController = transactionViewController
 	}
+
 	private func configureTreatmentViewController(with viewController: ContainerViewController) {
 		let treatmentViewController = TreatmentViewController()
 		let treatmentConfigurator = TreatmentConfigurator()
 		treatmentConfigurator.configure(with: treatmentViewController)
 		treatmentViewController.moduleOutput = viewController
-//		treatmentViewController.moduleInput?.configure(amountOfTransaction: amountOfTransaction)
 		treatmentViewController.view.frame.origin.y = viewController.view.frame.height
 		viewController.add(treatmentViewController)
 		viewController.treatmentViewController = treatmentViewController
 	}
+
 	private func configureSuccessViewController(with viewController: ContainerViewController) {
 		let successViewController = SuccessOperationViewController()
 		let successConfigurator = SuccessOperationConfigurator()
@@ -61,7 +63,6 @@ class ContainerConfigurator {
 		successViewController.view.frame.origin.y = viewController.view.frame.height
 		viewController.add(successViewController)
 		viewController.successOperationViewController = successViewController
-
 	}
 
 }

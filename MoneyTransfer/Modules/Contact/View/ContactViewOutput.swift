@@ -9,6 +9,6 @@
 import Foundation
 
 protocol ContactViewOutput {
+	///  Конфигурирует View
 	func configureView()
-	func pushTransition()
 }

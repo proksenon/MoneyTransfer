@@ -7,7 +7,8 @@
 //
 
 import Foundation
-class TransactionConfigurator: TransactionConfiguratorProtocol {
+
+final class TransactionConfigurator: TransactionConfiguratorProtocol {
 
 	func configure(with viewController: TransactionViewController){
 		let presenter = TransactionPresenter(view: viewController)

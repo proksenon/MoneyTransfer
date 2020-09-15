@@ -27,6 +27,7 @@ final class SuccessOperationPresenter {
 
 }
 
+//MARK: -SuccessOperationViewOutput
 extension SuccessOperationPresenter: SuccessOperationViewOutput {
 	func configureView() {
 		guard let view = view else { return }
@@ -35,7 +36,7 @@ extension SuccessOperationPresenter: SuccessOperationViewOutput {
 		view.setupStatusLabel()
 		view.setupAtributeTransactionLabel()
 		view.setupAmountOfMoneyLabel()
-		view.setupOperationButton()
+		view.setupExitButton()
 		view.setupChangeBalanceLabel()
 		view.setupBeforeTransactionBalanceLabel()
 		view.setupCurrentBalanceLabel()
@@ -43,10 +44,12 @@ extension SuccessOperationPresenter: SuccessOperationViewOutput {
 
 }
 
+//MARK: -SuccessOperationInteractorOutput
 extension SuccessOperationPresenter: SuccessOperationInteractorOutput {
 
 }
 
+//MARK: -SuccessOperationModuleInput
 extension SuccessOperationPresenter: SuccessOperationModuleInput {
 	
 	func configure(with balance: Balance) {

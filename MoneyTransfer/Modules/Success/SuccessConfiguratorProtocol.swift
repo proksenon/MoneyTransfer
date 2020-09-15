@@ -9,5 +9,6 @@
 import Foundation
 
 protocol SuccessOperationConfiguratorProtocol: class {
+	///  Конфигурирует модуль Success
 	func configure(with viewController: SuccessOperationViewController)
 }

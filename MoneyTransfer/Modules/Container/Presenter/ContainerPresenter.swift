@@ -30,16 +30,16 @@ final class ContainerPresenter {
 	}
 
 }
-
+//MARK: -ContainerViewOutput
 extension ContainerPresenter: ContainerViewOutput {
 	func configureView() {}
 
+	//MARK: -TogleTransaction
 	func togleTransaction(on vc: ChildsController?) {
 		guard let view = view else { return }
 		var viewController: ChildsController?
 		if let vc = vc {
 			if vc == .successOperationViewController, let operation = operation, operation == .request {
-
 			} else {
 				viewController = vc
 			}
@@ -56,26 +56,22 @@ extension ContainerPresenter: ContainerViewOutput {
 		view.showTransactionView(show: isShow, y: nil, showVC: showVC)
 	}
 
-	func moveTransaction(on viewSize: ViewSize) {
-		guard let view = view, let isShowingController = isShowingController else { return }
-		view.showTransactionView(show: true, y: viewSize.size, showVC: isShowingController)
-	}
-
-	func transactionMoneyIs(amount: String?) {
-		guard let view = view, let operation = operation else { return }
-		amountMoneyForTransaction = amount
-		view.setAmountAtTreatmentController(with: amount ?? "so bad balance", operation: operation)
-	}
-
-	func dissmis() {
-		router?.dissmis()
-	}
-
 	func succesOperation() {
 		DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
 			self.togleTransaction(on: .successOperationViewController)
 			self.statusShow = false
 		}
+	}
+
+	func moveTransaction(on viewSize: ViewSize) {
+		guard let view = view, let isShowingController = isShowingController else { return }
+		view.showTransactionView(show: true, y: viewSize.size, showVC: isShowingController)
+	}
+	//MARK: -OperationWork
+	func transactionMoneyIs(amount: String?) {
+		guard let view = view, let operation = operation else { return }
+		amountMoneyForTransaction = amount
+		view.setAmountAtTreatmentController(with: amount ?? "so bad balance", operation: operation)
 	}
 
 	func setBalance(balance: String?) {
@@ -100,12 +96,18 @@ extension ContainerPresenter: ContainerViewOutput {
 		self.operation = operation
 		view?.setOperationAtTransactionView(operation: operation)
 	}
-}
 
+	//MARK: -Exit
+	func dissmis() {
+		router?.dissmis()
+	}
+
+}
+//MARK: -ContainerInteractorOutput
 extension ContainerPresenter: ContainerInteractorOutput {
 
 }
-
+//MARK: -ContainerModuleInput
 extension ContainerPresenter: ContainerModuleInput {
 	func configure(with person: Person) {
 		guard let view = view else { return }

@@ -21,6 +21,7 @@ final class TreatmentPresenter {
 
 }
 
+//MARK: -TreatmentViewOutput
 extension TreatmentPresenter: TreatmentViewOutput {
 	func configureView() {
 		guard let view = view else { return }
@@ -31,22 +32,27 @@ extension TreatmentPresenter: TreatmentViewOutput {
 		view.setupAmountOfMoneyLabel()
 		view.setupOperationButton()
 		guard let amountOfTransaction = amountOfTransaction else { return }
-		view.setTitleAmountOfMoneyLable(with: amountOfTransaction)
+		view.setTitleAmountOfMoneyLabel(with: amountOfTransaction)
 	}
 }
 
+//MARK: -TreatmentInteractorOutput
 extension TreatmentPresenter: TreatmentInteractorOutput {
 
 }
 
+//MARK: -TreatmentModuleInput
 extension TreatmentPresenter: TreatmentModuleInput {
 	func configure(amountOfTransaction: String, operation: Operations) {
 		self.amountOfTransaction = amountOfTransaction
 		self.operation = operation
 		guard let view = view else { return }
-		view.setTitleAmountOfMoneyLable(with: amountOfTransaction)
-		if operation == .request {
+		view.setTitleAmountOfMoneyLabel(with: amountOfTransaction)
+		switch operation {
+		case .request:
 			view.setTitleForStatusLabel(title: "Запрос в обработке")
+		default:
+			view.setTitleForStatusLabel(title: "Перевод в обработке")
 		}
 	}
 

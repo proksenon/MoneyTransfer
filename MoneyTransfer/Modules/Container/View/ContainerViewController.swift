@@ -9,20 +9,26 @@
 import UIKit
 
 protocol TransactionViewDelegate {
+	///  Поднимает или опускает контроллер
 	func moveTransactionView(on y: CGFloat)
+	///  Принимает сумму операции
 	func transactionMoney(amount: String?)
+	///  Принимает баланс
 	func balance(balance: String?)
 }
 
 protocol OperationDelegate {
+	///  Принимает нужную операцию
 	func chooseOperation(operation: Operations)
 }
 
 protocol TogleTransactionDelegate {
+	///  Переключает ChildControllers
 	func toggleTransaction(on vc: ChildsController?)
 }
 
 protocol ExitDelegate {
+	///  Выходит к конактам
 	func backToContacts()
 }
 
@@ -51,12 +57,11 @@ final class ContainerViewController: UIViewController {
 	override func viewDidDisappear(_ animated: Bool) {
 		moduleOutput?.statusTransaction(with: output?.getBalance(), show: output!.showStatus())
 	}
-
-
 }
-
+//MARK: -ContainerViewInput
 extension ContainerViewController: ContainerViewInput {
 
+	//MARK: -SettingChildControlers
 	func setPersonAtContactView(with person: Person) {
 		guard let contactViewController = contactViewController else { return }
 		contactViewController.moduleInput?.configure(with: person)
@@ -76,7 +81,7 @@ extension ContainerViewController: ContainerViewInput {
 		guard let successOperationViewController = successOperationViewController else {return}
 		successOperationViewController.moduleInput?.configure(with: balance)
 	}
-
+	//MARK: -DimmView
 	func setupDimmView() {
 		guard let contactViewController = contactViewController else { return }
 		dimmView.frame = view.frame
@@ -95,7 +100,7 @@ extension ContainerViewController: ContainerViewInput {
 	@objc private func tapGestureDone(){
 		output?.togleTransaction(on: nil)
 	}
-
+	//MARK: -ShowTransactionViews
 	func showTransactionView(show: Bool, y: CGFloat? = nil, showVC: ChildsController) {
 		var nextViewController: UIViewController
 		switch showVC {
@@ -149,13 +154,13 @@ extension ContainerViewController: ContainerViewInput {
 
 	
 }
-
+//MARK: -TogleTransactionDelegate
 extension ContainerViewController: TogleTransactionDelegate {
 	func toggleTransaction(on vc: ChildsController?) {
 		output?.togleTransaction(on: vc)
 	}
 }
-
+//MARK: -TransactionViewDelegate
 extension ContainerViewController: TransactionViewDelegate {
 
 	func moveTransactionView(on y: CGFloat) {
@@ -165,17 +170,18 @@ extension ContainerViewController: TransactionViewDelegate {
 	func transactionMoney(amount: String?) {
 		output?.transactionMoneyIs(amount: amount)
 	}
+
 	func balance(balance: String?) {
 		output?.setBalance(balance: balance)
 	}
 }
-
+//MARK: -ExitDelegate
 extension ContainerViewController: ExitDelegate {
 	func backToContacts() {
 		output?.dissmis()
 	}
 }
-
+//MARK: -OperationDelegate
 extension ContainerViewController: OperationDelegate {
 
 	func chooseOperation(operation: Operations) {

@@ -15,6 +15,7 @@ extension UILabel {
 		self.textColor = .gray
 		self.textAlignment = .center
 		self.text = title
+		self.translatesAutoresizingMaskIntoConstraints = false
 		self.heightAnchor.constraint(equalToConstant: 15).isActive = true
 	}
 
@@ -24,6 +25,7 @@ extension UILabel {
 		self.textAlignment = .center
 		self.textColor = .black
 		self.text = title
+		self.translatesAutoresizingMaskIntoConstraints = false
 		self.heightAnchor.constraint(equalToConstant: 20).isActive = true
 	}
 

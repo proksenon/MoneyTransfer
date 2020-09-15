@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TreatmentModuleInput: class {
+	///  Конфигурирует Treatment
 	func configure(amountOfTransaction: String, operation: Operations)
 }

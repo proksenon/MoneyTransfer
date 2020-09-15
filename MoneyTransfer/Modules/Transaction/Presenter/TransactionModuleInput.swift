@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TransactionModuleInput: class {
+	///  Конфигурирует Transaction для нужной операции
 	func configure(with operation: Operations)
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TreatmentInteractor {
+final class TreatmentInteractor {
 
 	weak var output: TreatmentInteractorOutput?
 
@@ -16,6 +16,8 @@ class TreatmentInteractor {
 		self.output = presenter
 	}
 }
+
+//MARK: -TreatmentInteractorInput
 extension TreatmentInteractor: TreatmentInteractorInput {
 	
 }

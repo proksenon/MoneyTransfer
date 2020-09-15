@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TreatmentConfigurator {
+final class TreatmentConfigurator {
 
 	func configure(with viewController: TreatmentViewController) {
 		let presenter = TreatmentPresenter(view: viewController)

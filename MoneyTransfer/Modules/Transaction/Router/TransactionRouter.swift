@@ -8,13 +8,15 @@
 
 import UIKit
 
-class TransactionRouter {
+final class TransactionRouter {
 	weak var viewController: UIViewController?
 
 	init(viewController: TransactionViewController) {
 		self.viewController = viewController
 	}
 }
+
+//MARK: -TransactionRouterInput
 extension TransactionRouter: TransactionRouterInput {
 	
 }

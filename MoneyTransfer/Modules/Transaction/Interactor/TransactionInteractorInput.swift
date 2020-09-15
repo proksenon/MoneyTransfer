@@ -9,6 +9,8 @@
 import Foundation
 
 protocol TransactionInteractorInput: class {
+	///  Получает баланс
 	func getBalance()-> String?
+	///  Устанавливает баланс
 	func setBalance(balance: String)
 }

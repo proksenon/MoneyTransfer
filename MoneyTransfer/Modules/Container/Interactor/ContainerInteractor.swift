@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContainerInteractor {
+final class ContainerInteractor {
 
 	weak var output: ContainerInteractorOutput?
 
@@ -16,6 +16,7 @@ class ContainerInteractor {
 		self.output = presenter
 	}
 }
+
 extension ContainerInteractor: ContainerInteractorInput {
 	
 }

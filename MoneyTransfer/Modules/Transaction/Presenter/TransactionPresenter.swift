@@ -20,7 +20,10 @@ final class TransactionPresenter {
 		self.view = view
 	}
 }
+
+//MARK: -TransactionViewOutput
 extension TransactionPresenter: TransactionViewOutput {
+
 	func configureView() {
 		guard let view = view else { return }
 		view.setView()
@@ -55,18 +58,22 @@ extension TransactionPresenter: TransactionViewOutput {
 		}
 	}
 }
-
+//MARK: -TransactionInteractorOutput
 extension TransactionPresenter: TransactionInteractorOutput {
 
 }
-
+//MARK: -TransactionModuleInput
 extension TransactionPresenter: TransactionModuleInput {
 	func configure(with operation: Operations) {
 		self.operation = operation
 		guard let view = view else {return}
-		if operation == .request {
+		switch operation {
+		case .request:
 			view.setTitleForOperationLabel(title: "Запрос средств")
 			view.setTitleForOperationButton(title: "Запросить")
+		default:
+			view.setTitleForOperationLabel(title: "Перевод средств")
+			view.setTitleForOperationButton(title: "Перевести")
 		}
 	}
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SuccessOperationInteractor {
+final class SuccessOperationInteractor {
 
 	weak var output: SuccessOperationInteractorOutput?
 
@@ -16,6 +16,8 @@ class SuccessOperationInteractor {
 		self.output = presenter
 	}
 }
+
+//MARK: -SuccessOperationInteractorInput
 extension SuccessOperationInteractor: SuccessOperationInteractorInput {
 	
 }

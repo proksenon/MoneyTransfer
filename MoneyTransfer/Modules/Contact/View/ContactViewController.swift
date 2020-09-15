@@ -26,14 +26,14 @@ final class ContactViewController: UIViewController {
 		output.configureView()
     }
 }
-
+//MARK: -ContactViewInput
 extension ContactViewController: ContactViewInput {
 
 
 	func setBackgroundColor() {
 		view.backgroundColor = .white
 	}
-
+	//MARK: -AvatarImageView
 	func setupAvatarImageView() {
 		avatarImageView = UIImageView()
 		guard let avatarImageView = avatarImageView else { return }
@@ -53,7 +53,7 @@ extension ContactViewController: ContactViewInput {
 
 		avatarImageView.image = UIImage(data: data)
 	}
-
+	//MARK: -FullNameLabel
 	func setFullName(with name: String) {
 		fullNameLabel?.text = name
 	}
@@ -71,7 +71,8 @@ extension ContactViewController: ContactViewInput {
 		fullNameLabel.text = "Surname Name"
 		fullNameLabel.font = fullNameLabel.font.withSize(35)
 	}
-
+	
+	//MARK: -PhoneNumberLabel
 	func setupPhoneNumberLabel() {
 		phoneNumberLabel = UILabel()
 		guard let phoneNumberLabel = phoneNumberLabel else { return }
@@ -92,50 +93,42 @@ extension ContactViewController: ContactViewInput {
 		phoneNumberLabel.text = phone
 	}
 
+	//MARK: -RequestMoneyButton
 	func setupRequestMoneyButton() {
 		requestMoneyButton = UIButton()
 		guard let requestMoneyButton = requestMoneyButton else { return }
 		view.addSubview(requestMoneyButton)
-		requestMoneyButton.roundedCorner(with: 4)
 
-		requestMoneyButton.translatesAutoresizingMaskIntoConstraints = false
 		guard let phoneNumberLabel = phoneNumberLabel else { return }
 		NSLayoutConstraint.activate([requestMoneyButton.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 70),
 									 requestMoneyButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
-									 requestMoneyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
-									 requestMoneyButton.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height/10)])
+									 requestMoneyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25)])
 
-		requestMoneyButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
-		requestMoneyButton.setTitle("Запросить деньги", for: .normal)
-		requestMoneyButton.titleLabel?.textColor = .black
+		requestMoneyButton.contactStyleButton(title: "Запросить деньги")
 		requestMoneyButton.addTarget(self, action: #selector(requestMoney), for: .touchUpInside)
 	}
 	
-	@IBAction func requestMoney() {
+	@IBAction private func requestMoney() {
 		moduleOutput?.chooseOperation(operation: .request)
 		moduleOutput?.toggleTransaction(on: .transactionViewController)
 	}
 
+	//MARK: -SendMoneyButton
 	func setupSendMoneyButton() {
 		sendMoneyButton = UIButton()
 		guard let sendMoneyButton = sendMoneyButton else { return }
 		view.addSubview(sendMoneyButton)
-		sendMoneyButton.roundedCorner(with: 4)
 
-		sendMoneyButton.translatesAutoresizingMaskIntoConstraints = false
 		guard let requestMoneyButton = requestMoneyButton else { return }
 		NSLayoutConstraint.activate([sendMoneyButton.topAnchor.constraint(equalTo: requestMoneyButton.bottomAnchor, constant: 10),
 									 sendMoneyButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
-									 sendMoneyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
-									 sendMoneyButton.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height/10)])
+									 sendMoneyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25)])
 
-		sendMoneyButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
-		sendMoneyButton.setTitle("Отправить деньги", for: .normal)
-		sendMoneyButton.titleLabel?.textColor = .black
+		sendMoneyButton.contactStyleButton(title: "Отправить деньги")
 		sendMoneyButton.addTarget(self, action: #selector(sendMoney), for: .touchUpInside)
 	}
 
-	@IBAction func sendMoney() {
+	@IBAction private func sendMoney() {
 		moduleOutput?.chooseOperation(operation: .transaction)
 		moduleOutput?.toggleTransaction(on: .transactionViewController)
 	}

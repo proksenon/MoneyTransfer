@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TreatmentViewOutput: class {
+	///  Конфигурирует вью
 	func configureView()
 }

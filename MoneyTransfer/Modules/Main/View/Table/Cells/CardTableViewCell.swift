@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardTableViewCell: UITableViewCell {
+final class CardTableViewCell: UITableViewCell {
 
 	private let cardView = UIView()
 	private let balanceLabel = UILabel()

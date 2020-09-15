@@ -40,13 +40,13 @@ extension TransactionViewController: TransactionViewInput {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 	}
 
-	@IBAction func keyboardWillShow(notification: NSNotification) {
+	@IBAction private func keyboardWillShow(notification: NSNotification) {
 		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
 			moduleOutput?.moveTransactionView(on: keyboardSize.height)
 		}
 	}
 
-	@IBAction func keyboardWillHide(notification: NSNotification) {
+	@IBAction private func keyboardWillHide(notification: NSNotification) {
 		moduleOutput?.moveTransactionView(on: 0)
 	}
 
@@ -54,7 +54,6 @@ extension TransactionViewController: TransactionViewInput {
 	func setupNameOperationLabel() {
 		let nameOperationLabel = UILabel()
 		view.addSubview(nameOperationLabel)
-		nameOperationLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([nameOperationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
 									 nameOperationLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15)])
 
@@ -105,7 +104,6 @@ extension TransactionViewController: TransactionViewInput {
 	func setupOperationButton() {
 		let operationButton = UIButton()
 		view.addSubview(operationButton)
-		operationButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
 									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
 									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)])
@@ -114,6 +112,7 @@ extension TransactionViewController: TransactionViewInput {
 		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
 		self.operationButton = operationButton
 	}
+
 	func setTitleForOperationButton(title: String) {
 		guard let operationButton = operationButton else { return }
 		operationButton.setTitle(title, for: .normal)
@@ -144,15 +143,14 @@ extension TransactionViewController: UITextFieldDelegate {
 		var acceptChars = Array(0...9).map { (int) -> String in
 			String(int)
 		}
-		acceptChars.append(".")
 
+		acceptChars.append(".")
 		for char in string {
 			if !acceptChars.contains(String(char)) {
 				return false
 			}
 		}
 		return true
-
 	}
 
 	func textFieldDidChangeSelection(_ textField: UITextField) {
@@ -166,5 +164,4 @@ extension TransactionViewController: UITextFieldDelegate {
 		}
 		output?.checkBalance(transaction: textField.text)
 	}
-
 }

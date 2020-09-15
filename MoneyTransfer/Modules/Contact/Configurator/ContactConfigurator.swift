@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContactConfigurator: ContactConfiguratorProtocol {
+final class ContactConfigurator: ContactConfiguratorProtocol {
 	func configure(with viewController: ContactViewController){
 		let presenter = ContactPrsenter(view: viewController)
 		let interactor = ContactInteractor(output: presenter)

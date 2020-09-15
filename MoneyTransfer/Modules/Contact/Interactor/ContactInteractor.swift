@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContactInteractor {
+final class ContactInteractor {
 
 	weak var output: ContactInteractorOutput?
 
@@ -16,7 +16,7 @@ class ContactInteractor {
 		self.output = output
 	}
 }
-
+//MARK: -ContactInteractorInput
 extension ContactInteractor: ContactInteractorInput {
 	
 }

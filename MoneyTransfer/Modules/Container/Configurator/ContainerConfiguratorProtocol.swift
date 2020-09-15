@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ContainerConfiguratorProtocol: class {
+	///  Конфигурирует модуль Container
 	func configure(with viewController: ContainerViewController)
 }

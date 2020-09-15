@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TransactionConfiguratorProtocol: class {
-
+	func configure(with viewController: TransactionViewController)
 }

@@ -29,6 +29,7 @@ final class TreatmentViewController: UIViewController {
 
 }
 
+//MARK: -TreatmentViewInput
 extension TreatmentViewController: TreatmentViewInput {
 
 	func setView() {
@@ -50,12 +51,12 @@ extension TreatmentViewController: TreatmentViewInput {
 		treatmentImageView.image = UIImage(systemName: "clock")?.withTintColor(.gray, renderingMode: .alwaysOriginal)
 		self.treatmentImageView = treatmentImageView
 	}
-
+	
+	//MARK: -StatusLabel
 	func setupStatusLabel() {
 		guard let treatmentImageView = treatmentImageView else { return }
 		let statusLabel = UILabel()
 		view.addSubview(statusLabel)
-		statusLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: 20),
 									 statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 statusLabel.widthAnchor.constraint(equalToConstant: 300)])
@@ -69,11 +70,11 @@ extension TreatmentViewController: TreatmentViewInput {
 		statusLabel.text = title
 	}
 
+	//MARK: -AtributeTransactionLabel
 	func setupAtributeTransactionLabel() {
 		guard let statusLabel = statusLabel else { return }
 		let atributeTransactionLabel = UILabel()
 		view.addSubview(atributeTransactionLabel)
-		atributeTransactionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 20),
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: 300)])
@@ -82,11 +83,11 @@ extension TreatmentViewController: TreatmentViewInput {
 		self.atributeTransactionLabel = atributeTransactionLabel
 	}
 
+	//MARK: -AmountOfMoneyLabel
 	func setupAmountOfMoneyLabel() {
 		guard let atributeTransactionLabel = atributeTransactionLabel else { return }
 		let amountOfMoneyLabel = UILabel()
 		view.addSubview(amountOfMoneyLabel)
-		amountOfMoneyLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: 10),
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: 300)])
@@ -94,15 +95,16 @@ extension TreatmentViewController: TreatmentViewInput {
 		amountOfMoneyLabel.mainLabel(title: money)
 		self.amountOfMoneyLabel = amountOfMoneyLabel
 	}
-	func setTitleAmountOfMoneyLable(with amount: String) {
+
+	func setTitleAmountOfMoneyLabel(with amount: String) {
 		guard let amountOfMoneyLabel = amountOfMoneyLabel else { return }
 		amountOfMoneyLabel.text = amount
 	}
 
+	//MARK: -OperationButton
 	func setupOperationButton() {
 		let operationButton = UIButton()
 		view.addSubview(operationButton)
-		operationButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
 									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
 									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)])

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ContainerRouterInput: class {
+	///  Выходит с модуля Container
 	func dissmis()
 }

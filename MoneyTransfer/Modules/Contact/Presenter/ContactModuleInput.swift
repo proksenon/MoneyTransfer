@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ContactModuleInput {
+	///  Конфигурирует Contarct
 	func configure(with person: Person)
 }

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TreatmentConfiguratorProtocol: class {
+	///  Конфигурирует Treatment
 	func configure(with viewController: TreatmentViewController)
 }

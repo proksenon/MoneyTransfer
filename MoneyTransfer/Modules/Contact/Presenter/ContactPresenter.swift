@@ -19,7 +19,7 @@ final class ContactPrsenter {
 		self.view = view
 	}
 }
-
+//MARK: -ContactViewOutput
 extension ContactPrsenter: ContactViewOutput {
 	func configureView() {
 		guard let view = view else { return }
@@ -31,15 +31,12 @@ extension ContactPrsenter: ContactViewOutput {
 		view.setupSendMoneyButton()
 	}
 
-	func pushTransition() {
-		router?.pushTransaction()
-	}
 }
-
+//MARK: -ContactInteractorOutput
 extension ContactPrsenter: ContactInteractorOutput {
 	
 }
-
+//MARK: -ContactModuleInput
 extension ContactPrsenter: ContactModuleInput {
 	func configure(with person: Person) {
 		guard let view = view else { return }

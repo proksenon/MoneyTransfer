@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ContactConfiguratorProtocol: class {
+	///  Конфигурирует Module Contact
 	func configure(with viewController: ContactViewController)
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuccessOperationRouter: SuccessOperationRouterInput {
+final class SuccessOperationRouter: SuccessOperationRouterInput {
 
 	weak var viewController: UIViewController?
 

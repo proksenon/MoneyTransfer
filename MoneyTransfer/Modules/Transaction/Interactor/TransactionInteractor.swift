@@ -8,10 +8,10 @@
 
 import Foundation
 
-class TransactionInteractor {
+final class TransactionInteractor {
 
 	weak var output: TransactionInteractorOutput?
-	let userDefaultsWork: UserDefaultsWorkProtocol
+	private let userDefaultsWork: UserDefaultsWorkProtocol
 
 	init(output: TransactionInteractorOutput, userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {
 		self.output = output
@@ -20,6 +20,7 @@ class TransactionInteractor {
 
 }
 
+//MARK: -TransactionInteractorInput
 extension TransactionInteractor: TransactionInteractorInput {
 	func getBalance()-> String? {
 		return userDefaultsWork.getObject(for: "balance") as? String

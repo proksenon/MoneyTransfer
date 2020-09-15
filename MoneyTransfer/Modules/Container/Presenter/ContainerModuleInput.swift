@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ContainerModuleInput: class {
+	///  Конфигурирует модуль Container
 	func configure(with person: Person)
 }

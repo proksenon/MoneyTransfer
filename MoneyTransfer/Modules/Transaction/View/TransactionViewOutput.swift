@@ -9,8 +9,12 @@
 import Foundation
 
 protocol TransactionViewOutput: class {
+	///  Конфигурирует View
 	func configureView()
+	///  Проверяет баланс
 	func checkBalance(transaction: String?)
+	///  Получает баланс
 	func getBalance() -> String?
+	///  Устанавливает баланс
 	func setNewBalance(transaction: String?)
 }

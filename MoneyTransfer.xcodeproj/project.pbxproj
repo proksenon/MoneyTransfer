@@ -35,6 +35,7 @@
 		D52C3C79250F821D001E34A0 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C78250F821D001E34A0 /* RoundedCorners.swift */; };
 		D52C3C7B250F83E2001E34A0 /* ChildsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7A250F83E2001E34A0 /* ChildsController.swift */; };
 		D52C3C7D250FCE98001E34A0 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7C250FCE98001E34A0 /* Operations.swift */; };
+		D52C3C7F2510B894001E34A0 /* ContactStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -140,6 +141,7 @@
 		D52C3C78250F821D001E34A0 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		D52C3C7A250F83E2001E34A0 /* ChildsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsController.swift; sourceTree = "<group>"; };
 		D52C3C7C250FCE98001E34A0 /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStyleButton.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				D52C3C74250F6A78001E34A0 /* StylesLabel.swift */,
 				D52C3C76250F6ABB001E34A0 /* StyleTransactionButtons.swift */,
 				D52C3C78250F821D001E34A0 /* RoundedCorners.swift */,
+				D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				D5A0BFE1250A40F10080737E /* SuccessViewOutput.swift in Sources */,
 				D5A0BF9E250A1E9C0080737E /* TreatmentPresenter.swift in Sources */,
 				D5A0BFA4250A1ED40080737E /* TreatmentConfigurator.swift in Sources */,
+				D52C3C7F2510B894001E34A0 /* ContactStyleButton.swift in Sources */,
 				D5A0BFE3250A40F10080737E /* SuccessViewController.swift in Sources */,
 				D52C3C7B250F83E2001E34A0 /* ChildsController.swift in Sources */,
 				D50F50FD24DD6F760042BAD2 /* SceneDelegate.swift in Sources */,

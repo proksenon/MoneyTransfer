@@ -32,6 +32,7 @@ final class SuccessOperationViewController: UIViewController {
 
 }
 
+//MARK: -TreatmentInteractorInput
 extension SuccessOperationViewController: SuccessOperationViewInput {
 
 	func setView() {
@@ -39,7 +40,7 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		view.backgroundColor = .white
 		view.roundedCorner(with: 20)
 	}
-
+	//MARK: -TreatmentImageView
 	func setupTreatmentImageView() {
 		let treatmentImageView = UIImageView()
 		view.addSubview(treatmentImageView)
@@ -53,12 +54,11 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		treatmentImageView.image = UIImage(systemName: "checkmark.circle")?.withTintColor(.green, renderingMode: .alwaysOriginal)
 		self.treatmentImageView = treatmentImageView
 	}
-
+	//MARK: -StatusLabel
 	func setupStatusLabel() {
 		guard let treatmentImageView = treatmentImageView else { return }
 		let statusLabel = UILabel()
 		view.addSubview(statusLabel)
-		statusLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: 20),
 									 statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 statusLabel.widthAnchor.constraint(equalToConstant: 300)])
@@ -67,11 +67,11 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		self.statusLabel = statusLabel
 	}
 
+	//MARK: -AtributeTransactionLabel
 	func setupAtributeTransactionLabel() {
 		guard let statusLabel = statusLabel else { return }
 		let atributeTransactionLabel = UILabel()
 		view.addSubview(atributeTransactionLabel)
-		atributeTransactionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 20),
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: 300)])
@@ -79,12 +79,11 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		atributeTransactionLabel.subLabel(title: "Переведено")
 		self.atributeTransactionLabel = atributeTransactionLabel
 	}
-
+	//MARK: -AmountOfMoneyLabel
 	func setupAmountOfMoneyLabel() {
 		guard let atributeTransactionLabel = atributeTransactionLabel else { return }
 		let amountOfMoneyLabel = UILabel()
 		view.addSubview(amountOfMoneyLabel)
-		amountOfMoneyLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: 10),
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: 300)])
@@ -98,10 +97,10 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		amountOfMoneyLabel.text = amount
 	}
 
-	func setupOperationButton() {
+	//MARK: -OperationButton
+	func setupExitButton() {
 		let operationButton = UIButton()
 		view.addSubview(operationButton)
-		operationButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
 									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
 									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)])
@@ -111,14 +110,14 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		self.operationButton = operationButton
 	}
 
-	@IBAction func operationButtonDidTapped() {
+	@IBAction private func operationButtonDidTapped() {
 		moduleOutput?.backToContacts()
 	}
 
+	//MARK: -ChangeBalanceLabel
 	func setupChangeBalanceLabel() {
 		let changeBalanceLabel = UILabel()
 		view.addSubview(changeBalanceLabel)
-		changeBalanceLabel.translatesAutoresizingMaskIntoConstraints = false
 		guard let amountOfMoneyLabel = amountOfMoneyLabel else { return }
 		NSLayoutConstraint.activate([changeBalanceLabel.topAnchor.constraint(equalTo: amountOfMoneyLabel.bottomAnchor, constant: 20),
 									 changeBalanceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -128,10 +127,10 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		self.changeBalanceLabel = changeBalanceLabel
 	}
 
+	//MARK: -BeforeTransactionBalanceLabel
 	func setupBeforeTransactionBalanceLabel() {
 		let beforeTransactionBalanceLabel = UILabel()
 		view.addSubview(beforeTransactionBalanceLabel)
-		beforeTransactionBalanceLabel.translatesAutoresizingMaskIntoConstraints = false
 		guard let changeBalanceLabel = changeBalanceLabel else { return }
 		NSLayoutConstraint.activate([beforeTransactionBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: 10),
 									 beforeTransactionBalanceLabel.rightAnchor.constraint(equalTo: view.centerXAnchor, constant: -5),
@@ -142,11 +141,13 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 		beforeTransactionBalanceLabel.textAlignment = .right
 		self.beforeTransactionBalanceLabel = beforeTransactionBalanceLabel
 	}
+
 	func setOldBalance(oldBalance: String) {
 		guard let beforeTransactionBalanceLabel = beforeTransactionBalanceLabel else { return }
 		beforeTransactionBalanceLabel.text = oldBalance
 	}
 
+	//MARK: -CurrentBalanceLabel
 	func setupCurrentBalanceLabel() {
 		let currentBalanceLabel = UILabel()
 		view.addSubview(currentBalanceLabel)
