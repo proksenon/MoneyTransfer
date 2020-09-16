@@ -47,6 +47,20 @@
 		D53682A325122D720077BDCB /* ContactsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682A225122D720077BDCB /* ContactsManagerMock.swift */; };
 		D53682A525122EB00077BDCB /* UserDefaultsWorkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682A425122EB00077BDCB /* UserDefaultsWorkMock.swift */; };
 		D53682A725122F2D0077BDCB /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682A625122F2D0077BDCB /* MainInteractorTests.swift */; };
+		D53682B225124BDE0077BDCB /* ContainerViewInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682B125124BDE0077BDCB /* ContainerViewInputSpy.swift */; };
+		D53682B425124BF60077BDCB /* ContainerViewOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682B325124BF60077BDCB /* ContainerViewOutputSpy.swift */; };
+		D53682B825124C2B0077BDCB /* ContainerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682B725124C2B0077BDCB /* ContainerViewControllerTests.swift */; };
+		D53682BA25124D1F0077BDCB /* MainModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682B925124D1F0077BDCB /* MainModuleInputSpy.swift */; };
+		D53682C425125D790077BDCB /* ContactViewInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682C325125D790077BDCB /* ContactViewInputSpy.swift */; };
+		D53682C625125E740077BDCB /* ContactViewOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682C525125E740077BDCB /* ContactViewOutputSpy.swift */; };
+		D53682C825125ED40077BDCB /* ContactViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682C725125ED40077BDCB /* ContactViewControllerTests.swift */; };
+		D53682CA25125FB50077BDCB /* ContactConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682C925125FB50077BDCB /* ContactConfiguratorMock.swift */; };
+		D53682CC251262E40077BDCB /* ContactPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682CB251262E40077BDCB /* ContactPresenterTest.swift */; };
+		D53682CE251263320077BDCB /* ContactInteractorInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682CD251263320077BDCB /* ContactInteractorInputSpy.swift */; };
+		D53682D5251265980077BDCB /* TransactionViewInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682D4251265980077BDCB /* TransactionViewInputSpy.swift */; };
+		D53682D7251266D80077BDCB /* TransactionViewOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682D6251266D80077BDCB /* TransactionViewOutputSpy.swift */; };
+		D53682D9251267870077BDCB /* TransactionConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682D8251267870077BDCB /* TransactionConfiguratorMock.swift */; };
+		D53682DB251268570077BDCB /* TransactionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682DA251268570077BDCB /* TransactionViewControllerTests.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -177,6 +191,20 @@
 		D53682A225122D720077BDCB /* ContactsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerMock.swift; sourceTree = "<group>"; };
 		D53682A425122EB00077BDCB /* UserDefaultsWorkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWorkMock.swift; sourceTree = "<group>"; };
 		D53682A625122F2D0077BDCB /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
+		D53682B125124BDE0077BDCB /* ContainerViewInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewInputSpy.swift; sourceTree = "<group>"; };
+		D53682B325124BF60077BDCB /* ContainerViewOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewOutputSpy.swift; sourceTree = "<group>"; };
+		D53682B725124C2B0077BDCB /* ContainerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewControllerTests.swift; sourceTree = "<group>"; };
+		D53682B925124D1F0077BDCB /* MainModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleInputSpy.swift; sourceTree = "<group>"; };
+		D53682C325125D790077BDCB /* ContactViewInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewInputSpy.swift; sourceTree = "<group>"; };
+		D53682C525125E740077BDCB /* ContactViewOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewOutputSpy.swift; sourceTree = "<group>"; };
+		D53682C725125ED40077BDCB /* ContactViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewControllerTests.swift; sourceTree = "<group>"; };
+		D53682C925125FB50077BDCB /* ContactConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactConfiguratorMock.swift; sourceTree = "<group>"; };
+		D53682CB251262E40077BDCB /* ContactPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPresenterTest.swift; sourceTree = "<group>"; };
+		D53682CD251263320077BDCB /* ContactInteractorInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractorInputSpy.swift; sourceTree = "<group>"; };
+		D53682D4251265980077BDCB /* TransactionViewInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewInputSpy.swift; sourceTree = "<group>"; };
+		D53682D6251266D80077BDCB /* TransactionViewOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewOutputSpy.swift; sourceTree = "<group>"; };
+		D53682D8251267870077BDCB /* TransactionConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfiguratorMock.swift; sourceTree = "<group>"; };
+		D53682DA251268570077BDCB /* TransactionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewControllerTests.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -393,6 +421,10 @@
 				D53682A125122AF10077BDCB /* Services */,
 				D52C3C8E2510CDD4001E34A0 /* Main */,
 				D53682A825123D4C0077BDCB /* Container */,
+				D53682BB251256710077BDCB /* Contact */,
+				D53682AB251244190077BDCB /* Transaction */,
+				D53682AA251244170077BDCB /* Treatment */,
+				D53682A9251244150077BDCB /* Success */,
 				D52C3C882510CBC8001E34A0 /* Info.plist */,
 			);
 			path = MoneyTransferTests;
@@ -451,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				D536829F25120CD10077BDCB /* MainPresenterTest.swift */,
+				D53682B925124D1F0077BDCB /* MainModuleInputSpy.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -467,8 +500,169 @@
 		D53682A825123D4C0077BDCB /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				D53682AC25124B6F0077BDCB /* View */,
+				D53682AD25124B740077BDCB /* Presenter */,
+				D53682AE25124B8E0077BDCB /* Interactor */,
+				D53682AF25124BA20077BDCB /* Router */,
+				D53682B025124BBC0077BDCB /* Configurator */,
 			);
 			path = Container;
+			sourceTree = "<group>";
+		};
+		D53682A9251244150077BDCB /* Success */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Success;
+			sourceTree = "<group>";
+		};
+		D53682AA251244170077BDCB /* Treatment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Treatment;
+			sourceTree = "<group>";
+		};
+		D53682AB251244190077BDCB /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				D53682CF251265360077BDCB /* View */,
+				D53682D02512653A0077BDCB /* Presenter */,
+				D53682D12512654D0077BDCB /* Interactor */,
+				D53682D2251265630077BDCB /* Router */,
+				D53682D32512657D0077BDCB /* Configurator */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		D53682AC25124B6F0077BDCB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D53682B125124BDE0077BDCB /* ContainerViewInputSpy.swift */,
+				D53682B325124BF60077BDCB /* ContainerViewOutputSpy.swift */,
+				D53682B725124C2B0077BDCB /* ContainerViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D53682AD25124B740077BDCB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D53682AE25124B8E0077BDCB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D53682AF25124BA20077BDCB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D53682B025124BBC0077BDCB /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D53682BB251256710077BDCB /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				D53682BC251256810077BDCB /* View */,
+				D53682BF25125C4A0077BDCB /* Presenter */,
+				D53682C025125C5F0077BDCB /* Interactor */,
+				D53682C125125C690077BDCB /* Router */,
+				D53682C225125C740077BDCB /* Configurator */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		D53682BC251256810077BDCB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D53682C325125D790077BDCB /* ContactViewInputSpy.swift */,
+				D53682C525125E740077BDCB /* ContactViewOutputSpy.swift */,
+				D53682C725125ED40077BDCB /* ContactViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D53682BF25125C4A0077BDCB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D53682CB251262E40077BDCB /* ContactPresenterTest.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D53682C025125C5F0077BDCB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D53682CD251263320077BDCB /* ContactInteractorInputSpy.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D53682C125125C690077BDCB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D53682C225125C740077BDCB /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D53682C925125FB50077BDCB /* ContactConfiguratorMock.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D53682CF251265360077BDCB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D53682D4251265980077BDCB /* TransactionViewInputSpy.swift */,
+				D53682DA251268570077BDCB /* TransactionViewControllerTests.swift */,
+				D53682D6251266D80077BDCB /* TransactionViewOutputSpy.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D53682D02512653A0077BDCB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D53682D12512654D0077BDCB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D53682D2251265630077BDCB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D53682D32512657D0077BDCB /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D53682D8251267870077BDCB /* TransactionConfiguratorMock.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 		D59DB6BF250A47F50068888D /* View */ = {
@@ -1041,17 +1235,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52C3C932510D056001E34A0 /* MainViewOutputSpy.swift in Sources */,
+				D53682CE251263320077BDCB /* ContactInteractorInputSpy.swift in Sources */,
+				D53682D9251267870077BDCB /* TransactionConfiguratorMock.swift in Sources */,
 				D53682A325122D720077BDCB /* ContactsManagerMock.swift in Sources */,
+				D53682D7251266D80077BDCB /* TransactionViewOutputSpy.swift in Sources */,
 				D52C3C872510CBC8001E34A0 /* MoneyTransferTests.swift in Sources */,
+				D53682C425125D790077BDCB /* ContactViewInputSpy.swift in Sources */,
 				D536829A2511011B0077BDCB /* MainInteractorOutputSpy.swift in Sources */,
+				D53682B825124C2B0077BDCB /* ContainerViewControllerTests.swift in Sources */,
+				D53682B425124BF60077BDCB /* ContainerViewOutputSpy.swift in Sources */,
 				D53682A525122EB00077BDCB /* UserDefaultsWorkMock.swift in Sources */,
+				D53682B225124BDE0077BDCB /* ContainerViewInputSpy.swift in Sources */,
 				D5E877252510E90E007E80F3 /* MainConfiguratorMock.swift in Sources */,
+				D53682CC251262E40077BDCB /* ContactPresenterTest.swift in Sources */,
 				D53682942510F2E50077BDCB /* MainViewControllerTest.swift in Sources */,
+				D53682D5251265980077BDCB /* TransactionViewInputSpy.swift in Sources */,
+				D53682C625125E740077BDCB /* ContactViewOutputSpy.swift in Sources */,
+				D53682C825125ED40077BDCB /* ContactViewControllerTests.swift in Sources */,
 				D53682A725122F2D0077BDCB /* MainInteractorTests.swift in Sources */,
+				D53682BA25124D1F0077BDCB /* MainModuleInputSpy.swift in Sources */,
 				D536829E25110F400077BDCB /* MainRouterInputSpy.swift in Sources */,
 				D536829C251101760077BDCB /* MainInteractorInputSpy.swift in Sources */,
+				D53682CA25125FB50077BDCB /* ContactConfiguratorMock.swift in Sources */,
 				D53682A025120CD10077BDCB /* MainPresenterTest.swift in Sources */,
 				D52C3C912510D022001E34A0 /* MainViewInputSpy.swift in Sources */,
+				D53682DB251268570077BDCB /* TransactionViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1222,7 +1430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5D5RK3QAMV;
+				DEVELOPMENT_TEAM = DFX963574W;
 				INFOPLIST_FILE = MoneyTransfer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -13,6 +13,8 @@ protocol TransactionViewInput: class {
 	func setupNameOperationLabel()
 	///  Устанавливает текстфилд для суммы транзакции
 	func setupMoneyTextfield()
+	///  Текст с MoneyTextFiels
+	func textFieldText()-> String?
 	///  Устанавливает кнопку операции
 	func setupOperationButton()
 	///  Устанавливает вью

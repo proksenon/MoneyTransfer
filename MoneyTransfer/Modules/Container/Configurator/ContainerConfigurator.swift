@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ContainerConfigurator {
+final class ContainerConfigurator: ContainerConfiguratorProtocol {
 
 	func configure(with viewController: ContainerViewController) {
 		let presenter = ContainerPresenter(view: viewController)
@@ -19,47 +19,47 @@ final class ContainerConfigurator {
 		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router
-		configureContactViewController(with: viewController)
-		configureTransactionViewController(with: viewController)
-		configureTreatmentViewController(with: viewController)
-		configureSuccessViewController(with: viewController)
+		configureContactViewController(with: viewController, presenter: presenter)
+		configureTransactionViewController(with: viewController, presenter: presenter)
+		configureTreatmentViewController(with: viewController, presenter: presenter)
+		configureSuccessViewController(with: viewController, presenter: presenter)
 	}
 	
-	private func configureContactViewController(with viewController: ContainerViewController) {
+	private func configureContactViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
 		let contactViewController = ContactViewController()
 		let configuratorContactModule = ContactConfigurator()
 		configuratorContactModule.configure(with: contactViewController)
-		contactViewController.moduleOutput = viewController
+		contactViewController.moduleOutput = presenter
 		contactViewController.view.frame = viewController.view.frame
 		viewController.add(contactViewController)
 		viewController.contactViewController = contactViewController
 	}
 
-	private func configureTransactionViewController(with viewController: ContainerViewController) {
+	private func configureTransactionViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
 		let transactionViewController = TransactionViewController()
 		let	transactionConfigurator = TransactionConfigurator()
 		transactionConfigurator.configure(with: transactionViewController)
 		transactionViewController.view.frame.origin.y = viewController.view.frame.height
-		transactionViewController.moduleOutput = viewController
+		transactionViewController.moduleOutput = presenter
 		viewController.add(transactionViewController)
 		viewController.transactionViewController = transactionViewController
 	}
 
-	private func configureTreatmentViewController(with viewController: ContainerViewController) {
+	private func configureTreatmentViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
 		let treatmentViewController = TreatmentViewController()
 		let treatmentConfigurator = TreatmentConfigurator()
 		treatmentConfigurator.configure(with: treatmentViewController)
-		treatmentViewController.moduleOutput = viewController
+		treatmentViewController.moduleOutput = presenter
 		treatmentViewController.view.frame.origin.y = viewController.view.frame.height
 		viewController.add(treatmentViewController)
 		viewController.treatmentViewController = treatmentViewController
 	}
 
-	private func configureSuccessViewController(with viewController: ContainerViewController) {
+	private func configureSuccessViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
 		let successViewController = SuccessOperationViewController()
 		let successConfigurator = SuccessOperationConfigurator()
 		successConfigurator.configure(with: successViewController)
-		successViewController.moduleOutput = viewController
+		successViewController.moduleOutput = presenter
 		successViewController.view.frame.origin.y = viewController.view.frame.height
 		viewController.add(successViewController)
 		viewController.successOperationViewController = successViewController

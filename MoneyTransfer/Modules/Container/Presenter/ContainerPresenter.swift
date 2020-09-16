@@ -7,6 +7,32 @@
 //
 
 import Foundation
+//MARK: - ChildControllersProtocols
+protocol TransactionViewDelegate {
+	///  Поднимает или опускает контроллер
+	func moveTransactionView(on y: ViewSize)
+	///  Принимает сумму операции
+	func transactionMoney(amount: String?)
+	///  Принимает баланс
+	func balance(balance: String?)
+}
+
+protocol OperationDelegate {
+	///  Принимает нужную операцию
+	func chooseOperation(operation: Operations)
+}
+
+protocol TogleTransactionDelegate {
+	///  Переключает ChildControllers
+	func toggleTransaction(on vc: ChildsController?)
+}
+
+protocol ExitDelegate {
+	///  Выходит к конактам
+	func backToContacts()
+}
+
+
 final class ContainerPresenter {
 
 	weak var view: ContainerViewInput?
@@ -114,5 +140,40 @@ extension ContainerPresenter: ContainerModuleInput {
 		view.setPersonAtContactView(with: person)
 		view.setupDimmView()
 		view.tapOutSite()
+	}
+}
+
+//MARK: -TogleTransactionDelegate
+extension ContainerPresenter: TogleTransactionDelegate {
+	func toggleTransaction(on vc: ChildsController?) {
+		togleTransaction(on: vc)
+	}
+}
+//MARK: -TransactionViewDelegate
+extension ContainerPresenter: TransactionViewDelegate {
+
+	func moveTransactionView(on y: ViewSize) {
+		moveTransaction(on: y)
+	}
+
+	func transactionMoney(amount: String?) {
+		transactionMoneyIs(amount: amount)
+	}
+
+	func balance(balance: String?) {
+		setBalance(balance: balance)
+	}
+}
+//MARK: -ExitDelegate
+extension ContainerPresenter: ExitDelegate {
+	func backToContacts() {
+		dissmis()
+	}
+}
+//MARK: -OperationDelegate
+extension ContainerPresenter: OperationDelegate {
+
+	func chooseOperation(operation: Operations) {
+		setOperation(operation: operation)
 	}
 }

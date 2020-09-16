@@ -55,7 +55,8 @@ extension MainViewController: MainViewInput {
 		navigationController.navigationBar.insertSubview(balanceTitleLabel, at: 0)
 		balanceTitleLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([balanceTitleLabel.centerYAnchor.constraint(equalTo: navigationController.navigationBar.centerYAnchor),
-									 balanceTitleLabel.centerXAnchor.constraint(equalTo: navigationController.navigationBar.centerXAnchor)])
+									 balanceTitleLabel.centerXAnchor.constraint(equalTo:
+										navigationController.navigationBar.centerXAnchor)])
 	}
 
 	func setBalanceTitleWith(balance: String) {
@@ -105,7 +106,7 @@ extension MainViewController: MainViewInput {
 		DispatchQueue.main.async {
 			tableView.reloadData()
 		}
-		
+
 	}
 
 	//MARK: -MainViewInput
@@ -118,7 +119,7 @@ extension MainViewController: MainViewInput {
 		dimmView.alpha = isShow ? 0.6 : 0
 	}
 	func showDimmView(_ show: Bool) {
-		UIView.animate(withDuration: 2) {
+		UIView.animate(withDuration: 0.7) {
 			self.dimmViewIsHidden(show)
 		}
 	}

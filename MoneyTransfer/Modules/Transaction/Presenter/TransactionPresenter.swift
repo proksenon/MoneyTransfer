@@ -75,6 +75,7 @@ extension TransactionPresenter: TransactionModuleInput {
 			view.setTitleForOperationLabel(title: "Перевод средств")
 			view.setTitleForOperationButton(title: "Перевести")
 		}
+		checkBalance(transaction: view.textFieldText())
 	}
 
 	

@@ -42,12 +42,12 @@ extension TransactionViewController: TransactionViewInput {
 
 	@IBAction private func keyboardWillShow(notification: NSNotification) {
 		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-			moduleOutput?.moveTransactionView(on: keyboardSize.height)
+			moduleOutput?.moveTransactionView(on: ViewSize(size: keyboardSize.height))
 		}
 	}
 
 	@IBAction private func keyboardWillHide(notification: NSNotification) {
-		moduleOutput?.moveTransactionView(on: 0)
+		moduleOutput?.moveTransactionView(on: ViewSize(size: 0))
 	}
 
 	//MARK: -OperationLabel
@@ -76,6 +76,7 @@ extension TransactionViewController: TransactionViewInput {
 		moneyTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: moneyTextfield.frame.height))
 		moneyTextfield.leftViewMode = .always
 		moneyTextfield.keyboardType = .numberPad
+		moneyTextfield.clearsOnBeginEditing = true
 		view.addSubview(moneyTextfield)
 
 		moneyTextfield.translatesAutoresizingMaskIntoConstraints = false
@@ -86,6 +87,10 @@ extension TransactionViewController: TransactionViewInput {
 
 		moneyTextfield.roundedCorner(with: 4)
 		self.moneyTextfield = moneyTextfield
+	}
+
+	func textFieldText()-> String? {
+		return moneyTextfield?.text
 	}
 
 	func changeCornerColorMoneyTextField(result: Status) {
@@ -128,7 +133,7 @@ extension TransactionViewController: TransactionViewInput {
 		operationButton.isUserInteractionEnabled = isEnabled
 	}
 
-	@IBAction func operationButtonDidTapped() {
+	@IBAction private func operationButtonDidTapped() {
 		output?.setNewBalance(transaction: moneyTextfield?.text)
 		moduleOutput?.transactionMoney(amount: moneyTextfield?.text)
 		moduleOutput?.balance(balance: output?.getBalance())
