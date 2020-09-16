@@ -11,11 +11,11 @@ import Contacts
 
 final class MainViewController: UIViewController {
 
-	private let configurator: MainConfiguratorProtocol = MainConfigurator()
 	var output: MainViewOutput!
 	var moduleInput: MainMouduleInput?
-	private var tableView: UITableView!
-	private var scrollAtTopButton: UIBarButtonItem!
+	private var configurator: MainConfiguratorProtocol?
+	private var tableView: UITableView?
+	private var scrollAtTopButton: UIBarButtonItem?
 	private var balanceTitleLabel: UILabel?
 	private lazy var dimmView: UIView = {
 		let view = UIView()
@@ -23,9 +23,18 @@ final class MainViewController: UIViewController {
 		view.alpha = 0
 		return view
 	}()
-	
+
+	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
+		super.init(nibName: nil, bundle: nil)
+		self.configurator = configurator
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
 	override func viewDidLoad() {
+		guard let configurator = configurator else { return }
 		configurator.configure(with: self)
 		output.configureView()
 	}
@@ -74,11 +83,12 @@ extension MainViewController: MainViewInput {
 	}
 
 	@IBAction func scrollAtTheTop() {
+		guard let tableView = tableView else { return }
 		tableView.scrollToRow(at: IndexPath(row: 0, section: 0) , at: .top, animated: true)
 	}
 
 	func setTableView() {
-		tableView = CustomTableView()
+		let tableView = CustomTableView()
 		view.addSubview(tableView)
 		tableView.dataSource = self
 		tableView.delegate = self
@@ -87,12 +97,15 @@ extension MainViewController: MainViewInput {
 		tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 		tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+		self.tableView = tableView
 	}
 
 	func tableViewReload() {
+		guard let tableView = tableView else { return }
 		DispatchQueue.main.async {
-			self.tableView.reloadData()
+			tableView.reloadData()
 		}
+		
 	}
 
 	//MARK: -MainViewInput
@@ -114,7 +127,7 @@ extension MainViewController: MainViewInput {
         dimmView.addGestureRecognizer(tapGesture)
 	}
 
-	@objc func tapGestureDone(){
+	@objc private func tapGestureDone(){
 		output.dissmissStatusOperation()
 	}
 }
@@ -169,6 +182,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		guard let tableView = tableView else { return }
 		if tableView.contentOffset.y > 130 {
 			output.cardInfromationLeft(false)
 		} else {

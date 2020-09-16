@@ -10,9 +10,9 @@ import Foundation
 
 final class MainPresenter {
 	
-	weak var view: MainViewInput!
-	var interactor: MainInteractorInput!
-	var router: MainRouterInput!
+	weak var view: MainViewInput?
+	var interactor: MainInteractorInput?
+	var router: MainRouterInput?
 	private var persons: [Person] = []
 
 	init(view: MainViewInput) {
@@ -24,10 +24,11 @@ final class MainPresenter {
 extension MainPresenter: MainViewOutput {
 
 	func configureView() {
+		guard let view = view, let interactor = interactor else { return }
 		view.setTableView()
 		interactor.getContatcs { (persons) in
 			self.persons = persons
-			self.view.tableViewReload()
+			view.tableViewReload()
 		}
 		view.setScrollAtTopButton()
 		view.navigationWithScrollAtTop()
@@ -39,6 +40,7 @@ extension MainPresenter: MainViewOutput {
 	}
 
 	func getBalance()-> String {
+		guard let interactor = interactor else { return "0"}
 		if let balance = interactor.getBalance() {
 			return balance
 		} else {
@@ -57,15 +59,18 @@ extension MainPresenter: MainViewOutput {
 	}
 
 	func cardInfromationLeft(_ isLeft: Bool) {
+		guard let view = view else { return }
 		view.navigationBarIsHidden(isLeft)
 	}
 
 	func didChosePerson(indexPath: IndexPath) {
+		guard let view = view, let router = router else { return }
 		view.navigationTitleIsHidden(true)
 		router.pushContainer(with: persons[indexPath.row])
 	}
 
 	func dissmissStatusOperation() {
+		guard let view = view, let router = router else { return }
 		router.dissmisSucces()
 		view.showDimmView(false)
 	}
@@ -78,14 +83,14 @@ extension MainPresenter: MainInteractorOutput {
 extension MainPresenter: MainMouduleInput {
 	
 	func statusTransaction(with balance: Balance?, show: Bool) {
-		guard let router = router, let balance = balance else {return}
+		guard let router = router, let balance = balance, let view = view else {return}
 		DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 			if show {
-				self.view.showDimmView(true)
+				view.showDimmView(true)
 				router.showSuccess(with: balance)
 			}
-			self.view.tableViewReload()
-			self.view.setBalanceTitleWith(balance: self.getBalance())
+			view.tableViewReload()
+			view.setBalanceTitleWith(balance: self.getBalance())
 		}
 	}
 }

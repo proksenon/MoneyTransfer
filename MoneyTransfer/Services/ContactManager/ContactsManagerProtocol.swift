@@ -9,7 +9,5 @@
 import Foundation
 
 protocol ContactsManagerProtocol: class {
-	var persons: [Person] { get }
-
 	func getContatcs(completion: @escaping ([Person])->Void)
 }

@@ -10,7 +10,7 @@ import Foundation
 
 final class MainInteractor: MainInteractorInput {
 
-	weak var output: MainInteractorOutput!
+	weak var output: MainInteractorOutput?
 	private let contactsManager: ContactsManagerProtocol
 	private let userDefaultsWork: UserDefaultsWorkProtocol
 

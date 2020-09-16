@@ -36,6 +36,17 @@
 		D52C3C7B250F83E2001E34A0 /* ChildsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7A250F83E2001E34A0 /* ChildsController.swift */; };
 		D52C3C7D250FCE98001E34A0 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7C250FCE98001E34A0 /* Operations.swift */; };
 		D52C3C7F2510B894001E34A0 /* ContactStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */; };
+		D52C3C872510CBC8001E34A0 /* MoneyTransferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C862510CBC8001E34A0 /* MoneyTransferTests.swift */; };
+		D52C3C912510D022001E34A0 /* MainViewInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C902510D022001E34A0 /* MainViewInputSpy.swift */; };
+		D52C3C932510D056001E34A0 /* MainViewOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C922510D056001E34A0 /* MainViewOutputSpy.swift */; };
+		D53682942510F2E50077BDCB /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682932510F2E50077BDCB /* MainViewControllerTest.swift */; };
+		D536829A2511011B0077BDCB /* MainInteractorOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682992511011B0077BDCB /* MainInteractorOutputSpy.swift */; };
+		D536829C251101760077BDCB /* MainInteractorInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536829B251101760077BDCB /* MainInteractorInputSpy.swift */; };
+		D536829E25110F400077BDCB /* MainRouterInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536829D25110F400077BDCB /* MainRouterInputSpy.swift */; };
+		D53682A025120CD10077BDCB /* MainPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536829F25120CD10077BDCB /* MainPresenterTest.swift */; };
+		D53682A325122D720077BDCB /* ContactsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682A225122D720077BDCB /* ContactsManagerMock.swift */; };
+		D53682A525122EB00077BDCB /* UserDefaultsWorkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682A425122EB00077BDCB /* UserDefaultsWorkMock.swift */; };
+		D53682A725122F2D0077BDCB /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53682A625122F2D0077BDCB /* MainInteractorTests.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -108,7 +119,18 @@
 		D5B0400624FD091D0023E5DE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400524FD091D0023E5DE /* Person.swift */; };
 		D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */; };
 		D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */; };
+		D5E877252510E90E007E80F3 /* MainConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D52C3C892510CBC8001E34A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D50F50EF24DD6F760042BAD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D50F50F624DD6F760042BAD2;
+			remoteInfo = MoneyTransfer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D50F50F724DD6F760042BAD2 /* MoneyTransfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyTransfer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +164,19 @@
 		D52C3C7A250F83E2001E34A0 /* ChildsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsController.swift; sourceTree = "<group>"; };
 		D52C3C7C250FCE98001E34A0 /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStyleButton.swift; sourceTree = "<group>"; };
+		D52C3C842510CBC8001E34A0 /* MoneyTransferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyTransferTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D52C3C862510CBC8001E34A0 /* MoneyTransferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTransferTests.swift; sourceTree = "<group>"; };
+		D52C3C882510CBC8001E34A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D52C3C902510D022001E34A0 /* MainViewInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewInputSpy.swift; sourceTree = "<group>"; };
+		D52C3C922510D056001E34A0 /* MainViewOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOutputSpy.swift; sourceTree = "<group>"; };
+		D53682932510F2E50077BDCB /* MainViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTest.swift; sourceTree = "<group>"; };
+		D53682992511011B0077BDCB /* MainInteractorOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorOutputSpy.swift; sourceTree = "<group>"; };
+		D536829B251101760077BDCB /* MainInteractorInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorInputSpy.swift; sourceTree = "<group>"; };
+		D536829D25110F400077BDCB /* MainRouterInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterInputSpy.swift; sourceTree = "<group>"; };
+		D536829F25120CD10077BDCB /* MainPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTest.swift; sourceTree = "<group>"; };
+		D53682A225122D720077BDCB /* ContactsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerMock.swift; sourceTree = "<group>"; };
+		D53682A425122EB00077BDCB /* UserDefaultsWorkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWorkMock.swift; sourceTree = "<group>"; };
+		D53682A625122F2D0077BDCB /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -214,10 +249,18 @@
 		D5B0400524FD091D0023E5DE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerProtocol.swift; sourceTree = "<group>"; };
+		D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguratorMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D50F50F424DD6F760042BAD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52C3C812510CBC8001E34A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -231,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				D50F50F924DD6F760042BAD2 /* MoneyTransfer */,
+				D52C3C852510CBC8001E34A0 /* MoneyTransferTests */,
 				D50F50F824DD6F760042BAD2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -239,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				D50F50F724DD6F760042BAD2 /* MoneyTransfer.app */,
+				D52C3C842510CBC8001E34A0 /* MoneyTransferTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,6 +384,91 @@
 				D5B0400224FCE7420023E5DE /* CardTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D52C3C852510CBC8001E34A0 /* MoneyTransferTests */ = {
+			isa = PBXGroup;
+			children = (
+				D52C3C862510CBC8001E34A0 /* MoneyTransferTests.swift */,
+				D53682A125122AF10077BDCB /* Services */,
+				D52C3C8E2510CDD4001E34A0 /* Main */,
+				D53682A825123D4C0077BDCB /* Container */,
+				D52C3C882510CBC8001E34A0 /* Info.plist */,
+			);
+			path = MoneyTransferTests;
+			sourceTree = "<group>";
+		};
+		D52C3C8E2510CDD4001E34A0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D52C3C972510D775001E34A0 /* View */,
+				D5368298251100ED0077BDCB /* Presenter */,
+				D5368297251100E30077BDCB /* Interactor */,
+				D5368296251100DA0077BDCB /* Router */,
+				D53682952510FE930077BDCB /* Configurator */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D52C3C972510D775001E34A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D52C3C902510D022001E34A0 /* MainViewInputSpy.swift */,
+				D52C3C922510D056001E34A0 /* MainViewOutputSpy.swift */,
+				D53682932510F2E50077BDCB /* MainViewControllerTest.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D53682952510FE930077BDCB /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D5368296251100DA0077BDCB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D536829D25110F400077BDCB /* MainRouterInputSpy.swift */,
+			);
+			name = Router;
+			path = View/Router;
+			sourceTree = "<group>";
+		};
+		D5368297251100E30077BDCB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D53682992511011B0077BDCB /* MainInteractorOutputSpy.swift */,
+				D536829B251101760077BDCB /* MainInteractorInputSpy.swift */,
+				D53682A625122F2D0077BDCB /* MainInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D5368298251100ED0077BDCB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D536829F25120CD10077BDCB /* MainPresenterTest.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D53682A125122AF10077BDCB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D53682A225122D720077BDCB /* ContactsManagerMock.swift */,
+				D53682A425122EB00077BDCB /* UserDefaultsWorkMock.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D53682A825123D4C0077BDCB /* Container */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		D59DB6BF250A47F50068888D /* View */ = {
@@ -724,18 +854,40 @@
 			productReference = D50F50F724DD6F760042BAD2 /* MoneyTransfer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D52C3C832510CBC8001E34A0 /* MoneyTransferTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D52C3C8B2510CBC8001E34A0 /* Build configuration list for PBXNativeTarget "MoneyTransferTests" */;
+			buildPhases = (
+				D52C3C802510CBC8001E34A0 /* Sources */,
+				D52C3C812510CBC8001E34A0 /* Frameworks */,
+				D52C3C822510CBC8001E34A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D52C3C8A2510CBC8001E34A0 /* PBXTargetDependency */,
+			);
+			name = MoneyTransferTests;
+			productName = MoneyTransferTests;
+			productReference = D52C3C842510CBC8001E34A0 /* MoneyTransferTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D50F50EF24DD6F760042BAD2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = 18579132;
 				TargetAttributes = {
 					D50F50F624DD6F760042BAD2 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					D52C3C832510CBC8001E34A0 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D50F50F624DD6F760042BAD2;
 					};
 				};
 			};
@@ -753,6 +905,7 @@
 			projectRoot = "";
 			targets = (
 				D50F50F624DD6F760042BAD2 /* MoneyTransfer */,
+				D52C3C832510CBC8001E34A0 /* MoneyTransferTests */,
 			);
 		};
 /* End PBXProject section */
@@ -765,6 +918,13 @@
 				D50F510724DD6F790042BAD2 /* LaunchScreen.storyboard in Resources */,
 				D50F510424DD6F790042BAD2 /* Assets.xcassets in Resources */,
 				D50F510224DD6F760042BAD2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D52C3C822510CBC8001E34A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,7 +1036,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D52C3C802510CBC8001E34A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52C3C932510D056001E34A0 /* MainViewOutputSpy.swift in Sources */,
+				D53682A325122D720077BDCB /* ContactsManagerMock.swift in Sources */,
+				D52C3C872510CBC8001E34A0 /* MoneyTransferTests.swift in Sources */,
+				D536829A2511011B0077BDCB /* MainInteractorOutputSpy.swift in Sources */,
+				D53682A525122EB00077BDCB /* UserDefaultsWorkMock.swift in Sources */,
+				D5E877252510E90E007E80F3 /* MainConfiguratorMock.swift in Sources */,
+				D53682942510F2E50077BDCB /* MainViewControllerTest.swift in Sources */,
+				D53682A725122F2D0077BDCB /* MainInteractorTests.swift in Sources */,
+				D536829E25110F400077BDCB /* MainRouterInputSpy.swift in Sources */,
+				D536829C251101760077BDCB /* MainInteractorInputSpy.swift in Sources */,
+				D53682A025120CD10077BDCB /* MainPresenterTest.swift in Sources */,
+				D52C3C912510D022001E34A0 /* MainViewInputSpy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D52C3C8A2510CBC8001E34A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D50F50F624DD6F760042BAD2 /* MoneyTransfer */;
+			targetProxy = D52C3C892510CBC8001E34A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D50F510024DD6F760042BAD2 /* Main.storyboard */ = {
@@ -1048,6 +1235,48 @@
 			};
 			name = Release;
 		};
+		D52C3C8C2510CBC8001E34A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFX963574W;
+				INFOPLIST_FILE = MoneyTransferTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.MoneyTransferTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyTransfer.app/MoneyTransfer";
+			};
+			name = Debug;
+		};
+		D52C3C8D2510CBC8001E34A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFX963574W;
+				INFOPLIST_FILE = MoneyTransferTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.MoneyTransferTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyTransfer.app/MoneyTransfer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1065,6 +1294,15 @@
 			buildConfigurations = (
 				D50F510C24DD6F790042BAD2 /* Debug */,
 				D50F510D24DD6F790042BAD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D52C3C8B2510CBC8001E34A0 /* Build configuration list for PBXNativeTarget "MoneyTransferTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D52C3C8C2510CBC8001E34A0 /* Debug */,
+				D52C3C8D2510CBC8001E34A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

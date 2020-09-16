@@ -11,8 +11,6 @@ import Contacts
 
 final class ContactsManager: ContactsManagerProtocol {
 
-	internal var persons: [Person] = []
-
 	func getContatcs(completion: @escaping ([Person])->Void) {
 		let store = CNContactStore()
 		store.requestAccess(for: .contacts) { granted, error in
@@ -22,7 +20,6 @@ final class ContactsManager: ContactsManagerProtocol {
 			let fetchRequest = CNContactFetchRequest(keysToFetch: keysToFetch)
 
 			guard let persons = self.dataProcessing(store: store, fetchRequest: fetchRequest) else { return }
-			self.persons = persons
 			completion(persons)
 		}
 	}

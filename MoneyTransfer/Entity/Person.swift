@@ -8,7 +8,7 @@
 
 import Foundation
 ///		Информация о человеке
-struct Person {
+struct Person: Equatable {
 	let fullName: String?
 	let phoneNumber: String?
 	let avatarData: Data?
