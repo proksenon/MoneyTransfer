@@ -59,9 +59,8 @@ extension ContainerViewController: ContainerViewInput {
 	}
 	//MARK: -DimmView
 	func setupDimmView() {
-		guard let contactViewController = contactViewController else { return }
 		dimmView.frame = view.frame
-		contactViewController.view.addSubview(dimmView)
+		view.insertSubview(dimmView, at: 1)
 	}
 
 	private func dimmViewIsHidden(_ isShow: Bool) {
