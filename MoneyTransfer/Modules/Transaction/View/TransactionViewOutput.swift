@@ -17,4 +17,8 @@ protocol TransactionViewOutput: class {
 	func getBalance() -> String?
 	///  Устанавливает баланс
 	func setNewBalance(transaction: String?)
+	///  Проверяет символы в ТекстФилд
+	func checkTextFieldString(string: String)-> Bool
+	///  Проверяет лишние символы в ТекстФилд
+	func checkExcessSymbols(text: String?) -> String?
 }

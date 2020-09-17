@@ -48,6 +48,15 @@ class TransactionViewControllerTests: XCTestCase {
 		viewController.textFieldDidChangeSelection(textField)
 
 		XCTAssert(output.didCheckBalance)
+		XCTAssert(output.didCheckedExcessSymbols)
+	}
+
+	func testTextFieldSchouldChangeCharacters() {
+		let textField = UITextField()
+
+		viewController.textField(textField, shouldChangeCharactersIn: NSRange.init(), replacementString: "2123")
+
+		XCTAssert(output.didCheckedTextFieldString)
 	}
 
 }

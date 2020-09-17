@@ -114,7 +114,7 @@ extension TreatmentViewController: TreatmentViewInput {
 		self.operationButton = operationButton
 	}
 	
-	@IBAction func operationButtonDidTapped() {
+	@IBAction private func operationButtonDidTapped() {
 		moduleOutput?.backToContacts()
 	}
 

@@ -171,6 +171,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.black
 		header.textLabel?.font = header.textLabel?.font.withSize(20)
+		header.sizeToFit()
 	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

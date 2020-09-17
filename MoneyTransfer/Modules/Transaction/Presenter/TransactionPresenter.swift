@@ -46,16 +46,46 @@ extension TransactionPresenter: TransactionViewOutput {
 			}
 		}
 	}
+
 	func getBalance() -> String? {
 		interactor?.getBalance()
 	}
+
 	func setNewBalance(transaction: String?) {
 		guard let operation = operation else { return }
 		if let oldBalance = getBalance(), let transaction = transaction, operation == .transaction {
 			guard let oldBalance = Int(oldBalance), let transaction = Int(transaction) else {return}
-			let newBalance = oldBalance - transaction
-			interactor?.setBalance(balance: String(newBalance))
+			if oldBalance >= transaction {
+				let newBalance = oldBalance - transaction
+				interactor?.setBalance(balance: String(newBalance))
+			}
 		}
+	}
+
+	func checkTextFieldString(string: String)-> Bool {
+		var acceptChars = Array(0...9).map { (int) -> String in
+			String(int)
+		}
+
+		acceptChars.append(".")
+		for char in string {
+			if !acceptChars.contains(String(char)) {
+				return false
+			}
+		}
+		return true
+	}
+
+	func checkExcessSymbols(text: String?) -> String? {
+		if var str = text {
+			if str.count > 0 {
+				if str.first == "0" {
+					str.remove(at: str.firstIndex(of: "0")!)
+				}
+				return str
+			}
+		}
+		return text
 	}
 }
 //MARK: -TransactionInteractorOutput

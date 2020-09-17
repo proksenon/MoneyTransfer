@@ -144,29 +144,13 @@ extension TransactionViewController: TransactionViewInput {
 // MARK: -UITextFieldDelegate
 extension TransactionViewController: UITextFieldDelegate {
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-		var acceptChars = Array(0...9).map { (int) -> String in
-			String(int)
-		}
-
-		acceptChars.append(".")
-		for char in string {
-			if !acceptChars.contains(String(char)) {
-				return false
-			}
-		}
-		return true
+		guard let output = output else { return false}
+		return output.checkTextFieldString(string: string)
 	}
 
 	func textFieldDidChangeSelection(_ textField: UITextField) {
-		if var str = textField.text {
-			if str.count > 0 {
-				if str.first == "0" {
-					str.remove(at: str.firstIndex(of: "0")!)
-				}
-				textField.text = str
-			}
-		}
+		textField.text = output?.checkExcessSymbols(text: textField.text)
 		output?.checkBalance(transaction: textField.text)
 	}
 }
+
