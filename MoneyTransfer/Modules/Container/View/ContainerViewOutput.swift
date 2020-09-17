@@ -29,4 +29,6 @@ protocol ContainerViewOutput: class {
 	func showStatus() -> Bool
 	///  Устанавливает вид операции
 	func setOperation(operation: Operations)
+	///  Отображает или скывает вьюшки
+	func showTransactionView(show: Bool, viewSize: ViewSize?, showVC: ChildsController)
 }

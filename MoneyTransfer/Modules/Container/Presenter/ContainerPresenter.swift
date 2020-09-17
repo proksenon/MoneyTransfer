@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 //MARK: - ChildControllersProtocols
 protocol TransactionViewDelegate {
 	///  Поднимает или опускает контроллер
@@ -32,7 +33,7 @@ protocol ExitDelegate {
 	func backToContacts()
 }
 
-
+//MARK: -class ContainerPresenter
 final class ContainerPresenter {
 
 	weak var view: ContainerViewInput?
@@ -40,8 +41,8 @@ final class ContainerPresenter {
 	var router: ContainerRouterInput?
 	private var person: Person? {
 		didSet {
-			guard let view = view, let person = person else { return }
-			view.setPersonAtContactView(with: person)
+			guard let person = person else { return }
+			setPersonAtContactView(with: person)
 		}
 	}
 	private var isShow: Bool = false
@@ -50,19 +51,64 @@ final class ContainerPresenter {
 	private var balance: Balance?
 	private var statusShow: Bool = true
 	private var operation: Operations?
+	var contactViewController: ContactViewController?
+	var transactionViewController: TransactionViewController?
+	var treatmentViewController: TreatmentViewController?
+	var successOperationViewController: SuccessOperationViewController?
 
 	init(view: ContainerViewInput) {
 		self.view = view
 	}
 
+	//MARK: -SettingChildControlers
+	private func setPersonAtContactView(with person: Person) {
+		guard let contactViewController = contactViewController else { return }
+		contactViewController.moduleInput?.configure(with: person)
+	}
+
+	private func setOperationAtTransactionView(operation: Operations) {
+		guard let transactionViewController = transactionViewController else { return }
+		transactionViewController.moduleInput?.configure(with: operation)
+	}
+
+	private func setAmountAtTreatmentController(with amount: String, operation: Operations) {
+		guard let treatmentViewController = treatmentViewController else { return }
+		treatmentViewController.moduleInput?.configure(amountOfTransaction: amount, operation: operation)
+	}
+
+	private func setDataAtSuccesViewController(with balance: Balance) {
+		guard let successOperationViewController = successOperationViewController else {return}
+		successOperationViewController.moduleInput?.configure(with: balance)
+	}
+
 }
+
 //MARK: -ContainerViewOutput
 extension ContainerPresenter: ContainerViewOutput {
 	func configureView() {}
 
+	//MARK: -ShowTransactionViews
+	func showTransactionView(show: Bool, viewSize: ViewSize? = nil, showVC: ChildsController) {
+		guard let view = view else { return }
+		switch showVC {
+		case .transactionViewController:
+			guard let transactionViewController = transactionViewController else { return }
+			view.showTransaction(show: show, showViewController: transactionViewController, y: viewSize)
+		case .treatmentViewController:
+			guard let treatmentViewController = treatmentViewController else { return }
+			if show {
+				succesOperation()
+			}
+			view.showTransaction(show: show, showViewController: treatmentViewController, y: viewSize)
+
+		case .successOperationViewController:
+			guard let successOperationViewController = successOperationViewController else { return }
+			view.showTransaction(show: show, showViewController: successOperationViewController, y: viewSize)
+		}
+	}
+
 	//MARK: -TogleTransaction
 	func togleTransaction(on vc: ChildsController?) {
-		guard let view = view else { return }
 		var viewController: ChildsController?
 		if let vc = vc {
 			if vc == .successOperationViewController, let operation = operation, operation == .request {
@@ -71,7 +117,7 @@ extension ContainerPresenter: ContainerViewOutput {
 			}
 		}
 		if let isShowingController = isShowingController {
-			view.showTransactionView(show: false, y: nil, showVC: isShowingController)
+			showTransactionView(show: false, viewSize: nil, showVC: isShowingController)
 			self.isShowingController = nil
 			isShow = !isShow
 			statusShow = true
@@ -79,7 +125,7 @@ extension ContainerPresenter: ContainerViewOutput {
 		guard let showVC = viewController else { return }
 		isShowingController = showVC
 		isShow = !isShow
-		view.showTransactionView(show: isShow, y: nil, showVC: showVC)
+		showTransactionView(show: isShow, viewSize: nil, showVC: showVC)
 	}
 
 	func succesOperation() {
@@ -90,20 +136,21 @@ extension ContainerPresenter: ContainerViewOutput {
 	}
 
 	func moveTransaction(on viewSize: ViewSize) {
-		guard let view = view, let isShowingController = isShowingController else { return }
-		view.showTransactionView(show: true, y: viewSize.size, showVC: isShowingController)
+		guard let isShowingController = isShowingController else { return }
+		showTransactionView(show: true, viewSize: viewSize, showVC: isShowingController)
 	}
+
 	//MARK: -OperationWork
 	func transactionMoneyIs(amount: String?) {
-		guard let view = view, let operation = operation else { return }
+		guard let operation = operation else { return }
 		amountMoneyForTransaction = amount
-		view.setAmountAtTreatmentController(with: amount ?? "so bad balance", operation: operation)
+		setAmountAtTreatmentController(with: amount ?? "so bad balance", operation: operation)
 	}
 
 	func setBalance(balance: String?) {
 		guard let balance = balance, let amountMoneyForTransaction = amountMoneyForTransaction else { return }
 		let balanceWithTransaction = Balance(balance: balance, transactionMoney: amountMoneyForTransaction)
-		view?.setDataAtSuccesViewController(with: balanceWithTransaction)
+		setDataAtSuccesViewController(with: balanceWithTransaction)
 		self.balance = balanceWithTransaction
 	}
 
@@ -120,7 +167,7 @@ extension ContainerPresenter: ContainerViewOutput {
 
 	func setOperation(operation: Operations) {
 		self.operation = operation
-		view?.setOperationAtTransactionView(operation: operation)
+		setOperationAtTransactionView(operation: operation)
 	}
 
 	//MARK: -Exit
@@ -129,15 +176,17 @@ extension ContainerPresenter: ContainerViewOutput {
 	}
 
 }
+
 //MARK: -ContainerInteractorOutput
 extension ContainerPresenter: ContainerInteractorOutput {
 
 }
+
 //MARK: -ContainerModuleInput
 extension ContainerPresenter: ContainerModuleInput {
 	func configure(with person: Person) {
 		guard let view = view else { return }
-		view.setPersonAtContactView(with: person)
+		setPersonAtContactView(with: person)
 		view.setupDimmView()
 		view.tapOutSite()
 	}
@@ -149,6 +198,7 @@ extension ContainerPresenter: TogleTransactionDelegate {
 		togleTransaction(on: vc)
 	}
 }
+
 //MARK: -TransactionViewDelegate
 extension ContainerPresenter: TransactionViewDelegate {
 
@@ -164,12 +214,14 @@ extension ContainerPresenter: TransactionViewDelegate {
 		setBalance(balance: balance)
 	}
 }
+
 //MARK: -ExitDelegate
 extension ContainerPresenter: ExitDelegate {
 	func backToContacts() {
 		dissmis()
 	}
 }
+
 //MARK: -OperationDelegate
 extension ContainerPresenter: OperationDelegate {
 

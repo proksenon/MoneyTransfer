@@ -13,10 +13,6 @@ final class ContainerViewController: UIViewController {
 	var output: ContainerViewOutput?
 	var moduleInput: ContainerModuleInput?
 	var moduleOutput: MainMouduleInput?
-	var contactViewController: ContactViewController?
-	var transactionViewController: TransactionViewController?
-	var treatmentViewController: TreatmentViewController?
-	var successOperationViewController: SuccessOperationViewController?
 	private lazy var dimmView: UIView = {
 		let view = UIView()
 		view.backgroundColor = UIColor.black.withAlphaComponent(1)
@@ -37,26 +33,6 @@ final class ContainerViewController: UIViewController {
 //MARK: -ContainerViewInput
 extension ContainerViewController: ContainerViewInput {
 
-	//MARK: -SettingChildControlers
-	func setPersonAtContactView(with person: Person) {
-		guard let contactViewController = contactViewController else { return }
-		contactViewController.moduleInput?.configure(with: person)
-	}
-
-	func setOperationAtTransactionView(operation: Operations) {
-		guard let transactionViewController = transactionViewController else { return }
-		transactionViewController.moduleInput?.configure(with: operation)
-	}
-
-	func setAmountAtTreatmentController(with amount: String, operation: Operations) {
-		guard let treatmentViewController = treatmentViewController else { return }
-		treatmentViewController.moduleInput?.configure(amountOfTransaction: amount, operation: operation)
-	}
-
-	func setDataAtSuccesViewController(with balance: Balance) {
-		guard let successOperationViewController = successOperationViewController else {return}
-		successOperationViewController.moduleInput?.configure(with: balance)
-	}
 	//MARK: -DimmView
 	func setupDimmView() {
 		dimmView.frame = view.frame
@@ -75,27 +51,8 @@ extension ContainerViewController: ContainerViewInput {
 	@objc private func tapGestureDone(){
 		output?.togleTransaction(on: nil)
 	}
-	//MARK: -ShowTransactionViews
-	func showTransactionView(show: Bool, y: CGFloat? = nil, showVC: ChildsController) {
-		var nextViewController: UIViewController
-		switch showVC {
-		case .transactionViewController:
-			guard let transactionViewController = transactionViewController else { return }
-			nextViewController = transactionViewController
-		case .treatmentViewController:
-			guard let treatmentViewController = treatmentViewController else { return }
-			nextViewController = treatmentViewController
-			if show {
-				output?.succesOperation()
-			}
-		case .successOperationViewController:
-			guard let successOperationViewController = successOperationViewController else { return }
-			nextViewController = successOperationViewController
-		}
-		showTransaction(show: show, showViewController: nextViewController, y: y)
-	}
 
-	private func showTransaction(show: Bool, showViewController: UIViewController, y: CGFloat? = nil) {
+	func showTransaction(show: Bool, showViewController: UIViewController, y: ViewSize? = nil) {
 		if show {
 			UIView.animate(withDuration: 0.5,
 						   delay: 0,
@@ -106,7 +63,7 @@ extension ContainerViewController: ContainerViewInput {
 							self.dimmViewIsHidden(show)
 							var originY = self.view.frame.height - showViewController.view.frame.height + 20
 							if let y = y {
-								originY -= y
+								originY -= y.size
 							}
 							showViewController.view.frame.origin.y = originY
 						},

@@ -32,7 +32,7 @@ final class ContainerConfigurator: ContainerConfiguratorProtocol {
 		contactViewController.moduleOutput = presenter
 		contactViewController.view.frame = viewController.view.frame
 		viewController.add(contactViewController)
-		viewController.contactViewController = contactViewController
+		presenter.contactViewController = contactViewController
 	}
 
 	private func configureTransactionViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
@@ -42,7 +42,7 @@ final class ContainerConfigurator: ContainerConfiguratorProtocol {
 		transactionViewController.view.frame.origin.y = viewController.view.frame.height
 		transactionViewController.moduleOutput = presenter
 		viewController.add(transactionViewController)
-		viewController.transactionViewController = transactionViewController
+		presenter.transactionViewController = transactionViewController
 	}
 
 	private func configureTreatmentViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
@@ -52,7 +52,7 @@ final class ContainerConfigurator: ContainerConfiguratorProtocol {
 		treatmentViewController.moduleOutput = presenter
 		treatmentViewController.view.frame.origin.y = viewController.view.frame.height
 		viewController.add(treatmentViewController)
-		viewController.treatmentViewController = treatmentViewController
+		presenter.treatmentViewController = treatmentViewController
 	}
 
 	private func configureSuccessViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
@@ -62,7 +62,7 @@ final class ContainerConfigurator: ContainerConfiguratorProtocol {
 		successViewController.moduleOutput = presenter
 		successViewController.view.frame.origin.y = viewController.view.frame.height
 		viewController.add(successViewController)
-		viewController.successOperationViewController = successViewController
+		presenter.successOperationViewController = successViewController
 	}
 
 }
