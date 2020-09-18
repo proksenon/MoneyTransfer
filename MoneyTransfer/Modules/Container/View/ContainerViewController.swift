@@ -27,7 +27,8 @@ final class ContainerViewController: UIViewController {
     }
 
 	override func viewDidDisappear(_ animated: Bool) {
-		moduleOutput?.statusTransaction(with: output?.getBalance(), show: output!.showStatus())
+		guard let moduleOutput = moduleOutput, let output = output else { return }
+		moduleOutput.statusTransaction(with: output.getBalance(), show: output.showStatus())
 	}
 }
 //MARK: -ContainerViewInput
@@ -78,9 +79,8 @@ extension ContainerViewController: ContainerViewInput {
 							showViewController.view.endEditing(true)
 							self.dimmViewIsHidden(show)
 							showViewController.view.frame.origin.y = self.view.frame.height
-			}) { (_) in
-//				showViewController.remove()
-			}
+						},
+						   completion: nil)
 		}
 	}
 

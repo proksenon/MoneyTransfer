@@ -13,5 +13,6 @@ protocol ContainerViewInput: class {
 	func setupDimmView()
 	///  Устанавливает тап по затемнению
 	func tapOutSite()
+	///  Анимирует переход
 	func showTransaction(show: Bool, showViewController: UIViewController, y: ViewSize?)
 }

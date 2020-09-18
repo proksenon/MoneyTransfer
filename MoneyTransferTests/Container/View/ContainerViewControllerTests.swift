@@ -7,17 +7,40 @@
 //
 
 import XCTest
+@testable import MoneyTransfer
 
 class ContainerViewControllerTests: XCTestCase {
 
-	
+	var moduleOutput: MainModuleInputSpy!
+	var viewController: ContainerViewController!
+	var output: ContainerViewOutputSpy!
+	var configurator: ContainerConfiguratorMock!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+		moduleOutput = MainModuleInputSpy()
+		viewController = ContainerViewController()
+		output = ContainerViewOutputSpy()
+		configurator = ContainerConfiguratorMock(output: output)
+		configurator.configure(with: viewController)
+		viewController.moduleOutput = moduleOutput
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+		moduleOutput = nil
+		viewController = nil
+		output = nil
+		configurator = nil
     }
 
+	func testViewDidLoad() {
+		viewController.viewDidLoad()
 
+		XCTAssert(output.didConfigureView)
+	}
+
+	func testViewDidDisappear() {
+		viewController.viewDidDisappear(true)
+
+		XCTAssert(moduleOutput.status)
+	}
 }

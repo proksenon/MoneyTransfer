@@ -81,14 +81,8 @@ final class ContainerPresenter {
 		successOperationViewController.moduleInput?.configure(with: balance)
 	}
 
-}
-
-//MARK: -ContainerViewOutput
-extension ContainerPresenter: ContainerViewOutput {
-	func configureView() {}
-
 	//MARK: -ShowTransactionViews
-	func showTransactionView(show: Bool, viewSize: ViewSize? = nil, showVC: ChildsController) {
+	private func showTransactionView(show: Bool, viewSize: ViewSize? = nil, showVC: ChildsController) {
 		guard let view = view else { return }
 		switch showVC {
 		case .transactionViewController:
@@ -100,12 +94,17 @@ extension ContainerPresenter: ContainerViewOutput {
 				succesOperation()
 			}
 			view.showTransaction(show: show, showViewController: treatmentViewController, y: viewSize)
-
 		case .successOperationViewController:
 			guard let successOperationViewController = successOperationViewController else { return }
 			view.showTransaction(show: show, showViewController: successOperationViewController, y: viewSize)
 		}
 	}
+
+}
+
+//MARK: -ContainerViewOutput
+extension ContainerPresenter: ContainerViewOutput {
+	func configureView() {}
 
 	//MARK: -TogleTransaction
 	func togleTransaction(on vc: ChildsController?) {
@@ -128,26 +127,26 @@ extension ContainerPresenter: ContainerViewOutput {
 		showTransactionView(show: isShow, viewSize: nil, showVC: showVC)
 	}
 
-	func succesOperation() {
+	private func succesOperation() {
 		DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
 			self.togleTransaction(on: .successOperationViewController)
 			self.statusShow = false
 		}
 	}
 
-	func moveTransaction(on viewSize: ViewSize) {
+	private func moveTransaction(on viewSize: ViewSize) {
 		guard let isShowingController = isShowingController else { return }
 		showTransactionView(show: true, viewSize: viewSize, showVC: isShowingController)
 	}
 
 	//MARK: -OperationWork
-	func transactionMoneyIs(amount: String?) {
+	private func transactionMoneyIs(amount: String?) {
 		guard let operation = operation else { return }
 		amountMoneyForTransaction = amount
 		setAmountAtTreatmentController(with: amount ?? "so bad balance", operation: operation)
 	}
 
-	func setBalance(balance: String?) {
+	private func setBalance(balance: String?) {
 		guard let balance = balance, let amountMoneyForTransaction = amountMoneyForTransaction else { return }
 		let balanceWithTransaction = Balance(balance: balance, transactionMoney: amountMoneyForTransaction)
 		setDataAtSuccesViewController(with: balanceWithTransaction)
@@ -165,13 +164,13 @@ extension ContainerPresenter: ContainerViewOutput {
 		return statusShow
 	}
 
-	func setOperation(operation: Operations) {
+	private func setOperation(operation: Operations) {
 		self.operation = operation
 		setOperationAtTransactionView(operation: operation)
 	}
 
 	//MARK: -Exit
-	func dissmis() {
+	private func dissmis() {
 		router?.dissmis()
 	}
 

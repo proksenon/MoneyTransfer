@@ -84,6 +84,7 @@
 		D5368310251363A50077BDCB /* SuccessOperationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536830F251363A50077BDCB /* SuccessOperationViewControllerTests.swift */; };
 		D5368312251364040077BDCB /* SuccessPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5368311251364040077BDCB /* SuccessPresenterTests.swift */; };
 		D53683142513658B0077BDCB /* SuccessConfiguratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53683132513658B0077BDCB /* SuccessConfiguratorTest.swift */; };
+		D536831625139BC90077BDCB /* ContainerConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536831525139BC90077BDCB /* ContainerConfiguratorMock.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -156,6 +157,12 @@
 		D5B0400624FD091D0023E5DE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400524FD091D0023E5DE /* Person.swift */; };
 		D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */; };
 		D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */; };
+		D5E85A822513A1DF0071F660 /* ContainerRouterInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */; };
+		D5E85A842513A4CD0071F660 /* ContainerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */; };
+		D5E85A892513AF880071F660 /* ContactModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A882513AF880071F660 /* ContactModuleInputSpy.swift */; };
+		D5E85A8B2513AFDE0071F660 /* TransactionModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A8A2513AFDE0071F660 /* TransactionModuleInputSpy.swift */; };
+		D5E85A8D2513B01D0071F660 /* TreatmentModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A8C2513B01D0071F660 /* TreatmentModuleInputSpy.swift */; };
+		D5E85A8F2513B04A0071F660 /* SuccessModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A8E2513B04A0071F660 /* SuccessModuleInputSpy.swift */; };
 		D5E877252510E90E007E80F3 /* MainConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +258,7 @@
 		D536830F251363A50077BDCB /* SuccessOperationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOperationViewControllerTests.swift; sourceTree = "<group>"; };
 		D5368311251364040077BDCB /* SuccessPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPresenterTests.swift; sourceTree = "<group>"; };
 		D53683132513658B0077BDCB /* SuccessConfiguratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessConfiguratorTest.swift; sourceTree = "<group>"; };
+		D536831525139BC90077BDCB /* ContainerConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConfiguratorMock.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -323,6 +331,12 @@
 		D5B0400524FD091D0023E5DE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerProtocol.swift; sourceTree = "<group>"; };
+		D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRouterInputSpy.swift; sourceTree = "<group>"; };
+		D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenterTests.swift; sourceTree = "<group>"; };
+		D5E85A882513AF880071F660 /* ContactModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModuleInputSpy.swift; sourceTree = "<group>"; };
+		D5E85A8A2513AFDE0071F660 /* TransactionModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModuleInputSpy.swift; sourceTree = "<group>"; };
+		D5E85A8C2513B01D0071F660 /* TreatmentModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentModuleInputSpy.swift; sourceTree = "<group>"; };
+		D5E85A8E2513B04A0071F660 /* SuccessModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessModuleInputSpy.swift; sourceTree = "<group>"; };
 		D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguratorMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -595,9 +609,9 @@
 		D53682AC25124B6F0077BDCB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D53682B725124C2B0077BDCB /* ContainerViewControllerTests.swift */,
 				D53682B125124BDE0077BDCB /* ContainerViewInputSpy.swift */,
 				D53682B325124BF60077BDCB /* ContainerViewOutputSpy.swift */,
-				D53682B725124C2B0077BDCB /* ContainerViewControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -605,6 +619,7 @@
 		D53682AD25124B740077BDCB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -619,6 +634,7 @@
 		D53682AF25124BA20077BDCB /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -626,6 +642,7 @@
 		D53682B025124BBC0077BDCB /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				D536831525139BC90077BDCB /* ContainerConfiguratorMock.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -656,6 +673,7 @@
 			isa = PBXGroup;
 			children = (
 				D53682CB251262E40077BDCB /* ContactPresenterTest.swift */,
+				D5E85A882513AF880071F660 /* ContactModuleInputSpy.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -698,6 +716,7 @@
 			isa = PBXGroup;
 			children = (
 				D53682DC251344270077BDCB /* TransactionPresenterTests.swift */,
+				D5E85A8A2513AFDE0071F660 /* TransactionModuleInputSpy.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -758,6 +777,7 @@
 		D53682EF251355210077BDCB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D5E85A8C2513B01D0071F660 /* TreatmentModuleInputSpy.swift */,
 				D53682FF25135EDD0077BDCB /* TreatmentPresenterTests.swift */,
 			);
 			path = Presenter;
@@ -800,6 +820,7 @@
 			isa = PBXGroup;
 			children = (
 				D5368311251364040077BDCB /* SuccessPresenterTests.swift */,
+				D5E85A8E2513B04A0071F660 /* SuccessModuleInputSpy.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1396,21 +1417,27 @@
 				D5368312251364040077BDCB /* SuccessPresenterTests.swift in Sources */,
 				D536830B251361AE0077BDCB /* SuccessViewOutputSpy.swift in Sources */,
 				D536829A2511011B0077BDCB /* MainInteractorOutputSpy.swift in Sources */,
+				D5E85A8D2513B01D0071F660 /* TreatmentModuleInputSpy.swift in Sources */,
 				D53682F8251356450077BDCB /* TreatmentInteractorOutputSpy.swift in Sources */,
 				D53682B825124C2B0077BDCB /* ContainerViewControllerTests.swift in Sources */,
 				D53682FE25135D200077BDCB /* TreatmentViewControllerTest.swift in Sources */,
+				D5E85A8F2513B04A0071F660 /* SuccessModuleInputSpy.swift in Sources */,
 				D53682B425124BF60077BDCB /* ContainerViewOutputSpy.swift in Sources */,
+				D5E85A822513A1DF0071F660 /* ContainerRouterInputSpy.swift in Sources */,
 				D53682A525122EB00077BDCB /* UserDefaultsWorkMock.swift in Sources */,
 				D53682B225124BDE0077BDCB /* ContainerViewInputSpy.swift in Sources */,
 				D5E877252510E90E007E80F3 /* MainConfiguratorMock.swift in Sources */,
 				D53682F4251355660077BDCB /* TreatmentViewOutputSpy.swift in Sources */,
+				D5E85A842513A4CD0071F660 /* ContainerPresenterTests.swift in Sources */,
 				D5368310251363A50077BDCB /* SuccessOperationViewControllerTests.swift in Sources */,
+				D5E85A8B2513AFDE0071F660 /* TransactionModuleInputSpy.swift in Sources */,
 				D53682CC251262E40077BDCB /* ContactPresenterTest.swift in Sources */,
 				D53682942510F2E50077BDCB /* MainViewControllerTest.swift in Sources */,
 				D53682D5251265980077BDCB /* TransactionViewInputSpy.swift in Sources */,
 				D53682C625125E740077BDCB /* ContactViewOutputSpy.swift in Sources */,
 				D536830025135EDD0077BDCB /* TreatmentPresenterTests.swift in Sources */,
 				D53683092513617C0077BDCB /* SuccessViewInputSpy.swift in Sources */,
+				D536831625139BC90077BDCB /* ContainerConfiguratorMock.swift in Sources */,
 				D5368302251360E90077BDCB /* TreatmentConfiguratorTests.swift in Sources */,
 				D53682FA2513566B0077BDCB /* TreatmentRouterInputSpy.swift in Sources */,
 				D53682E92513539A0077BDCB /* ContactConfiguratorTests.swift in Sources */,
@@ -1420,6 +1447,7 @@
 				D53682BA25124D1F0077BDCB /* MainModuleInputSpy.swift in Sources */,
 				D53682FC2513569D0077BDCB /* TreatmentConfiguratorMock.swift in Sources */,
 				D536829E25110F400077BDCB /* MainRouterInputSpy.swift in Sources */,
+				D5E85A892513AF880071F660 /* ContactModuleInputSpy.swift in Sources */,
 				D536829C251101760077BDCB /* MainInteractorInputSpy.swift in Sources */,
 				D53682CA25125FB50077BDCB /* ContactConfiguratorMock.swift in Sources */,
 				D536830E251363460077BDCB /* SuccessConfiguratorMock.swift in Sources */,

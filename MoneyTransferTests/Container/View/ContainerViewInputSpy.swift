@@ -6,4 +6,25 @@
 //  Copyright © 2020 18579132. All rights reserved.
 //
 
-import Foundation
+import UIKit
+@testable import  MoneyTransfer
+
+class ContainerViewInputSpy: ContainerViewInput {
+	var didSetupDimmView: Bool = false
+	var didTappedOutSite: Bool = false
+	var didShowTransaction: Bool = false
+
+	func setupDimmView() {
+		didSetupDimmView = true
+	}
+
+	func tapOutSite() {
+		didTappedOutSite = true
+	}
+
+	func showTransaction(show: Bool, showViewController: UIViewController, y: ViewSize?) {
+		didShowTransaction = true
+	}
+
+
+}
