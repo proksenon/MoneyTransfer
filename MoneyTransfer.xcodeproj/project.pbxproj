@@ -85,6 +85,9 @@
 		D5368312251364040077BDCB /* SuccessPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5368311251364040077BDCB /* SuccessPresenterTests.swift */; };
 		D53683142513658B0077BDCB /* SuccessConfiguratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53683132513658B0077BDCB /* SuccessConfiguratorTest.swift */; };
 		D536831625139BC90077BDCB /* ContainerConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536831525139BC90077BDCB /* ContainerConfiguratorMock.swift */; };
+		D57E6F6E2514C683002C1042 /* ExtensionChildrensControllersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F6D2514C683002C1042 /* ExtensionChildrensControllersTest.swift */; };
+		D57E6F742514C7D1002C1042 /* StylesLabelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */; };
+		D57E6F7D2514D3BF002C1042 /* ContainerConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -259,6 +262,9 @@
 		D5368311251364040077BDCB /* SuccessPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPresenterTests.swift; sourceTree = "<group>"; };
 		D53683132513658B0077BDCB /* SuccessConfiguratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessConfiguratorTest.swift; sourceTree = "<group>"; };
 		D536831525139BC90077BDCB /* ContainerConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConfiguratorMock.swift; sourceTree = "<group>"; };
+		D57E6F6D2514C683002C1042 /* ExtensionChildrensControllersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionChildrensControllersTest.swift; sourceTree = "<group>"; };
+		D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesLabelTest.swift; sourceTree = "<group>"; };
+		D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConfiguratorTests.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -478,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				D52C3C862510CBC8001E34A0 /* MoneyTransferTests.swift */,
+				D57E6F6C2514C654002C1042 /* Extension */,
 				D53682A125122AF10077BDCB /* Services */,
 				D52C3C8E2510CDD4001E34A0 /* Main */,
 				D53682A825123D4C0077BDCB /* Container */,
@@ -643,6 +650,7 @@
 			isa = PBXGroup;
 			children = (
 				D536831525139BC90077BDCB /* ContainerConfiguratorMock.swift */,
+				D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -833,6 +841,15 @@
 				D536830A251361AE0077BDCB /* SuccessViewOutputSpy.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D57E6F6C2514C654002C1042 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D57E6F6D2514C683002C1042 /* ExtensionChildrensControllersTest.swift */,
+				D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D59DB6BF250A47F50068888D /* View */ = {
@@ -1411,6 +1428,7 @@
 				D53682A325122D720077BDCB /* ContactsManagerMock.swift in Sources */,
 				D53682E325134F900077BDCB /* TransactionInteractorTests.swift in Sources */,
 				D53682D7251266D80077BDCB /* TransactionViewOutputSpy.swift in Sources */,
+				D57E6F6E2514C683002C1042 /* ExtensionChildrensControllersTest.swift in Sources */,
 				D52C3C872510CBC8001E34A0 /* MoneyTransferTests.swift in Sources */,
 				D53682C425125D790077BDCB /* ContactViewInputSpy.swift in Sources */,
 				D53682E525134FCA0077BDCB /* TransactionInteractorOutputSpy.swift in Sources */,
@@ -1439,6 +1457,8 @@
 				D53683092513617C0077BDCB /* SuccessViewInputSpy.swift in Sources */,
 				D536831625139BC90077BDCB /* ContainerConfiguratorMock.swift in Sources */,
 				D5368302251360E90077BDCB /* TreatmentConfiguratorTests.swift in Sources */,
+				D57E6F7D2514D3BF002C1042 /* ContainerConfiguratorTests.swift in Sources */,
+				D57E6F742514C7D1002C1042 /* StylesLabelTest.swift in Sources */,
 				D53682FA2513566B0077BDCB /* TreatmentRouterInputSpy.swift in Sources */,
 				D53682E92513539A0077BDCB /* ContactConfiguratorTests.swift in Sources */,
 				D53682C825125ED40077BDCB /* ContactViewControllerTests.swift in Sources */,
