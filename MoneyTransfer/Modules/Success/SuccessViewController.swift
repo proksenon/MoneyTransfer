@@ -94,7 +94,7 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 	
 	func setTitleAmountOfMoneyLable(with amount: String) {
 		guard let amountOfMoneyLabel = amountOfMoneyLabel else { return }
-		amountOfMoneyLabel.text = amount
+		amountOfMoneyLabel.text = amount.moneyFormat()
 	}
 
 	//MARK: -OperationButton
@@ -144,7 +144,7 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 
 	func setOldBalance(oldBalance: String) {
 		guard let beforeTransactionBalanceLabel = beforeTransactionBalanceLabel else { return }
-		beforeTransactionBalanceLabel.text = oldBalance
+		beforeTransactionBalanceLabel.text = oldBalance.moneyFormat()
 	}
 
 	//MARK: -CurrentBalanceLabel
@@ -165,7 +165,7 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 
 	func setCurrentBalance(balance: String) {
 		guard let currentBalanceLabel = currentBalanceLabel else { return }
-		currentBalanceLabel.text = balance
+		currentBalanceLabel.text = balance.moneyFormat()
 	}
 
 }

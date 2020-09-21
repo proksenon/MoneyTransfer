@@ -13,7 +13,6 @@ final class TransactionPresenter {
 	weak var view: TransactionViewInput?
 	var interactor: TransactionInteractorInput?
 	var router: TransactionRouterInput?
-	private var amountOfTransaction: String?
 	private var operation: Operations?
 
 	init(view: TransactionViewInput) {
@@ -33,11 +32,11 @@ extension TransactionPresenter: TransactionViewOutput {
 		view.setupNotificationKeyboard()
 	}
 
-	func checkBalance(transaction: String?) {
-		guard let transaction = transaction, let view = view, let interactor = interactor, let operation = operation else { return }
+	func checkBalance() {
+		guard let transaction = formatingTextField(), let view = view, let interactor = interactor, let operation = operation else { return }
 		if let balanceString = interactor.getBalance() {
-			guard let balanceInt = Int(balanceString) else { return }
-			if let transactionInt = Int(transaction), balanceInt >= transactionInt || operation == .request {
+			guard let balanceD = Double(balanceString) else { return }
+			if let transactionD = Double(transaction), transactionD > 0, balanceD >= transactionD || operation == .request {
 				view.changeCornerColorMoneyTextField(result: .success)
 				view.operationButtonIsEnabled(isEnabled: true)
 			} else {
@@ -47,29 +46,42 @@ extension TransactionPresenter: TransactionViewOutput {
 		}
 	}
 
+	func formatingTextField()->String? {
+		guard let view = view, let text = view.textFieldText() else { return nil}
+		let result = text.replacingOccurrences(of: ",", with: ".")
+		return result
+	}
+
 	func getBalance() -> String? {
 		interactor?.getBalance()
 	}
 
-	func setNewBalance(transaction: String?) {
+	func setNewBalance() {
 		guard let operation = operation else { return }
-		if let oldBalance = getBalance(), let transaction = transaction, operation == .transaction {
-			guard let oldBalance = Int(oldBalance), let transaction = Int(transaction) else {return}
+		if let oldBalance = getBalance(), let transaction = formatingTextField(), operation == .transaction {
+			guard let oldBalance = Double(oldBalance), let transaction = Double(transaction) else {return}
 			if oldBalance >= transaction {
 				let newBalance = oldBalance - transaction
-				interactor?.setBalance(balance: String(newBalance))
+				interactor?.setBalance(balance: String(format: "%.2f", newBalance))
 			}
 		}
 	}
 
-	func checkTextFieldString(string: String)-> Bool {
+	func checkTextFieldString(text: String?, string: String)-> Bool {
 		var acceptChars = Array(0...9).map { (int) -> String in
 			String(int)
 		}
+		let point = ","
 
-		acceptChars.append(".")
+		acceptChars.append(point)
 		for char in string {
 			if !acceptChars.contains(String(char)) {
+				return false
+			}
+		}
+		if string.contains(point) {
+			guard let text = text else { return false }
+			if text.contains(point) || text.count == 0 {
 				return false
 			}
 		}
@@ -80,7 +92,14 @@ extension TransactionPresenter: TransactionViewOutput {
 		if var str = text {
 			if str.count > 0 {
 				if str.first == "0" {
-					str.remove(at: str.firstIndex(of: "0")!)
+					if str.count >= 2 && str[str.index(after: str.firstIndex(of: "0")!)] != "," {
+						str.remove(at: str.firstIndex(of: "0")!)
+					}
+				}
+				if str.contains(",") {
+					while str.components(separatedBy: ",")[1].count > 2 {
+						str.removeLast()
+					}
 				}
 				return str
 			}
@@ -105,7 +124,7 @@ extension TransactionPresenter: TransactionModuleInput {
 			view.setTitleForOperationLabel(title: "Перевод средств")
 			view.setTitleForOperationButton(title: "Перевести")
 		}
-		checkBalance(transaction: view.textFieldText())
+		checkBalance()
 	}
 
 	

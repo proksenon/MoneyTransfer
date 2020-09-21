@@ -160,6 +160,7 @@
 		D5B0400624FD091D0023E5DE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400524FD091D0023E5DE /* Person.swift */; };
 		D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */; };
 		D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */; };
+		D5BB97272518CDD200CC8717 /* MoneyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BB97262518CDD200CC8717 /* MoneyString.swift */; };
 		D5E85A822513A1DF0071F660 /* ContainerRouterInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */; };
 		D5E85A842513A4CD0071F660 /* ContainerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */; };
 		D5E85A892513AF880071F660 /* ContactModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A882513AF880071F660 /* ContactModuleInputSpy.swift */; };
@@ -337,6 +338,7 @@
 		D5B0400524FD091D0023E5DE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerProtocol.swift; sourceTree = "<group>"; };
+		D5BB97262518CDD200CC8717 /* MoneyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyString.swift; sourceTree = "<group>"; };
 		D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRouterInputSpy.swift; sourceTree = "<group>"; };
 		D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenterTests.swift; sourceTree = "<group>"; };
 		D5E85A882513AF880071F660 /* ContactModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModuleInputSpy.swift; sourceTree = "<group>"; };
@@ -908,6 +910,7 @@
 				D52C3C76250F6ABB001E34A0 /* StyleTransactionButtons.swift */,
 				D52C3C78250F821D001E34A0 /* RoundedCorners.swift */,
 				D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */,
+				D5BB97262518CDD200CC8717 /* MoneyString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1320,6 +1323,7 @@
 				D59DB6BB250A47890068888D /* ContainerModuleInput.swift in Sources */,
 				D5B03FF824FBF8D80023E5DE /* MainInteractorInput.swift in Sources */,
 				D5A0BF93250A034B0080737E /* Status.swift in Sources */,
+				D5BB97272518CDD200CC8717 /* MoneyString.swift in Sources */,
 				D59DB6BA250A47890068888D /* ContainerPresenter.swift in Sources */,
 				D59DB6B8250A47890068888D /* ContainerConfiguratorProtocol.swift in Sources */,
 				D59DB6D5250D470D0068888D /* Balance.swift in Sources */,
@@ -1638,7 +1642,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.MoneyTransfer;
+				PRODUCT_BUNDLE_IDENTIFIER = "google.com-MoneyTransfer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1650,13 +1654,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFX963574W;
+				DEVELOPMENT_TEAM = 5D5RK3QAMV;
 				INFOPLIST_FILE = MoneyTransfer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.MoneyTransfer;
+				PRODUCT_BUNDLE_IDENTIFIER = "google.com-MoneyTransfer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

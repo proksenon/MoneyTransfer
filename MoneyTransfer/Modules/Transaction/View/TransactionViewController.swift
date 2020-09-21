@@ -75,7 +75,7 @@ extension TransactionViewController: TransactionViewInput {
 		moneyTextfield.placeholder = "Укажите сумму"
 		moneyTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: moneyTextfield.frame.height))
 		moneyTextfield.leftViewMode = .always
-		moneyTextfield.keyboardType = .numberPad
+		moneyTextfield.keyboardType = .decimalPad
 		moneyTextfield.clearsOnBeginEditing = true
 		view.addSubview(moneyTextfield)
 
@@ -134,8 +134,8 @@ extension TransactionViewController: TransactionViewInput {
 	}
 
 	@IBAction private func operationButtonDidTapped() {
-		output?.setNewBalance(transaction: moneyTextfield?.text)
-		moduleOutput?.transactionMoney(amount: moneyTextfield?.text)
+		output?.setNewBalance()
+		moduleOutput?.transactionMoney(amount: output?.formatingTextField())
 		moduleOutput?.balance(balance: output?.getBalance())
 		moduleOutput?.toggleTransaction(on: .treatmentViewController)
 	}
@@ -145,12 +145,14 @@ extension TransactionViewController: TransactionViewInput {
 extension TransactionViewController: UITextFieldDelegate {
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		guard let output = output else { return false}
-		return output.checkTextFieldString(string: string)
+		return output.checkTextFieldString(text: textField.text, string: string)
 	}
 
 	func textFieldDidChangeSelection(_ textField: UITextField) {
-		textField.text = output?.checkExcessSymbols(text: textField.text)
-		output?.checkBalance(transaction: textField.text)
+		guard let output = output else { return }
+		textField.text = output.checkExcessSymbols(text: textField.text)
+		output.checkBalance()
 	}
+
 }
 

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Contacts
 
 final class MainViewController: UIViewController {
 
@@ -61,7 +60,7 @@ extension MainViewController: MainViewInput {
 
 	func setBalanceTitleWith(balance: String) {
 		guard let balanceTitleLabel = balanceTitleLabel else { return }
-		balanceTitleLabel.text = "Текущий баланс " + balance + " р"
+		balanceTitleLabel.text = "Текущий баланс " + balance.moneyFormat() + " р"
 	}
 
 	func navigationTitleIsHidden(_ isHidden: Bool) {

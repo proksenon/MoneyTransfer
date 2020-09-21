@@ -46,7 +46,7 @@ class TransactionPresenterTests: XCTestCase {
 	}
 
 	func testCheckBalanceWithoutBalance() {
-		presenter.checkBalance(transaction: transaction)
+		presenter.checkBalance()
 
 		XCTAssertFalse(view.didChangeCornerColorMoneyTextField)
 		XCTAssertFalse(view.didOperationButtonIsEnabled)
@@ -55,8 +55,9 @@ class TransactionPresenterTests: XCTestCase {
 	func testCheckBalanceWithRequest() {
 		presenter.configure(with: .request)
 		interactor.balance = "100000"
+		view.text = "100000"
 
-		presenter.checkBalance(transaction: transaction)
+		presenter.checkBalance()
 
 		XCTAssert(view.didChangeCornerColorMoneyTextField)
 		XCTAssert(view.didOperationButtonIsEnabled)
@@ -65,8 +66,9 @@ class TransactionPresenterTests: XCTestCase {
 	func testCheckBalanceWithTransaction() {
 		presenter.configure(with: .transaction)
 		interactor.balance = "100000"
+		view.text = "100000"
 
-		presenter.checkBalance(transaction: transaction)
+		presenter.checkBalance()
 
 		XCTAssert(view.didChangeCornerColorMoneyTextField)
 		XCTAssert(view.didOperationButtonIsEnabled)
@@ -75,8 +77,9 @@ class TransactionPresenterTests: XCTestCase {
 	func testCheckBalanceWithTransactionFailure() {
 		presenter.configure(with: .transaction)
 		interactor.balance = "0"
+		view.text = "0"
 
-		presenter.checkBalance(transaction: transaction)
+		presenter.checkBalance()
 
 		XCTAssert(view.didChangeCornerColorMoneyTextField)
 		XCTAssert(view.didOperationButtonIsEnabled)
@@ -95,21 +98,22 @@ class TransactionPresenterTests: XCTestCase {
 	}
 
 	func testSetNewBalanceWithFailure() {
-		presenter.setNewBalance(transaction: transaction)
+		presenter.setNewBalance()
 
 		XCTAssertFalse(interactor.didSetBalance)
 
 		presenter.configure(with: .transaction)
-		presenter.setNewBalance(transaction: transaction)
+		presenter.setNewBalance()
 
 		XCTAssertFalse(interactor.didSetBalance)
 	}
 
 	func testSetNewBalanceWithSuccess() {
 		interactor.balance = "1000"
+		view.text = "1000"
 		presenter.configure(with: .transaction)
 
-		presenter.setNewBalance(transaction: transaction)
+		presenter.setNewBalance()
 
 		XCTAssert(interactor.didSetBalance)
 		XCTAssert(interactor.didGetBalance)
@@ -119,7 +123,7 @@ class TransactionPresenterTests: XCTestCase {
 		interactor.balance = "0"
 		presenter.configure(with: .transaction)
 
-		presenter.setNewBalance(transaction: transaction)
+		presenter.setNewBalance()
 
 		XCTAssertFalse(interactor.didSetBalance)
 		XCTAssert(interactor.didGetBalance)
@@ -127,13 +131,13 @@ class TransactionPresenterTests: XCTestCase {
 	}
 
 	func testCheckTextFieldStringWithFailure() {
-		let result = presenter.checkTextFieldString(string: "asda")
+		let result = presenter.checkTextFieldString(text: "ss", string: "asda")
 
 		XCTAssertFalse(result)
 	}
 
 	func testCheckTextFieldStringWithSuccess() {
-		let result = presenter.checkTextFieldString(string: "12312")
+		let result = presenter.checkTextFieldString(text: "2", string: "12312")
 
 		XCTAssert(result)
 	}

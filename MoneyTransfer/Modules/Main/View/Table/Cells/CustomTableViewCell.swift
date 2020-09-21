@@ -27,7 +27,7 @@ final class CustomTableViewCell: UITableViewCell {
 		backgroundColor = .white
 	}
 
-	func setAvatarImageView() {
+	private func setAvatarImageView() {
 		avatarImageView.translatesAutoresizingMaskIntoConstraints = false
 		avatarImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
 		avatarImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
@@ -36,24 +36,23 @@ final class CustomTableViewCell: UITableViewCell {
 		avatarImageView.image = defaultImage
 		avatarImageView.contentMode = .scaleAspectFill
 		avatarImageView.roundedCorner(with: 25)
-		avatarImageView.layer.masksToBounds = false
 	}
 
-	func setFullNameLabel() {
+	private func setFullNameLabel() {
 		fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
 		fullNameLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: -35).isActive = true
 		fullNameLabel.leftAnchor.constraint(equalTo: avatarImageView.rightAnchor, constant: 10).isActive = true
 		fullNameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		fullNameLabel.text = "???"
+		fullNameLabel.text = "Unknown"
 		fullNameLabel.textColor = .black
 	}
 
-	func setPhoneNumberLabel() {
+	private func setPhoneNumberLabel() {
 		phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
 		phoneNumberLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor , constant: -5).isActive = true
 		phoneNumberLabel.leftAnchor.constraint(equalTo: avatarImageView.rightAnchor, constant: 10).isActive = true
 		phoneNumberLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		phoneNumberLabel.text = "???"
+		phoneNumberLabel.text = "Unknown"
 		phoneNumberLabel.textColor = .systemGray
 	}
 
@@ -79,14 +78,14 @@ final class CustomTableViewCell: UITableViewCell {
 			avatarImageView.image = defaultImage
 		}
 		if let fullName = contact.fullName {
-			fullNameLabel.text = fullName == "" ? "???" : fullName
+			fullNameLabel.text = (fullName == "" || fullName == " ") ? "Unknown" : fullName
 		} else {
-			fullNameLabel.text = "???"
+			fullNameLabel.text = "Unknown"
 		}
 		if let phoneNumber = contact.phoneNumber {
-			phoneNumberLabel.text = phoneNumber == "" ? "???" : phoneNumber
+			phoneNumberLabel.text = (phoneNumber == "" || phoneNumber == " ") ? "Unknown" : phoneNumber
 		} else {
-			phoneNumberLabel.text = "???"
+			phoneNumberLabel.text = "Unknown"
 		}
 	}
 }

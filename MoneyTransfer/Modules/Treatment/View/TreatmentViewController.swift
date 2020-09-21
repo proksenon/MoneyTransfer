@@ -98,7 +98,7 @@ extension TreatmentViewController: TreatmentViewInput {
 
 	func setTitleAmountOfMoneyLabel(with amount: String) {
 		guard let amountOfMoneyLabel = amountOfMoneyLabel else { return }
-		amountOfMoneyLabel.text = amount
+		amountOfMoneyLabel.text = amount.moneyFormat()
 	}
 
 	//MARK: -OperationButton

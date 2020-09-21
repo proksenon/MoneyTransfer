@@ -31,7 +31,7 @@ extension ContactViewController: ContactViewInput {
 
 
 	func setBackgroundColor() {
-		view.backgroundColor = .white
+		view.backgroundColor = UIColor.init(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
 	}
 	//MARK: -AvatarImageView
 	func setupAvatarImageView() {
@@ -45,7 +45,8 @@ extension ContactViewController: ContactViewInput {
 									 avatarImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width/2),
 									 avatarImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width/2)])
 		avatarImageView.image = UIImage(named: "defaultImage")
-		avatarImageView.contentMode = .scaleAspectFit
+		avatarImageView.contentMode = .scaleAspectFill
+		avatarImageView.roundedCorner(with: UIScreen.main.bounds.width/4)
 	}
 
 	func setDataToAvatar(with data: Data?) {
@@ -70,6 +71,7 @@ extension ContactViewController: ContactViewInput {
 
 		fullNameLabel.text = "Surname Name"
 		fullNameLabel.font = fullNameLabel.font.withSize(35)
+		fullNameLabel.textColor = .black
 	}
 	
 	//MARK: -PhoneNumberLabel

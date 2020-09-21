@@ -12,13 +12,15 @@ protocol TransactionViewOutput: class {
 	///  Конфигурирует View
 	func configureView()
 	///  Проверяет баланс
-	func checkBalance(transaction: String?)
+	func checkBalance()
 	///  Получает баланс
 	func getBalance() -> String?
 	///  Устанавливает баланс
-	func setNewBalance(transaction: String?)
+	func setNewBalance()
 	///  Проверяет символы в ТекстФилд
-	func checkTextFieldString(string: String)-> Bool
+	func checkTextFieldString(text: String?, string: String)-> Bool
 	///  Проверяет лишние символы в ТекстФилд
 	func checkExcessSymbols(text: String?) -> String?
+	///  Меняет запятую на точку
+	func formatingTextField()->String?
 }

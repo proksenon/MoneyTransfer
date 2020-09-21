@@ -44,7 +44,7 @@ extension MainPresenter: MainViewOutput {
 		if let balance = interactor.getBalance() {
 			return balance
 		} else {
-			let balance = "100000"
+			let balance = "100000.00"
 			interactor.setBalance(balance: balance)
 			return balance
 		}

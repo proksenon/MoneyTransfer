@@ -21,8 +21,8 @@ final class SuccessOperationPresenter {
 	}
 
 	private func calculationOldBalance(balance: String, transaction: String)-> String {
-		let oldBalance = (Int(balance) ?? 0) + (Int(transaction) ?? 0)
-		return String(oldBalance)
+		let oldBalance = (Double(balance) ?? 0) + (Double(transaction) ?? 0)
+		return String(format: "%.2f", oldBalance)
 	}
 
 }
