@@ -11,7 +11,7 @@ import UIKit
 final class CustomTableView: UITableView {
 
 	init() {
-		super.init(frame: .zero, style: .insetGrouped)
+		super.init(frame: .zero, style: .grouped)
 		register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
 		register(CardTableViewCell.self, forCellReuseIdentifier: "cell2")
 		tableFooterView = UIView()

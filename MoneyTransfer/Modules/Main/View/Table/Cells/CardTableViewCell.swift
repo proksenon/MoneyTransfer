@@ -23,28 +23,19 @@ final class CardTableViewCell: UITableViewCell {
 		setCurrencyBalanceLabel()
 		setLabelCardImageView()
 		backgroundColor = .white
-
 	}
-	private func setCardImageView() {
-		var gradientLayer: CAGradientLayer = {
-			let gradientLayer = CAGradientLayer()
-			gradientLayer.colors = [UIColor.gray.cgColor, UIColor.black.cgColor]//Colors you want to add
-			gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-			gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-			gradientLayer.frame = CGRect.zero
-		   return gradientLayer
-		}()
 
+	private func setCardImageView() {
 		addSubview(cardView)
 		cardView.translatesAutoresizingMaskIntoConstraints = false
 		cardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 30).isActive = true
 		cardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30).isActive = true
 		cardView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
 		cardView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
+
 		cardView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
 		cardView.roundedCorner(with: 10)
-		gradientLayer.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 250)
-		cardView.layer.insertSublayer(gradientLayer, at: 0)
+		cardView.gradient(with: [UIColor.gray.cgColor, UIColor.black.cgColor], frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 30, height: 250))
 	}
 
 	private func setBalanceLabel() {
@@ -97,3 +88,4 @@ final class CardTableViewCell: UITableViewCell {
 		balanceLabel.text = balance.moneyFormat()
 	}
 }
+

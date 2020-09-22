@@ -31,8 +31,7 @@ extension String {
 		for index in 1...countZero {
 			intPartOfMoney.insert(" ", at: intPartOfMoney.count - (index * 3))
 		}
-
-		return String(intPartOfMoney) + "." + (array.count == 1 ? "" : array[1])
+		return String(intPartOfMoney) + (array.count == 1 ? "" : "." + array[1])
 	}
 }
 
