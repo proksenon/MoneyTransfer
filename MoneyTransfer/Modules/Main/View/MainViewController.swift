@@ -60,7 +60,7 @@ extension MainViewController: MainViewInput {
 
 	func setBalanceTitleWith(balance: String) {
 		guard let balanceTitleLabel = balanceTitleLabel else { return }
-		balanceTitleLabel.text = "Текущий баланс " + balance.moneyFormat() + " р"
+		balanceTitleLabel.text = "Текущий баланс " + balance.moneyFormat()
 	}
 
 	func navigationTitleIsHidden(_ isHidden: Bool) {
