@@ -11,51 +11,34 @@ import Foundation
 
 class ContactViewInputSpy: ContactViewInput {
 
-	var didSetupAvatarImageView: Bool = false
 	var didSetDataToAvatar: Bool = false
-	var didSetupFullNameLabel: Bool = false
 	var didSetFullName: Bool = false
 	var didSetBackgroundColor: Bool = false
-	var didSetupPhoneNumberLabel: Bool = false
 	var didSetPhoneNumber: Bool = false
-	var didSetupRequestMoneyButton: Bool = false
-	var didSetupSendMoneyButton: Bool = false
-
-	func setupAvatarImageView() {
-		didSetupAvatarImageView = true
-	}
+	var didSetTargetRequestMoneyButton: Bool = false
+	var didSetTargetOnSendMoneyButton: Bool = false
 
 	func setDataToAvatar(with data: Data?) {
 		didSetDataToAvatar = true
-	}
-
-	func setupFullNameLabel() {
-		didSetupFullNameLabel = true
 	}
 
 	func setFullName(with name: String) {
 		didSetFullName = true
 	}
 
-	func setBackgroundColor() {
+	func setViewColor() {
 		didSetBackgroundColor = true
 	}
 
-	func setupPhoneNumberLabel() {
-		didSetupPhoneNumberLabel = true
-	}
 
 	func setPhoneNumber(with phone: String) {
 		didSetPhoneNumber = true
 	}
-
-	func setupRequestMoneyButton() {
-		didSetupRequestMoneyButton = true
+	func setTargetRequestMoneyButton() {
+		didSetTargetRequestMoneyButton = true
 	}
 
-	func setupSendMoneyButton() {
-		didSetupSendMoneyButton = true
+	func setTargetOnSendMoneyButton() {
+		didSetTargetOnSendMoneyButton = true
 	}
-
-
 }

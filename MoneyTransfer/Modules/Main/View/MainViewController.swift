@@ -12,16 +12,10 @@ final class MainViewController: UIViewController {
 
 	var output: MainViewOutput!
 	var moduleInput: MainMouduleInput?
+	private let mainView: MainView = MainView()
 	private var configurator: MainConfiguratorProtocol?
-	private var tableView: UITableView?
 	private var scrollAtTopButton: UIBarButtonItem?
 	private var balanceTitleLabel: UILabel?
-	private lazy var dimmView: UIView = {
-		let view = UIView()
-		view.backgroundColor = UIColor.black.withAlphaComponent(1)
-		view.alpha = 0
-		return view
-	}()
 
 	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
 		super.init(nibName: nil, bundle: nil)
@@ -38,6 +32,10 @@ final class MainViewController: UIViewController {
 		output.configureView()
 	}
 
+	override func loadView() {
+		self.view = mainView
+	}
+
 	override func viewDidAppear(_ animated: Bool) {
 		navigationTitleIsHidden(false)
 	}
@@ -46,11 +44,10 @@ final class MainViewController: UIViewController {
 //MARK: -MainViewInput
 extension MainViewController: MainViewInput {
 
-	//MARK: -ТavigationTitle
+	//MARK: -NavigationTitle
 	func setupBalanceTitle() {
 		balanceTitleLabel = UILabel()
 		guard let balanceTitleLabel = balanceTitleLabel, let navigationController = navigationController else { return }
-		balanceTitleLabel.text = "Текущий баланс" + " " + "103 527,5 р"
 		navigationController.navigationBar.insertSubview(balanceTitleLabel, at: 0)
 		balanceTitleLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([balanceTitleLabel.centerYAnchor.constraint(equalTo: navigationController.navigationBar.centerYAnchor),
@@ -83,39 +80,27 @@ extension MainViewController: MainViewInput {
 	}
 
 	@IBAction func scrollAtTheTop() {
-		guard let tableView = tableView else { return }
+		guard let tableView = mainView.tableView else { return }
 		tableView.scrollToRow(at: IndexPath(row: 0, section: 0) , at: .top, animated: true)
 	}
 
-	func setTableView() {
-		let tableView = CustomTableView()
-		view.addSubview(tableView)
-		tableView.dataSource = self
-		tableView.delegate = self
-		tableView.translatesAutoresizingMaskIntoConstraints = false
-		tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-		tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-		tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-		tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-		self.tableView = tableView
+	func setupTableView() {
+		mainView.tableView?.delegate = self
+		mainView.tableView?.dataSource = self
 	}
 
 	func tableViewReload() {
-		guard let tableView = tableView else { return }
+		guard let tableView = mainView.tableView else { return }
 		DispatchQueue.main.async {
 			tableView.reloadData()
 		}
 
 	}
 
-	//MARK: -MainViewInput
-	func setupDimmView() {
-		dimmView.frame = view.frame
-		view.addSubview(dimmView)
-	}
+	//MARK: -DimmView
 
 	func dimmViewIsHidden(_ isShow: Bool) {
-		dimmView.alpha = isShow ? 0.6 : 0
+		mainView.dimmView.alpha = isShow ? 0.6 : 0
 	}
 	func showDimmView(_ show: Bool) {
 		UIView.animate(withDuration: 0.7) {
@@ -124,7 +109,7 @@ extension MainViewController: MainViewInput {
 	}
 	func tapOutSite() {
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
-        dimmView.addGestureRecognizer(tapGesture)
+		mainView.dimmView.addGestureRecognizer(tapGesture)
 	}
 
 	@objc private func tapGestureDone(){
@@ -183,7 +168,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		guard let tableView = tableView else { return }
+		guard let tableView = mainView.tableView else { return }
 		if tableView.contentOffset.y > 130 {
 			output.cardInfromationLeft(false)
 		} else {

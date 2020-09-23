@@ -14,99 +14,53 @@ final class ContactViewController: UIViewController {
 	var output: ContactViewOutput?
 	var moduleInput: ContactModuleInput?
 	var moduleOutput: TogleView?
-	private var avatarImageView: UIImageView?
-	private var requestMoneyButton: UIButton?
-	private var sendMoneyButton: UIButton?
-	private var fullNameLabel: UILabel?
-	private var phoneNumberLabel: UILabel?
+	private var contactView: ContactView?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		guard let output = output else { return }
 		output.configureView()
     }
+	
+	override func loadView() {
+		let view = ContactView()
+		self.view = view
+		contactView = view
+	}
+
 }
 //MARK: -ContactViewInput
 extension ContactViewController: ContactViewInput {
 
-
-	func setBackgroundColor() {
+	func setViewColor() {
 		view.backgroundColor = UIColor.init(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
 	}
+
 	//MARK: -AvatarImageView
-	func setupAvatarImageView() {
-		avatarImageView = UIImageView()
-		guard let avatarImageView = avatarImageView else { return }
-		view.addSubview(avatarImageView)
-
-		avatarImageView.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([avatarImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 avatarImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -110),
-									 avatarImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width/2),
-									 avatarImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width/2)])
-		avatarImageView.image = UIImage(named: "defaultImage")
-		avatarImageView.contentMode = .scaleAspectFill
-		avatarImageView.roundedCorner(with: UIScreen.main.bounds.width/4)
-	}
-
 	func setDataToAvatar(with data: Data?) {
-		guard let avatarImageView = avatarImageView, let data = data else { return }
+		guard let contactView = contactView,
+			  let avatarImageView = contactView.avatarImageView,
+			  let data = data
+		else { return }
 
 		avatarImageView.image = UIImage(data: data)
 	}
 	//MARK: -FullNameLabel
 	func setFullName(with name: String) {
-		fullNameLabel?.text = name
-	}
-
-	func setupFullNameLabel() {
-		fullNameLabel = UILabel()
-		guard let fullNameLabel = fullNameLabel else { return }
-		view.addSubview(fullNameLabel)
-
-		fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
-		guard let avatarImageView = avatarImageView else { return }
-		NSLayoutConstraint.activate([fullNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 fullNameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 20)])
-
-		fullNameLabel.text = "Surname Name"
-		fullNameLabel.font = fullNameLabel.font.withSize(35)
-		fullNameLabel.textColor = .black
+		contactView?.fullNameLabel?.text = name
 	}
 	
 	//MARK: -PhoneNumberLabel
-	func setupPhoneNumberLabel() {
-		phoneNumberLabel = UILabel()
-		guard let phoneNumberLabel = phoneNumberLabel else { return }
-		view.addSubview(phoneNumberLabel)
-
-		guard let fullNameLabel = fullNameLabel else { return }
-		phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([phoneNumberLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 phoneNumberLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: 5)])
-		phoneNumberLabel.text = "+799999999"
-		phoneNumberLabel.textColor = .darkGray
-		phoneNumberLabel.font = phoneNumberLabel.font.withSize(15)
-	}
-
 	func setPhoneNumber(with phone: String) {
-		guard let phoneNumberLabel = phoneNumberLabel else { return }
+		guard let contactView = contactView, let phoneNumberLabel = contactView.phoneNumberLabel else { return }
 
 		phoneNumberLabel.text = phone
 	}
 
 	//MARK: -RequestMoneyButton
-	func setupRequestMoneyButton() {
-		requestMoneyButton = UIButton()
-		guard let requestMoneyButton = requestMoneyButton else { return }
-		view.addSubview(requestMoneyButton)
+	func setTargetRequestMoneyButton() {
+		guard let contactView = contactView, let requestMoneyButton = contactView.requestMoneyButton else { return }
 
-		guard let phoneNumberLabel = phoneNumberLabel else { return }
-		NSLayoutConstraint.activate([requestMoneyButton.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 70),
-									 requestMoneyButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
-									 requestMoneyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25)])
-
-		requestMoneyButton.contactStyleButton(title: "Запросить деньги")
 		requestMoneyButton.addTarget(self, action: #selector(requestMoney), for: .touchUpInside)
 	}
 	
@@ -116,20 +70,11 @@ extension ContactViewController: ContactViewInput {
 	}
 
 	//MARK: -SendMoneyButton
-	func setupSendMoneyButton() {
-		sendMoneyButton = UIButton()
-		guard let sendMoneyButton = sendMoneyButton else { return }
-		view.addSubview(sendMoneyButton)
-
-		guard let requestMoneyButton = requestMoneyButton else { return }
-		NSLayoutConstraint.activate([sendMoneyButton.topAnchor.constraint(equalTo: requestMoneyButton.bottomAnchor, constant: 10),
-									 sendMoneyButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
-									 sendMoneyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25)])
-
-		sendMoneyButton.contactStyleButton(title: "Отправить деньги")
+	func setTargetOnSendMoneyButton() {
+		guard let contactView = contactView, let sendMoneyButton = contactView.sendMoneyButton else { return }
 		sendMoneyButton.addTarget(self, action: #selector(sendMoney), for: .touchUpInside)
 	}
-
+	
 	@IBAction private func sendMoney() {
 		moduleOutput?.chooseOperation(operation: .transaction)
 		moduleOutput?.toggleTransaction(on: .transactionViewController)

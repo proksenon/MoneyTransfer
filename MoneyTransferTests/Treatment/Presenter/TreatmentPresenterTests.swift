@@ -38,11 +38,7 @@ class TreatmentPresenterTests: XCTestCase {
 		presenter.configureView()
 
 		XCTAssert(view.didSetView)
-		XCTAssert(view.didSetupTreatmentImageView)
-		XCTAssert(view.didSetupStatusLabel)
-		XCTAssert(view.didSetupAtributeTransactionLabel)
-		XCTAssert(view.didSetupAmountOfMoneyLabel)
-		XCTAssert(view.didSetupOperationButton)
+		XCTAssert(view.didSetTargetOnOperationButton)
 		XCTAssertFalse(view.didSetTitleAmountOfMoneyLabel)
 	}
 
@@ -51,11 +47,7 @@ class TreatmentPresenterTests: XCTestCase {
 		presenter.configureView()
 
 		XCTAssert(view.didSetView)
-		XCTAssert(view.didSetupTreatmentImageView)
-		XCTAssert(view.didSetupStatusLabel)
-		XCTAssert(view.didSetupAtributeTransactionLabel)
-		XCTAssert(view.didSetupAmountOfMoneyLabel)
-		XCTAssert(view.didSetupOperationButton)
+		XCTAssert(view.didSetTargetOnOperationButton)
 		XCTAssert(view.didSetTitleAmountOfMoneyLabel)
 	}
 

@@ -9,14 +9,12 @@
 import Foundation
 
 protocol TransactionViewInput: class {
-	///  Устанавливает OperationLabel
-	func setupNameOperationLabel()
-	///  Устанавливает текстфилд для суммы транзакции
-	func setupMoneyTextfield()
 	///  Текст с MoneyTextFiels
 	func textFieldText()-> String?
+	///  Настройка текстфилда
+	func setupMoneyTextField()
 	///  Устанавливает кнопку операции
-	func setupOperationButton()
+	func setTargetOnOperationButton()
 	///  Устанавливает вью
 	func setView()
 	///  Ставит уведомление на клавиатуру

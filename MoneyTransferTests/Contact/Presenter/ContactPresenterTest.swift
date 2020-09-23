@@ -30,11 +30,8 @@ class ContactPresenterTest: XCTestCase {
 		presenter.configureView()
 
 		XCTAssert(view.didSetBackgroundColor)
-		XCTAssert(view.didSetupAvatarImageView)
-		XCTAssert(view.didSetupFullNameLabel)
-		XCTAssert(view.didSetupPhoneNumberLabel)
-		XCTAssert(view.didSetupRequestMoneyButton)
-		XCTAssert(view.didSetupSendMoneyButton)
+		XCTAssert(view.didSetTargetRequestMoneyButton)
+		XCTAssert(view.didSetTargetOnSendMoneyButton)
 	}
 
 	func testConfigure() {

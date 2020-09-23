@@ -12,36 +12,12 @@ import Foundation
 class TreatmentViewInputSpy: TreatmentViewInput {
 
 	var didSetView: Bool = false
-	var didSetupTreatmentImageView: Bool = false
-	var didSetupStatusLabel: Bool = false
-	var didSetupAtributeTransactionLabel: Bool = false
-	var didSetupAmountOfMoneyLabel: Bool = false
-	var didSetupOperationButton: Bool = false
 	var didSetTitleAmountOfMoneyLabel: Bool = false
 	var didSetTitleForStatusLabel: Bool = false
+	var didSetTargetOnOperationButton: Bool = false
 
 	func setView() {
 		didSetView = true
-	}
-
-	func setupTreatmentImageView() {
-		didSetupTreatmentImageView = true
-	}
-
-	func setupStatusLabel() {
-		didSetupStatusLabel = true
-	}
-
-	func setupAtributeTransactionLabel() {
-		didSetupAtributeTransactionLabel = true
-	}
-
-	func setupAmountOfMoneyLabel() {
-		didSetupAmountOfMoneyLabel = true
-	}
-
-	func setupOperationButton() {
-		didSetupOperationButton = true
 	}
 
 	func setTitleAmountOfMoneyLabel(with amount: String) {
@@ -52,5 +28,8 @@ class TreatmentViewInputSpy: TreatmentViewInput {
 		didSetTitleForStatusLabel = true
 	}
 
+	func setTargetOnOperationButton() {
+		didSetTargetOnOperationButton = true
+	}
 	
 }

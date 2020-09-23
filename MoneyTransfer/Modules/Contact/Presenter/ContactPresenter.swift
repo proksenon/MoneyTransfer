@@ -23,12 +23,9 @@ final class ContactPrsenter {
 extension ContactPrsenter: ContactViewOutput {
 	func configureView() {
 		guard let view = view else { return }
-		view.setBackgroundColor()
-		view.setupAvatarImageView()
-		view.setupFullNameLabel()
-		view.setupPhoneNumberLabel()
-		view.setupRequestMoneyButton()
-		view.setupSendMoneyButton()
+		view.setViewColor()
+		view.setTargetRequestMoneyButton()
+		view.setTargetOnSendMoneyButton()
 	}
 
 }

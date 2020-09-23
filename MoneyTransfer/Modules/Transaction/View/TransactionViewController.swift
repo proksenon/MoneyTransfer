@@ -14,9 +14,7 @@ final class TransactionViewController: UIViewController {
 	var output: TransactionViewOutput?
 	var moduleInput: TransactionModuleInput?
 	var moduleOutput: TransactionDelegate?
-	private var nameOperationLabel: UILabel?
-	private var operationButton: UIButton?
-	private var moneyTextfield: UITextField?
+	private var transactionView: TransactionView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +22,18 @@ final class TransactionViewController: UIViewController {
 		output.configureView()
     }
 
+	override func loadView() {
+		let view = TransactionView()
+		self.view = view
+		transactionView = view
+	}
+
 }
 // MARK: -TransactionViewInput
 extension TransactionViewController: TransactionViewInput {
 
+
 	func setView() {
-		view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 320)
 		view.roundedCorner(with: 20)
 		view.backgroundColor = .white
 	}
@@ -51,50 +55,25 @@ extension TransactionViewController: TransactionViewInput {
 	}
 
 	//MARK: -OperationLabel
-	func setupNameOperationLabel() {
-		let nameOperationLabel = UILabel()
-		view.addSubview(nameOperationLabel)
-		NSLayoutConstraint.activate([nameOperationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-									 nameOperationLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15)])
-
-		nameOperationLabel.mainLabel(title: "Перевод средств")
-		self.nameOperationLabel = nameOperationLabel
-	}
-
 	func setTitleForOperationLabel(title: String) {
-		guard let nameOperationLabel = nameOperationLabel else { return }
+		guard let transactionView = transactionView, let nameOperationLabel = transactionView.nameOperationLabel else { return }
+
 		nameOperationLabel.text = title
 	}
 
 	//MARK: -MoneyTextfield
-	func setupMoneyTextfield() {
-		guard let nameOperationLabel = nameOperationLabel else { return }
-		let moneyTextfield = UITextField()
-		moneyTextfield.delegate = self
-		moneyTextfield.backgroundColor = UIColor.systemGray6.withAlphaComponent(0.6)
-		moneyTextfield.placeholder = "Укажите сумму"
-		moneyTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: moneyTextfield.frame.height))
-		moneyTextfield.leftViewMode = .always
-		moneyTextfield.keyboardType = .decimalPad
-		moneyTextfield.clearsOnBeginEditing = true
-		view.addSubview(moneyTextfield)
-
-		moneyTextfield.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([moneyTextfield.topAnchor.constraint(equalTo: nameOperationLabel.bottomAnchor, constant: 40),
-									 moneyTextfield.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
-									 moneyTextfield.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-									 moneyTextfield.heightAnchor.constraint(equalToConstant: 40)])
-
-		moneyTextfield.roundedCorner(with: 4)
-		self.moneyTextfield = moneyTextfield
+	func textFieldText()-> String? {
+		return transactionView?.moneyTextfield?.text
 	}
 
-	func textFieldText()-> String? {
-		return moneyTextfield?.text
+	func setupMoneyTextField() {
+		guard let transactionView = transactionView, let moneyTextfield = transactionView.moneyTextfield else { return }
+
+		moneyTextfield.delegate = self
 	}
 
 	func changeCornerColorMoneyTextField(result: Status) {
-		guard let moneyTextfield = moneyTextfield else { return }
+		guard let transactionView = transactionView, let moneyTextfield = transactionView.moneyTextfield else { return }
 		var color: CGColor
 		switch result {
 		case .failure:
@@ -106,25 +85,19 @@ extension TransactionViewController: TransactionViewInput {
 		moneyTextfield.layer.borderColor = color
 	}
 	//MARK: -OperationButton
-	func setupOperationButton() {
-		let operationButton = UIButton()
-		view.addSubview(operationButton)
-		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
-									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)])
-		
-		operationButton.styleButton(title: "Перевести", color: .systemGray2)
+	func setTargetOnOperationButton() {
+		guard let transactionView = transactionView, let operationButton = transactionView.operationButton else { return }
+
 		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
-		self.operationButton = operationButton
 	}
 
 	func setTitleForOperationButton(title: String) {
-		guard let operationButton = operationButton else { return }
+		guard let transactionView = transactionView, let operationButton = transactionView.operationButton else { return }
 		operationButton.setTitle(title, for: .normal)
 	}
 
 	func operationButtonIsEnabled(isEnabled: Bool) {
-		guard let operationButton = operationButton else { return }
+		guard let transactionView = transactionView, let operationButton = transactionView.operationButton else { return }
 		if isEnabled {
 			operationButton.backgroundColor = .green
 		} else {

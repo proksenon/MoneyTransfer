@@ -38,15 +38,13 @@ class MainPresenterTest: XCTestCase {
 	func testConfigureView() {
 		presenter.configureView()
 
-		XCTAssertTrue(view.didSetTable, "Didnt set TableView")
+		XCTAssertTrue(view.didSetupTable, "Didnt set TableView")
 		XCTAssertTrue(view.didScrollAtTopButton)
 		XCTAssertTrue(view.didNavigationWithScrollAtTop)
 		XCTAssertTrue(view.didSetBalanceTitle)
 		XCTAssertTrue(view.didSetBalanceTitleWith)
-		XCTAssertTrue(view.didSetupDimmView)
 		XCTAssertTrue(view.didSetTapOutSite)
 		XCTAssertTrue(view.didHiddenNavigationBar)
-		XCTAssertTrue(view.didSetTable)
 		XCTAssertTrue(interactor.didGetContacts)
 	}
 

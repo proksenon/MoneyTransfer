@@ -30,14 +30,7 @@ class SuccessPresenterTests: XCTestCase {
 		presenter.configureView()
 
 		XCTAssert(view.didSetView)
-		XCTAssert(view.didSetupTreatmentImageView)
-		XCTAssert(view.didSetupStatusLabel)
-		XCTAssert(view.didSetupAtributeTransactionLabel)
-		XCTAssert(view.didSetupAmountOfMoneyLabel)
-		XCTAssert(view.didSetupExitButton)
-		XCTAssert(view.didSetupChangeBalanceLabel)
-		XCTAssert(view.didSetupBeforeTransactionBalanceLabel)
-		XCTAssert(view.didSetupCurrentBalanceLabel)
+		XCTAssert(view.didSetTargetOnOperationButton)
 	}
 
 	func testConfigure() {

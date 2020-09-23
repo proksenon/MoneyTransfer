@@ -37,16 +37,9 @@ class ContactViewControllerTests: XCTestCase {
 	}
 
 	func testSetBackground() {
-		viewController.setBackgroundColor()
+		viewController.setViewColor()
 
 		XCTAssert(viewController.view.backgroundColor == UIColor.init(red: 0.95, green: 0.95, blue: 0.95, alpha: 1))
-	}
-
-	func testSetupAvatarImageView() {
-		let countSubviews = viewController.view.subviews.count
-		viewController.setupAvatarImageView()
-
-		XCTAssert(viewController.view.subviews.count == countSubviews + 1)
 	}
 
 	

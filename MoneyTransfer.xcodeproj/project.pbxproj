@@ -169,6 +169,11 @@
 		D5E85A8F2513B04A0071F660 /* SuccessModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A8E2513B04A0071F660 /* SuccessModuleInputSpy.swift */; };
 		D5E877252510E90E007E80F3 /* MainConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */; };
 		D5EAA46B2519E7EF0025AC0F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA46A2519E7EF0025AC0F /* GradientView.swift */; };
+		D5EAA477251B41220025AC0F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA476251B41220025AC0F /* MainView.swift */; };
+		D5EAA47C251B57D20025AC0F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA47B251B57D20025AC0F /* ContactView.swift */; };
+		D5EAA481251B5DD20025AC0F /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA480251B5DD20025AC0F /* TransactionView.swift */; };
+		D5EAA488251B71BF0025AC0F /* TreatmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA487251B71BF0025AC0F /* TreatmentView.swift */; };
+		D5EAA48D251B76000025AC0F /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA48C251B76000025AC0F /* SuccessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +353,11 @@
 		D5E85A8E2513B04A0071F660 /* SuccessModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessModuleInputSpy.swift; sourceTree = "<group>"; };
 		D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguratorMock.swift; sourceTree = "<group>"; };
 		D5EAA46A2519E7EF0025AC0F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D5EAA476251B41220025AC0F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D5EAA47B251B57D20025AC0F /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		D5EAA480251B5DD20025AC0F /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		D5EAA487251B71BF0025AC0F /* TreatmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentView.swift; sourceTree = "<group>"; };
+		D5EAA48C251B76000025AC0F /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,6 +440,7 @@
 		D520451225050CBB007B746A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D5EAA47A251B57C00025AC0F /* View */,
 				D520452525050DCF007B746A /* ContactViewController.swift */,
 				D520451925050D3A007B746A /* ContactViewInput.swift */,
 				D520451725050D2E007B746A /* ContactViewOutput.swift */,
@@ -921,6 +932,7 @@
 		D59DB6C9250A56750068888D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D5EAA48B251B75F20025AC0F /* View */,
 				D5A0BFD6250A40F10080737E /* SuccessViewController.swift */,
 				D5A0BFD5250A40F10080737E /* SuccessViewInput.swift */,
 				D5A0BFD4250A40F10080737E /* SuccessViewOutput.swift */,
@@ -982,6 +994,7 @@
 		D59DB6CF250A56E00068888D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D5EAA486251B71AF0025AC0F /* View */,
 				D5A0BF9B250A1E640080737E /* TreatmentViewController.swift */,
 				D5A0BFA5250A1FBC0080737E /* TreatmentViewInput.swift */,
 				D5A0BFA7250A1FC80080737E /* TreatmentViewOutput.swift */,
@@ -1042,6 +1055,7 @@
 		D5A0BF7225079C140080737E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D5EAA47F251B5DB50025AC0F /* View */,
 				D5A0BF8725079EC20080737E /* TransactionViewController.swift */,
 				D5A0BF7725079CEF0080737E /* TransactionViewInput.swift */,
 				D5A0BF7925079CF90080737E /* TransactionViewOutput.swift */,
@@ -1144,6 +1158,7 @@
 		D5B03FEA24FBF6F00023E5DE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D5EAA475251B410A0025AC0F /* View */,
 				D5B03FFB24FBFAC60023E5DE /* Table */,
 				D50F510F24DD72E00042BAD2 /* MainViewController.swift */,
 				D5B03FEF24FBF76B0023E5DE /* MainViewInput.swift */,
@@ -1219,6 +1234,46 @@
 				D5A0BF912509FD360080737E /* UserDefaultsWork */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D5EAA475251B410A0025AC0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5EAA476251B41220025AC0F /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5EAA47A251B57C00025AC0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5EAA47B251B57D20025AC0F /* ContactView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5EAA47F251B5DB50025AC0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5EAA480251B5DD20025AC0F /* TransactionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5EAA486251B71AF0025AC0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5EAA487251B71BF0025AC0F /* TreatmentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5EAA48B251B75F20025AC0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5EAA48C251B76000025AC0F /* SuccessView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1332,6 +1387,7 @@
 				D59DB6D5250D470D0068888D /* Balance.swift in Sources */,
 				D59DB6B9250A47890068888D /* ContainerRouter.swift in Sources */,
 				D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */,
+				D5EAA481251B5DD20025AC0F /* TransactionView.swift in Sources */,
 				D5B03FF224FBF7870023E5DE /* MainViewOutput.swift in Sources */,
 				D5A0BF8425079DF50080737E /* TransactionRouterInput.swift in Sources */,
 				D5A0BF7825079CEF0080737E /* TransactionViewInput.swift in Sources */,
@@ -1383,6 +1439,7 @@
 				D5A0BFAA250A1FDA0080737E /* TreatmentModuleInput.swift in Sources */,
 				D59DB6BE250A47890068888D /* ContainerViewOutput.swift in Sources */,
 				D520451C25050D4A007B746A /* ContactModuleInput.swift in Sources */,
+				D5EAA47C251B57D20025AC0F /* ContactView.swift in Sources */,
 				D50F511424DD72FA0042BAD2 /* MainInteractor.swift in Sources */,
 				D520451825050D2E007B746A /* ContactViewOutput.swift in Sources */,
 				D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */,
@@ -1413,13 +1470,16 @@
 				D59DB6B5250A47890068888D /* ContainerConfigurator.swift in Sources */,
 				D5B03FFA24FBF9260023E5DE /* MainRouterInput.swift in Sources */,
 				D5B0400624FD091D0023E5DE /* Person.swift in Sources */,
+				D5EAA488251B71BF0025AC0F /* TreatmentView.swift in Sources */,
 				D520450F25050CA9007B746A /* ContactRouter.swift in Sources */,
 				D5A0BF8625079E060080737E /* TransactionConfiguratorProtocol.swift in Sources */,
 				D5B03FFD24FBFB200023E5DE /* CustomTableView.swift in Sources */,
+				D5EAA48D251B76000025AC0F /* SuccessView.swift in Sources */,
 				D5A0BFA6250A1FBC0080737E /* TreatmentViewInput.swift in Sources */,
 				D59DB6C8250A50160068888D /* ViewSize.swift in Sources */,
 				D5A0BFE8250A40F10080737E /* SuccessModuleOutput.swift in Sources */,
 				D5B0400324FCE7420023E5DE /* CardTableViewCell.swift in Sources */,
+				D5EAA477251B41220025AC0F /* MainView.swift in Sources */,
 				D5A0BFA2250A1EC80080737E /* TreatmentRouter.swift in Sources */,
 				D5A0BFB4250A201E0080737E /* TreatmentConfiguratorProtocol.swift in Sources */,
 			);

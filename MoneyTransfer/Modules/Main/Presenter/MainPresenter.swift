@@ -25,7 +25,7 @@ extension MainPresenter: MainViewOutput {
 
 	func configureView() {
 		guard let view = view, let interactor = interactor else { return }
-		view.setTableView()
+		view.setupTableView()
 		interactor.getContatcs { (persons) in
 			self.persons = persons
 			view.tableViewReload()
@@ -35,7 +35,6 @@ extension MainPresenter: MainViewOutput {
 		view.navigationBarIsHidden(true)
 		view.setupBalanceTitle()
 		view.setBalanceTitleWith(balance: getBalance())
-		view.setupDimmView()
 		view.tapOutSite()
 	}
 

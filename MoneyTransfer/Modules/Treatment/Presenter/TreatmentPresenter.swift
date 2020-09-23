@@ -26,11 +26,7 @@ extension TreatmentPresenter: TreatmentViewOutput {
 	func configureView() {
 		guard let view = view else { return }
 		view.setView()
-		view.setupTreatmentImageView()
-		view.setupStatusLabel()
-		view.setupAtributeTransactionLabel()
-		view.setupAmountOfMoneyLabel()
-		view.setupOperationButton()
+		view.setTargetOnOperationButton()
 		guard let amountOfTransaction = amountOfTransaction else { return }
 		view.setTitleAmountOfMoneyLabel(with: amountOfTransaction)
 	}

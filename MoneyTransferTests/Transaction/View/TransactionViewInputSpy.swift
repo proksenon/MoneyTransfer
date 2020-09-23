@@ -11,34 +11,24 @@ import Foundation
 
 class TransactionViewInputSpy: TransactionViewInput {
 
-	var didSetupNameOperationLabel: Bool = false
 	var didSetupMoneyTextfield: Bool = false
 	var didTakeTextFieldText: Bool = false
-	var didSetupOperationButton: Bool = false
 	var didSetView: Bool = false
 	var didSetupNotificationKeyboard: Bool = false
 	var didChangeCornerColorMoneyTextField: Bool = false
 	var didOperationButtonIsEnabled: Bool = false
 	var didSetTitleForOperationButton: Bool = false
 	var didSetTitleForOperationLabel: Bool = false
+	var didSetTargetOnOperationButton: Bool = false
 	var text: String!
 
-
-	func setupNameOperationLabel() {
-		didSetupNameOperationLabel = true
-	}
-
-	func setupMoneyTextfield() {
+	func setupMoneyTextField() {
 		didSetupMoneyTextfield = true
 	}
 
 	func textFieldText() -> String? {
 		didTakeTextFieldText = true
 		return text
-	}
-
-	func setupOperationButton() {
-		didSetupOperationButton = true
 	}
 
 	func setView() {
@@ -63,6 +53,10 @@ class TransactionViewInputSpy: TransactionViewInput {
 
 	func setTitleForOperationLabel(title: String) {
 		didSetTitleForOperationLabel = true
+	}
+
+	func setTargetOnOperationButton() {
+		didSetTargetOnOperationButton = true
 	}
 
 

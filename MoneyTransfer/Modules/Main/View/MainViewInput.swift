@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainViewInput: class {
 	///  Устанавливает таблицу
-	func setTableView()
+	func setupTableView()
 	///  Обновляет таблицу
 	func tableViewReload()
 	///  Устанавливает кнопку,  которая будет скролть к верху
@@ -25,8 +25,6 @@ protocol MainViewInput: class {
 	func setBalanceTitleWith(balance: String)
 	///  Скрывает навигейшн тайтл
 	func navigationTitleIsHidden(_ isHidden: Bool)
-	///  Устанавливает затемняющую вьюшку
-	func setupDimmView()
 	///  Показывает или скрывает затемняющую вьюшку
 	func showDimmView(_ show: Bool)
 	///  Настраивает нажатие на затемняющую вьшку, что бы закрывать SuccessViewController

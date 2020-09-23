@@ -13,12 +13,7 @@ final class TreatmentViewController: UIViewController {
 	var output: TreatmentViewOutput?
 	var moduleInput: TreatmentModuleInput?
 	var moduleOutput: ExitDelegate?
-	private var treatmentImageView: UIImageView?
-	private var statusLabel: UILabel?
-	private var atributeTransactionLabel: UILabel?
-	private var amountOfMoneyLabel: UILabel?
-	private var operationButton: UIButton?
-	private let money: String = "100000"
+	private var treatmentView: TreatmentView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,92 +21,37 @@ final class TreatmentViewController: UIViewController {
 		output.configureView()
     }
 
-
+	override func loadView() {
+		let view = TreatmentView()
+		self.view = view
+		treatmentView = view
+	}
 }
 
 //MARK: -TreatmentViewInput
 extension TreatmentViewController: TreatmentViewInput {
 
 	func setView() {
-		view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
 		view.backgroundColor = .white
 		view.roundedCorner(with: 20)
 	}
-
-	func setupTreatmentImageView() {
-		let treatmentImageView = UIImageView()
-		view.addSubview(treatmentImageView)
-		treatmentImageView.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([treatmentImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 treatmentImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-									 treatmentImageView.heightAnchor.constraint(equalToConstant: 60),
-									 treatmentImageView.widthAnchor.constraint(equalToConstant: 60)])
-
-
-		treatmentImageView.image = UIImage(systemName: "clock")?.withTintColor(.gray, renderingMode: .alwaysOriginal)
-		self.treatmentImageView = treatmentImageView
-	}
 	
 	//MARK: -StatusLabel
-	func setupStatusLabel() {
-		guard let treatmentImageView = treatmentImageView else { return }
-		let statusLabel = UILabel()
-		view.addSubview(statusLabel)
-		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: 20),
-									 statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 statusLabel.widthAnchor.constraint(equalToConstant: 300)])
-		
-		statusLabel.mainLabel(title: "Перевод в обработке...")
-		self.statusLabel = statusLabel
-	}
-
 	func setTitleForStatusLabel(title: String) {
-		guard let statusLabel = statusLabel else { return }
+		guard let treatmentView = treatmentView, let statusLabel = treatmentView.statusLabel else { return }
 		statusLabel.text = title
 	}
 
-	//MARK: -AtributeTransactionLabel
-	func setupAtributeTransactionLabel() {
-		guard let statusLabel = statusLabel else { return }
-		let atributeTransactionLabel = UILabel()
-		view.addSubview(atributeTransactionLabel)
-		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 20),
-									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: 300)])
-
-		atributeTransactionLabel.subLabel(title: "Сумма перевода")
-		self.atributeTransactionLabel = atributeTransactionLabel
-	}
-
 	//MARK: -AmountOfMoneyLabel
-	func setupAmountOfMoneyLabel() {
-		guard let atributeTransactionLabel = atributeTransactionLabel else { return }
-		let amountOfMoneyLabel = UILabel()
-		view.addSubview(amountOfMoneyLabel)
-		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: 10),
-									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: 300)])
-
-		amountOfMoneyLabel.mainLabel(title: money)
-		self.amountOfMoneyLabel = amountOfMoneyLabel
-	}
-
 	func setTitleAmountOfMoneyLabel(with amount: String) {
-		guard let amountOfMoneyLabel = amountOfMoneyLabel else { return }
+		guard let treatmentView = treatmentView, let amountOfMoneyLabel = treatmentView.amountOfMoneyLabel else { return }
 		amountOfMoneyLabel.text = amount.moneyFormat()
 	}
 
 	//MARK: -OperationButton
-	func setupOperationButton() {
-		let operationButton = UIButton()
-		view.addSubview(operationButton)
-		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
-									 operationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-									 operationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)])
-		
-		operationButton.styleButton(title: "Перейти в контакты")
+	func setTargetOnOperationButton() {
+		guard let treatmentView = treatmentView, let operationButton = treatmentView.operationButton else { return }
 		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
-		self.operationButton = operationButton
 	}
 	
 	@IBAction private func operationButtonDidTapped() {

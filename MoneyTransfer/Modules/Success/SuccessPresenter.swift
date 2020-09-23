@@ -32,14 +32,7 @@ extension SuccessOperationPresenter: SuccessOperationViewOutput {
 	func configureView() {
 		guard let view = view else { return }
 		view.setView()
-		view.setupTreatmentImageView()
-		view.setupStatusLabel()
-		view.setupAtributeTransactionLabel()
-		view.setupAmountOfMoneyLabel()
-		view.setupExitButton()
-		view.setupChangeBalanceLabel()
-		view.setupBeforeTransactionBalanceLabel()
-		view.setupCurrentBalanceLabel()
+		view.setTargetOnOperationButton()
 	}
 
 }

@@ -39,9 +39,8 @@ class TransactionPresenterTests: XCTestCase {
 		presenter.configureView()
 
 		XCTAssert(view.didSetView)
-		XCTAssert(view.didSetupNameOperationLabel)
+		XCTAssert(view.didSetTargetOnOperationButton)
 		XCTAssert(view.didSetupMoneyTextfield)
-		XCTAssert(view.didSetupOperationButton)
 		XCTAssert(view.didSetupNotificationKeyboard)
 	}
 

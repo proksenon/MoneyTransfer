@@ -26,10 +26,9 @@ extension TransactionPresenter: TransactionViewOutput {
 	func configureView() {
 		guard let view = view else { return }
 		view.setView()
-		view.setupNameOperationLabel()
-		view.setupMoneyTextfield()
-		view.setupOperationButton()
+		view.setTargetOnOperationButton()
 		view.setupNotificationKeyboard()
+		view.setupMoneyTextField()
 	}
 
 	func checkBalance() {

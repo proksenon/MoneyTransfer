@@ -12,7 +12,7 @@ import Foundation
 
 class MainViewInputSpy: MainViewInput {
 
-	var didSetTable: Bool = false
+	var didSetupTable: Bool = false
 	var didTableViewReload: Bool = false
 	var didScrollAtTopButton: Bool = false
 	var didNavigationWithScrollAtTop: Bool = false
@@ -20,14 +20,13 @@ class MainViewInputSpy: MainViewInput {
 	var didSetBalanceTitle: Bool = false
 	var didSetBalanceTitleWith: Bool = false
 	var didHiddenNavigationTitle: Bool = false
-	var didSetupDimmView: Bool = false
 	var didShowDimmView: Bool = false
 	var didSetTapOutSite: Bool = false
 	
 
 
-	func setTableView() {
-		didSetTable = true
+	func setupTableView() {
+		didSetupTable = true
 	}
 
 	func tableViewReload() {
@@ -56,10 +55,6 @@ class MainViewInputSpy: MainViewInput {
 
 	func navigationTitleIsHidden(_ isHidden: Bool) {
 		didHiddenNavigationTitle = true
-	}
-
-	func setupDimmView() {
-		didSetupDimmView = true
 	}
 
 	func showDimmView(_ show: Bool) {
