@@ -20,7 +20,7 @@ final class MainTableDelegate: NSObject, UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
 		view.tintColor = .white
-		let header = view as! UITableViewHeaderFooterView
+		guard let header = view as? UITableViewHeaderFooterView else { return }
 		header.textLabel?.textColor = UIColor.black
 		header.textLabel?.font = header.textLabel?.font.withSize(20)
 		header.sizeToFit()
@@ -29,9 +29,9 @@ final class MainTableDelegate: NSObject, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
 		if indexPath.section == 1 {
-			return UIScreen.main.bounds.height/11
+			return CellsHeight.defaultCell
 		} else {
-			return 300
+			return CellsHeight.cardCell
 		}
 	}
 

@@ -178,6 +178,8 @@
 		D5EAA49B251B9B710025AC0F /* MainTableDelegateOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA49A251B9B710025AC0F /* MainTableDelegateOutput.swift */; };
 		D5EAA4F2251C9DA60025AC0F /* MainTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA4F1251C9DA60025AC0F /* MainTableDataSource.swift */; };
 		D5EAA4F6251C9DE30025AC0F /* MainTableDataSourceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA4F5251C9DE30025AC0F /* MainTableDataSourceOutput.swift */; };
+		D5EAA4FD251CC14D0025AC0F /* ViewConstatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA4FC251CC14D0025AC0F /* ViewConstatns.swift */; };
+		D5EAA501251CC1E70025AC0F /* CellsHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA500251CC1E70025AC0F /* CellsHeight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -366,6 +368,8 @@
 		D5EAA49A251B9B710025AC0F /* MainTableDelegateOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDelegateOutput.swift; sourceTree = "<group>"; };
 		D5EAA4F1251C9DA60025AC0F /* MainTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSource.swift; sourceTree = "<group>"; };
 		D5EAA4F5251C9DE30025AC0F /* MainTableDataSourceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSourceOutput.swift; sourceTree = "<group>"; };
+		D5EAA4FC251CC14D0025AC0F /* ViewConstatns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstatns.swift; sourceTree = "<group>"; };
+		D5EAA500251CC1E70025AC0F /* CellsHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsHeight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1308,6 +1312,8 @@
 		D5EAA4F9251CBD720025AC0F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				D5EAA4FC251CC14D0025AC0F /* ViewConstatns.swift */,
+				D5EAA500251CC1E70025AC0F /* CellsHeight.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1475,11 +1481,13 @@
 				D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */,
 				D520451A25050D3A007B746A /* ContactViewInput.swift in Sources */,
 				D5A0BFAA250A1FDA0080737E /* TreatmentModuleInput.swift in Sources */,
+				D5EAA4FD251CC14D0025AC0F /* ViewConstatns.swift in Sources */,
 				D59DB6BE250A47890068888D /* ContainerViewOutput.swift in Sources */,
 				D520451C25050D4A007B746A /* ContactModuleInput.swift in Sources */,
 				D5EAA47C251B57D20025AC0F /* ContactView.swift in Sources */,
 				D50F511424DD72FA0042BAD2 /* MainInteractor.swift in Sources */,
 				D520451825050D2E007B746A /* ContactViewOutput.swift in Sources */,
+				D5EAA501251CC1E70025AC0F /* CellsHeight.swift in Sources */,
 				D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */,
 				D59DB6D9250E34440068888D /* MainModuleOutput.swift in Sources */,
 				D59DB6C6250A48D40068888D /* ChildAddAndRemove.swift in Sources */,

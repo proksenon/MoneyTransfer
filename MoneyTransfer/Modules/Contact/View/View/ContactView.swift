@@ -36,11 +36,11 @@ class ContactView: UIView {
 		avatarImageView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([avatarImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -110),
-									 avatarImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width/2),
-									 avatarImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width/2)])
+									 avatarImageView.widthAnchor.constraint(equalToConstant: ViewConstatns.width/2),
+									 avatarImageView.heightAnchor.constraint(equalToConstant: ViewConstatns.width/2)])
 		avatarImageView.image = UIImage(named: "defaultImage")
 		avatarImageView.contentMode = .scaleAspectFill
-		avatarImageView.roundedCorner(with: UIScreen.main.bounds.width/4)
+		avatarImageView.roundedCorner(with: ViewConstatns.width/4)
 	}
 
 	//MARK: -FullNameLabel

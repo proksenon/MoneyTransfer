@@ -29,12 +29,16 @@ class TreatmentView: UIView {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+	private enum Constants {
+		static let labelWidth: CGFloat = 300
+		static let topAnchor: CGFloat = 20
+	}
 
 	private func setupTreatmentImageView() {
 		addSubview(treatmentImageView)
 		treatmentImageView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([treatmentImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 treatmentImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+									 treatmentImageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.topAnchor),
 									 treatmentImageView.heightAnchor.constraint(equalToConstant: 60),
 									 treatmentImageView.widthAnchor.constraint(equalToConstant: 60)])
 
@@ -45,9 +49,9 @@ class TreatmentView: UIView {
 	//MARK: -StatusLabel
 	private func setupStatusLabel() {
 		addSubview(statusLabel)
-		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: 20),
+		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: Constants.topAnchor),
 									 statusLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 statusLabel.widthAnchor.constraint(equalToConstant: 300)])
+									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
 		statusLabel.mainLabel(title: "Перевод в обработке...")
 	}
@@ -55,9 +59,9 @@ class TreatmentView: UIView {
 	//MARK: -AtributeTransactionLabel
 	private func setupAtributeTransactionLabel() {
 		addSubview(atributeTransactionLabel)
-		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 20),
+		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: Constants.topAnchor),
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: 300)])
+									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
 		atributeTransactionLabel.subLabel(title: "Сумма перевода")
 	}
@@ -65,9 +69,9 @@ class TreatmentView: UIView {
 	//MARK: -AmountOfMoneyLabel
 	private func setupAmountOfMoneyLabel() {
 		addSubview(amountOfMoneyLabel)
-		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: 10),
+		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: Constants.topAnchor / 2),
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: 300)])
+									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
 		amountOfMoneyLabel.mainLabel(title: "money")
 	}

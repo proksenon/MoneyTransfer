@@ -25,13 +25,17 @@ final class CardTableViewCell: UITableViewCell {
 		backgroundColor = .white
 	}
 
+	private enum Constants {
+		static let defConstraint: CGFloat = 30
+	}
+
 	private func setCardImageView() {
 		addSubview(cardView)
 		cardView.translatesAutoresizingMaskIntoConstraints = false
-		cardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 30).isActive = true
-		cardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30).isActive = true
-		cardView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-		cardView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
+		cardView.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.defConstraint).isActive = true
+		cardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Constants.defConstraint).isActive = true
+		cardView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Constants.defConstraint).isActive = true
+		cardView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -Constants.defConstraint).isActive = true
 
 		cardView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
 		cardView.roundedCorner(with: 10)
@@ -41,8 +45,8 @@ final class CardTableViewCell: UITableViewCell {
 	private func setBalanceLabel() {
 		cardView.addSubview(balanceLabel)
 		balanceLabel.translatesAutoresizingMaskIntoConstraints = false
-		balanceLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: 30).isActive = true
-		balanceLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -30).isActive = true
+		balanceLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: Constants.defConstraint).isActive = true
+		balanceLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -Constants.defConstraint).isActive = true
 		balanceLabel.backgroundColor = .clear
 		balanceLabel.font = balanceLabel.font.withSize(33)
 		balanceLabel.text = "103 542,5Р"
@@ -52,7 +56,7 @@ final class CardTableViewCell: UITableViewCell {
 	private func setCurrencyBalanceLabel() {
 		cardView.addSubview(curencyBalanceLabel)
 		curencyBalanceLabel.translatesAutoresizingMaskIntoConstraints = false
-		curencyBalanceLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: 30).isActive = true
+		curencyBalanceLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: Constants.defConstraint).isActive = true
 		curencyBalanceLabel.bottomAnchor.constraint(equalTo: balanceLabel.topAnchor, constant: -10).isActive = true
 		curencyBalanceLabel.backgroundColor = .clear
 		curencyBalanceLabel.font = curencyBalanceLabel.font.withSize(17)
@@ -63,10 +67,10 @@ final class CardTableViewCell: UITableViewCell {
 	private func setLabelCardImageView() {
 		cardView.addSubview(labelCardImageView)
 		labelCardImageView.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([labelCardImageView.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: 30),
-									 labelCardImageView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 30),
-									 labelCardImageView.heightAnchor.constraint(equalToConstant: 60),
-									 labelCardImageView.widthAnchor.constraint(equalToConstant: 60)])
+		NSLayoutConstraint.activate([labelCardImageView.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: Constants.defConstraint),
+									 labelCardImageView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: Constants.defConstraint),
+									 labelCardImageView.heightAnchor.constraint(equalToConstant: 2*Constants.defConstraint),
+									 labelCardImageView.widthAnchor.constraint(equalToConstant: 2*Constants.defConstraint)])
 
 		labelCardImageView.image = UIImage(named: "logo")
 		labelCardImageView.contentMode = .scaleAspectFit

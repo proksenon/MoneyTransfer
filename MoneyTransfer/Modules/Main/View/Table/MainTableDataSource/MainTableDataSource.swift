@@ -29,7 +29,7 @@ class MainTableDataSource: NSObject, UITableViewDataSource {
 			return output.countOfPersons()
 		}
 	}
-	
+
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if section == 1 {
 			return "Контакты"
@@ -40,13 +40,15 @@ class MainTableDataSource: NSObject, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let output = output else { return UITableViewCell() }
 		if indexPath.section == 1 {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
-			cell.configureCell(with: output.getPerson(with: indexPath))
-			return cell
+			let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CustomTableViewCell
+			cell?.configureCell(with: output.getPerson(with: indexPath))
+			guard let currentCell = cell else { return UITableViewCell()}
+			return currentCell
 		} else {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! CardTableViewCell
-			cell.configureCell(with: output.getBalance())
-			return cell
+			let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as? CardTableViewCell
+			cell?.configureCell(with: output.getBalance())
+			guard let currentCell = cell else { return UITableViewCell()}
+			return currentCell
 		}
 	}
 
