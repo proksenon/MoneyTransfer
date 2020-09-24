@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View of Module Main
 class MainView: UIView {
 
 	var tableView: UITableView = CustomTableView()
@@ -28,6 +29,7 @@ class MainView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	/// Устанавливает констрейнты на таблицу
 	private func setTableView() {
 		addSubview(tableView)
 		tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +38,7 @@ class MainView: UIView {
 		tableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
 		tableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
 	}
-
+	/// Устанавливает констрейнты на dimmView
 	private func setupDimmView() {
 		addSubview(dimmView)
 		dimmView.translatesAutoresizingMaskIntoConstraints = false

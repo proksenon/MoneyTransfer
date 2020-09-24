@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
+/// StylesLabel
 extension UILabel {
+	/// Стиль вторичного лейбла
+	/// - Parameter title: Title of Label
 	func subLabel(title: String) {
 		self.backgroundColor = .clear
 		self.font = self.font.withSize(14)
@@ -19,6 +21,8 @@ extension UILabel {
 		self.heightAnchor.constraint(equalToConstant: 15).isActive = true
 	}
 
+	/// Стиль основного лейбла
+	/// - Parameter title: Title of Label
 	func mainLabel(title: String) {
 		self.backgroundColor = .clear
 		self.font = UIFont(name: "Futura Medium", size: 18)
@@ -29,6 +33,8 @@ extension UILabel {
 		self.heightAnchor.constraint(equalToConstant: 20).isActive = true
 	}
 
+	/// Стиль зачеркнутого лейбла
+	/// - Parameter isStrikeThrough: True - зачеркивает
 	func strikeThrough(_ isStrikeThrough:Bool) {
     if isStrikeThrough {
         if let lblText = self.text {

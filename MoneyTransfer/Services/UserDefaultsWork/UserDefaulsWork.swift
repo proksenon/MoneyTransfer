@@ -8,7 +8,9 @@
 
 import Foundation
 
+/// Работа с UserDefaults
 final class UserDefaultsWork: UserDefaultsWorkProtocol {
+	/// UserDefaults
 private let defaults: UserDefaults
 
 init(defaults: UserDefaults = UserDefaults.standard) {

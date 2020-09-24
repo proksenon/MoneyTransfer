@@ -9,6 +9,7 @@
 import Foundation
 import Contacts
 
+/// Менеджер получает контакты
 final class ContactsManager: ContactsManagerProtocol {
 
 	func getContatcs(completion: @escaping ([Person])->Void) {

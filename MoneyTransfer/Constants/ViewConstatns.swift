@@ -8,7 +8,10 @@
 
 import UIKit
 
+///  Константы экрана
 enum ViewConstatns {
+	/// Ширина экрана
 	static let width = UIScreen.main.bounds.width
+	/// Высота экрана
 	static let height = UIScreen.main.bounds.height
 }

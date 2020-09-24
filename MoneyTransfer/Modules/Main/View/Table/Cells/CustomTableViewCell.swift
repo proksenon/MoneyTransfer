@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Ячейка с контактом
 final class CustomTableViewCell: UITableViewCell {
 
 	private let avatarImageView = UIImageView()
@@ -27,6 +28,7 @@ final class CustomTableViewCell: UITableViewCell {
 		backgroundColor = .white
 	}
 
+	/// Настраивает аватарку
 	private func setAvatarImageView() {
 		avatarImageView.translatesAutoresizingMaskIntoConstraints = false
 		avatarImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
@@ -37,7 +39,7 @@ final class CustomTableViewCell: UITableViewCell {
 		avatarImageView.contentMode = .scaleAspectFill
 		avatarImageView.roundedCorner(with: 25)
 	}
-
+	/// Настраивает лейбл полного Имени
 	private func setFullNameLabel() {
 		fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
 		fullNameLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: -35).isActive = true
@@ -46,7 +48,7 @@ final class CustomTableViewCell: UITableViewCell {
 		fullNameLabel.text = "Unknown"
 		fullNameLabel.textColor = .black
 	}
-
+	/// Настраивает лейбл телефонного номера
 	private func setPhoneNumberLabel() {
 		phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
 		phoneNumberLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor , constant: -5).isActive = true

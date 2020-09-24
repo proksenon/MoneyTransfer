@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Протокол output кастомной DataSource
 protocol MainTableDataSourceOutput: AnyObject {
 	///  Возвращает количество контактов
 	func countOfPersons()->Int

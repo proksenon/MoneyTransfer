@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Протокол работы с UserDefaultsWork
 protocol UserDefaultsWorkProtocol {
 	///  Устанавливает данные в UserDefaults
 	func setObject(for key: String, object: Any?)

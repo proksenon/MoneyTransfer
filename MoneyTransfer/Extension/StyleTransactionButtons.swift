@@ -7,8 +7,12 @@
 //
 
 import UIKit
-
+/// StyleTransactionButtons
 extension UIButton {
+	/// Стиль кнопки на Транзакшион экране
+	/// - Parameters:
+	///   - title: Title of Label
+	///   - color: TextColor
 	func styleButton(title: String, color: UIColor = .green) {
 		self.backgroundColor = color
 		self.setTitle(title, for: .normal)

@@ -9,5 +9,6 @@
 import UIKit
 ///		Размер вью
 struct ViewSize {
+	/// Размер
 	let size: CGFloat
 }

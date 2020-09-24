@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Ячейка с картой
 final class CardTableViewCell: UITableViewCell {
 
 	private let cardView = UIView()
@@ -18,18 +19,20 @@ final class CardTableViewCell: UITableViewCell {
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		backgroundColor = .white
-		setCardImageView()
+		setCardView()
 		setBalanceLabel()
 		setCurrencyBalanceLabel()
 		setLabelCardImageView()
 		backgroundColor = .white
 	}
 
+	/// Константы
 	private enum Constants {
 		static let defConstraint: CGFloat = 30
 	}
 
-	private func setCardImageView() {
+	/// Настройка Card View
+	private func setCardView() {
 		addSubview(cardView)
 		cardView.translatesAutoresizingMaskIntoConstraints = false
 		cardView.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.defConstraint).isActive = true
@@ -42,6 +45,7 @@ final class CardTableViewCell: UITableViewCell {
 		cardView.gradient(with: [UIColor.gray.cgColor, UIColor.black.cgColor], frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 30, height: 250))
 	}
 
+	/// Настройка лейбла Баланса
 	private func setBalanceLabel() {
 		cardView.addSubview(balanceLabel)
 		balanceLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +57,7 @@ final class CardTableViewCell: UITableViewCell {
 		balanceLabel.textColor = .white
 	}
 
+	/// Настройка лейбла с Текущим балансом
 	private func setCurrencyBalanceLabel() {
 		cardView.addSubview(curencyBalanceLabel)
 		curencyBalanceLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -64,6 +69,7 @@ final class CardTableViewCell: UITableViewCell {
 		curencyBalanceLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
 	}
 
+	/// Настройка Картинки карты
 	private func setLabelCardImageView() {
 		cardView.addSubview(labelCardImageView)
 		labelCardImageView.translatesAutoresizingMaskIntoConstraints = false

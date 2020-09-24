@@ -8,7 +8,10 @@
 
 import UIKit
 
+/// Высота ячеек
 enum CellsHeight {
+	/// Выстоа ячейки с картой
 	static let cardCell: CGFloat = 300
+	/// Высота дефолтной ячейки
 	static let defaultCell = ViewConstatns.height / 11
 }

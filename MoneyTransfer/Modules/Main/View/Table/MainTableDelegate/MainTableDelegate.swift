@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Класс делегата таблицы
 final class MainTableDelegate: NSObject, UITableViewDelegate {
 	
 	weak var output: MainTableDelegateOutput?

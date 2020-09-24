@@ -9,7 +9,10 @@
 import Foundation
 ///		Информация о человеке
 struct Person: Equatable {
+	/// Полное имя
 	let fullName: String?
+	/// Телефонный номер
 	let phoneNumber: String?
+	/// Картинка аватарки
 	let avatarData: Data?
 }

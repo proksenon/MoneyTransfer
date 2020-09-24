@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Протокол делегата таблицы
 protocol MainTableDelegateOutput: AnyObject {
 	///	 Первая ячейка с картой покидает экран
 	func cardInfromationLeft(_ isLeft: Bool)

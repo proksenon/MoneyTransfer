@@ -9,6 +9,8 @@
 import UIKit
 
 extension UIView {
+	/// Закругляет углы
+	/// - Parameter radius: Радиус
 	func roundedCorner(with radius: CGFloat) {
 		self.layer.cornerRadius = radius
 		self.clipsToBounds = true

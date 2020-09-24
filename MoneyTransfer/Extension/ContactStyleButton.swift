@@ -9,6 +9,8 @@
 import UIKit
 
 extension UIButton {
+	/// Стиль кнопки на экрае контакты
+	/// - Parameter title: Title of label
 	func contactStyleButton(title: String) {
 		self.backgroundColor = UIColor.white
 		self.setTitle(title, for: .normal)

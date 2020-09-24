@@ -17,6 +17,8 @@ extension String {
 		return ""
 	}
 
+	/// Формирует стиль денежной строки
+	/// - Returns: Сформированная денежная строка с пробелами
 	func moneyFormat()-> String {
 		let array = self.components(separatedBy: ".")
 		var intPartOfMoney = Array(array[0])

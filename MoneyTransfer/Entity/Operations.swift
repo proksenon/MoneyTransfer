@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Операции
 enum Operations {
 	case transaction
 	case request

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Кастомная ДатаСорс для Таблицы на главном экране
 class MainTableDataSource: NSObject, UITableViewDataSource {
 
 	weak var output: MainTableDataSourceOutput?

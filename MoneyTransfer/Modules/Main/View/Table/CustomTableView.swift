@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Таблица контактов
 final class CustomTableView: UITableView {
 
 	init() {
