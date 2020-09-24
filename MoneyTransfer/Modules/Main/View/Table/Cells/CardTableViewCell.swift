@@ -78,7 +78,7 @@ final class CardTableViewCell: UITableViewCell {
 									 labelCardImageView.heightAnchor.constraint(equalToConstant: 2*Constants.defConstraint),
 									 labelCardImageView.widthAnchor.constraint(equalToConstant: 2*Constants.defConstraint)])
 
-		labelCardImageView.image = UIImage(named: "logo")
+		labelCardImageView.image = UIImage(named: Images.logo)
 		labelCardImageView.contentMode = .scaleAspectFit
 	}
 

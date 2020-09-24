@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Конфигуратор модуля Main
 final class MainConfigurator: MainConfiguratorProtocol {
 
 	func configure(with viewController: MainViewController) {

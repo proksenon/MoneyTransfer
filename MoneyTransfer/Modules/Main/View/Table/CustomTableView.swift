@@ -13,8 +13,8 @@ final class CustomTableView: UITableView {
 
 	init() {
 		super.init(frame: .zero, style: .grouped)
-		register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
-		register(CardTableViewCell.self, forCellReuseIdentifier: "cell2")
+		register(CustomTableViewCell.self, forCellReuseIdentifier: Cells.CellsID.defaultCell.rawValue)
+		register(CardTableViewCell.self, forCellReuseIdentifier: Cells.CellsID.cardCell.rawValue)
 		tableFooterView = UIView()
 		separatorStyle = .singleLine
 		backgroundColor = .white

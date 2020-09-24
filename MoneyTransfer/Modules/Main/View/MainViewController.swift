@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Controller of Main Module
 final class MainViewController: UIViewController {
 
 	var output: MainViewOutput?
@@ -49,12 +50,12 @@ extension MainViewController: MainViewInput {
 	}
 
 	func navigationTitleIsHidden(_ isHidden: Bool) {
-		navigationController?.navigationBar.alpha = 1
+		navigationController?.navigationBar.alpha = Alpha.fullView
 	}
 
 	func navigationBarIsHidden(_ isHidden: Bool) {
-		UIView.animate(withDuration: 0.7, animations: {
-			self.navigationController?.navigationBar.alpha = isHidden ? 0 : 1
+		UIView.animate(withDuration: Duration.medium, animations: {
+			self.navigationController?.navigationBar.alpha = isHidden ? Alpha.withoutView : Alpha.fullView
 		})
 	}
 
@@ -64,7 +65,7 @@ extension MainViewController: MainViewInput {
 
 	//MARK: -TableView
 	func setScrollAtTopButton() {
-		scrollAtTopButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .done, target: self, action: #selector(scrollAtTheTop))
+		scrollAtTopButton = UIBarButtonItem(image: UIImage(systemName: Images.back), style: .done, target: self, action: #selector(scrollAtTheTop))
 	}
 
 	@IBAction func scrollAtTheTop() {
@@ -80,10 +81,10 @@ extension MainViewController: MainViewInput {
 	//MARK: -DimmView
 
 	func dimmViewIsHidden(_ isShow: Bool) {
-		mainView.dimmView.alpha = isShow ? 0.6 : 0
+		mainView.dimmView.alpha = isShow ? Alpha.mediumView : Alpha.withoutView
 	}
 	func showDimmView(_ show: Bool) {
-		UIView.animate(withDuration: 0.7) {
+		UIView.animate(withDuration: Duration.medium) {
 			self.dimmViewIsHidden(show)
 		}
 	}

@@ -30,9 +30,9 @@ final class MainTableDelegate: NSObject, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
 		if indexPath.section == 1 {
-			return CellsHeight.defaultCell
+			return Cells.CellsHeight.defaultCell
 		} else {
-			return CellsHeight.cardCell
+			return Cells.CellsHeight.cardCell
 		}
 	}
 

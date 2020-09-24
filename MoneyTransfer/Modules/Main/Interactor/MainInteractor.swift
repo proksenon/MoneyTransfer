@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Интерактор модуля Main
 final class MainInteractor: MainInteractorInput {
 
 	weak var output: MainInteractorOutput?

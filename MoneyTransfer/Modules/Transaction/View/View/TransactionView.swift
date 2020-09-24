@@ -15,7 +15,7 @@ class TransactionView: UIView {
 	let moneyTextfield: UITextField = UITextField()
 
 	init() {
-		let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 320)
+		let frame = CGRect(x: 0, y: 0, width: ViewConstatns.width, height: ChildsAtributes.Hight.transaction)
 		super.init(frame: frame)
 		setupNameOperationLabel()
 		setupMoneyTextfield()
@@ -37,7 +37,7 @@ class TransactionView: UIView {
 
 	//MARK: -MoneyTextfield
 	private func setupMoneyTextfield() {
-		moneyTextfield.backgroundColor = UIColor.systemGray6.withAlphaComponent(0.6)
+		moneyTextfield.backgroundColor = UIColor.systemGray6.withAlphaComponent(Alpha.mediumView)
 		moneyTextfield.placeholder = "Укажите сумму"
 		moneyTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: moneyTextfield.frame.height))
 		moneyTextfield.leftViewMode = .always

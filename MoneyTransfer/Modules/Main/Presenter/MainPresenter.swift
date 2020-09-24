@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Презентер модуля Main
 final class MainPresenter {
 	
 	weak var view: MainViewInput?

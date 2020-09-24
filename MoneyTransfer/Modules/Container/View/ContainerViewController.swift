@@ -16,7 +16,7 @@ final class ContainerViewController: UIViewController {
 	private lazy var dimmView: UIView = {
 		let view = UIView()
 		view.backgroundColor = UIColor.black.withAlphaComponent(1)
-		view.alpha = 0
+		view.alpha = Alpha.withoutView
 		return view
 	}()
 
@@ -41,7 +41,7 @@ extension ContainerViewController: ContainerViewInput {
 	}
 
 	private func dimmViewIsHidden(_ isShow: Bool) {
-		self.dimmView.alpha = isShow ? 0.6 : 0
+		self.dimmView.alpha = isShow ? Alpha.mediumView : Alpha.withoutView
 	}
 
 	func tapOutSite() {
@@ -55,7 +55,7 @@ extension ContainerViewController: ContainerViewInput {
 
 	func showTransaction(show: Bool, showViewController: UIViewController, y: ViewSize? = nil) {
 		if show {
-			UIView.animate(withDuration: 0.5,
+			UIView.animate(withDuration: Duration.fast,
 						   delay: 0,
 						   usingSpringWithDamping: 0.8,
 						   initialSpringVelocity: 0,
@@ -70,7 +70,7 @@ extension ContainerViewController: ContainerViewInput {
 						},
 						   completion: nil)
 		} else {
-			UIView.animate(withDuration: 0.5,
+			UIView.animate(withDuration: Duration.fast,
 						   delay: 0,
 						   usingSpringWithDamping: 0.8,
 						   initialSpringVelocity: 0,

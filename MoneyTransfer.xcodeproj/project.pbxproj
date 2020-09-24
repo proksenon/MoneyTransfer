@@ -179,7 +179,11 @@
 		D5EAA4F2251C9DA60025AC0F /* MainTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA4F1251C9DA60025AC0F /* MainTableDataSource.swift */; };
 		D5EAA4F6251C9DE30025AC0F /* MainTableDataSourceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA4F5251C9DE30025AC0F /* MainTableDataSourceOutput.swift */; };
 		D5EAA4FD251CC14D0025AC0F /* ViewConstatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA4FC251CC14D0025AC0F /* ViewConstatns.swift */; };
-		D5EAA501251CC1E70025AC0F /* CellsHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA500251CC1E70025AC0F /* CellsHeight.swift */; };
+		D5EAA501251CC1E70025AC0F /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA500251CC1E70025AC0F /* Cells.swift */; };
+		D5EAA509251CF4CB0025AC0F /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA508251CF4CB0025AC0F /* Duration.swift */; };
+		D5EAA50D251CF5AA0025AC0F /* Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA50C251CF5AA0025AC0F /* Alpha.swift */; };
+		D5EAA511251CF8990025AC0F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA510251CF8990025AC0F /* Images.swift */; };
+		D5EAA515251CFACD0025AC0F /* ChildsAtributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA514251CFACD0025AC0F /* ChildsAtributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,7 +373,11 @@
 		D5EAA4F1251C9DA60025AC0F /* MainTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSource.swift; sourceTree = "<group>"; };
 		D5EAA4F5251C9DE30025AC0F /* MainTableDataSourceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSourceOutput.swift; sourceTree = "<group>"; };
 		D5EAA4FC251CC14D0025AC0F /* ViewConstatns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstatns.swift; sourceTree = "<group>"; };
-		D5EAA500251CC1E70025AC0F /* CellsHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsHeight.swift; sourceTree = "<group>"; };
+		D5EAA500251CC1E70025AC0F /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		D5EAA508251CF4CB0025AC0F /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		D5EAA50C251CF5AA0025AC0F /* Alpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alpha.swift; sourceTree = "<group>"; };
+		D5EAA510251CF8990025AC0F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		D5EAA514251CFACD0025AC0F /* ChildsAtributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsAtributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1313,7 +1321,11 @@
 			isa = PBXGroup;
 			children = (
 				D5EAA4FC251CC14D0025AC0F /* ViewConstatns.swift */,
-				D5EAA500251CC1E70025AC0F /* CellsHeight.swift */,
+				D5EAA500251CC1E70025AC0F /* Cells.swift */,
+				D5EAA508251CF4CB0025AC0F /* Duration.swift */,
+				D5EAA50C251CF5AA0025AC0F /* Alpha.swift */,
+				D5EAA510251CF8990025AC0F /* Images.swift */,
+				D5EAA514251CFACD0025AC0F /* ChildsAtributes.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1468,6 +1480,7 @@
 				D5A0BFE1250A40F10080737E /* SuccessViewOutput.swift in Sources */,
 				D5A0BF9E250A1E9C0080737E /* TreatmentPresenter.swift in Sources */,
 				D5A0BFA4250A1ED40080737E /* TreatmentConfigurator.swift in Sources */,
+				D5EAA511251CF8990025AC0F /* Images.swift in Sources */,
 				D52C3C7F2510B894001E34A0 /* ContactStyleButton.swift in Sources */,
 				D5A0BFE3250A40F10080737E /* SuccessViewController.swift in Sources */,
 				D52C3C7B250F83E2001E34A0 /* ChildsController.swift in Sources */,
@@ -1487,7 +1500,7 @@
 				D5EAA47C251B57D20025AC0F /* ContactView.swift in Sources */,
 				D50F511424DD72FA0042BAD2 /* MainInteractor.swift in Sources */,
 				D520451825050D2E007B746A /* ContactViewOutput.swift in Sources */,
-				D5EAA501251CC1E70025AC0F /* CellsHeight.swift in Sources */,
+				D5EAA501251CC1E70025AC0F /* Cells.swift in Sources */,
 				D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */,
 				D59DB6D9250E34440068888D /* MainModuleOutput.swift in Sources */,
 				D59DB6C6250A48D40068888D /* ChildAddAndRemove.swift in Sources */,
@@ -1514,6 +1527,7 @@
 				D59DB6BC250A47890068888D /* ContainerInteractorOutput.swift in Sources */,
 				D59DB6BD250A47890068888D /* ContainerViewInput.swift in Sources */,
 				D5A0BFE9250A40F10080737E /* SuccessRouterInput.swift in Sources */,
+				D5EAA509251CF4CB0025AC0F /* Duration.swift in Sources */,
 				D50F511624DD73050042BAD2 /* MainRouter.swift in Sources */,
 				D59DB6B5250A47890068888D /* ContainerConfigurator.swift in Sources */,
 				D5B03FFA24FBF9260023E5DE /* MainRouterInput.swift in Sources */,
@@ -1524,8 +1538,10 @@
 				D5B03FFD24FBFB200023E5DE /* CustomTableView.swift in Sources */,
 				D5EAA48D251B76000025AC0F /* SuccessView.swift in Sources */,
 				D5A0BFA6250A1FBC0080737E /* TreatmentViewInput.swift in Sources */,
+				D5EAA515251CFACD0025AC0F /* ChildsAtributes.swift in Sources */,
 				D59DB6C8250A50160068888D /* ViewSize.swift in Sources */,
 				D5A0BFE8250A40F10080737E /* SuccessModuleOutput.swift in Sources */,
+				D5EAA50D251CF5AA0025AC0F /* Alpha.swift in Sources */,
 				D5B0400324FCE7420023E5DE /* CardTableViewCell.swift in Sources */,
 				D5EAA477251B41220025AC0F /* MainView.swift in Sources */,
 				D5A0BFA2250A1EC80080737E /* TreatmentRouter.swift in Sources */,

@@ -15,7 +15,7 @@ final class CustomTableViewCell: UITableViewCell {
 	private let fullNameLabel = UILabel()
 	private let phoneNumberLabel = UILabel()
 	private let size = UIScreen.main.bounds.height/11
-	private let defaultImage = UIImage(named: "defaultImage")
+	private let defaultImage = UIImage(named: Images.unknown)
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)

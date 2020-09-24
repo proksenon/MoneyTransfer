@@ -41,12 +41,12 @@ class MainTableDataSource: NSObject, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let output = output else { return UITableViewCell() }
 		if indexPath.section == 1 {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CustomTableViewCell
+			let cell = tableView.dequeueReusableCell(withIdentifier: Cells.CellsID.defaultCell.rawValue) as? CustomTableViewCell
 			cell?.configureCell(with: output.getPerson(with: indexPath))
 			guard let currentCell = cell else { return UITableViewCell()}
 			return currentCell
 		} else {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as? CardTableViewCell
+			let cell = tableView.dequeueReusableCell(withIdentifier: Cells.CellsID.cardCell.rawValue) as? CardTableViewCell
 			cell?.configureCell(with: output.getBalance())
 			guard let currentCell = cell else { return UITableViewCell()}
 			return currentCell

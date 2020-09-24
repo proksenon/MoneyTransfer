@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Роутер модуля Main
 final class MainRouter: MainRouterInput {
 
 	weak var viewController: UIViewController?

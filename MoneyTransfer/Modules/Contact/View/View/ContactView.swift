@@ -38,7 +38,7 @@ class ContactView: UIView {
 									 avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -110),
 									 avatarImageView.widthAnchor.constraint(equalToConstant: ViewConstatns.width/2),
 									 avatarImageView.heightAnchor.constraint(equalToConstant: ViewConstatns.width/2)])
-		avatarImageView.image = UIImage(named: "defaultImage")
+		avatarImageView.image = UIImage(named: Images.unknown)
 		avatarImageView.contentMode = .scaleAspectFill
 		avatarImageView.roundedCorner(with: ViewConstatns.width/4)
 	}
