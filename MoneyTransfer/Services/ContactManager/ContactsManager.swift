@@ -42,8 +42,8 @@ final class ContactsManager: ContactsManagerProtocol {
 		var persons: [Person] = []
 		for contact in contacts {
 			var phone: String?
-			if contact.phoneNumbers.count >= 1 {
-				phone = (contact.phoneNumbers[0].value as CNPhoneNumber).stringValue
+			if let phoneNumber = contact.phoneNumbers.first?.value {
+				phone = phoneNumber.stringValue
 			}
 			let fullName = contact.familyName + " " + contact.givenName
 			let imageData = contact.imageData
