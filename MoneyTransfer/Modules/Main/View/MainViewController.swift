@@ -10,16 +10,15 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
-	var output: MainViewOutput!
+	var output: MainViewOutput?
 	var moduleInput: MainMouduleInput?
-	private let mainView: MainView = MainView()
-	private var configurator: MainConfiguratorProtocol?
+	let mainView: MainView = MainView()
+	private var configurator: MainConfiguratorProtocol
 	private var scrollAtTopButton: UIBarButtonItem?
-	private var balanceTitleLabel: UILabel?
 
 	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
-		super.init(nibName: nil, bundle: nil)
 		self.configurator = configurator
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	required init?(coder: NSCoder) {
@@ -27,8 +26,8 @@ final class MainViewController: UIViewController {
 	}
 
 	override func viewDidLoad() {
-		guard let configurator = configurator else { return }
 		configurator.configure(with: self)
+		guard let output = output else { return }
 		output.configureView()
 	}
 
@@ -45,24 +44,12 @@ final class MainViewController: UIViewController {
 extension MainViewController: MainViewInput {
 
 	//MARK: -NavigationTitle
-	func setupBalanceTitle() {
-		balanceTitleLabel = UILabel()
-		guard let balanceTitleLabel = balanceTitleLabel, let navigationController = navigationController else { return }
-		navigationController.navigationBar.insertSubview(balanceTitleLabel, at: 0)
-		balanceTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([balanceTitleLabel.centerYAnchor.constraint(equalTo: navigationController.navigationBar.centerYAnchor),
-									 balanceTitleLabel.centerXAnchor.constraint(equalTo:
-										navigationController.navigationBar.centerXAnchor)])
-	}
-
 	func setBalanceTitleWith(balance: String) {
-		guard let balanceTitleLabel = balanceTitleLabel else { return }
-		balanceTitleLabel.text = "Текущий баланс " + balance.moneyFormat()
+		self.title = "Текущий баланс " + balance.moneyFormat()
 	}
 
 	func navigationTitleIsHidden(_ isHidden: Bool) {
 		navigationController?.navigationBar.alpha = 1
-		balanceTitleLabel?.isHidden = isHidden
 	}
 
 	func navigationBarIsHidden(_ isHidden: Bool) {
@@ -74,27 +61,20 @@ extension MainViewController: MainViewInput {
 	func navigationWithScrollAtTop() {
 		navigationItem.leftBarButtonItem = scrollAtTopButton
 	}
+
 	//MARK: -TableView
 	func setScrollAtTopButton() {
 		scrollAtTopButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .done, target: self, action: #selector(scrollAtTheTop))
 	}
 
 	@IBAction func scrollAtTheTop() {
-		guard let tableView = mainView.tableView else { return }
-		tableView.scrollToRow(at: IndexPath(row: 0, section: 0) , at: .top, animated: true)
-	}
-
-	func setupTableView() {
-		mainView.tableView?.delegate = self
-		mainView.tableView?.dataSource = self
+		mainView.tableView.scrollToRow(at: IndexPath(row: 0, section: 0) , at: .top, animated: true)
 	}
 
 	func tableViewReload() {
-		guard let tableView = mainView.tableView else { return }
 		DispatchQueue.main.async {
-			tableView.reloadData()
+			self.mainView.tableView.reloadData()
 		}
-
 	}
 
 	//MARK: -DimmView
@@ -113,79 +93,16 @@ extension MainViewController: MainViewInput {
 	}
 
 	@objc private func tapGestureDone(){
+		guard let output = output else { return }
 		output.dissmissStatusOperation()
 	}
 }
-//MARK: -TableWork
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-	
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return 2
-	}
 
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if section == 0 {
-			return 1
-		} else {
-			return output.countOfPersons()
-		}
-	}
 
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if indexPath.section == 1 {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
-			cell.configureCell(with: output.getPerson(with: indexPath))
-			return cell
-		} else {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! CardTableViewCell
-			cell.configureCell(with: output.getBalance())
-			return cell
-		}
-	}
-
-	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if section == 1 {
-			return "Контакты"
-		}
-		return nil
-	}
-
-	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-		view.tintColor = .white
-        let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor.black
-		header.textLabel?.font = header.textLabel?.font.withSize(20)
-		header.sizeToFit()
-	}
-
-	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-		if indexPath.section == 1 {
-			return UIScreen.main.bounds.height/11
-		} else {
-			return 300
-		}
-	}
-
-	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		guard let tableView = mainView.tableView else { return }
-		if tableView.contentOffset.y > 130 {
-			output.cardInfromationLeft(false)
-		} else {
-			output.cardInfromationLeft(true)
-		}
-	}
-
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if indexPath.section != 0 {
-			output.didChosePerson(indexPath: indexPath)
-		}
-	}
-
-}
 //MARK: -ExitDelegate
 extension MainViewController: ExitDelegate {
 	func backToContacts() {
+		guard let output = output else { return }
 		output.dissmissStatusOperation()
 	}
 }

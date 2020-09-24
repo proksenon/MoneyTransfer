@@ -13,7 +13,7 @@ final class TreatmentViewController: UIViewController {
 	var output: TreatmentViewOutput?
 	var moduleInput: TreatmentModuleInput?
 	var moduleOutput: ExitDelegate?
-	private var treatmentView: TreatmentView?
+	let treatmentView: TreatmentView = TreatmentView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,7 @@ final class TreatmentViewController: UIViewController {
     }
 
 	override func loadView() {
-		let view = TreatmentView()
-		self.view = view
-		treatmentView = view
+		self.view = treatmentView
 	}
 }
 
@@ -38,20 +36,17 @@ extension TreatmentViewController: TreatmentViewInput {
 	
 	//MARK: -StatusLabel
 	func setTitleForStatusLabel(title: String) {
-		guard let treatmentView = treatmentView, let statusLabel = treatmentView.statusLabel else { return }
-		statusLabel.text = title
+		treatmentView.statusLabel.text = title
 	}
 
 	//MARK: -AmountOfMoneyLabel
 	func setTitleAmountOfMoneyLabel(with amount: String) {
-		guard let treatmentView = treatmentView, let amountOfMoneyLabel = treatmentView.amountOfMoneyLabel else { return }
-		amountOfMoneyLabel.text = amount.moneyFormat()
+		treatmentView.amountOfMoneyLabel.text = amount.moneyFormat()
 	}
 
 	//MARK: -OperationButton
 	func setTargetOnOperationButton() {
-		guard let treatmentView = treatmentView, let operationButton = treatmentView.operationButton else { return }
-		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
+		treatmentView.operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
 	}
 	
 	@IBAction private func operationButtonDidTapped() {

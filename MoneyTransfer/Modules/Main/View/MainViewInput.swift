@@ -9,8 +9,6 @@
 import Foundation
 
 protocol MainViewInput: class {
-	///  Устанавливает таблицу
-	func setupTableView()
 	///  Обновляет таблицу
 	func tableViewReload()
 	///  Устанавливает кнопку,  которая будет скролть к верху
@@ -19,8 +17,6 @@ protocol MainViewInput: class {
 	func navigationWithScrollAtTop()
 	///  Скрывает навигейшнбар
 	func navigationBarIsHidden(_ isHidden: Bool)
-	///  Устанавливает тайтл навигейшн бара с текущим балансом
-	func setupBalanceTitle()
 	///  Устанавливает баланс в тайтл
 	func setBalanceTitleWith(balance: String)
 	///  Скрывает навигейшн тайтл

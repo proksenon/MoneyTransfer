@@ -19,5 +19,12 @@ final class MainConfigurator: MainConfiguratorProtocol {
 		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router
+
+		let delegate = MainTableDelegate(output: presenter)
+		let dataSource = MainTableDataSource(output: presenter)
+		presenter.mainTableDelegate = delegate
+		presenter.mainTableDataSource = dataSource
+		viewController.mainView.tableView.delegate = delegate
+		viewController.mainView.tableView .dataSource = dataSource
 	}
 }

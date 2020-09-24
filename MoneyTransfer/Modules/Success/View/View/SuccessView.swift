@@ -10,14 +10,14 @@ import UIKit
 
 class SuccessView: UIView {
 
-	var treatmentImageView: UIImageView?
-	var statusLabel: UILabel?
-	var atributeTransactionLabel: UILabel?
-	var amountOfMoneyLabel: UILabel?
-	var operationButton: UIButton?
-	var changeBalanceLabel: UILabel?
-	var beforeTransactionBalanceLabel: UILabel?
-	var currentBalanceLabel: UILabel?
+	let treatmentImageView: UIImageView = UIImageView()
+	let statusLabel: UILabel = UILabel()
+	let atributeTransactionLabel: UILabel = UILabel()
+	let amountOfMoneyLabel: UILabel = UILabel()
+	let operationButton: UIButton = UIButton()
+	let changeBalanceLabel: UILabel = UILabel()
+	let beforeTransactionBalanceLabel: UILabel = UILabel()
+	let currentBalanceLabel: UILabel = UILabel()
 
 	init() {
 		let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 450)
@@ -36,8 +36,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -TreatmentImageView
-	func setupTreatmentImageView() {
-		let treatmentImageView = UIImageView()
+	private func setupTreatmentImageView() {
 		addSubview(treatmentImageView)
 		treatmentImageView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([treatmentImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -47,78 +46,61 @@ class SuccessView: UIView {
 
 
 		treatmentImageView.image = UIImage(systemName: "checkmark.circle")?.withTintColor(.green, renderingMode: .alwaysOriginal)
-		self.treatmentImageView = treatmentImageView
 	}
 
 	//MARK: -StatusLabel
-	func setupStatusLabel() {
-		guard let treatmentImageView = treatmentImageView else { return }
-		let statusLabel = UILabel()
+	private func setupStatusLabel() {
 		addSubview(statusLabel)
 		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: 20),
 									 statusLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 statusLabel.widthAnchor.constraint(equalToConstant: 300)])
 
 		statusLabel.mainLabel(title: "Перевод прошел успешно")
-		self.statusLabel = statusLabel
 	}
 
 	//MARK: -AtributeTransactionLabel
-	func setupAtributeTransactionLabel() {
-		guard let statusLabel = statusLabel else { return }
-		let atributeTransactionLabel = UILabel()
+	private func setupAtributeTransactionLabel() {
 		addSubview(atributeTransactionLabel)
 		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 20),
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: 300)])
 
 		atributeTransactionLabel.subLabel(title: "Переведено")
-		self.atributeTransactionLabel = atributeTransactionLabel
 	}
 
 	//MARK: -AmountOfMoneyLabel
-	func setupAmountOfMoneyLabel() {
-		guard let atributeTransactionLabel = atributeTransactionLabel else { return }
-		let amountOfMoneyLabel = UILabel()
+	private func setupAmountOfMoneyLabel() {
 		addSubview(amountOfMoneyLabel)
 		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: 10),
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: 300)])
 
 		amountOfMoneyLabel.mainLabel(title: "money")
-		self.amountOfMoneyLabel = amountOfMoneyLabel
 	}
 
 	//MARK: -OperationButton
-	func setupExitButton() {
-		let operationButton = UIButton()
+	private func setupExitButton() {
 		addSubview(operationButton)
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -130),
 									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
 									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -15)])
 
 		operationButton.styleButton(title: "Перейти в контакты")
-		self.operationButton = operationButton
 	}
 
 	//MARK: -ChangeBalanceLabel
-	func setupChangeBalanceLabel() {
-		let changeBalanceLabel = UILabel()
+	private func setupChangeBalanceLabel() {
 		addSubview(changeBalanceLabel)
-		guard let amountOfMoneyLabel = amountOfMoneyLabel else { return }
 		NSLayoutConstraint.activate([changeBalanceLabel.topAnchor.constraint(equalTo: amountOfMoneyLabel.bottomAnchor, constant: 20),
 									 changeBalanceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 changeBalanceLabel.widthAnchor.constraint(equalToConstant: 300)])
 
 		changeBalanceLabel.subLabel(title: "Изменение баланса")
-		self.changeBalanceLabel = changeBalanceLabel
 	}
 
 	//MARK: -BeforeTransactionBalanceLabel
-	func setupBeforeTransactionBalanceLabel() {
-		let beforeTransactionBalanceLabel = UILabel()
+	private func setupBeforeTransactionBalanceLabel() {
 		addSubview(beforeTransactionBalanceLabel)
-		guard let changeBalanceLabel = changeBalanceLabel else { return }
 		NSLayoutConstraint.activate([beforeTransactionBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: 10),
 									 beforeTransactionBalanceLabel.rightAnchor.constraint(equalTo: centerXAnchor, constant: -5),
 									 beforeTransactionBalanceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10)])
@@ -126,14 +108,11 @@ class SuccessView: UIView {
 		beforeTransactionBalanceLabel.subLabel(title: "999999")
 		beforeTransactionBalanceLabel.strikeThrough(true)
 		beforeTransactionBalanceLabel.textAlignment = .right
-		self.beforeTransactionBalanceLabel = beforeTransactionBalanceLabel
 	}
 
 	//MARK: -CurrentBalanceLabel
-	func setupCurrentBalanceLabel() {
-		let currentBalanceLabel = UILabel()
+	private func setupCurrentBalanceLabel() {
 		addSubview(currentBalanceLabel)
-		guard let changeBalanceLabel = changeBalanceLabel else { return }
 		NSLayoutConstraint.activate([currentBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: 10),
 									 currentBalanceLabel.leftAnchor.constraint(equalTo: centerXAnchor, constant: 5),
 									 currentBalanceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)])
@@ -141,7 +120,6 @@ class SuccessView: UIView {
 		currentBalanceLabel.subLabel(title: "999999")
 		currentBalanceLabel.textAlignment = .left
 		currentBalanceLabel.textColor = .black
-		self.currentBalanceLabel = currentBalanceLabel
 	}
 	
 }

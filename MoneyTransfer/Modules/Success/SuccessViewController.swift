@@ -13,7 +13,7 @@ final class SuccessOperationViewController: UIViewController {
 	var output: SuccessOperationViewOutput?
 	var moduleInput: SuccessOperationModuleInput?
 	var moduleOutput: ExitDelegate?
-	private var successView: SuccessView?
+	let successView: SuccessView = SuccessView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,7 @@ final class SuccessOperationViewController: UIViewController {
     }
 
 	override func loadView() {
-		let view = SuccessView()
-		self.view = view
-		successView = view
+		self.view = successView
 	}
 
 }
@@ -39,14 +37,12 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 
 	//MARK: -AmountOfMoneyLabel
 	func setTitleAmountOfMoneyLable(with amount: String) {
-		guard let successView = successView, let amountOfMoneyLabel = successView.amountOfMoneyLabel else { return }
-		amountOfMoneyLabel.text = amount.moneyFormat()
+		successView.amountOfMoneyLabel.text = amount.moneyFormat()
 	}
 
 	//MARK: -OperationButton
 	func setTargetOnOperationButton() {
-		guard let successView = successView, let operationButton = successView.operationButton else { return }
-		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
+		successView.operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
 	}
 
 	@IBAction private func operationButtonDidTapped() {
@@ -55,14 +51,12 @@ extension SuccessOperationViewController: SuccessOperationViewInput {
 
 	//MARK: -BeforeTransactionBalanceLabel
 	func setOldBalance(oldBalance: String) {
-		guard let successView = successView, let beforeTransactionBalanceLabel = successView.beforeTransactionBalanceLabel else { return }
-		beforeTransactionBalanceLabel.text = oldBalance.moneyFormat()
+		successView.beforeTransactionBalanceLabel.text = oldBalance.moneyFormat()
 	}
 
 	//MARK: -CurrentBalanceLabel
 	func setCurrentBalance(balance: String) {
-		guard let successView = successView, let currentBalanceLabel = successView.currentBalanceLabel else { return }
-		currentBalanceLabel.text = balance.moneyFormat()
+		successView.currentBalanceLabel.text = balance.moneyFormat()
 	}
 
 }

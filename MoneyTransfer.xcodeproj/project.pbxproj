@@ -174,6 +174,10 @@
 		D5EAA481251B5DD20025AC0F /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA480251B5DD20025AC0F /* TransactionView.swift */; };
 		D5EAA488251B71BF0025AC0F /* TreatmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA487251B71BF0025AC0F /* TreatmentView.swift */; };
 		D5EAA48D251B76000025AC0F /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA48C251B76000025AC0F /* SuccessView.swift */; };
+		D5EAA495251B9B210025AC0F /* MainTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA494251B9B210025AC0F /* MainTableDelegate.swift */; };
+		D5EAA49B251B9B710025AC0F /* MainTableDelegateOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA49A251B9B710025AC0F /* MainTableDelegateOutput.swift */; };
+		D5EAA4F2251C9DA60025AC0F /* MainTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA4F1251C9DA60025AC0F /* MainTableDataSource.swift */; };
+		D5EAA4F6251C9DE30025AC0F /* MainTableDataSourceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA4F5251C9DE30025AC0F /* MainTableDataSourceOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -358,6 +362,10 @@
 		D5EAA480251B5DD20025AC0F /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		D5EAA487251B71BF0025AC0F /* TreatmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentView.swift; sourceTree = "<group>"; };
 		D5EAA48C251B76000025AC0F /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		D5EAA494251B9B210025AC0F /* MainTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDelegate.swift; sourceTree = "<group>"; };
+		D5EAA49A251B9B710025AC0F /* MainTableDelegateOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDelegateOutput.swift; sourceTree = "<group>"; };
+		D5EAA4F1251C9DA60025AC0F /* MainTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSource.swift; sourceTree = "<group>"; };
+		D5EAA4F5251C9DE30025AC0F /* MainTableDataSourceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataSourceOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +409,7 @@
 			children = (
 				D50F50FA24DD6F760042BAD2 /* AppDelegate.swift */,
 				D50F50FC24DD6F760042BAD2 /* SceneDelegate.swift */,
+				D5EAA4F9251CBD720025AC0F /* Constants */,
 				D5B0400424FD08B40023E5DE /* Entity */,
 				D59DB6C4250A48B90068888D /* Extension */,
 				D5B0400724FD09AD0023E5DE /* Services */,
@@ -1209,6 +1218,8 @@
 			isa = PBXGroup;
 			children = (
 				D5B03FFC24FBFB200023E5DE /* CustomTableView.swift */,
+				D5EAA492251B98410025AC0F /* MainTableDataSource */,
+				D5EAA493251B98520025AC0F /* MainTableDelegate */,
 				D520452925065EA9007B746A /* Cells */,
 			);
 			path = Table;
@@ -1274,6 +1285,31 @@
 				D5EAA48C251B76000025AC0F /* SuccessView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D5EAA492251B98410025AC0F /* MainTableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D5EAA4F1251C9DA60025AC0F /* MainTableDataSource.swift */,
+				D5EAA4F5251C9DE30025AC0F /* MainTableDataSourceOutput.swift */,
+			);
+			path = MainTableDataSource;
+			sourceTree = "<group>";
+		};
+		D5EAA493251B98520025AC0F /* MainTableDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D5EAA494251B9B210025AC0F /* MainTableDelegate.swift */,
+				D5EAA49A251B9B710025AC0F /* MainTableDelegateOutput.swift */,
+			);
+			path = MainTableDelegate;
+			sourceTree = "<group>";
+		};
+		D5EAA4F9251CBD720025AC0F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1385,6 +1421,7 @@
 				D59DB6BA250A47890068888D /* ContainerPresenter.swift in Sources */,
 				D59DB6B8250A47890068888D /* ContainerConfiguratorProtocol.swift in Sources */,
 				D59DB6D5250D470D0068888D /* Balance.swift in Sources */,
+				D5EAA495251B9B210025AC0F /* MainTableDelegate.swift in Sources */,
 				D59DB6B9250A47890068888D /* ContainerRouter.swift in Sources */,
 				D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */,
 				D5EAA481251B5DD20025AC0F /* TransactionView.swift in Sources */,
@@ -1415,6 +1452,7 @@
 				D5A0BF6D25079BF20080737E /* TransactionInteractor.swift in Sources */,
 				D520452025050D80007B746A /* ContactInteractorOutput.swift in Sources */,
 				D52C3C7D250FCE98001E34A0 /* Operations.swift in Sources */,
+				D5EAA4F6251C9DE30025AC0F /* MainTableDataSourceOutput.swift in Sources */,
 				D520450D25050C9B007B746A /* ContactInteractor.swift in Sources */,
 				D52C3C79250F821D001E34A0 /* RoundedCorners.swift in Sources */,
 				D5A0BF6F25079BFE0080737E /* TransactionRouter.swift in Sources */,
@@ -1459,10 +1497,12 @@
 				D50F511224DD72EB0042BAD2 /* MainPresenter.swift in Sources */,
 				D5204528250511E0007B746A /* ContactConfigureProtocol.swift in Sources */,
 				D5A0BFE4250A40F10080737E /* SuccessPresenter.swift in Sources */,
+				D5EAA49B251B9B710025AC0F /* MainTableDelegateOutput.swift in Sources */,
 				D5A0BFE2250A40F10080737E /* SuccessViewInput.swift in Sources */,
 				D5A0BF8225079DE00080737E /* TransactionInteractorOutput.swift in Sources */,
 				D5A0BF8025079DD40080737E /* TransactionInteractorInput.swift in Sources */,
 				D5A0BFE6250A40F10080737E /* SuccessInteractorInput.swift in Sources */,
+				D5EAA4F2251C9DA60025AC0F /* MainTableDataSource.swift in Sources */,
 				D59DB6BC250A47890068888D /* ContainerInteractorOutput.swift in Sources */,
 				D59DB6BD250A47890068888D /* ContainerViewInput.swift in Sources */,
 				D5A0BFE9250A40F10080737E /* SuccessRouterInput.swift in Sources */,

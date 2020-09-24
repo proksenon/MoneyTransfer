@@ -10,9 +10,7 @@ import UIKit
 
 class MainView: UIView {
 
-	var tableView: UITableView?
-	var scrollAtTopButton: UIBarButtonItem?
-	var balanceTitleLabel: UILabel?
+	var tableView: UITableView = CustomTableView()
 	lazy var dimmView: UIView = {
 		let view = UIView()
 		view.backgroundColor = UIColor.black.withAlphaComponent(1)
@@ -31,14 +29,12 @@ class MainView: UIView {
 	}
 
 	private func setTableView() {
-		let tableView = CustomTableView()
 		addSubview(tableView)
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
 		tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
 		tableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
 		tableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-		self.tableView = tableView
 	}
 
 	private func setupDimmView() {

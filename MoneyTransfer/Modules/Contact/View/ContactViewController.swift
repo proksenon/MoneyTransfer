@@ -14,7 +14,7 @@ final class ContactViewController: UIViewController {
 	var output: ContactViewOutput?
 	var moduleInput: ContactModuleInput?
 	var moduleOutput: TogleView?
-	private var contactView: ContactView?
+	let contactView: ContactView = ContactView()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,7 @@ final class ContactViewController: UIViewController {
     }
 	
 	override func loadView() {
-		let view = ContactView()
-		self.view = view
-		contactView = view
+		self.view = contactView
 	}
 
 }
@@ -38,30 +36,23 @@ extension ContactViewController: ContactViewInput {
 
 	//MARK: -AvatarImageView
 	func setDataToAvatar(with data: Data?) {
-		guard let contactView = contactView,
-			  let avatarImageView = contactView.avatarImageView,
-			  let data = data
-		else { return }
+		guard let data = data else { return }
 
-		avatarImageView.image = UIImage(data: data)
+		contactView.avatarImageView.image = UIImage(data: data)
 	}
 	//MARK: -FullNameLabel
 	func setFullName(with name: String) {
-		contactView?.fullNameLabel?.text = name
+		contactView.fullNameLabel.text = name
 	}
 	
 	//MARK: -PhoneNumberLabel
 	func setPhoneNumber(with phone: String) {
-		guard let contactView = contactView, let phoneNumberLabel = contactView.phoneNumberLabel else { return }
-
-		phoneNumberLabel.text = phone
+		contactView.phoneNumberLabel.text = phone
 	}
 
 	//MARK: -RequestMoneyButton
 	func setTargetRequestMoneyButton() {
-		guard let contactView = contactView, let requestMoneyButton = contactView.requestMoneyButton else { return }
-
-		requestMoneyButton.addTarget(self, action: #selector(requestMoney), for: .touchUpInside)
+		contactView.requestMoneyButton.addTarget(self, action: #selector(requestMoney), for: .touchUpInside)
 	}
 	
 	@IBAction private func requestMoney() {
@@ -71,8 +62,7 @@ extension ContactViewController: ContactViewInput {
 
 	//MARK: -SendMoneyButton
 	func setTargetOnSendMoneyButton() {
-		guard let contactView = contactView, let sendMoneyButton = contactView.sendMoneyButton else { return }
-		sendMoneyButton.addTarget(self, action: #selector(sendMoney), for: .touchUpInside)
+		contactView.sendMoneyButton.addTarget(self, action: #selector(sendMoney), for: .touchUpInside)
 	}
 	
 	@IBAction private func sendMoney() {

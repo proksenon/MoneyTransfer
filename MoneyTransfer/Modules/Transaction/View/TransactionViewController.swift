@@ -14,7 +14,7 @@ final class TransactionViewController: UIViewController {
 	var output: TransactionViewOutput?
 	var moduleInput: TransactionModuleInput?
 	var moduleOutput: TransactionDelegate?
-	private var transactionView: TransactionView?
+	let transactionView: TransactionView = TransactionView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,7 @@ final class TransactionViewController: UIViewController {
     }
 
 	override func loadView() {
-		let view = TransactionView()
-		self.view = view
-		transactionView = view
+		self.view = transactionView
 	}
 
 }
@@ -56,24 +54,19 @@ extension TransactionViewController: TransactionViewInput {
 
 	//MARK: -OperationLabel
 	func setTitleForOperationLabel(title: String) {
-		guard let transactionView = transactionView, let nameOperationLabel = transactionView.nameOperationLabel else { return }
-
-		nameOperationLabel.text = title
+		transactionView.nameOperationLabel.text = title
 	}
 
 	//MARK: -MoneyTextfield
 	func textFieldText()-> String? {
-		return transactionView?.moneyTextfield?.text
+		return transactionView.moneyTextfield.text
 	}
 
 	func setupMoneyTextField() {
-		guard let transactionView = transactionView, let moneyTextfield = transactionView.moneyTextfield else { return }
-
-		moneyTextfield.delegate = self
+		transactionView.moneyTextfield.delegate = self
 	}
 
 	func changeCornerColorMoneyTextField(result: Status) {
-		guard let transactionView = transactionView, let moneyTextfield = transactionView.moneyTextfield else { return }
 		var color: CGColor
 		switch result {
 		case .failure:
@@ -81,29 +74,25 @@ extension TransactionViewController: TransactionViewInput {
 		case .success:
 			color = .init(srgbRed: 0, green: 1, blue: 0.1, alpha: 0.5)
 		}
-		moneyTextfield.layer.borderWidth = 1
-		moneyTextfield.layer.borderColor = color
+		transactionView.moneyTextfield.layer.borderWidth = 1
+		transactionView.moneyTextfield.layer.borderColor = color
 	}
 	//MARK: -OperationButton
 	func setTargetOnOperationButton() {
-		guard let transactionView = transactionView, let operationButton = transactionView.operationButton else { return }
-
-		operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
+		transactionView.operationButton.addTarget(self, action: #selector(operationButtonDidTapped), for: .touchUpInside)
 	}
 
 	func setTitleForOperationButton(title: String) {
-		guard let transactionView = transactionView, let operationButton = transactionView.operationButton else { return }
-		operationButton.setTitle(title, for: .normal)
+		transactionView.operationButton.setTitle(title, for: .normal)
 	}
 
 	func operationButtonIsEnabled(isEnabled: Bool) {
-		guard let transactionView = transactionView, let operationButton = transactionView.operationButton else { return }
 		if isEnabled {
-			operationButton.backgroundColor = .green
+			transactionView.operationButton.backgroundColor = .green
 		} else {
-			operationButton.backgroundColor = .systemGray2
+			transactionView.operationButton.backgroundColor = .systemGray2
 		}
-		operationButton.isUserInteractionEnabled = isEnabled
+		transactionView.operationButton.isUserInteractionEnabled = isEnabled
 	}
 
 	@IBAction private func operationButtonDidTapped() {

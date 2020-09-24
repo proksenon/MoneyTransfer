@@ -13,6 +13,8 @@ final class MainPresenter {
 	weak var view: MainViewInput?
 	var interactor: MainInteractorInput?
 	var router: MainRouterInput?
+	var mainTableDataSource: MainTableDataSource?
+	var mainTableDelegate: MainTableDelegate?
 	private var persons: [Person] = []
 
 	init(view: MainViewInput) {
@@ -25,7 +27,6 @@ extension MainPresenter: MainViewOutput {
 
 	func configureView() {
 		guard let view = view, let interactor = interactor else { return }
-		view.setupTableView()
 		interactor.getContatcs { (persons) in
 			self.persons = persons
 			view.tableViewReload()
@@ -33,9 +34,46 @@ extension MainPresenter: MainViewOutput {
 		view.setScrollAtTopButton()
 		view.navigationWithScrollAtTop()
 		view.navigationBarIsHidden(true)
-		view.setupBalanceTitle()
 		view.setBalanceTitleWith(balance: getBalance())
 		view.tapOutSite()
+	}
+
+	func dissmissStatusOperation() {
+		guard let view = view, let router = router else { return }
+		router.dissmisSucces()
+		view.showDimmView(false)
+	}
+
+}
+//MARK: -MainInteractorOutput
+extension MainPresenter: MainInteractorOutput {
+}
+
+//MARK: -MainTableDelegateOutput
+extension MainPresenter: MainTableDelegateOutput {
+
+	func cardInfromationLeft(_ isLeft: Bool) {
+		guard let view = view else { return }
+		view.navigationBarIsHidden(isLeft)
+	}
+
+	func didChosePerson(indexPath: IndexPath) {
+		guard let view = view, let router = router else { return }
+		view.navigationTitleIsHidden(true)
+		router.pushContainer(with: persons[indexPath.row])
+	}
+
+}
+
+//MARK: -MainTableDataSourceOutput
+extension MainPresenter: MainTableDataSourceOutput {
+
+	func countOfPersons()->Int {
+		return persons.count
+	}
+
+	func getPerson(with indexPath: IndexPath)-> Person {
+		return persons[indexPath.row]
 	}
 
 	func getBalance()-> String {
@@ -49,35 +87,8 @@ extension MainPresenter: MainViewOutput {
 		}
 	}
 
-	func countOfPersons()->Int {
-		return persons.count
-	}
-
-	func getPerson(with indexPath: IndexPath)-> Person {
-		return persons[indexPath.row]
-	}
-
-	func cardInfromationLeft(_ isLeft: Bool) {
-		guard let view = view else { return }
-		view.navigationBarIsHidden(isLeft)
-	}
-
-	func didChosePerson(indexPath: IndexPath) {
-		guard let view = view, let router = router else { return }
-		view.navigationTitleIsHidden(true)
-		router.pushContainer(with: persons[indexPath.row])
-	}
-
-	func dissmissStatusOperation() {
-		guard let view = view, let router = router else { return }
-		router.dissmisSucces()
-		view.showDimmView(false)
-	}
-
 }
-//MARK: -MainInteractorOutput
-extension MainPresenter: MainInteractorOutput {
-}
+
 //MARK: -MainMouduleInput
 extension MainPresenter: MainMouduleInput {
 	
