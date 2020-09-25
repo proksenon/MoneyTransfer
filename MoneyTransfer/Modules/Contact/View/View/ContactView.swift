@@ -61,7 +61,7 @@ class ContactView: UIView {
 		NSLayoutConstraint.activate([fullNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 fullNameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: Constants.top)])
 
-		fullNameLabel.text = "SurnameName".localized
+		fullNameLabel.text = Labels.fullName
 		fullNameLabel.font = fullNameLabel.font.withSize(35)
 		fullNameLabel.textColor = .black
 	}
@@ -85,7 +85,7 @@ class ContactView: UIView {
 									 requestMoneyButton.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.buttonSpacing),
 									 requestMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.buttonSpacing)])
 
-		requestMoneyButton.contactStyleButton(title: "RequsetMoney".localized)
+		requestMoneyButton.contactStyleButton(title: Labels.requestMoney)
 	}
 
 	//MARK: -SendMoneyButton
@@ -96,7 +96,7 @@ class ContactView: UIView {
 									 sendMoneyButton.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.buttonSpacing),
 									 sendMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.buttonSpacing)])
 
-		sendMoneyButton.contactStyleButton(title: "SendMoney".localized)
+		sendMoneyButton.contactStyleButton(title: Labels.sendMoney)
 	}
 
 }

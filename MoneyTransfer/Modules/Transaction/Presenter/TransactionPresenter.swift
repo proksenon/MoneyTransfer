@@ -117,11 +117,11 @@ extension TransactionPresenter: TransactionModuleInput {
 		guard let view = view else {return}
 		switch operation {
 		case .request:
-			view.setTitleForOperationLabel(title: "RequestAmount".localized)
-			view.setTitleForOperationButton(title: "Request".localized)
+			view.setTitleForOperationLabel(title: Labels.requestAmount)
+			view.setTitleForOperationButton(title: Labels.request)
 		default:
-			view.setTitleForOperationLabel(title: "TransactionMoney".localized)
-			view.setTitleForOperationButton(title: "Send")
+			view.setTitleForOperationLabel(title: Labels.transactionMoney)
+			view.setTitleForOperationButton(title: Labels.send)
 		}
 		checkBalance()
 	}

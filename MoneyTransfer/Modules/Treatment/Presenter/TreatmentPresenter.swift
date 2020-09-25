@@ -46,9 +46,9 @@ extension TreatmentPresenter: TreatmentModuleInput {
 		view.setTitleAmountOfMoneyLabel(with: amountOfTransaction)
 		switch operation {
 		case .request:
-			view.setTitleForStatusLabel(title: "RequestProcessing".localized)
+			view.setTitleForStatusLabel(title: Labels.requestProcessing)
 		default:
-			view.setTitleForStatusLabel(title: "TransferProcessing".localized)
+			view.setTitleForStatusLabel(title: Labels.transferProcessing)
 		}
 	}
 

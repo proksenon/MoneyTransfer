@@ -46,7 +46,7 @@ extension MainViewController: MainViewInput {
 
 	//MARK: -NavigationTitle
 	func setBalanceTitleWith(balance: String) {
-		self.title = "CurrentBalance".localized + " " + balance.moneyFormat()
+		self.title = Labels.currentBalance + " " + balance.moneyFormat()
 	}
 
 	func navigationTitleIsHidden(_ isHidden: Bool) {

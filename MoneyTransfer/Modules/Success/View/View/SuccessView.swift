@@ -65,7 +65,7 @@ class SuccessView: UIView {
 									 statusLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
-		statusLabel.mainLabel(title: "TransferSuccess".localized)
+		statusLabel.mainLabel(title: Labels.transferSuccess)
 	}
 
 	//MARK: -AtributeTransactionLabel
@@ -75,7 +75,7 @@ class SuccessView: UIView {
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
-		atributeTransactionLabel.subLabel(title: "Transfered".localized)
+		atributeTransactionLabel.subLabel(title: Labels.transfered)
 	}
 
 	//MARK: -AmountOfMoneyLabel
@@ -95,7 +95,7 @@ class SuccessView: UIView {
 									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
 									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
 
-		operationButton.styleButton(title: "GoToContacts".localized)
+		operationButton.styleButton(title: Labels.goToContacts)
 	}
 
 	//MARK: -ChangeBalanceLabel
@@ -105,7 +105,7 @@ class SuccessView: UIView {
 									 changeBalanceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 changeBalanceLabel.widthAnchor.constraint(equalToConstant: ViewConstatns.width)])
 
-		changeBalanceLabel.subLabel(title: "BalanceChange".localized)
+		changeBalanceLabel.subLabel(title: Labels.balanceChange)
 	}
 
 	//MARK: -BeforeTransactionBalanceLabel

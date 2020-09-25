@@ -38,8 +38,8 @@ extension ContactPrsenter: ContactModuleInput {
 	func configure(with person: Person) {
 		guard let view = view else { return }
 		view.setDataToAvatar(with: person.avatarData)
-		view.setFullName(with: person.fullName ?? "Unknown".localized)
-		view.setPhoneNumber(with: person.phoneNumber ?? "WithoutPhone".localized)
+		view.setFullName(with: person.fullName ?? Labels.unknown)
+		view.setPhoneNumber(with: person.phoneNumber ?? Labels.withoutPhone)
 	}
 
 }

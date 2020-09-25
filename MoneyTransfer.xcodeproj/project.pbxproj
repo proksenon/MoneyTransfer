@@ -150,6 +150,7 @@
 		D5B0400624FD091D0023E5DE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400524FD091D0023E5DE /* Person.swift */; };
 		D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */; };
 		D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */; };
+		D5B83BF6251E5CA50095FA0B /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B83BF5251E5CA50095FA0B /* Labels.swift */; };
 		D5BB97272518CDD200CC8717 /* MoneyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BB97262518CDD200CC8717 /* MoneyString.swift */; };
 		D5E85A822513A1DF0071F660 /* ContainerRouterInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */; };
 		D5E85A842513A4CD0071F660 /* ContainerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */; };
@@ -348,6 +349,7 @@
 		D5B0400524FD091D0023E5DE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerProtocol.swift; sourceTree = "<group>"; };
+		D5B83BF5251E5CA50095FA0B /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		D5BB97262518CDD200CC8717 /* MoneyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyString.swift; sourceTree = "<group>"; };
 		D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRouterInputSpy.swift; sourceTree = "<group>"; };
 		D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenterTests.swift; sourceTree = "<group>"; };
@@ -954,10 +956,6 @@
 				D5A0BFD6250A40F10080737E /* SuccessViewController.swift */,
 				D5A0BFD5250A40F10080737E /* SuccessViewInput.swift */,
 				D5A0BFD4250A40F10080737E /* SuccessViewOutput.swift */,
-				D5EAA5B9251E18C20025AC0F /* Configurator */,
-				D5EAA5C0251E18F00025AC0F /* Interactor */,
-				D5EAA5C9251E190A0025AC0F /* Presenter */,
-				D5EAA5D2251E19220025AC0F /* Router */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1131,6 +1129,10 @@
 			isa = PBXGroup;
 			children = (
 				D59DB6C9250A56750068888D /* View */,
+				D5EAA5C0251E18F00025AC0F /* Interactor */,
+				D5EAA5C9251E190A0025AC0F /* Presenter */,
+				D5EAA5D2251E19220025AC0F /* Router */,
+				D5EAA5B9251E18C20025AC0F /* Configurator */,
 			);
 			path = Success;
 			sourceTree = "<group>";
@@ -1283,6 +1285,7 @@
 				D5EAA500251CC1E70025AC0F /* Cells.swift */,
 				D5EAA508251CF4CB0025AC0F /* Duration.swift */,
 				D5EAA50C251CF5AA0025AC0F /* Alpha.swift */,
+				D5B83BF5251E5CA50095FA0B /* Labels.swift */,
 				D5EAA510251CF8990025AC0F /* Images.swift */,
 				D5EAA514251CFACD0025AC0F /* ChildsAtributes.swift */,
 				D5EAA51A251DC1F00025AC0F /* ChildsButton.swift */,
@@ -1313,9 +1316,9 @@
 		D5EAA5C9251E190A0025AC0F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D5EAA5CC251E191A0025AC0F /* SuccessPresenter.swift */,
 				D5EAA5CA251E191A0025AC0F /* SuccessModuleInput.swift */,
 				D5EAA5CB251E191A0025AC0F /* SuccessModuleOutput.swift */,
-				D5EAA5CC251E191A0025AC0F /* SuccessPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1477,6 +1480,7 @@
 				D52C3C79250F821D001E34A0 /* RoundedCorners.swift in Sources */,
 				D5A0BF6F25079BFE0080737E /* TransactionRouter.swift in Sources */,
 				D5A0BFAC250A1FE80080737E /* TreatmentModuleOutput.swift in Sources */,
+				D5B83BF6251E5CA50095FA0B /* Labels.swift in Sources */,
 				D5A0BFE1250A40F10080737E /* SuccessViewOutput.swift in Sources */,
 				D5A0BF9E250A1E9C0080737E /* TreatmentPresenter.swift in Sources */,
 				D5EAA5CD251E191A0025AC0F /* SuccessModuleInput.swift in Sources */,
