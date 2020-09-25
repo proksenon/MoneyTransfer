@@ -13,7 +13,6 @@ final class ContactPrsenter {
 	weak var view: ContactViewInput?
 	var interactor: ContactInteractorInput?
 	var router: ContactRouterInput?
-	private var person: Person?
 
 	init(view: ContactViewInput) {
 		self.view = view

@@ -12,7 +12,7 @@ final class TreatmentPresenter {
 	weak var view: TreatmentViewInput?
 	var interactor: TreatmentInteractorInput?
 	var router: TreatmentRouterInput?
-	private var amountOfTransaction: String?
+	private var amountOfTransaction: String = DefaultBalance.failBalance
 	private var operation: Operations?
 
 	init(view: TreatmentViewInput) {
@@ -27,7 +27,6 @@ extension TreatmentPresenter: TreatmentViewOutput {
 		guard let view = view else { return }
 		view.setView()
 		view.setTargetOnOperationButton()
-		guard let amountOfTransaction = amountOfTransaction else { return }
 		view.setTitleAmountOfMoneyLabel(with: amountOfTransaction)
 	}
 }

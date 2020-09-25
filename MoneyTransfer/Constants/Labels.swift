@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// project labels name
 enum Labels {
 	static let contacts = "Contacts".localized
 	static let currentBalance = "CurrentBalance".localized

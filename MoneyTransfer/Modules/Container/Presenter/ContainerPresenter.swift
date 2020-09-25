@@ -52,7 +52,7 @@ final class ContainerPresenter {
 	private var isShow: Bool = false
 	private var isShowingController: ChildsController?
 	private var amountMoneyForTransaction: String?
-	private var balance: Balance?
+	private var balance: Balance = Balance(balance: DefaultBalance.failBalance, transactionMoney: DefaultBalance.failBalance)
 	private var statusShow: Bool = true
 	private var operation: Operations?
 	var contactViewController: ContactViewController?

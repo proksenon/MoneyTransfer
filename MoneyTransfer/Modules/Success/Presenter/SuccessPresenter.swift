@@ -12,8 +12,6 @@ final class SuccessOperationPresenter {
 	weak var view: SuccessOperationViewInput?
 	var interactor: SuccessOperationInteractorInput?
 	var router: SuccessOperationRouterInput?
-	private var amountOfTransaction: String?
-	private var currentBalance: String?
 	private var operation: Operations?
 
 	init(view: SuccessOperationViewInput) {
@@ -46,8 +44,6 @@ extension SuccessOperationPresenter: SuccessOperationInteractorOutput {
 extension SuccessOperationPresenter: SuccessOperationModuleInput {
 	
 	func configure(with balance: Balance) {
-		self.currentBalance = balance.balance
-		self.amountOfTransaction = balance.transactionMoney
 		guard let view = view else { return }
 		view.setTitleAmountOfMoneyLable(with: balance.transactionMoney)
 		view.setOldBalance(oldBalance: calculationOldBalance(balance: balance.balance, transaction: balance.transactionMoney))

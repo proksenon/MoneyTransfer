@@ -151,6 +151,7 @@
 		D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */; };
 		D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */; };
 		D5B83BF6251E5CA50095FA0B /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B83BF5251E5CA50095FA0B /* Labels.swift */; };
+		D5B83BFC251E65180095FA0B /* DefaultBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B83BFB251E65180095FA0B /* DefaultBalance.swift */; };
 		D5BB97272518CDD200CC8717 /* MoneyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BB97262518CDD200CC8717 /* MoneyString.swift */; };
 		D5E85A822513A1DF0071F660 /* ContainerRouterInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */; };
 		D5E85A842513A4CD0071F660 /* ContainerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */; };
@@ -350,6 +351,7 @@
 		D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerProtocol.swift; sourceTree = "<group>"; };
 		D5B83BF5251E5CA50095FA0B /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
+		D5B83BFB251E65180095FA0B /* DefaultBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBalance.swift; sourceTree = "<group>"; };
 		D5BB97262518CDD200CC8717 /* MoneyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyString.swift; sourceTree = "<group>"; };
 		D5E85A812513A1DF0071F660 /* ContainerRouterInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRouterInputSpy.swift; sourceTree = "<group>"; };
 		D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenterTests.swift; sourceTree = "<group>"; };
@@ -1290,6 +1292,7 @@
 				D5EAA514251CFACD0025AC0F /* ChildsAtributes.swift */,
 				D5EAA51A251DC1F00025AC0F /* ChildsButton.swift */,
 				D5EAA51E251DC77D0025AC0F /* ChildsImageSize.swift */,
+				D5B83BFB251E65180095FA0B /* DefaultBalance.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1533,6 +1536,7 @@
 				D5EAA4F2251C9DA60025AC0F /* MainTableDataSource.swift in Sources */,
 				D59DB6BC250A47890068888D /* ContainerInteractorOutput.swift in Sources */,
 				D59DB6BD250A47890068888D /* ContainerViewInput.swift in Sources */,
+				D5B83BFC251E65180095FA0B /* DefaultBalance.swift in Sources */,
 				D5EAA509251CF4CB0025AC0F /* Duration.swift in Sources */,
 				D50F511624DD73050042BAD2 /* MainRouter.swift in Sources */,
 				D59DB6B5250A47890068888D /* ContainerConfigurator.swift in Sources */,
