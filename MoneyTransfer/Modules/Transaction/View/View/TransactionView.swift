@@ -26,11 +26,21 @@ class TransactionView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	/// Константы
+	private enum Constatns {
+		/// Боковой отступ
+		static let spacing: CGFloat = 15
+		/// Отступ сверху для текстфилда
+		static let textFieldTop: CGFloat = 40
+		/// Отступ сверху для Label
+		static let labelTop: CGFloat = 30
+	}
+
 	//MARK: -OperationLabel
 	private func setupNameOperationLabel() {
 		addSubview(nameOperationLabel)
-		NSLayoutConstraint.activate([nameOperationLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-									 nameOperationLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 15)])
+		NSLayoutConstraint.activate([nameOperationLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constatns.labelTop),
+									 nameOperationLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constatns.spacing)])
 
 		nameOperationLabel.mainLabel(title: "Перевод средств")
 	}
@@ -46,10 +56,10 @@ class TransactionView: UIView {
 		addSubview(moneyTextfield)
 
 		moneyTextfield.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([moneyTextfield.topAnchor.constraint(equalTo: nameOperationLabel.bottomAnchor, constant: 40),
-									 moneyTextfield.rightAnchor.constraint(equalTo: rightAnchor, constant: -15),
-									 moneyTextfield.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-									 moneyTextfield.heightAnchor.constraint(equalToConstant: 40)])
+		NSLayoutConstraint.activate([moneyTextfield.topAnchor.constraint(equalTo: nameOperationLabel.bottomAnchor, constant: Constatns.textFieldTop),
+									 moneyTextfield.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constatns.spacing),
+									 moneyTextfield.leftAnchor.constraint(equalTo: leftAnchor, constant: Constatns.spacing),
+									 moneyTextfield.heightAnchor.constraint(equalToConstant: Constatns.textFieldTop)])
 
 		moneyTextfield.roundedCorner(with: 4)
 	}
@@ -57,9 +67,9 @@ class TransactionView: UIView {
 	//MARK: -OperationButton
 	private func setupOperationButton() {
 		addSubview(operationButton)
-		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -130),
-									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -15)])
+		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ChildsButton.bottomAchor),
+									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
+									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
 
 		operationButton.styleButton(title: "Перевести", color: .systemGray2)
 	}

@@ -15,4 +15,8 @@ enum Images {
 	static let unknown = "defaultImage"
 	/// Стрелка назад
 	static let back = "chevron.left"
+	/// Часы
+	static let clock = "clock"
+	/// Выполнено
+	static let checkMark = "checkmark.circle"
 }

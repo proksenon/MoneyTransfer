@@ -29,13 +29,23 @@ class ContactView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	/// Константы
+	private enum Constants {
+		/// Отступ аватарки от центра по оси y
+		static let avatarCenterY: CGFloat = -110
+		/// Отступ для кнопок
+		static let buttonSpacing: CGFloat = 25
+		/// Отступ сверху
+		static let top: CGFloat = 20
+	}
+
 	//MARK: -AvatarImageView
 	private func setupAvatarImageView() {
 		addSubview(avatarImageView)
 
 		avatarImageView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([avatarImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -110),
+									 avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: Constants.avatarCenterY),
 									 avatarImageView.widthAnchor.constraint(equalToConstant: ViewConstatns.width/2),
 									 avatarImageView.heightAnchor.constraint(equalToConstant: ViewConstatns.width/2)])
 		avatarImageView.image = UIImage(named: Images.unknown)
@@ -49,7 +59,7 @@ class ContactView: UIView {
 
 		fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([fullNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 fullNameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 20)])
+									 fullNameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: Constants.top)])
 
 		fullNameLabel.text = "Surname Name"
 		fullNameLabel.font = fullNameLabel.font.withSize(35)
@@ -61,7 +71,7 @@ class ContactView: UIView {
 		addSubview(phoneNumberLabel)
 		phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([phoneNumberLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 phoneNumberLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: 5)])
+									 phoneNumberLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: Constants.top / 4)])
 		phoneNumberLabel.text = "+799999999"
 		phoneNumberLabel.textColor = .darkGray
 		phoneNumberLabel.font = phoneNumberLabel.font.withSize(15)
@@ -71,9 +81,9 @@ class ContactView: UIView {
 	private func setupRequestMoneyButton() {
 		addSubview(requestMoneyButton)
 
-		NSLayoutConstraint.activate([requestMoneyButton.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 70),
-									 requestMoneyButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
-									 requestMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -25)])
+		NSLayoutConstraint.activate([requestMoneyButton.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: Constants.top * 3),
+									 requestMoneyButton.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.buttonSpacing),
+									 requestMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.buttonSpacing)])
 
 		requestMoneyButton.contactStyleButton(title: "Запросить деньги")
 	}
@@ -82,9 +92,9 @@ class ContactView: UIView {
 	private func setupSendMoneyButton() {
 		addSubview(sendMoneyButton)
 
-		NSLayoutConstraint.activate([sendMoneyButton.topAnchor.constraint(equalTo: requestMoneyButton.bottomAnchor, constant: 10),
-									 sendMoneyButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
-									 sendMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -25)])
+		NSLayoutConstraint.activate([sendMoneyButton.topAnchor.constraint(equalTo: requestMoneyButton.bottomAnchor, constant: Constants.top / 2),
+									 sendMoneyButton.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.buttonSpacing),
+									 sendMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.buttonSpacing)])
 
 		sendMoneyButton.contactStyleButton(title: "Отправить деньги")
 	}

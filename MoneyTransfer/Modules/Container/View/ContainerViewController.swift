@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Контейнер ViewController
 final class ContainerViewController: UIViewController {
 
 	var output: ContainerViewOutput?

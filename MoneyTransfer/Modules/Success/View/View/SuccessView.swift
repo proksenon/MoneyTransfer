@@ -20,7 +20,7 @@ class SuccessView: UIView {
 	let currentBalanceLabel: UILabel = UILabel()
 
 	init() {
-		let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 450)
+		let frame = CGRect(x: 0, y: 0, width: ViewConstatns.width, height: ChildsAtributes.Hight.success)
 		super.init(frame: frame)
 		setupTreatmentImageView()
 		setupStatusLabel()
@@ -46,11 +46,11 @@ class SuccessView: UIView {
 		treatmentImageView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([treatmentImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 treatmentImageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.topAnchor),
-									 treatmentImageView.heightAnchor.constraint(equalToConstant: 60),
-									 treatmentImageView.widthAnchor.constraint(equalToConstant: 60)])
+									 treatmentImageView.heightAnchor.constraint(equalToConstant: ChildsImageSize.height),
+									 treatmentImageView.widthAnchor.constraint(equalToConstant: ChildsImageSize.width)])
 
 
-		treatmentImageView.image = UIImage(systemName: "checkmark.circle")?.withTintColor(.green, renderingMode: .alwaysOriginal)
+		treatmentImageView.image = UIImage(systemName: Images.checkMark)?.withTintColor(.green, renderingMode: .alwaysOriginal)
 	}
 
 	//MARK: -StatusLabel
@@ -86,9 +86,9 @@ class SuccessView: UIView {
 	//MARK: -OperationButton
 	private func setupExitButton() {
 		addSubview(operationButton)
-		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -130),
-									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -15)])
+		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ChildsButton.bottomAchor),
+									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
+									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
 
 		operationButton.styleButton(title: "Перейти в контакты")
 	}
@@ -96,9 +96,9 @@ class SuccessView: UIView {
 	//MARK: -ChangeBalanceLabel
 	private func setupChangeBalanceLabel() {
 		addSubview(changeBalanceLabel)
-		NSLayoutConstraint.activate([changeBalanceLabel.topAnchor.constraint(equalTo: amountOfMoneyLabel.bottomAnchor, constant: 20),
+		NSLayoutConstraint.activate([changeBalanceLabel.topAnchor.constraint(equalTo: amountOfMoneyLabel.bottomAnchor, constant: Constants.topAnchor),
 									 changeBalanceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 changeBalanceLabel.widthAnchor.constraint(equalToConstant: 300)])
+									 changeBalanceLabel.widthAnchor.constraint(equalToConstant: ViewConstatns.width)])
 
 		changeBalanceLabel.subLabel(title: "Изменение баланса")
 	}
@@ -118,7 +118,7 @@ class SuccessView: UIView {
 	//MARK: -CurrentBalanceLabel
 	private func setupCurrentBalanceLabel() {
 		addSubview(currentBalanceLabel)
-		NSLayoutConstraint.activate([currentBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: 10),
+		NSLayoutConstraint.activate([currentBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: Constants.topAnchor / 2),
 									 currentBalanceLabel.leftAnchor.constraint(equalTo: centerXAnchor, constant: 5),
 									 currentBalanceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)])
 

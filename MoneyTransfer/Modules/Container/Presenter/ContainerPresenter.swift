@@ -9,6 +9,7 @@
 import Foundation
 
 //MARK: - ChildControllersProtocols
+/// Delegat of module Transaction
 protocol TransactionViewDelegate {
 	///  Поднимает или опускает контроллер
 	func moveTransactionView(on y: ViewSize)
@@ -18,16 +19,19 @@ protocol TransactionViewDelegate {
 	func balance(balance: String?)
 }
 
+/// Delegat of operations
 protocol OperationDelegate {
 	///  Принимает нужную операцию
 	func chooseOperation(operation: Operations)
 }
 
+/// Говорит, что надо переключить childController
 protocol TogleTransactionDelegate {
 	///  Переключает ChildControllers
 	func toggleTransaction(on vc: ChildsController?)
 }
 
+/// Выходит с childController
 protocol ExitDelegate {
 	///  Выходит к конактам
 	func backToContacts()

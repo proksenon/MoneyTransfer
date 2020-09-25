@@ -184,6 +184,8 @@
 		D5EAA50D251CF5AA0025AC0F /* Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA50C251CF5AA0025AC0F /* Alpha.swift */; };
 		D5EAA511251CF8990025AC0F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA510251CF8990025AC0F /* Images.swift */; };
 		D5EAA515251CFACD0025AC0F /* ChildsAtributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA514251CFACD0025AC0F /* ChildsAtributes.swift */; };
+		D5EAA51B251DC1F00025AC0F /* ChildsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA51A251DC1F00025AC0F /* ChildsButton.swift */; };
+		D5EAA51F251DC77D0025AC0F /* ChildsImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA51E251DC77D0025AC0F /* ChildsImageSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,6 +380,8 @@
 		D5EAA50C251CF5AA0025AC0F /* Alpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alpha.swift; sourceTree = "<group>"; };
 		D5EAA510251CF8990025AC0F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		D5EAA514251CFACD0025AC0F /* ChildsAtributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsAtributes.swift; sourceTree = "<group>"; };
+		D5EAA51A251DC1F00025AC0F /* ChildsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsButton.swift; sourceTree = "<group>"; };
+		D5EAA51E251DC77D0025AC0F /* ChildsImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsImageSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1326,6 +1330,8 @@
 				D5EAA50C251CF5AA0025AC0F /* Alpha.swift */,
 				D5EAA510251CF8990025AC0F /* Images.swift */,
 				D5EAA514251CFACD0025AC0F /* ChildsAtributes.swift */,
+				D5EAA51A251DC1F00025AC0F /* ChildsButton.swift */,
+				D5EAA51E251DC77D0025AC0F /* ChildsImageSize.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1490,6 +1496,7 @@
 				D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */,
 				D5A0BF7A25079CF90080737E /* TransactionViewOutput.swift in Sources */,
 				D5A0BFA8250A1FC80080737E /* TreatmentViewOutput.swift in Sources */,
+				D5EAA51F251DC77D0025AC0F /* ChildsImageSize.swift in Sources */,
 				D5A0BFB0250A20060080737E /* TreatmentInteractorOutput.swift in Sources */,
 				D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */,
 				D520451A25050D3A007B746A /* ContactViewInput.swift in Sources */,
@@ -1519,6 +1526,7 @@
 				D5204528250511E0007B746A /* ContactConfigureProtocol.swift in Sources */,
 				D5A0BFE4250A40F10080737E /* SuccessPresenter.swift in Sources */,
 				D5EAA49B251B9B710025AC0F /* MainTableDelegateOutput.swift in Sources */,
+				D5EAA51B251DC1F00025AC0F /* ChildsButton.swift in Sources */,
 				D5A0BFE2250A40F10080737E /* SuccessViewInput.swift in Sources */,
 				D5A0BF8225079DE00080737E /* TransactionInteractorOutput.swift in Sources */,
 				D5A0BF8025079DD40080737E /* TransactionInteractorInput.swift in Sources */,

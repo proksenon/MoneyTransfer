@@ -17,7 +17,7 @@ class TreatmentView: UIView {
 	let operationButton: UIButton = UIButton()
 
 	init() {
-		let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400)
+		let frame = CGRect(x: 0, y: 0, width: ViewConstatns.width, height: ChildsAtributes.Hight.treatment)
 		super.init(frame: frame)
 		setupTreatmentImageView()
 		setupStatusLabel()
@@ -39,11 +39,11 @@ class TreatmentView: UIView {
 		treatmentImageView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([treatmentImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 treatmentImageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.topAnchor),
-									 treatmentImageView.heightAnchor.constraint(equalToConstant: 60),
-									 treatmentImageView.widthAnchor.constraint(equalToConstant: 60)])
+									 treatmentImageView.heightAnchor.constraint(equalToConstant: ChildsImageSize.height),
+									 treatmentImageView.widthAnchor.constraint(equalToConstant: ChildsImageSize.width)])
 
 
-		treatmentImageView.image = UIImage(systemName: "clock")?.withTintColor(.gray, renderingMode: .alwaysOriginal)
+		treatmentImageView.image = UIImage(systemName: Images.clock)?.withTintColor(.gray, renderingMode: .alwaysOriginal)
 	}
 
 	//MARK: -StatusLabel
@@ -79,9 +79,9 @@ class TreatmentView: UIView {
 	//MARK: -OperationButton
 	private func setupOperationButton() {
 		addSubview(operationButton)
-		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -130),
-									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -15)])
+		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ChildsButton.bottomAchor),
+									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
+									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
 
 		operationButton.styleButton(title: "Перейти в контакты")
 	}
