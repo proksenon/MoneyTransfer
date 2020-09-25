@@ -21,3 +21,7 @@ This application that simulates transfers and requests money for contacts from a
 ● SOLID
 
 ● UnitTests
+
+● language: Swift
+
+● platform: Ios 13.2+
