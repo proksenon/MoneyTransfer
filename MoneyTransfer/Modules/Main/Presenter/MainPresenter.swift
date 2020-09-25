@@ -78,11 +78,11 @@ extension MainPresenter: MainTableDataSourceOutput {
 	}
 
 	func getBalance()-> String {
-		guard let interactor = interactor else { return "0"}
+		guard let interactor = interactor else { return DefaultBalance.failBalance }
 		if let balance = interactor.getBalance() {
 			return balance
 		} else {
-			let balance = "100000.00"
+			let balance = DefaultBalance.startBalance
 			interactor.setBalance(balance: balance)
 			return balance
 		}
