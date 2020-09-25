@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  MoneyTransfer
+
+  Created by 18579132 on 25.09.2020.
+  Copyright © 2020 18579132. All rights reserved.
+*/
+
+Contacts = "Contacts";
+Unknown = "Unknown";
+CurrentBalance = "Current balance";
+SurnameName = "Surname Name";
+RequsetMoney = "Request money";
+SendMoney = "Send money";
+WithoutPhone = "Will be phone here";
+TransactionMoney = "Transaction money";
+EnterAmount = "Enter the amount";
+Transfer = "Transfer";
+TransferProcessing = "Translation in processing...";
+TransferAmount = "Amount of transfer";
+GoToContacts = "Go to contacts";
+RequestAmount = "Request amount";
+Request = "Request";
+Send = "Send";
+RequestProcessing = "Request in processing...";
+TransferSuccess = "The translation was successful";
+Transfered = "Transfered";
+BalanceChange = "Balance change";

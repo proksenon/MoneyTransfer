@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  MoneyTransfer
+
+  Created by 18579132 on 25.09.2020.
+  Copyright © 2020 18579132. All rights reserved.
+*/
+
+Contacts = "Контакты";
+Unknown = "Неизвестный";
+CurrentBalance = "Текущий баланс";
+SurnameName = "Фамилия Имя";
+RequsetMoney = "Запросить деньги";
+SendMoney = "Отправить деньги";
+WithoutPhone = "Здесь будет телефон";
+TransactionMoney = "Перевод средств";
+EnterAmount = "Укажите сумму";
+Transfer = "Перевести";
+TransferProcessing = "Перевод в обработке...";
+TransferAmount = "Сумма перевода";
+GoToContacts = "Перейти в контакты";
+RequestAmount = "Запрос средств";
+Request = "Запросить";
+Send = "Перевести";
+RequestProcessing = "Запрос в обработке...";
+TransferSuccess = "Перевод прошел успешно";
+Transfered = "Переведено";
+BalanceChange = "Изменение баланса";

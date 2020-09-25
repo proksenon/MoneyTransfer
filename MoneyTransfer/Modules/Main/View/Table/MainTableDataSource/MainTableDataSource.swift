@@ -33,7 +33,7 @@ class MainTableDataSource: NSObject, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if section == 1 {
-			return "Контакты"
+			return "Contacts".localized
 		}
 		return nil
 	}

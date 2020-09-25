@@ -53,7 +53,7 @@ final class CardTableViewCell: UITableViewCell {
 		balanceLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -Constants.defConstraint).isActive = true
 		balanceLabel.backgroundColor = .clear
 		balanceLabel.font = balanceLabel.font.withSize(33)
-		balanceLabel.text = "103 542,5Р"
+		balanceLabel.text = "103 542,5 Р"
 		balanceLabel.textColor = .white
 	}
 
@@ -65,7 +65,7 @@ final class CardTableViewCell: UITableViewCell {
 		curencyBalanceLabel.bottomAnchor.constraint(equalTo: balanceLabel.topAnchor, constant: -10).isActive = true
 		curencyBalanceLabel.backgroundColor = .clear
 		curencyBalanceLabel.font = curencyBalanceLabel.font.withSize(17)
-		curencyBalanceLabel.text = "Текущий баланс"
+		curencyBalanceLabel.text = "CurrentBalance".localized
 		curencyBalanceLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
 	}
 

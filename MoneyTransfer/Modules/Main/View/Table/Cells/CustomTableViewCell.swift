@@ -45,7 +45,7 @@ final class CustomTableViewCell: UITableViewCell {
 		fullNameLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: -35).isActive = true
 		fullNameLabel.leftAnchor.constraint(equalTo: avatarImageView.rightAnchor, constant: 10).isActive = true
 		fullNameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		fullNameLabel.text = "Unknown"
+		fullNameLabel.text = "Unknown".localized
 		fullNameLabel.textColor = .black
 	}
 	/// Настраивает лейбл телефонного номера
@@ -54,7 +54,7 @@ final class CustomTableViewCell: UITableViewCell {
 		phoneNumberLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor , constant: -5).isActive = true
 		phoneNumberLabel.leftAnchor.constraint(equalTo: avatarImageView.rightAnchor, constant: 10).isActive = true
 		phoneNumberLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		phoneNumberLabel.text = "Unknown"
+		phoneNumberLabel.text = "Unknown".localized
 		phoneNumberLabel.textColor = .systemGray
 	}
 
@@ -74,20 +74,21 @@ final class CustomTableViewCell: UITableViewCell {
     }
 
 	func configureCell(with contact: Person) {
+		let unknown = "Unknown".localized
 		if let avatardata = contact.avatarData {
 			avatarImageView.image = UIImage(data: avatardata)
 		} else {
 			avatarImageView.image = defaultImage
 		}
 		if let fullName = contact.fullName {
-			fullNameLabel.text = (fullName == "" || fullName == " ") ? "Unknown" : fullName
+			fullNameLabel.text = (fullName == "" || fullName == " ") ? unknown : fullName
 		} else {
-			fullNameLabel.text = "Unknown"
+			fullNameLabel.text = unknown
 		}
 		if let phoneNumber = contact.phoneNumber {
-			phoneNumberLabel.text = (phoneNumber == "" || phoneNumber == " ") ? "Unknown" : phoneNumber
+			phoneNumberLabel.text = (phoneNumber == "" || phoneNumber == " ") ? unknown : phoneNumber
 		} else {
-			phoneNumberLabel.text = "Unknown"
+			phoneNumberLabel.text = unknown
 		}
 	}
 }

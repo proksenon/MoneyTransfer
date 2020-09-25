@@ -35,9 +35,14 @@ class SuccessView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	/// Константы для констрейнтов
 	private enum Constants {
+		/// Ширина лейблов
 		static let labelWidth: CGFloat = 300
+		/// Отступ сверху
 		static let topAnchor: CGFloat = 20
+		/// Отступы по бокам
+		static let spacing: CGFloat = 10
 	}
 
 	//MARK: -TreatmentImageView
@@ -60,7 +65,7 @@ class SuccessView: UIView {
 									 statusLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
-		statusLabel.mainLabel(title: "Перевод прошел успешно")
+		statusLabel.mainLabel(title: "TransferSuccess".localized)
 	}
 
 	//MARK: -AtributeTransactionLabel
@@ -70,7 +75,7 @@ class SuccessView: UIView {
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
-		atributeTransactionLabel.subLabel(title: "Переведено")
+		atributeTransactionLabel.subLabel(title: "Transfered".localized)
 	}
 
 	//MARK: -AmountOfMoneyLabel
@@ -80,7 +85,7 @@ class SuccessView: UIView {
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
-		amountOfMoneyLabel.mainLabel(title: "money")
+		amountOfMoneyLabel.mainLabel(title: "")
 	}
 
 	//MARK: -OperationButton
@@ -90,7 +95,7 @@ class SuccessView: UIView {
 									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
 									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
 
-		operationButton.styleButton(title: "Перейти в контакты")
+		operationButton.styleButton(title: "GoToContacts".localized)
 	}
 
 	//MARK: -ChangeBalanceLabel
@@ -100,15 +105,15 @@ class SuccessView: UIView {
 									 changeBalanceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 changeBalanceLabel.widthAnchor.constraint(equalToConstant: ViewConstatns.width)])
 
-		changeBalanceLabel.subLabel(title: "Изменение баланса")
+		changeBalanceLabel.subLabel(title: "BalanceChange".localized)
 	}
 
 	//MARK: -BeforeTransactionBalanceLabel
 	private func setupBeforeTransactionBalanceLabel() {
 		addSubview(beforeTransactionBalanceLabel)
-		NSLayoutConstraint.activate([beforeTransactionBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: 10),
-									 beforeTransactionBalanceLabel.rightAnchor.constraint(equalTo: centerXAnchor, constant: -5),
-									 beforeTransactionBalanceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10)])
+		NSLayoutConstraint.activate([beforeTransactionBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: Constants.topAnchor/2),
+									 beforeTransactionBalanceLabel.rightAnchor.constraint(equalTo: centerXAnchor, constant: -Constants.spacing/2),
+									 beforeTransactionBalanceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.spacing)])
 
 		beforeTransactionBalanceLabel.subLabel(title: "999999")
 		beforeTransactionBalanceLabel.strikeThrough(true)
@@ -119,8 +124,8 @@ class SuccessView: UIView {
 	private func setupCurrentBalanceLabel() {
 		addSubview(currentBalanceLabel)
 		NSLayoutConstraint.activate([currentBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: Constants.topAnchor / 2),
-									 currentBalanceLabel.leftAnchor.constraint(equalTo: centerXAnchor, constant: 5),
-									 currentBalanceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)])
+									 currentBalanceLabel.leftAnchor.constraint(equalTo: centerXAnchor, constant: Constants.spacing/2),
+									 currentBalanceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.spacing)])
 
 		currentBalanceLabel.subLabel(title: "999999")
 		currentBalanceLabel.textAlignment = .left

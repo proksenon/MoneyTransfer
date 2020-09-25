@@ -42,13 +42,13 @@ class TransactionView: UIView {
 		NSLayoutConstraint.activate([nameOperationLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constatns.labelTop),
 									 nameOperationLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constatns.spacing)])
 
-		nameOperationLabel.mainLabel(title: "Перевод средств")
+		nameOperationLabel.mainLabel(title: "TransactionMoney".localized)
 	}
 
 	//MARK: -MoneyTextfield
 	private func setupMoneyTextfield() {
 		moneyTextfield.backgroundColor = UIColor.systemGray6.withAlphaComponent(Alpha.mediumView)
-		moneyTextfield.placeholder = "Укажите сумму"
+		moneyTextfield.placeholder = "EnterAmount".localized
 		moneyTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: moneyTextfield.frame.height))
 		moneyTextfield.leftViewMode = .always
 		moneyTextfield.keyboardType = .decimalPad
@@ -71,7 +71,7 @@ class TransactionView: UIView {
 									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
 									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
 
-		operationButton.styleButton(title: "Перевести", color: .systemGray2)
+		operationButton.styleButton(title: "Transfer".localized, color: .systemGray2)
 	}
 
 }

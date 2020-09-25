@@ -53,7 +53,7 @@ class TreatmentView: UIView {
 									 statusLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
-		statusLabel.mainLabel(title: "Перевод в обработке...")
+		statusLabel.mainLabel(title: "TransferProcessing".localized)
 	}
 
 	//MARK: -AtributeTransactionLabel
@@ -63,7 +63,7 @@ class TreatmentView: UIView {
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
 
-		atributeTransactionLabel.subLabel(title: "Сумма перевода")
+		atributeTransactionLabel.subLabel(title: "TransferAmount".localized)
 	}
 
 	//MARK: -AmountOfMoneyLabel
@@ -83,7 +83,7 @@ class TreatmentView: UIView {
 									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
 									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
 
-		operationButton.styleButton(title: "Перейти в контакты")
+		operationButton.styleButton(title: "GoToContacts".localized)
 	}
 
 }
