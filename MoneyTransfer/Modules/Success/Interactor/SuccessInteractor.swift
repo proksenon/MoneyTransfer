@@ -1,5 +1,5 @@
 //
-//  TreatmentTransactionInteractor.swift
+//  SuccessOperationInteractor.swift
 //  MoneyTransfer
 //
 //  Created by 18579132 on 10.09.2020.
