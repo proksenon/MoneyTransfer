@@ -25,3 +25,19 @@ This application that simulates transfers and requests money for contacts from a
 ● language: Swift
 
 ● platform: Ios 13.2+
+
+# ScreenSchots
+
+![](ScreenShots/MainViewController.png "Main view with address contacts")​
+
+![](ScreenShots/MainViwControllerBottom.png "Main view scrolled to bottom ")​
+
+![](ScreenShots/ContactView.png "Contact view ")​
+
+![](ScreenShots/TransactioNView.png "Transaction view ")​
+
+![](ScreenShots/TreatmentView.png "Treatment view ")​
+
+![](ScreenShots/Success.png "Success view ")​
+
+![](ScreenShots/SuccessOnMainView.png "Success view on MainView ")​
