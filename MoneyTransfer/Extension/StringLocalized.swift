@@ -9,6 +9,7 @@
 import Foundation
 
 extension String {
+	/// Локализует строку
 	var localized: String {
 		return NSLocalizedString(self, comment: "")
 	}
