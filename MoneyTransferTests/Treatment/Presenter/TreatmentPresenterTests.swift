@@ -39,7 +39,7 @@ class TreatmentPresenterTests: XCTestCase {
 
 		XCTAssert(view.didSetView)
 		XCTAssert(view.didSetTargetOnOperationButton)
-		XCTAssertFalse(view.didSetTitleAmountOfMoneyLabel)
+		XCTAssert(view.didSetTitleAmountOfMoneyLabel)
 	}
 
 	func testConfigureViewWithAmountOfMoney() {

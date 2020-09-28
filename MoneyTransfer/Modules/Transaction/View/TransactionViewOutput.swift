@@ -19,8 +19,6 @@ protocol TransactionViewOutput: class {
 	func setNewBalance()
 	///  Проверяет символы в ТекстФилд
 	func checkTextFieldString(text: String?, string: String)-> Bool
-	///  Проверяет лишние символы в ТекстФилд
-	func checkExcessSymbols(text: String?) -> String?
 	///  Меняет запятую на точку
 	func formatingTextField()->String?
 }

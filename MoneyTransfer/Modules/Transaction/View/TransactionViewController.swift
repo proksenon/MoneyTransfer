@@ -112,7 +112,6 @@ extension TransactionViewController: UITextFieldDelegate {
 
 	func textFieldDidChangeSelection(_ textField: UITextField) {
 		guard let output = output else { return }
-		textField.text = output.checkExcessSymbols(text: textField.text)
 		output.checkBalance()
 	}
 

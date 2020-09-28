@@ -48,7 +48,6 @@ class TransactionViewControllerTests: XCTestCase {
 		viewController.textFieldDidChangeSelection(textField)
 
 		XCTAssert(output.didCheckBalance)
-		XCTAssert(output.didCheckedExcessSymbols)
 	}
 
 	func testTextFieldSchouldChangeCharacters() {

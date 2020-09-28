@@ -67,49 +67,29 @@ extension TransactionPresenter: TransactionViewOutput {
 	}
 
 	func checkTextFieldString(text: String?, string: String)-> Bool {
-		var acceptChars = Array(0...9).map { (int) -> String in
-			String(int)
+		let pattern = "((^[0]{1})([,]{1}[0-9]{0,2})?)|(([1-9][0-9]*)([,][0-9]{0,2})?)"
+		var result = false
+		result = isValidTextInput(text: string, pattern: pattern)
+		if let text = text {
+			result = isValidTextInput(text: text + string, pattern: pattern)
 		}
-		let point = ","
-
-		acceptChars.append(point)
-		for char in string {
-			if !acceptChars.contains(String(char)) {
-				return false
-			}
-		}
-		if string.contains(point) {
-			guard let text = text else { return false }
-			if text.contains(point) || text.count == 0 {
-				return false
-			}
-		}
-		return true
+		return result
 	}
 
-	func checkExcessSymbols(text: String?) -> String? {
-		if var str = text {
-			if str.count > 0 {
-				if str.first == "0" {
-					if str.count >= 2 && str[str.index(after: str.firstIndex(of: "0")!)] != "," {
-						str.remove(at: str.firstIndex(of: "0")!)
-					}
-				}
-				if str.contains(",") {
-					while str.components(separatedBy: ",")[1].count > 2 {
-						str.removeLast()
-					}
-				}
-				return str
-			}
-		}
-		return text
+	/// Проверка валидности текстфилда
+	/// - Parameters:
+	///   - text: Проверяемый текст
+	///   - pattern: Условие
+	/// - Returns: Валдидный или не валидный
+	private func isValidTextInput(text: String, pattern: String) -> Bool {
+		return text.matches(pattern)
 	}
 }
+
 //MARK: -TransactionInteractorOutput
 extension TransactionPresenter: TransactionInteractorOutput {
-
 }
+
 //MARK: -TransactionModuleInput
 extension TransactionPresenter: TransactionModuleInput {
 	func configure(with operation: Operations) {
@@ -125,6 +105,14 @@ extension TransactionPresenter: TransactionModuleInput {
 		}
 		checkBalance()
 	}
+}
 
-	
+extension String {
+	func matches(_ expression: String) -> Bool {
+		if let range = range(of: expression, options: .regularExpression, range: nil, locale: nil) {
+			return range.lowerBound == startIndex && range.upperBound == endIndex
+		} else {
+			return false
+		}
+	}
 }

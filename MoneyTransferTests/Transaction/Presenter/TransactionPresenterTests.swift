@@ -141,23 +141,6 @@ class TransactionPresenterTests: XCTestCase {
 		XCTAssert(result)
 	}
 
-	func testCheckExcessSymbolsWithNil() {
-		let result = presenter.checkExcessSymbols(text: nil)
-
-		XCTAssertNil(result)
-	}
-
-	func testCheckExcessSymbolsWithEmpty() {
-		let result = presenter.checkExcessSymbols(text: "")
-
-		XCTAssert(result == "")
-	}
-
-	func testCheckExcessSymbolsWithFirstZero() {
-		let result = presenter.checkExcessSymbols(text: "012")
-
-		XCTAssert(result == "12")
-	}
 
 	func testConfigureCaseRequest() {
 		presenter.configure(with: .request)

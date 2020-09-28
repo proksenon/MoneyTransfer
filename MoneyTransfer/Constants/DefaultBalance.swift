@@ -10,6 +10,6 @@ import Foundation
 
 /// Константы баланса
 enum DefaultBalance {
-	static let startBalance = "100000"
+	static let startBalance = "100000.00"
 	static let failBalance = "0"
 }

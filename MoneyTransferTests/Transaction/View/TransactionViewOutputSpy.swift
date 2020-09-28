@@ -16,7 +16,6 @@ class TransactionViewOutputSpy: TransactionViewOutput {
 	var didGetBalance: Bool = false
 	var didSetNewBalance: Bool = false
 	var didCheckedTextFieldString: Bool = false
-	var didCheckedExcessSymbols: Bool = false
 	var balance: String?
 	var checkedStringIsCurrent: Bool = false
 	var didFormatedTextField: Bool = false
@@ -41,11 +40,6 @@ class TransactionViewOutputSpy: TransactionViewOutput {
 	func checkTextFieldString(text: String?, string: String) -> Bool {
 		didCheckedTextFieldString = true
 		return checkedStringIsCurrent
-	}
-
-	func checkExcessSymbols(text: String?) -> String? {
-		didCheckedExcessSymbols = true
-		return text
 	}
 
 	func formatingTextField() -> String? {
