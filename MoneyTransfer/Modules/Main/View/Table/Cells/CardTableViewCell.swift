@@ -42,7 +42,7 @@ final class CardTableViewCell: UITableViewCell {
 
 		cardView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
 		cardView.roundedCorner(with: 10)
-		cardView.gradient(with: [UIColor.gray.cgColor, UIColor.black.cgColor], frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 30, height: 250))
+		cardView.gradient(with: [UIColor.gray.cgColor, UIColor.black.cgColor], frame: CGRect(x: 0, y: 0, width: ViewConstatns.width - Constants.defConstraint, height: 250))
 	}
 
 	/// Настройка лейбла Баланса
