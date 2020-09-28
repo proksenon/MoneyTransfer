@@ -106,13 +106,3 @@ extension TransactionPresenter: TransactionModuleInput {
 		checkBalance()
 	}
 }
-
-extension String {
-	func matches(_ expression: String) -> Bool {
-		if let range = range(of: expression, options: .regularExpression, range: nil, locale: nil) {
-			return range.lowerBound == startIndex && range.upperBound == endIndex
-		} else {
-			return false
-		}
-	}
-}

@@ -88,6 +88,7 @@
 		D57E6F6E2514C683002C1042 /* ExtensionChildrensControllersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F6D2514C683002C1042 /* ExtensionChildrensControllersTest.swift */; };
 		D57E6F742514C7D1002C1042 /* StylesLabelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */; };
 		D57E6F7D2514D3BF002C1042 /* ContainerConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */; };
+		D59523BB2521FEB100D50710 /* StringRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523BA2521FEB100D50710 /* StringRegularExpression.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -288,6 +289,7 @@
 		D57E6F6D2514C683002C1042 /* ExtensionChildrensControllersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionChildrensControllersTest.swift; sourceTree = "<group>"; };
 		D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesLabelTest.swift; sourceTree = "<group>"; };
 		D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConfiguratorTests.swift; sourceTree = "<group>"; };
+		D59523BA2521FEB100D50710 /* StringRegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRegularExpression.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -947,6 +949,7 @@
 				D5BB97262518CDD200CC8717 /* MoneyString.swift */,
 				D5EAA46A2519E7EF0025AC0F /* GradientView.swift */,
 				D5EAA530251DEBA30025AC0F /* StringLocalized.swift */,
+				D59523BA2521FEB100D50710 /* StringRegularExpression.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1449,6 +1452,7 @@
 				D5EAA495251B9B210025AC0F /* MainTableDelegate.swift in Sources */,
 				D59DB6B9250A47890068888D /* ContainerRouter.swift in Sources */,
 				D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */,
+				D59523BB2521FEB100D50710 /* StringRegularExpression.swift in Sources */,
 				D5EAA5BD251E18E30025AC0F /* SuccessConfigurator.swift in Sources */,
 				D5EAA481251B5DD20025AC0F /* TransactionView.swift in Sources */,
 				D5B03FF224FBF7870023E5DE /* MainViewOutput.swift in Sources */,
