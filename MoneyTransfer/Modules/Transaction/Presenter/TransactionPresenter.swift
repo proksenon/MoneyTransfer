@@ -69,9 +69,10 @@ extension TransactionPresenter: TransactionViewOutput {
 	func checkTextFieldString(text: String?, string: String)-> Bool {
 		let pattern = "((^[0]{1})([,]{1}[0-9]{0,2})?)|(([1-9][0-9]*)([,][0-9]{0,2})?)"
 		var result = false
-		result = isValidTextInput(text: string, pattern: pattern)
 		if let text = text {
 			result = isValidTextInput(text: text + string, pattern: pattern)
+		} else {
+			result = isValidTextInput(text: string, pattern: pattern)
 		}
 		return result
 	}
