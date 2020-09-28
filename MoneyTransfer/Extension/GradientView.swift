@@ -16,7 +16,6 @@ extension UIView {
 	///   - stopPoint: finish position of gradient
 	///   - frame: frame of View
 	func gradient(with colors: [CGColor], startPoint: CGPoint = CGPoint(x: 0, y: 0), stopPoint: CGPoint = CGPoint(x: 1, y: 1), frame: CGRect? = nil){
-
 		let gradientLayer = CAGradientLayer()
 		gradientLayer.colors = colors
 		gradientLayer.startPoint = startPoint

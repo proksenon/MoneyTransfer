@@ -12,6 +12,6 @@ import UIKit
 enum ChildsImageSize {
 	/// Ширина
 	static let width: CGFloat = 60
-	/// Выота
+	/// Высота
 	static let height: CGFloat = width
 }
