@@ -316,8 +316,8 @@
             filePath = "MoneyTransferTests/Main/Presenter/MainPresenterTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "testDissmisStatusOperation()"
             landmarkType = "7">
          </BreakpointContent>

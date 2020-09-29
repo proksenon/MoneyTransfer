@@ -14,22 +14,23 @@ class MainInteractorInputSpy: MainInteractorInput {
 	var didGetContacts: Bool = false
 	var didGetBalance: Bool = false
 	var didSetBalance: Bool = false
-	var balance: String?
+	var setBalance: String?
+	var balance: String? {
+		get {
+			didGetBalance = true
+			return setBalance
+		}
+		set {
+			didSetBalance = true
+		}
+	}
+
 	var persons: [Person]?
 
 	func getContatcs(completion: @escaping ([Person]) -> Void) {
 		didGetContacts = true
 		guard let persons = persons else { return }
 		completion(persons)
-	}
-
-	func getBalance() -> String? {
-		didGetBalance = true
-		return balance
-	}
-
-	func setBalance(balance: String) {
-		didSetBalance = true
 	}
 
 

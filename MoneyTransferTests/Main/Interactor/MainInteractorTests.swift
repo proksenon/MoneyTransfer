@@ -52,13 +52,13 @@ class MainInteractorTests: XCTestCase {
 		let currentBalance = "1000"
 		userDefaultsWork.object = currentBalance
 
-		let balance = interactor.getBalance()
+		let balance = interactor.balance
 
 		XCTAssert(currentBalance == balance)
 	}
 
 	func testSetBalance() {
-		interactor.setBalance(balance: "")
+		interactor.balance = ""
 
 		XCTAssert(userDefaultsWork.didSet)
 	}

@@ -48,18 +48,20 @@ class MainPresenterTest: XCTestCase {
 
 	func testGetBalanceFromServices() {
 		let currentBalance = "5000"
-		interactor.balance = currentBalance
+		interactor.setBalance = currentBalance
 
-		let balance = presenter.balance()
+		let balance = presenter.itemCell(with: IndexPath(row: 1, section: 0)) as? Balance
 
+		XCTAssertNotNil(balance)
 		XCTAssertTrue(interactor.didGetBalance)
-		XCTAssert(currentBalance == balance)
+		XCTAssert(currentBalance == balance?.balance)
 	}
 
 	func testGetBBalanceForFirstTime() {
-		let balance = presenter.balance()
+		let balance = presenter.itemCell(with: IndexPath(row: 1, section: 0)) as? Balance
 
-		XCTAssertEqual(balance, "100000.00")
+		XCTAssertNotNil(balance)
+		XCTAssertEqual(balance?.balance, "100000.00")
 		XCTAssertTrue(interactor.didSetBalance)
 	}
 
@@ -75,13 +77,13 @@ class MainPresenterTest: XCTestCase {
 	}
 
 	func testGetPerson() {
-		let indexPath = IndexPath(row: 1, section: 0)
+		let indexPath = IndexPath(row: 1, section: 1)
 		let persons: [Person] = [Person(fullName: "Orange", phoneNumber: "+79999", avatarData: nil),
 								 Person(fullName: "Apple", phoneNumber: "+1", avatarData: nil)]
 		interactor.persons = persons
 		presenter.configureView()
 
-		let person = presenter.Person(with: indexPath)
+		let person = presenter.itemCell(with: indexPath) as? Person
 
 		XCTAssert(persons[indexPath.row] == person)
 	}

@@ -141,6 +141,18 @@ class TransactionPresenterTests: XCTestCase {
 		XCTAssert(result)
 	}
 
+	func testCheckTextFieldStringWithDoubleZero() {
+		let result = presenter.checkTextFieldString(text: "0", string: "0")
+
+		XCTAssertFalse(result)
+	}
+
+	func testCheckTextFieldStringWith3SignAfterPoint() {
+		let result = presenter.checkTextFieldString(text: "0", string: ",345")
+
+		XCTAssertFalse(result)
+	}
+
 
 	func testConfigureCaseRequest() {
 		presenter.configure(with: .request)
