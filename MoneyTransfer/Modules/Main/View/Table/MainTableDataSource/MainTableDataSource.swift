@@ -47,7 +47,7 @@ class MainTableDataSource: NSObject, UITableViewDataSource {
 			return currentCell
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: Cells.CellsID.cardCell.rawValue) as? CardTableViewCell
-			cell?.configureCell(with: output.getBalance())
+			cell?.configureCell(with: output.balance())
 			guard let currentCell = cell else { return UITableViewCell()}
 			return currentCell
 		}

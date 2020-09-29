@@ -14,6 +14,14 @@ final class MainInteractor: MainInteractorInput {
 	weak var output: MainInteractorOutput?
 	private let contactsManager: ContactServiceProtocol
 	private let userDefaultsWork: UserDefaultsWorkProtocol
+	var balance: String? {
+		get {
+			return userDefaultsWork.getObject(for: "balance") as? String
+		}
+		set {
+			userDefaultsWork.setObject(for: "balance", object: newValue)
+		}
+	}
 
 	init(presenter: MainInteractorOutput,
 		 contactsManager: ContactServiceProtocol = ContactService(),
@@ -27,14 +35,6 @@ final class MainInteractor: MainInteractorInput {
 		contactsManager.getContatcs { (persons) in
 			completion(persons)
 		}
-	}
-
-	func getBalance()-> String? {
-		return userDefaultsWork.getObject(for: "balance") as? String
-	}
-
-	func setBalance(balance: String) {
-		userDefaultsWork.setObject(for: "balance", object: balance)
 	}
 
 }

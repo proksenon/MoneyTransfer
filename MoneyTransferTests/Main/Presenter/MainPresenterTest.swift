@@ -50,14 +50,14 @@ class MainPresenterTest: XCTestCase {
 		let currentBalance = "5000"
 		interactor.balance = currentBalance
 
-		let balance = presenter.getBalance()
+		let balance = presenter.balance()
 
 		XCTAssertTrue(interactor.didGetBalance)
 		XCTAssert(currentBalance == balance)
 	}
 
 	func testGetBBalanceForFirstTime() {
-		let balance = presenter.getBalance()
+		let balance = presenter.balance()
 
 		XCTAssertEqual(balance, "100000.00")
 		XCTAssertTrue(interactor.didSetBalance)

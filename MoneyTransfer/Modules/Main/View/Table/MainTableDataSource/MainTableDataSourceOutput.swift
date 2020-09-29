@@ -15,5 +15,5 @@ protocol MainTableDataSourceOutput: AnyObject {
 	///	 Получает контакт
 	func getPerson(with indexPath: IndexPath)-> Person
 	///  Получает баланс
-	func getBalance()-> String
+	func balance()-> String
 }

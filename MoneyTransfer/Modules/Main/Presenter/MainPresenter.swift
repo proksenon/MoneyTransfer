@@ -35,7 +35,7 @@ extension MainPresenter: MainViewOutput {
 		view.setScrollAtTopButton()
 		view.navigationWithScrollAtTop()
 		view.navigationBarIsHidden(true)
-		view.setBalanceTitleWith(balance: getBalance())
+		view.setBalanceTitleWith(balance: balance())
 		view.tapOutSite()
 	}
 
@@ -77,13 +77,13 @@ extension MainPresenter: MainTableDataSourceOutput {
 		return persons[indexPath.row]
 	}
 
-	func getBalance()-> String {
+	func balance()-> String {
 		guard let interactor = interactor else { return DefaultBalance.failBalance }
-		if let balance = interactor.getBalance() {
+		if let balance = interactor.balance {
 			return balance
 		} else {
 			let balance = DefaultBalance.startBalance
-			interactor.setBalance(balance: balance)
+			interactor.balance = balance
 			return balance
 		}
 	}
@@ -101,7 +101,7 @@ extension MainPresenter: MainMouduleInput {
 				router.showSuccess(with: balance)
 			}
 			view.tableViewReload()
-			view.setBalanceTitleWith(balance: self.getBalance())
+			view.setBalanceTitleWith(balance: self.balance())
 		}
 	}
 }
