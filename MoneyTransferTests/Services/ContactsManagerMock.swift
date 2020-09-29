@@ -9,7 +9,7 @@
 import Foundation
 @testable import MoneyTransfer
 
-class ContactsManagerMock: ContactsManagerProtocol {
+class ContactsManagerMock: ContactServiceProtocol {
 	var persons = [Person]()
 
 	func getContatcs(completion: @escaping ([Person]) -> Void) {

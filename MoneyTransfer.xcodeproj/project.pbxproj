@@ -149,8 +149,8 @@
 		D5B03FFF24FBFB420023E5DE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FFE24FBFB420023E5DE /* CustomTableViewCell.swift */; };
 		D5B0400324FCE7420023E5DE /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400224FCE7420023E5DE /* CardTableViewCell.swift */; };
 		D5B0400624FD091D0023E5DE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400524FD091D0023E5DE /* Person.swift */; };
-		D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */; };
-		D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */; };
+		D5B0400924FD0A1C0023E5DE /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400824FD0A1C0023E5DE /* ContactService.swift */; };
+		D5B0400B24FD18A50023E5DE /* ContactServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400A24FD18A50023E5DE /* ContactServiceProtocol.swift */; };
 		D5B83BF6251E5CA50095FA0B /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B83BF5251E5CA50095FA0B /* Labels.swift */; };
 		D5B83BFC251E65180095FA0B /* DefaultBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B83BFB251E65180095FA0B /* DefaultBalance.swift */; };
 		D5BB97272518CDD200CC8717 /* MoneyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BB97262518CDD200CC8717 /* MoneyString.swift */; };
@@ -350,8 +350,8 @@
 		D5B03FFE24FBFB420023E5DE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D5B0400224FCE7420023E5DE /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		D5B0400524FD091D0023E5DE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
-		D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerProtocol.swift; sourceTree = "<group>"; };
+		D5B0400824FD0A1C0023E5DE /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		D5B0400A24FD18A50023E5DE /* ContactServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServiceProtocol.swift; sourceTree = "<group>"; };
 		D5B83BF5251E5CA50095FA0B /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		D5B83BFB251E65180095FA0B /* DefaultBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBalance.swift; sourceTree = "<group>"; };
 		D5BB97262518CDD200CC8717 /* MoneyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyString.swift; sourceTree = "<group>"; };
@@ -1100,13 +1100,13 @@
 			path = Container;
 			sourceTree = "<group>";
 		};
-		D5A0BF8E2509FC500080737E /* ContactManager */ = {
+		D5A0BF8E2509FC500080737E /* ContactService */ = {
 			isa = PBXGroup;
 			children = (
-				D5B0400824FD0A1C0023E5DE /* ContactsManager.swift */,
-				D5B0400A24FD18A50023E5DE /* ContactsManagerProtocol.swift */,
+				D5B0400824FD0A1C0023E5DE /* ContactService.swift */,
+				D5B0400A24FD18A50023E5DE /* ContactServiceProtocol.swift */,
 			);
-			path = ContactManager;
+			path = ContactService;
 			sourceTree = "<group>";
 		};
 		D5A0BF912509FD360080737E /* UserDefaultsWork */ = {
@@ -1219,7 +1219,7 @@
 		D5B0400724FD09AD0023E5DE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D5A0BF8E2509FC500080737E /* ContactManager */,
+				D5A0BF8E2509FC500080737E /* ContactService */,
 				D5A0BF912509FD360080737E /* UserDefaultsWork */,
 			);
 			path = Services;
@@ -1504,7 +1504,7 @@
 				D5A0BFA8250A1FC80080737E /* TreatmentViewOutput.swift in Sources */,
 				D5EAA51F251DC77D0025AC0F /* ChildsImageSize.swift in Sources */,
 				D5A0BFB0250A20060080737E /* TreatmentInteractorOutput.swift in Sources */,
-				D5B0400B24FD18A50023E5DE /* ContactsManagerProtocol.swift in Sources */,
+				D5B0400B24FD18A50023E5DE /* ContactServiceProtocol.swift in Sources */,
 				D520451A25050D3A007B746A /* ContactViewInput.swift in Sources */,
 				D5A0BFAA250A1FDA0080737E /* TreatmentModuleInput.swift in Sources */,
 				D5EAA4FD251CC14D0025AC0F /* ViewConstatns.swift in Sources */,
@@ -1526,7 +1526,7 @@
 				D520450B25050C90007B746A /* ContactPresenter.swift in Sources */,
 				D5B03FF624FBF8CE0023E5DE /* MainInteractorOutput.swift in Sources */,
 				D5B03FF024FBF76B0023E5DE /* MainViewInput.swift in Sources */,
-				D5B0400924FD0A1C0023E5DE /* ContactsManager.swift in Sources */,
+				D5B0400924FD0A1C0023E5DE /* ContactService.swift in Sources */,
 				D50F511824DD730F0042BAD2 /* MainConfigurator.swift in Sources */,
 				D5A0BF7E25079DC10080737E /* TransactionModuleOutput.swift in Sources */,
 				D50F511224DD72EB0042BAD2 /* MainPresenter.swift in Sources */,

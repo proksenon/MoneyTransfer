@@ -9,7 +9,7 @@
 import Foundation
 
 /// Протокол менеджера Контактов
-protocol ContactsManagerProtocol: class {
+protocol ContactServiceProtocol: class {
 	/// Получает контакты
 	/// - Parameter completion: Список контактов в структуре Person
 	func getContatcs(completion: @escaping ([Person])->Void)

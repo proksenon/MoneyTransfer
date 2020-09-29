@@ -12,11 +12,11 @@ import Foundation
 final class MainInteractor: MainInteractorInput {
 
 	weak var output: MainInteractorOutput?
-	private let contactsManager: ContactsManagerProtocol
+	private let contactsManager: ContactServiceProtocol
 	private let userDefaultsWork: UserDefaultsWorkProtocol
 
 	init(presenter: MainInteractorOutput,
-		 contactsManager: ContactsManagerProtocol = ContactsManager(),
+		 contactsManager: ContactServiceProtocol = ContactService(),
 		 userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {
 		self.output = presenter
 		self.contactsManager = contactsManager

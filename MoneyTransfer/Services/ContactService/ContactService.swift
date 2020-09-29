@@ -10,7 +10,7 @@ import Foundation
 import Contacts
 
 /// Менеджер получает контакты
-final class ContactsManager: ContactsManagerProtocol {
+final class ContactService: ContactServiceProtocol {
 
 	func getContatcs(completion: @escaping ([Person])->Void) {
 		let store = CNContactStore()
