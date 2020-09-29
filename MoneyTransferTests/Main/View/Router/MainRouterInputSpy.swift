@@ -19,7 +19,7 @@ class MainRouterInputSpy: MainRouterInput {
 		didpPushContainer = true
 	}
 
-	func showSuccess(with balance: Balance) {
+	func showSuccess(with balance: BalanceOperation) {
 		didShowSuccess = true
 	}
 

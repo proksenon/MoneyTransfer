@@ -89,6 +89,9 @@
 		D57E6F742514C7D1002C1042 /* StylesLabelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */; };
 		D57E6F7D2514D3BF002C1042 /* ContainerConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */; };
 		D59523BB2521FEB100D50710 /* StringRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523BA2521FEB100D50710 /* StringRegularExpression.swift */; };
+		D59523C7252330AD00D50710 /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523C6252330AD00D50710 /* CellProtocol.swift */; };
+		D59523CB2523316D00D50710 /* CellItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523CA2523316D00D50710 /* CellItemProtocol.swift */; };
+		D59523D12523326800D50710 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523D02523326800D50710 /* Balance.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -104,7 +107,7 @@
 		D59DB6BE250A47890068888D /* ContainerViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6B1250A47890068888D /* ContainerViewOutput.swift */; };
 		D59DB6C6250A48D40068888D /* ChildAddAndRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6C5250A48D40068888D /* ChildAddAndRemove.swift */; };
 		D59DB6C8250A50160068888D /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6C7250A50160068888D /* ViewSize.swift */; };
-		D59DB6D5250D470D0068888D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6D4250D470D0068888D /* Balance.swift */; };
+		D59DB6D5250D470D0068888D /* BalanceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6D4250D470D0068888D /* BalanceOperation.swift */; };
 		D59DB6D7250E34350068888D /* MainModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6D6250E34350068888D /* MainModuleInput.swift */; };
 		D59DB6D9250E34440068888D /* MainModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6D8250E34440068888D /* MainModuleOutput.swift */; };
 		D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */; };
@@ -290,6 +293,9 @@
 		D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesLabelTest.swift; sourceTree = "<group>"; };
 		D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConfiguratorTests.swift; sourceTree = "<group>"; };
 		D59523BA2521FEB100D50710 /* StringRegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRegularExpression.swift; sourceTree = "<group>"; };
+		D59523C6252330AD00D50710 /* CellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
+		D59523CA2523316D00D50710 /* CellItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItemProtocol.swift; sourceTree = "<group>"; };
+		D59523D02523326800D50710 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -305,7 +311,7 @@
 		D59DB6B1250A47890068888D /* ContainerViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewOutput.swift; sourceTree = "<group>"; };
 		D59DB6C5250A48D40068888D /* ChildAddAndRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildAddAndRemove.swift; sourceTree = "<group>"; };
 		D59DB6C7250A50160068888D /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
-		D59DB6D4250D470D0068888D /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		D59DB6D4250D470D0068888D /* BalanceOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceOperation.swift; sourceTree = "<group>"; };
 		D59DB6D6250E34350068888D /* MainModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleInput.swift; sourceTree = "<group>"; };
 		D59DB6D8250E34440068888D /* MainModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleOutput.swift; sourceTree = "<group>"; };
 		D5A0BF6A25079BE70080737E /* TransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenter.swift; sourceTree = "<group>"; };
@@ -530,6 +536,8 @@
 			children = (
 				D5B03FFE24FBFB420023E5DE /* CustomTableViewCell.swift */,
 				D5B0400224FCE7420023E5DE /* CardTableViewCell.swift */,
+				D59523C6252330AD00D50710 /* CellProtocol.swift */,
+				D59523CA2523316D00D50710 /* CellItemProtocol.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1208,7 +1216,8 @@
 			children = (
 				D5B0400524FD091D0023E5DE /* Person.swift */,
 				D5A0BF92250A034B0080737E /* Status.swift */,
-				D59DB6D4250D470D0068888D /* Balance.swift */,
+				D59DB6D4250D470D0068888D /* BalanceOperation.swift */,
+				D59523D02523326800D50710 /* Balance.swift */,
 				D59DB6C7250A50160068888D /* ViewSize.swift */,
 				D52C3C7A250F83E2001E34A0 /* ChildsController.swift */,
 				D52C3C7C250FCE98001E34A0 /* Operations.swift */,
@@ -1448,9 +1457,10 @@
 				D5BB97272518CDD200CC8717 /* MoneyString.swift in Sources */,
 				D59DB6BA250A47890068888D /* ContainerPresenter.swift in Sources */,
 				D59DB6B8250A47890068888D /* ContainerConfiguratorProtocol.swift in Sources */,
-				D59DB6D5250D470D0068888D /* Balance.swift in Sources */,
+				D59DB6D5250D470D0068888D /* BalanceOperation.swift in Sources */,
 				D5EAA495251B9B210025AC0F /* MainTableDelegate.swift in Sources */,
 				D59DB6B9250A47890068888D /* ContainerRouter.swift in Sources */,
+				D59523D12523326800D50710 /* Balance.swift in Sources */,
 				D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */,
 				D59523BB2521FEB100D50710 /* StringRegularExpression.swift in Sources */,
 				D5EAA5BD251E18E30025AC0F /* SuccessConfigurator.swift in Sources */,
@@ -1464,6 +1474,7 @@
 				D59DB6B6250A47890068888D /* ContainerInteractor.swift in Sources */,
 				D59DB6B7250A47890068888D /* ContainerRouterInput.swift in Sources */,
 				D5A0BF7125079C0D0080737E /* TransactionConfigurator.swift in Sources */,
+				D59523CB2523316D00D50710 /* CellItemProtocol.swift in Sources */,
 				D5A0BF8D2509FC3E0080737E /* UserDefaulsWork.swift in Sources */,
 				D5A0BFA0250A1EAC0080737E /* TreatmentInteractor.swift in Sources */,
 				D5A0BFB2250A20100080737E /* TreatmentRouterInput.swift in Sources */,
@@ -1526,6 +1537,7 @@
 				D520450B25050C90007B746A /* ContactPresenter.swift in Sources */,
 				D5B03FF624FBF8CE0023E5DE /* MainInteractorOutput.swift in Sources */,
 				D5B03FF024FBF76B0023E5DE /* MainViewInput.swift in Sources */,
+				D59523C7252330AD00D50710 /* CellProtocol.swift in Sources */,
 				D5B0400924FD0A1C0023E5DE /* ContactService.swift in Sources */,
 				D50F511824DD730F0042BAD2 /* MainConfigurator.swift in Sources */,
 				D5A0BF7E25079DC10080737E /* TransactionModuleOutput.swift in Sources */,

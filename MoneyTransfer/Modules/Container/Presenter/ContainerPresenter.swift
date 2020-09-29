@@ -52,7 +52,7 @@ final class ContainerPresenter {
 	private var isShow: Bool = false
 	private var isShowingController: ChildsController?
 	private var amountMoneyForTransaction: String?
-	private var balance: Balance?
+	private var balance: BalanceOperation?
 	private var statusShow: Bool = true
 	private var operation: Operations?
 	var contactViewController: ContactViewController?
@@ -80,7 +80,7 @@ final class ContainerPresenter {
 		treatmentViewController.moduleInput?.configure(amountOfTransaction: amount, operation: operation)
 	}
 
-	private func setDataAtSuccesViewController(with balance: Balance) {
+	private func setDataAtSuccesViewController(with balance: BalanceOperation) {
 		guard let successOperationViewController = successOperationViewController else {return}
 		successOperationViewController.moduleInput?.configure(with: balance)
 	}
@@ -152,12 +152,12 @@ extension ContainerPresenter: ContainerViewOutput {
 
 	private func setBalance(balance: String?) {
 		guard let balance = balance, let amountMoneyForTransaction = amountMoneyForTransaction else { return }
-		let balanceWithTransaction = Balance(balance: balance, transactionMoney: amountMoneyForTransaction)
+		let balanceWithTransaction = BalanceOperation(balance: balance, transactionMoney: amountMoneyForTransaction)
 		setDataAtSuccesViewController(with: balanceWithTransaction)
 		self.balance = balanceWithTransaction
 	}
 
-	func getBalance() ->Balance? {
+	func getBalance() ->BalanceOperation? {
 		return balance
 	}
 

@@ -8,7 +8,8 @@
 
 import Foundation
 ///		Информация о человеке
-struct Person: Equatable {
+struct Person: Equatable, CellItemProtocol {
+	var identifier: String = Cells.CellsID.defaultCell.rawValue
 	/// Полное имя
 	let fullName: String?
 	/// Телефонный номер

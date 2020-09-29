@@ -9,12 +9,12 @@
 import UIKit
 
 /// Ячейка с контактом
-final class CustomTableViewCell: UITableViewCell {
+final class CustomTableViewCell: UITableViewCell, CellProtocol {
 
 	private let avatarImageView = UIImageView()
 	private let fullNameLabel = UILabel()
 	private let phoneNumberLabel = UILabel()
-	private let size = UIScreen.main.bounds.height/11
+	private let size = ViewConstatns.height / 11
 	private let defaultImage = UIImage(named: Images.unknown)
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -73,7 +73,8 @@ final class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-	func configureCell(with contact: Person) {
+	func configureCell(with item: CellItemProtocol) {
+		guard let contact = item as? Person else { return }
 		if let avatardata = contact.avatarData {
 			avatarImageView.image = UIImage(data: avatardata)
 		} else {

@@ -28,7 +28,7 @@ final class MainRouter: MainRouterInput {
 		viewController.navigationController?.pushViewController(containerVC, animated: true)
 	}
 
-	func showSuccess(with balance: Balance){
+	func showSuccess(with balance: BalanceOperation){
 		guard let viewController = viewController else { return }
 		let successViewController = SuccessOperationViewController()
 		let successConfigurator = SuccessOperationConfigurator()

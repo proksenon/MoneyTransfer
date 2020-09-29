@@ -12,7 +12,7 @@ protocol MainRouterInput: class {
 	///  Переходит на модуль Container
 	func pushContainer(with person: Person)
 	///  Показывает успешный статус операци
-	func showSuccess(with balance: Balance)
+	func showSuccess(with balance: BalanceOperation)
 	///  Закрывает статус успешной операии
 	func dissmisSucces()
 }

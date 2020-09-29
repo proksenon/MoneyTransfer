@@ -14,7 +14,7 @@ protocol ContainerViewOutput: class {
 	///  Переключает контроллер
 	func togleTransaction(on vc: ChildsController?)
 	///  Получает баланс
-	func getBalance() ->Balance?
+	func getBalance() ->BalanceOperation?
 	///  Показывает выводилась ли информация о успешной операции
 	func showStatus() -> Bool
 }

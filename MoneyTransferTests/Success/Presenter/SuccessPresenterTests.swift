@@ -34,7 +34,7 @@ class SuccessPresenterTests: XCTestCase {
 	}
 
 	func testConfigure() {
-		let balance: Balance = Balance(balance: "1000", transactionMoney: "200")
+		let balance: BalanceOperation = BalanceOperation(balance: "1000", transactionMoney: "200")
 		presenter.configure(with: balance)
 
 		XCTAssert(view.didSetTitleAmountOfMoneyLable)

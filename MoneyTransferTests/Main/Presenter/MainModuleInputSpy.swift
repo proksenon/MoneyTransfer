@@ -12,7 +12,7 @@ import Foundation
 class MainModuleInputSpy: MainMouduleInput {
 	var status: Bool = false
 
-	func statusTransaction(with balance: Balance?, show: Bool) {
+	func statusTransaction(with balance: BalanceOperation?, show: Bool) {
 		status = true
 	}
 

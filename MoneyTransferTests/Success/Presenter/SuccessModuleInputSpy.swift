@@ -13,7 +13,7 @@ class SuccessModuleInputSpy: SuccessOperationModuleInput {
 
 	var didConfigure: Bool = false
 
-	func configure(with balance: Balance) {
+	func configure(with balance: BalanceOperation) {
 		didConfigure = true
 	}
 }

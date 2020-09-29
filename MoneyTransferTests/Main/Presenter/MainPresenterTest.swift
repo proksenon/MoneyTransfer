@@ -81,7 +81,7 @@ class MainPresenterTest: XCTestCase {
 		interactor.persons = persons
 		presenter.configureView()
 
-		let person = presenter.getPerson(with: indexPath)
+		let person = presenter.Person(with: indexPath)
 
 		XCTAssert(persons[indexPath.row] == person)
 	}
@@ -113,7 +113,7 @@ class MainPresenterTest: XCTestCase {
 	}
 
 	func testStatusTransactionWithTrue() {
-		let balance = Balance(balance: "100000", transactionMoney: "1000")
+		let balance = BalanceOperation(balance: "100000", transactionMoney: "1000")
 		let expectation = self.expectation(description: #function)
 		presenter.statusTransaction(with: balance, show: true)
 

@@ -40,17 +40,11 @@ class MainTableDataSource: NSObject, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let output = output else { return UITableViewCell() }
-		if indexPath.section == 1 {
-			let cell = tableView.dequeueReusableCell(withIdentifier: Cells.CellsID.defaultCell.rawValue) as? CustomTableViewCell
-			cell?.configureCell(with: output.getPerson(with: indexPath))
-			guard let currentCell = cell else { return UITableViewCell()}
-			return currentCell
-		} else {
-			let cell = tableView.dequeueReusableCell(withIdentifier: Cells.CellsID.cardCell.rawValue) as? CardTableViewCell
-			cell?.configureCell(with: output.balance())
-			guard let currentCell = cell else { return UITableViewCell()}
-			return currentCell
-		}
+		let itemCell: CellItemProtocol = output.itemCell(with: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: itemCell.identifier) as? CellProtocol
+		cell?.configureCell(with: itemCell)
+		guard let currentCell = cell else { return UITableViewCell()}
+		return currentCell
 	}
 
 }

@@ -21,7 +21,7 @@ class ContainerViewOutputSpy: ContainerViewOutput {
 	var didShowStatus: Bool = false
 	var didSetOperation: Bool = false
 	var didShowTransactionView: Bool = false
-	var balance: Balance?
+	var balance: BalanceOperation?
 	var status: Bool = false
 
 	func configureView() {
@@ -52,7 +52,7 @@ class ContainerViewOutputSpy: ContainerViewOutput {
 		didSetBalance = true
 	}
 
-	func getBalance() -> Balance? {
+	func getBalance() -> BalanceOperation? {
 		didGetBalance = true
 		return balance
 	}

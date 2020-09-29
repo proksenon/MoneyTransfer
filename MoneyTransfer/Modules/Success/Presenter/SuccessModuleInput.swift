@@ -10,5 +10,5 @@ import Foundation
 
 protocol SuccessOperationModuleInput: class {
 	///  Конфигурирует модуль с балансом
-	func configure(with balance: Balance)
+	func configure(with balance: BalanceOperation)
 }

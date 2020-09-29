@@ -9,7 +9,7 @@
 import UIKit
 
 /// Ячейка с картой
-final class CardTableViewCell: UITableViewCell {
+final class CardTableViewCell: UITableViewCell, CellProtocol {
 
 	private let cardView = UIView()
 	private let balanceLabel = UILabel()
@@ -94,8 +94,9 @@ final class CardTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-	func configureCell(with balance: String) {
-		balanceLabel.text = balance.moneyFormat()
+	func configureCell(with item: CellItemProtocol) {
+		guard let balance = item as? Balance else { return }
+		balanceLabel.text = balance.balance.moneyFormat()
 	}
 }
 

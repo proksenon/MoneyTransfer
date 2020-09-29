@@ -35,7 +35,7 @@ extension MainPresenter: MainViewOutput {
 		view.setScrollAtTopButton()
 		view.navigationWithScrollAtTop()
 		view.navigationBarIsHidden(true)
-		view.setBalanceTitleWith(balance: balance())
+		view.setBalanceTitleWith(balance: balance().balance)
 		view.tapOutSite()
 	}
 
@@ -73,27 +73,34 @@ extension MainPresenter: MainTableDataSourceOutput {
 		return persons.count
 	}
 
-	func getPerson(with indexPath: IndexPath)-> Person {
+	private func person(with indexPath: IndexPath)-> Person {
 		return persons[indexPath.row]
 	}
 
-	func balance()-> String {
-		guard let interactor = interactor else { return DefaultBalance.failBalance }
+	private func balance()-> Balance {
+		guard let interactor = interactor else { return Balance(balance: DefaultBalance.failBalance) }
 		if let balance = interactor.balance {
-			return balance
+			return Balance(balance: balance)
 		} else {
 			let balance = DefaultBalance.startBalance
 			interactor.balance = balance
-			return balance
+			return Balance(balance: balance)
 		}
 	}
 
+	func itemCell(with indexPath: IndexPath)-> CellItemProtocol {
+		if indexPath.section == 1 {
+			return person(with: indexPath)
+		} else {
+			return balance()
+		}
+	}
 }
 
 //MARK: -MainMouduleInput
 extension MainPresenter: MainMouduleInput {
 	
-	func statusTransaction(with balance: Balance?, show: Bool) {
+	func statusTransaction(with balance: BalanceOperation?, show: Bool) {
 		guard let router = router, let balance = balance, let view = view else {return}
 		DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 			if show {
@@ -101,7 +108,7 @@ extension MainPresenter: MainMouduleInput {
 				router.showSuccess(with: balance)
 			}
 			view.tableViewReload()
-			view.setBalanceTitleWith(balance: self.balance())
+			view.setBalanceTitleWith(balance: self.balance().balance)
 		}
 	}
 }

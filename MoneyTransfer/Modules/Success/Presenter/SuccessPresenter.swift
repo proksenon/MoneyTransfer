@@ -43,7 +43,7 @@ extension SuccessOperationPresenter: SuccessOperationInteractorOutput {
 //MARK: -SuccessOperationModuleInput
 extension SuccessOperationPresenter: SuccessOperationModuleInput {
 	
-	func configure(with balance: Balance) {
+	func configure(with balance: BalanceOperation) {
 		guard let view = view else { return }
 		view.setTitleAmountOfMoneyLable(with: balance.transactionMoney)
 		view.setOldBalance(oldBalance: calculationOldBalance(balance: balance.balance, transaction: balance.transactionMoney))
