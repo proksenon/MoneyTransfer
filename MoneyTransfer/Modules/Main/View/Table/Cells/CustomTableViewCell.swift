@@ -37,7 +37,7 @@ final class CustomTableViewCell: UITableViewCell, CellProtocol {
 		avatarImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		avatarImageView.image = defaultImage
 		avatarImageView.contentMode = .scaleAspectFill
-		avatarImageView.roundedCorner(with: 25)
+		avatarImageView.decorate(with: CornerRadiusDecorator(cornerRadius: 25))
 	}
 	/// Настраивает лейбл полного Имени
 	private func setFullNameLabel() {

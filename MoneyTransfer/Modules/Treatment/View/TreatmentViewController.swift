@@ -31,7 +31,7 @@ extension TreatmentViewController: TreatmentViewInput {
 
 	func setView() {
 		view.backgroundColor = .white
-		view.roundedCorner(with: 20)
+		view.decorate(with: CornerRadiusDecorator(cornerRadius: 20))
 	}
 	
 	//MARK: -StatusLabel

@@ -32,7 +32,7 @@ extension TransactionViewController: TransactionViewInput {
 
 
 	func setView() {
-		view.roundedCorner(with: 20)
+		view.decorate(with: CornerRadiusDecorator(cornerRadius: 20))
 		view.backgroundColor = .white
 	}
 

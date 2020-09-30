@@ -39,10 +39,13 @@ class TransactionView: UIView {
 	//MARK: -OperationLabel
 	private func setupNameOperationLabel() {
 		addSubview(nameOperationLabel)
-		NSLayoutConstraint.activate([nameOperationLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constatns.labelTop),
-									 nameOperationLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constatns.spacing)])
 
-		nameOperationLabel.mainLabel(title: Labels.transactionMoney)
+		nameOperationLabel.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([nameOperationLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constatns.labelTop),
+									 nameOperationLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constatns.spacing),
+									 nameOperationLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.mainLabelHeight)])
+
+		nameOperationLabel.decorate(with: MainLabelDecorator(title: Labels.transactionMoney))
 	}
 
 	//MARK: -MoneyTextfield
@@ -61,17 +64,20 @@ class TransactionView: UIView {
 									 moneyTextfield.leftAnchor.constraint(equalTo: leftAnchor, constant: Constatns.spacing),
 									 moneyTextfield.heightAnchor.constraint(equalToConstant: Constatns.textFieldTop)])
 
-		moneyTextfield.roundedCorner(with: 4)
+		moneyTextfield.decorate(with: CornerRadiusDecorator(cornerRadius: 4))
 	}
 
 	//MARK: -OperationButton
 	private func setupOperationButton() {
 		addSubview(operationButton)
+
+		operationButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ChildsButton.bottomAchor),
 									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
-									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
+									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor),
+									 operationButton.heightAnchor.constraint(equalToConstant: ChildsButton.transactionHeight)])
 
-		operationButton.styleButton(title: Labels.transfer, color: .systemGray2)
+		operationButton.decorate(with: [TransactionButtonDecorator(title: Labels.transfer, color: .systemGray2), CornerRadiusDecorator(cornerRadius: 15)])
 	}
 
 }

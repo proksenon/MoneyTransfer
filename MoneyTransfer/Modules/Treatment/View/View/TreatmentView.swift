@@ -11,9 +11,9 @@ import UIKit
 class TreatmentView: UIView {
 
 	let treatmentImageView: UIImageView = UIImageView()
-	let statusLabel: StyledLabel = StyledLabel()
-	let atributeTransactionLabel: StyledLabel = StyledLabel()
-	let amountOfMoneyLabel: StyledLabel = StyledLabel()
+	let statusLabel: UILabel = UILabel()
+	let atributeTransactionLabel: UILabel = UILabel()
+	let amountOfMoneyLabel: UILabel = UILabel()
 	let operationButton: UIButton = UIButton()
 
 	init() {
@@ -57,7 +57,7 @@ class TreatmentView: UIView {
 									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
 									 statusLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.mainLabelHeight)])
 
-		statusLabel.style = .mainLabelStyle(title: Labels.transferProcessing)
+		statusLabel.decorate(with: MainLabelDecorator(title: Labels.transferProcessing))
 	}
 
 	//MARK: -AtributeTransactionLabel
@@ -70,7 +70,7 @@ class TreatmentView: UIView {
 									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
 									 atributeTransactionLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.subLabelHeight)])
 
-		atributeTransactionLabel.style = .subLabelStyle(title: Labels.transferAmount)
+		atributeTransactionLabel.decorate(with: SubLabelDecorator(title: Labels.transferAmount))
 	}
 
 	//MARK: -AmountOfMoneyLabel
@@ -83,17 +83,20 @@ class TreatmentView: UIView {
 									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
 									 amountOfMoneyLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.mainLabelHeight)])
 
-		amountOfMoneyLabel.style = .mainLabelStyle(title: "")
+		amountOfMoneyLabel.decorate(with: MainLabelDecorator(title: ""))
 	}
 
 	//MARK: -OperationButton
 	private func setupOperationButton() {
 		addSubview(operationButton)
+
+		operationButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ChildsButton.bottomAchor),
 									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
-									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
+									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor),
+									 operationButton.heightAnchor.constraint(equalToConstant: ChildsButton.transactionHeight)])
 
-		operationButton.styleButton(title: Labels.goToContacts)
+		operationButton.decorate(with: [TransactionButtonDecorator(title: Labels.goToContacts), CornerRadiusDecorator(cornerRadius: 15)])
 	}
 
 }

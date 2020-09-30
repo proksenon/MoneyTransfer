@@ -30,12 +30,8 @@
 		D520452425050DA1007B746A /* ContactRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520452325050DA1007B746A /* ContactRouterInput.swift */; };
 		D520452625050DCF007B746A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520452525050DCF007B746A /* ContactViewController.swift */; };
 		D5204528250511E0007B746A /* ContactConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5204527250511E0007B746A /* ContactConfigureProtocol.swift */; };
-		D52C3C75250F6A78001E34A0 /* StylesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C74250F6A78001E34A0 /* StylesLabel.swift */; };
-		D52C3C77250F6ABB001E34A0 /* StyleTransactionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C76250F6ABB001E34A0 /* StyleTransactionButtons.swift */; };
-		D52C3C79250F821D001E34A0 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C78250F821D001E34A0 /* RoundedCorners.swift */; };
 		D52C3C7B250F83E2001E34A0 /* ChildsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7A250F83E2001E34A0 /* ChildsController.swift */; };
 		D52C3C7D250FCE98001E34A0 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7C250FCE98001E34A0 /* Operations.swift */; };
-		D52C3C7F2510B894001E34A0 /* ContactStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */; };
 		D52C3C872510CBC8001E34A0 /* MoneyTransferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C862510CBC8001E34A0 /* MoneyTransferTests.swift */; };
 		D52C3C912510D022001E34A0 /* MainViewInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C902510D022001E34A0 /* MainViewInputSpy.swift */; };
 		D52C3C932510D056001E34A0 /* MainViewOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52C3C922510D056001E34A0 /* MainViewOutputSpy.swift */; };
@@ -86,14 +82,21 @@
 		D53683142513658B0077BDCB /* SuccessConfiguratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53683132513658B0077BDCB /* SuccessConfiguratorTest.swift */; };
 		D536831625139BC90077BDCB /* ContainerConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536831525139BC90077BDCB /* ContainerConfiguratorMock.swift */; };
 		D57E6F6E2514C683002C1042 /* ExtensionChildrensControllersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F6D2514C683002C1042 /* ExtensionChildrensControllersTest.swift */; };
-		D57E6F742514C7D1002C1042 /* StylesLabelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */; };
 		D57E6F7D2514D3BF002C1042 /* ContainerConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */; };
 		D59523BB2521FEB100D50710 /* StringRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523BA2521FEB100D50710 /* StringRegularExpression.swift */; };
 		D59523C7252330AD00D50710 /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523C6252330AD00D50710 /* CellProtocol.swift */; };
 		D59523CB2523316D00D50710 /* CellItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523CA2523316D00D50710 /* CellItemProtocol.swift */; };
 		D59523D12523326800D50710 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523D02523326800D50710 /* Balance.swift */; };
-		D59523D625237C9200D50710 /* StyledLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523D525237C9200D50710 /* StyledLabel.swift */; };
 		D59523DD2523867C00D50710 /* ChildsLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523DC2523867C00D50710 /* ChildsLabels.swift */; };
+		D59523E225247B6E00D50710 /* DecorateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523E125247B6E00D50710 /* DecorateView.swift */; };
+		D59523E625247BAB00D50710 /* ViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523E525247BAB00D50710 /* ViewDecorator.swift */; };
+		D59523ED25247F4600D50710 /* MainLabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523EC25247F4600D50710 /* MainLabelDecorator.swift */; };
+		D59523F325249E3E00D50710 /* SubLabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523F225249E3E00D50710 /* SubLabelDecorator.swift */; };
+		D59523F72524A06200D50710 /* StrikeLabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523F62524A06200D50710 /* StrikeLabelDecorator.swift */; };
+		D59523FE2524A11300D50710 /* TransactionButtonDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523FD2524A11300D50710 /* TransactionButtonDecorator.swift */; };
+		D59524022524A9B700D50710 /* CornerRadiusDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59524012524A9B700D50710 /* CornerRadiusDecorator.swift */; };
+		D59524062524AA9C00D50710 /* ContactButtonDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59524052524AA9C00D50710 /* ContactButtonDecorator.swift */; };
+		D595240D2524AC9D00D50710 /* GradientViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595240C2524AC9D00D50710 /* GradientViewDecorator.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -166,7 +169,6 @@
 		D5E85A8D2513B01D0071F660 /* TreatmentModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A8C2513B01D0071F660 /* TreatmentModuleInputSpy.swift */; };
 		D5E85A8F2513B04A0071F660 /* SuccessModuleInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E85A8E2513B04A0071F660 /* SuccessModuleInputSpy.swift */; };
 		D5E877252510E90E007E80F3 /* MainConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */; };
-		D5EAA46B2519E7EF0025AC0F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA46A2519E7EF0025AC0F /* GradientView.swift */; };
 		D5EAA477251B41220025AC0F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA476251B41220025AC0F /* MainView.swift */; };
 		D5EAA47C251B57D20025AC0F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA47B251B57D20025AC0F /* ContactView.swift */; };
 		D5EAA481251B5DD20025AC0F /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAA480251B5DD20025AC0F /* TransactionView.swift */; };
@@ -234,12 +236,8 @@
 		D520452325050DA1007B746A /* ContactRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouterInput.swift; sourceTree = "<group>"; };
 		D520452525050DCF007B746A /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		D5204527250511E0007B746A /* ContactConfigureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactConfigureProtocol.swift; sourceTree = "<group>"; };
-		D52C3C74250F6A78001E34A0 /* StylesLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesLabel.swift; sourceTree = "<group>"; };
-		D52C3C76250F6ABB001E34A0 /* StyleTransactionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTransactionButtons.swift; sourceTree = "<group>"; };
-		D52C3C78250F821D001E34A0 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		D52C3C7A250F83E2001E34A0 /* ChildsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsController.swift; sourceTree = "<group>"; };
 		D52C3C7C250FCE98001E34A0 /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
-		D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStyleButton.swift; sourceTree = "<group>"; };
 		D52C3C842510CBC8001E34A0 /* MoneyTransferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyTransferTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52C3C862510CBC8001E34A0 /* MoneyTransferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTransferTests.swift; sourceTree = "<group>"; };
 		D52C3C882510CBC8001E34A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -292,14 +290,21 @@
 		D53683132513658B0077BDCB /* SuccessConfiguratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessConfiguratorTest.swift; sourceTree = "<group>"; };
 		D536831525139BC90077BDCB /* ContainerConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConfiguratorMock.swift; sourceTree = "<group>"; };
 		D57E6F6D2514C683002C1042 /* ExtensionChildrensControllersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionChildrensControllersTest.swift; sourceTree = "<group>"; };
-		D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesLabelTest.swift; sourceTree = "<group>"; };
 		D57E6F7C2514D3BF002C1042 /* ContainerConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConfiguratorTests.swift; sourceTree = "<group>"; };
 		D59523BA2521FEB100D50710 /* StringRegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRegularExpression.swift; sourceTree = "<group>"; };
 		D59523C6252330AD00D50710 /* CellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
 		D59523CA2523316D00D50710 /* CellItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItemProtocol.swift; sourceTree = "<group>"; };
 		D59523D02523326800D50710 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
-		D59523D525237C9200D50710 /* StyledLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledLabel.swift; sourceTree = "<group>"; };
 		D59523DC2523867C00D50710 /* ChildsLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsLabels.swift; sourceTree = "<group>"; };
+		D59523E125247B6E00D50710 /* DecorateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorateView.swift; sourceTree = "<group>"; };
+		D59523E525247BAB00D50710 /* ViewDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDecorator.swift; sourceTree = "<group>"; };
+		D59523EC25247F4600D50710 /* MainLabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLabelDecorator.swift; sourceTree = "<group>"; };
+		D59523F225249E3E00D50710 /* SubLabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLabelDecorator.swift; sourceTree = "<group>"; };
+		D59523F62524A06200D50710 /* StrikeLabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikeLabelDecorator.swift; sourceTree = "<group>"; };
+		D59523FD2524A11300D50710 /* TransactionButtonDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionButtonDecorator.swift; sourceTree = "<group>"; };
+		D59524012524A9B700D50710 /* CornerRadiusDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusDecorator.swift; sourceTree = "<group>"; };
+		D59524052524AA9C00D50710 /* ContactButtonDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactButtonDecorator.swift; sourceTree = "<group>"; };
+		D595240C2524AC9D00D50710 /* GradientViewDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViewDecorator.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -372,7 +377,6 @@
 		D5E85A8C2513B01D0071F660 /* TreatmentModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentModuleInputSpy.swift; sourceTree = "<group>"; };
 		D5E85A8E2513B04A0071F660 /* SuccessModuleInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessModuleInputSpy.swift; sourceTree = "<group>"; };
 		D5E877242510E90E007E80F3 /* MainConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguratorMock.swift; sourceTree = "<group>"; };
-		D5EAA46A2519E7EF0025AC0F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D5EAA476251B41220025AC0F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D5EAA47B251B57D20025AC0F /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		D5EAA480251B5DD20025AC0F /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
@@ -894,17 +898,8 @@
 			isa = PBXGroup;
 			children = (
 				D57E6F6D2514C683002C1042 /* ExtensionChildrensControllersTest.swift */,
-				D57E6F732514C7D1002C1042 /* StylesLabelTest.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		D59523D4252379C700D50710 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				D59523D525237C9200D50710 /* StyledLabel.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D59523D92523844400D50710 /* Common */ = {
@@ -913,7 +908,6 @@
 				D59523E02524780F00D50710 /* UI */,
 				D5EAA4F9251CBD720025AC0F /* Constants */,
 				D5B0400424FD08B40023E5DE /* Entity */,
-				D59523D4252379C700D50710 /* Helpers */,
 				D59DB6C4250A48B90068888D /* Extension */,
 				D5B0400724FD09AD0023E5DE /* Services */,
 			);
@@ -923,8 +917,48 @@
 		D59523E02524780F00D50710 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D59523E925247F2500D50710 /* Decorators */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D59523E925247F2500D50710 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				D59523E525247BAB00D50710 /* ViewDecorator.swift */,
+				D59524102524AD3800D50710 /* ViewDecorator */,
+				D59524092524AC2C00D50710 /* ButtonsDecorator */,
+				D59523FA2524A0D600D50710 /* LabelsDecorator */,
+			);
+			path = Decorators;
+			sourceTree = "<group>";
+		};
+		D59523FA2524A0D600D50710 /* LabelsDecorator */ = {
+			isa = PBXGroup;
+			children = (
+				D59523EC25247F4600D50710 /* MainLabelDecorator.swift */,
+				D59523F225249E3E00D50710 /* SubLabelDecorator.swift */,
+				D59523F62524A06200D50710 /* StrikeLabelDecorator.swift */,
+			);
+			path = LabelsDecorator;
+			sourceTree = "<group>";
+		};
+		D59524092524AC2C00D50710 /* ButtonsDecorator */ = {
+			isa = PBXGroup;
+			children = (
+				D59523FD2524A11300D50710 /* TransactionButtonDecorator.swift */,
+				D59524052524AA9C00D50710 /* ContactButtonDecorator.swift */,
+			);
+			path = ButtonsDecorator;
+			sourceTree = "<group>";
+		};
+		D59524102524AD3800D50710 /* ViewDecorator */ = {
+			isa = PBXGroup;
+			children = (
+				D59524012524A9B700D50710 /* CornerRadiusDecorator.swift */,
+				D595240C2524AC9D00D50710 /* GradientViewDecorator.swift */,
+			);
+			path = ViewDecorator;
 			sourceTree = "<group>";
 		};
 		D59DB6BF250A47F50068888D /* View */ = {
@@ -979,14 +1013,10 @@
 			isa = PBXGroup;
 			children = (
 				D59DB6C5250A48D40068888D /* ChildAddAndRemove.swift */,
-				D52C3C74250F6A78001E34A0 /* StylesLabel.swift */,
-				D52C3C76250F6ABB001E34A0 /* StyleTransactionButtons.swift */,
-				D52C3C78250F821D001E34A0 /* RoundedCorners.swift */,
-				D52C3C7E2510B894001E34A0 /* ContactStyleButton.swift */,
 				D5BB97262518CDD200CC8717 /* MoneyString.swift */,
-				D5EAA46A2519E7EF0025AC0F /* GradientView.swift */,
 				D5EAA530251DEBA30025AC0F /* StringLocalized.swift */,
 				D59523BA2521FEB100D50710 /* StringRegularExpression.swift */,
+				D59523E125247B6E00D50710 /* DecorateView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1480,7 +1510,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D52C3C77250F6ABB001E34A0 /* StyleTransactionButtons.swift in Sources */,
 				D59DB6BB250A47890068888D /* ContainerModuleInput.swift in Sources */,
 				D5B03FF824FBF8D80023E5DE /* MainInteractorInput.swift in Sources */,
 				D5A0BF93250A034B0080737E /* Status.swift in Sources */,
@@ -1508,7 +1537,6 @@
 				D5A0BF8D2509FC3E0080737E /* UserDefaulsWork.swift in Sources */,
 				D5A0BFA0250A1EAC0080737E /* TreatmentInteractor.swift in Sources */,
 				D5A0BFB2250A20100080737E /* TreatmentRouterInput.swift in Sources */,
-				D5EAA46B2519E7EF0025AC0F /* GradientView.swift in Sources */,
 				D5A0BF902509FD1B0080737E /* UserDefaultsWorkProtocol.swift in Sources */,
 				D520451E25050D5A007B746A /* ContactModuleOutput.swift in Sources */,
 				D520451125050CB5007B746A /* ContactConfigurator.swift in Sources */,
@@ -1518,26 +1546,26 @@
 				D5EAA5CF251E191A0025AC0F /* SuccessPresenter.swift in Sources */,
 				D50F50FB24DD6F760042BAD2 /* AppDelegate.swift in Sources */,
 				D59DB6D7250E34350068888D /* MainModuleInput.swift in Sources */,
-				D52C3C75250F6A78001E34A0 /* StylesLabel.swift in Sources */,
 				D5A0BF8825079EC20080737E /* TransactionViewController.swift in Sources */,
 				D5A0BF6D25079BF20080737E /* TransactionInteractor.swift in Sources */,
 				D520452025050D80007B746A /* ContactInteractorOutput.swift in Sources */,
 				D52C3C7D250FCE98001E34A0 /* Operations.swift in Sources */,
 				D5EAA4F6251C9DE30025AC0F /* MainTableDataSourceOutput.swift in Sources */,
+				D59523E625247BAB00D50710 /* ViewDecorator.swift in Sources */,
 				D520450D25050C9B007B746A /* ContactInteractor.swift in Sources */,
-				D52C3C79250F821D001E34A0 /* RoundedCorners.swift in Sources */,
 				D5A0BF6F25079BFE0080737E /* TransactionRouter.swift in Sources */,
 				D5A0BFAC250A1FE80080737E /* TreatmentModuleOutput.swift in Sources */,
+				D59523F72524A06200D50710 /* StrikeLabelDecorator.swift in Sources */,
 				D5B83BF6251E5CA50095FA0B /* Labels.swift in Sources */,
 				D5A0BFE1250A40F10080737E /* SuccessViewOutput.swift in Sources */,
 				D5A0BF9E250A1E9C0080737E /* TreatmentPresenter.swift in Sources */,
 				D5EAA5CD251E191A0025AC0F /* SuccessModuleInput.swift in Sources */,
 				D5A0BFA4250A1ED40080737E /* TreatmentConfigurator.swift in Sources */,
 				D5EAA511251CF8990025AC0F /* Images.swift in Sources */,
-				D52C3C7F2510B894001E34A0 /* ContactStyleButton.swift in Sources */,
 				D5A0BFE3250A40F10080737E /* SuccessViewController.swift in Sources */,
 				D52C3C7B250F83E2001E34A0 /* ChildsController.swift in Sources */,
 				D50F50FD24DD6F760042BAD2 /* SceneDelegate.swift in Sources */,
+				D59523F325249E3E00D50710 /* SubLabelDecorator.swift in Sources */,
 				D5B03FFF24FBFB420023E5DE /* CustomTableViewCell.swift in Sources */,
 				D520452425050DA1007B746A /* ContactRouterInput.swift in Sources */,
 				D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */,
@@ -1549,6 +1577,7 @@
 				D520451A25050D3A007B746A /* ContactViewInput.swift in Sources */,
 				D5A0BFAA250A1FDA0080737E /* TreatmentModuleInput.swift in Sources */,
 				D5EAA4FD251CC14D0025AC0F /* ViewConstatns.swift in Sources */,
+				D59524022524A9B700D50710 /* CornerRadiusDecorator.swift in Sources */,
 				D59DB6BE250A47890068888D /* ContainerViewOutput.swift in Sources */,
 				D5EAA5D5251E19320025AC0F /* SuccessRouterInput.swift in Sources */,
 				D520451C25050D4A007B746A /* ContactModuleInput.swift in Sources */,
@@ -1556,12 +1585,14 @@
 				D50F511424DD72FA0042BAD2 /* MainInteractor.swift in Sources */,
 				D520451825050D2E007B746A /* ContactViewOutput.swift in Sources */,
 				D5EAA501251CC1E70025AC0F /* Cells.swift in Sources */,
+				D59523E225247B6E00D50710 /* DecorateView.swift in Sources */,
 				D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */,
 				D5EAA5BC251E18E30025AC0F /* SuccessConfiguratorProtocol.swift in Sources */,
+				D59523ED25247F4600D50710 /* MainLabelDecorator.swift in Sources */,
 				D5EAA5C5251E19050025AC0F /* SuccessInteractorInput.swift in Sources */,
-				D59523D625237C9200D50710 /* StyledLabel.swift in Sources */,
 				D59DB6D9250E34440068888D /* MainModuleOutput.swift in Sources */,
 				D59DB6C6250A48D40068888D /* ChildAddAndRemove.swift in Sources */,
+				D59524062524AA9C00D50710 /* ContactButtonDecorator.swift in Sources */,
 				D520452625050DCF007B746A /* ContactViewController.swift in Sources */,
 				D520452225050D8D007B746A /* ContactInteractorInput.swift in Sources */,
 				D5A0BFAE250A1FFB0080737E /* TreatmentInteractorInput.swift in Sources */,
@@ -1575,6 +1606,7 @@
 				D50F511224DD72EB0042BAD2 /* MainPresenter.swift in Sources */,
 				D5204528250511E0007B746A /* ContactConfigureProtocol.swift in Sources */,
 				D5EAA49B251B9B710025AC0F /* MainTableDelegateOutput.swift in Sources */,
+				D59523FE2524A11300D50710 /* TransactionButtonDecorator.swift in Sources */,
 				D59523DD2523867C00D50710 /* ChildsLabels.swift in Sources */,
 				D5EAA51B251DC1F00025AC0F /* ChildsButton.swift in Sources */,
 				D5A0BFE2250A40F10080737E /* SuccessViewInput.swift in Sources */,
@@ -1599,6 +1631,7 @@
 				D5A0BFA6250A1FBC0080737E /* TreatmentViewInput.swift in Sources */,
 				D5EAA515251CFACD0025AC0F /* ChildsAtributes.swift in Sources */,
 				D59DB6C8250A50160068888D /* ViewSize.swift in Sources */,
+				D595240D2524AC9D00D50710 /* GradientViewDecorator.swift in Sources */,
 				D5EAA5C4251E19050025AC0F /* SuccessInteractor.swift in Sources */,
 				D5EAA50D251CF5AA0025AC0F /* Alpha.swift in Sources */,
 				D5B0400324FCE7420023E5DE /* CardTableViewCell.swift in Sources */,
@@ -1650,7 +1683,6 @@
 				D536831625139BC90077BDCB /* ContainerConfiguratorMock.swift in Sources */,
 				D5368302251360E90077BDCB /* TreatmentConfiguratorTests.swift in Sources */,
 				D57E6F7D2514D3BF002C1042 /* ContainerConfiguratorTests.swift in Sources */,
-				D57E6F742514C7D1002C1042 /* StylesLabelTest.swift in Sources */,
 				D53682FA2513566B0077BDCB /* TreatmentRouterInputSpy.swift in Sources */,
 				D53682E92513539A0077BDCB /* ContactConfiguratorTests.swift in Sources */,
 				D53682C825125ED40077BDCB /* ContactViewControllerTests.swift in Sources */,

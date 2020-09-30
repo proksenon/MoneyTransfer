@@ -50,7 +50,7 @@ class ContactView: UIView {
 									 avatarImageView.heightAnchor.constraint(equalToConstant: ViewConstatns.width/2)])
 		avatarImageView.image = UIImage(named: Images.unknown)
 		avatarImageView.contentMode = .scaleAspectFill
-		avatarImageView.roundedCorner(with: ViewConstatns.width/4)
+		avatarImageView.decorate(with: CornerRadiusDecorator(cornerRadius: ViewConstatns.width/4))
 	}
 
 	//MARK: -FullNameLabel
@@ -81,22 +81,26 @@ class ContactView: UIView {
 	private func setupRequestMoneyButton() {
 		addSubview(requestMoneyButton)
 
+		requestMoneyButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([requestMoneyButton.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: Constants.top * 3),
 									 requestMoneyButton.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.buttonSpacing),
-									 requestMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.buttonSpacing)])
+									 requestMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.buttonSpacing),
+									 requestMoneyButton.heightAnchor.constraint(equalToConstant: ChildsButton.contactHeight)])
 
-		requestMoneyButton.contactStyleButton(title: Labels.requestMoney)
+		requestMoneyButton.decorate(with: [ContactButtonDecorator(title: Labels.requestMoney), CornerRadiusDecorator(cornerRadius: 4)])
 	}
 
 	//MARK: -SendMoneyButton
 	private func setupSendMoneyButton() {
 		addSubview(sendMoneyButton)
 
+		sendMoneyButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([sendMoneyButton.topAnchor.constraint(equalTo: requestMoneyButton.bottomAnchor, constant: Constants.top / 2),
 									 sendMoneyButton.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.buttonSpacing),
-									 sendMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.buttonSpacing)])
+									 sendMoneyButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.buttonSpacing),
+									 sendMoneyButton.heightAnchor.constraint(equalToConstant: ChildsButton.contactHeight)])
 
-		sendMoneyButton.contactStyleButton(title: Labels.sendMoney)
+		sendMoneyButton.decorate(with: [ContactButtonDecorator(title: Labels.sendMoney), CornerRadiusDecorator(cornerRadius: 4)])
 	}
 
 }

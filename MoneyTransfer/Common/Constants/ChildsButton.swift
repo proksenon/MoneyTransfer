@@ -16,4 +16,8 @@ enum ChildsButton {
 	static let leftAchor: CGFloat = 15
 	/// Правая граница
 	static let rightAchor: CGFloat = -leftAchor
+	/// Высота кнопки стиля transaction
+	static let transactionHeight: CGFloat = 40
+	/// Высота кнопки стиля contact
+	static let contactHeight: CGFloat = ViewConstatns.height / 10
 }

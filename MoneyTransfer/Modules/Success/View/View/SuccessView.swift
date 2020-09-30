@@ -61,73 +61,93 @@ class SuccessView: UIView {
 	//MARK: -StatusLabel
 	private func setupStatusLabel() {
 		addSubview(statusLabel)
+
+		statusLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: Constants.topAnchor),
 									 statusLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
+									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
+									 statusLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.mainLabelHeight)])
 
-		statusLabel.mainLabel(title: Labels.transferSuccess)
+		statusLabel.decorate(with: MainLabelDecorator(title: Labels.transferSuccess))
 	}
 
 	//MARK: -AtributeTransactionLabel
 	private func setupAtributeTransactionLabel() {
 		addSubview(atributeTransactionLabel)
+
+		atributeTransactionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: Constants.topAnchor),
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
+									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
+									 atributeTransactionLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.subLabelHeight)])
 
-		atributeTransactionLabel.subLabel(title: Labels.transfered)
+		atributeTransactionLabel.decorate(with: SubLabelDecorator(title: Labels.transfered))
 	}
 
 	//MARK: -AmountOfMoneyLabel
 	private func setupAmountOfMoneyLabel() {
 		addSubview(amountOfMoneyLabel)
+
+		amountOfMoneyLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: Constants.topAnchor / 2),
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
+									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
+									 amountOfMoneyLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.mainLabelHeight)])
 
-		amountOfMoneyLabel.mainLabel(title: "")
+		amountOfMoneyLabel.decorate(with: MainLabelDecorator(title: ""))
 	}
 
 	//MARK: -OperationButton
 	private func setupExitButton() {
 		addSubview(operationButton)
+
+		operationButton.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([operationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ChildsButton.bottomAchor),
 									 operationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: ChildsButton.leftAchor),
-									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor)])
+									 operationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: ChildsButton.rightAchor),
+									 operationButton.heightAnchor.constraint(equalToConstant: ChildsButton.transactionHeight)])
 
-		operationButton.styleButton(title: Labels.goToContacts)
+		operationButton.decorate(with: [TransactionButtonDecorator(title: Labels.goToContacts), CornerRadiusDecorator(cornerRadius: 15)])
 	}
 
 	//MARK: -ChangeBalanceLabel
 	private func setupChangeBalanceLabel() {
 		addSubview(changeBalanceLabel)
+
+		changeBalanceLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([changeBalanceLabel.topAnchor.constraint(equalTo: amountOfMoneyLabel.bottomAnchor, constant: Constants.topAnchor),
 									 changeBalanceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 changeBalanceLabel.widthAnchor.constraint(equalToConstant: ViewConstatns.width)])
+									 changeBalanceLabel.widthAnchor.constraint(equalToConstant: ViewConstatns.width),
+									 changeBalanceLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.subLabelHeight)])
 
-		changeBalanceLabel.subLabel(title: Labels.balanceChange)
+		changeBalanceLabel.decorate(with: SubLabelDecorator(title: Labels.balanceChange))
 	}
 
 	//MARK: -BeforeTransactionBalanceLabel
 	private func setupBeforeTransactionBalanceLabel() {
 		addSubview(beforeTransactionBalanceLabel)
+
+		beforeTransactionBalanceLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([beforeTransactionBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: Constants.topAnchor/2),
 									 beforeTransactionBalanceLabel.rightAnchor.constraint(equalTo: centerXAnchor, constant: -Constants.spacing/2),
-									 beforeTransactionBalanceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.spacing)])
+									 beforeTransactionBalanceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.spacing),
+									 beforeTransactionBalanceLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.subLabelHeight)])
 
-		beforeTransactionBalanceLabel.subLabel(title: "999999")
-		beforeTransactionBalanceLabel.strikeThrough(true)
+		beforeTransactionBalanceLabel.decorate(with: [SubLabelDecorator(title: "0.00"), StrikeLabelDecorator(isStrikeThrough: true)])
 		beforeTransactionBalanceLabel.textAlignment = .right
 	}
 
 	//MARK: -CurrentBalanceLabel
 	private func setupCurrentBalanceLabel() {
 		addSubview(currentBalanceLabel)
+
+		currentBalanceLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([currentBalanceLabel.topAnchor.constraint(equalTo: changeBalanceLabel.bottomAnchor, constant: Constants.topAnchor / 2),
 									 currentBalanceLabel.leftAnchor.constraint(equalTo: centerXAnchor, constant: Constants.spacing/2),
-									 currentBalanceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.spacing)])
+									 currentBalanceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.spacing),
+									 currentBalanceLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.subLabelHeight)])
 
-		currentBalanceLabel.subLabel(title: "999999")
+		currentBalanceLabel.decorate(with: SubLabelDecorator(title: ""))
 		currentBalanceLabel.textAlignment = .left
 		currentBalanceLabel.textColor = .black
 	}

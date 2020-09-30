@@ -8,7 +8,10 @@
 
 import UIKit
 
+/// Атрибуты childs Labels
 enum ChildsLabels {
+	/// Высота style sub
 	static var subLabelHeight: CGFloat = 15
+	/// Высота style Main
 	static var mainLabelHeight: CGFloat = 20
 }
