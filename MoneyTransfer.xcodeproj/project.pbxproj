@@ -454,11 +454,7 @@
 				D50F50FC24DD6F760042BAD2 /* SceneDelegate.swift */,
 				D59523D92523844400D50710 /* Common */,
 				D59DB6CE250A56C80068888D /* Modules */,
-				D50F510024DD6F760042BAD2 /* Main.storyboard */,
-				D50F510324DD6F790042BAD2 /* Assets.xcassets */,
-				D50F510524DD6F790042BAD2 /* LaunchScreen.storyboard */,
-				D5EAA528251DEACF0025AC0F /* Localizable.strings */,
-				D50F510824DD6F790042BAD2 /* Info.plist */,
+				D59524242524C06300D50710 /* SupportingFiles */,
 			);
 			path = MoneyTransfer;
 			sourceTree = "<group>";
@@ -959,6 +955,18 @@
 				D595240C2524AC9D00D50710 /* GradientViewDecorator.swift */,
 			);
 			path = ViewDecorator;
+			sourceTree = "<group>";
+		};
+		D59524242524C06300D50710 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D50F510024DD6F760042BAD2 /* Main.storyboard */,
+				D50F510324DD6F790042BAD2 /* Assets.xcassets */,
+				D50F510524DD6F790042BAD2 /* LaunchScreen.storyboard */,
+				D5EAA528251DEACF0025AC0F /* Localizable.strings */,
+				D50F510824DD6F790042BAD2 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		D59DB6BF250A47F50068888D /* View */ = {
@@ -1869,8 +1877,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5D5RK3QAMV;
-				INFOPLIST_FILE = MoneyTransfer/Info.plist;
+				INFOPLIST_FILE = MoneyTransfer/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1887,8 +1896,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5D5RK3QAMV;
-				INFOPLIST_FILE = MoneyTransfer/Info.plist;
+				INFOPLIST_FILE = MoneyTransfer/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
