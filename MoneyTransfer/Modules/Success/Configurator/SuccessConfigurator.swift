@@ -8,7 +8,8 @@
 
 import Foundation
 
-final class SuccessOperationConfigurator {
+/// Configurator модуля Success
+final class SuccessOperationConfigurator: SuccessOperationConfiguratorProtocol {
 
 	func configure(with viewController: SuccessOperationViewController) {
 		let presenter = SuccessOperationPresenter(view: viewController)

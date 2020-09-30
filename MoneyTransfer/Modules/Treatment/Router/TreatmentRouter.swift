@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Роутер модуля treatment
 final class TreatmentRouter: TreatmentRouterInput {
 
 	weak var viewController: UIViewController?

@@ -38,6 +38,7 @@ protocol ExitDelegate {
 }
 
 //MARK: -class ContainerPresenter
+/// Презентер модуля Container
 final class ContainerPresenter {
 
 	weak var view: ContainerViewInput?

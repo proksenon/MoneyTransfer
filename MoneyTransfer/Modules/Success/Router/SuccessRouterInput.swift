@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Протокол роутера модуля Success
 protocol SuccessOperationRouterInput: class {
 
 }

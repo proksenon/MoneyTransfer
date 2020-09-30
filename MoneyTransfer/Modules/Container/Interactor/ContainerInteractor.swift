@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Интерактор модуля Container
 final class ContainerInteractor {
 
 	weak var output: ContainerInteractorOutput?

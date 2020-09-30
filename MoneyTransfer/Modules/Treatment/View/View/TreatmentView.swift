@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View модуля treatment
 class TreatmentView: UIView {
 
 	let treatmentImageView: UIImageView = UIImageView()
@@ -35,6 +36,7 @@ class TreatmentView: UIView {
 		static let topAnchor: CGFloat = 20
 	}
 
+	/// Настройка картинки ожидания
 	private func setupTreatmentImageView() {
 		addSubview(treatmentImageView)
 		treatmentImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +50,7 @@ class TreatmentView: UIView {
 	}
 
 	//MARK: -StatusLabel
+	/// Настройка лейбла статуса операции
 	private func setupStatusLabel() {
 		addSubview(statusLabel)
 
@@ -61,6 +64,7 @@ class TreatmentView: UIView {
 	}
 
 	//MARK: -AtributeTransactionLabel
+	/// Настройка лейбла с атрибутом транзакции
 	private func setupAtributeTransactionLabel() {
 		addSubview(atributeTransactionLabel)
 
@@ -74,6 +78,7 @@ class TreatmentView: UIView {
 	}
 
 	//MARK: -AmountOfMoneyLabel
+	/// Настройка лейбла количества денег
 	private func setupAmountOfMoneyLabel() {
 		addSubview(amountOfMoneyLabel)
 
@@ -87,6 +92,7 @@ class TreatmentView: UIView {
 	}
 
 	//MARK: -OperationButton
+	/// Настройка кнопки операции
 	private func setupOperationButton() {
 		addSubview(operationButton)
 

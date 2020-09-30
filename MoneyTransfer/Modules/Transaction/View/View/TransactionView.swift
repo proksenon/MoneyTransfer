@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View модуля Transaction
 class TransactionView: UIView {
 
 	let nameOperationLabel: UILabel = UILabel()
@@ -37,6 +38,7 @@ class TransactionView: UIView {
 	}
 
 	//MARK: -OperationLabel
+	/// Настройка лейбла  названия операции
 	private func setupNameOperationLabel() {
 		addSubview(nameOperationLabel)
 
@@ -49,6 +51,7 @@ class TransactionView: UIView {
 	}
 
 	//MARK: -MoneyTextfield
+	/// Настройка текстфилда для ввода ссуммы транзакции
 	private func setupMoneyTextfield() {
 		moneyTextfield.backgroundColor = UIColor.systemGray6.withAlphaComponent(Alpha.mediumView)
 		moneyTextfield.placeholder = Labels.enterAmount
@@ -68,6 +71,7 @@ class TransactionView: UIView {
 	}
 
 	//MARK: -OperationButton
+	/// Настройка кнопки операции
 	private func setupOperationButton() {
 		addSubview(operationButton)
 

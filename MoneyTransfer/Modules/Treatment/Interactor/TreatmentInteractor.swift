@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Интерактор модуля treatment
 final class TreatmentInteractor {
 
 	weak var output: TreatmentInteractorOutput?

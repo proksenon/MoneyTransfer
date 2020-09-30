@@ -10,9 +10,13 @@ import Foundation
 
 /// Протокол работы с UserDefaultsWork
 protocol UserDefaultsWorkProtocol {
-	///  Устанавливает данные в UserDefaults
+	/// Устанавливает данные в UserDefaults
+	/// - Parameters:
+	///   - key: Ключ, по которому устанавливается объект
+	///   - object: Объект, который сохраняется по ключу
 	func setObject(for key: String, object: Any?)
-	///  Получает данные в UserDefaults
+	/// Получает данные в UserDefaults
+	/// - Parameter key: Ключ, по которому хранятся данные
 	func getObject(for key: String)->Any?
 
 }

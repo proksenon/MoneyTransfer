@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// ViewController модуля Success
 final class SuccessOperationViewController: UIViewController {
 
 	var output: SuccessOperationViewOutput?

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Презентер модуля Contact
 final class ContactPrsenter {
 
 	weak var view: ContactViewInput?

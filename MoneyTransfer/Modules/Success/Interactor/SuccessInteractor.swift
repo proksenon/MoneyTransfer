@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Интерактор модуля Success
 final class SuccessOperationInteractor {
 
 	weak var output: SuccessOperationInteractorOutput?

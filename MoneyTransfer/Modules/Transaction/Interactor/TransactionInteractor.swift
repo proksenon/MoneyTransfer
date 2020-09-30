@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Интерактор модуля Transaction
 final class TransactionInteractor {
 
 	weak var output: TransactionInteractorOutput?

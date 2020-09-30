@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Протокол конфигуратора модуля Treatment
 protocol TreatmentConfiguratorProtocol: class {
 	///  Конфигурирует Treatment
 	func configure(with viewController: TreatmentViewController)

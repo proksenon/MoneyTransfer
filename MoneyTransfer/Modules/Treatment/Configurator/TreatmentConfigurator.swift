@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Конфигуратор моделя Treatment
 final class TreatmentConfigurator {
 
 	func configure(with viewController: TreatmentViewController) {

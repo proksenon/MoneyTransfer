@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Интерактор модуля Contact
 final class ContactInteractor {
 
 	weak var output: ContactInteractorOutput?

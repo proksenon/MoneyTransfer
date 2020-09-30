@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Роутер модуля Container
 final class ContainerRouter: ContainerRouterInput {
 
 	weak var viewController: UIViewController?

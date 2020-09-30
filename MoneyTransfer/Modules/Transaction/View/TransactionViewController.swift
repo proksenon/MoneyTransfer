@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// ViewController модуля Transaction
 final class TransactionViewController: UIViewController {
 
 	typealias TransactionDelegate = TogleTransactionDelegate & TransactionViewDelegate

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Конфигуратор модуля Container
 final class ContainerConfigurator: ContainerConfiguratorProtocol {
 
 	func configure(with viewController: ContainerViewController) {

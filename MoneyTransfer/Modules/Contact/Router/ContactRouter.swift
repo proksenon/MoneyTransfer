@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Роутер модуля Contact
 final class ContactRouter: ContactRouterInput {
 	weak var viewController: UIViewController?
 

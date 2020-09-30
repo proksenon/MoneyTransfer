@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Роутер модуля Transaction
 final class TransactionRouter {
 	weak var viewController: UIViewController?
 

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Протокол конфигуратора модуля Contact
 protocol ContactConfiguratorProtocol: class {
 	///  Конфигурирует Module Contact
 	func configure(with viewController: ContactViewController)

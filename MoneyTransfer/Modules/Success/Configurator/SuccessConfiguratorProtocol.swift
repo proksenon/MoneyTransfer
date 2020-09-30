@@ -8,7 +8,9 @@
 
 import Foundation
 
+/// Протокол конфигуратора модуля Success
 protocol SuccessOperationConfiguratorProtocol: class {
-	///  Конфигурирует модуль Success
+	/// Конфигурирует модуль Success
+	/// - Parameter viewController: viewController Модуля Success
 	func configure(with viewController: SuccessOperationViewController)
 }

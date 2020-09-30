@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// ViewController модуля Contact
 final class ContactViewController: UIViewController {
 
 	typealias TogleView = TogleTransactionDelegate & OperationDelegate

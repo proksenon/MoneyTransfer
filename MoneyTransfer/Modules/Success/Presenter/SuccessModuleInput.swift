@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Protocol SuccessModuleInput
 protocol SuccessOperationModuleInput: class {
 	///  Конфигурирует модуль с балансом
 	func configure(with balance: BalanceOperation)

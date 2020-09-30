@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View модуля Contact
 class ContactView: UIView {
 
 	let avatarImageView: UIImageView = UIImageView()
@@ -40,6 +41,7 @@ class ContactView: UIView {
 	}
 
 	//MARK: -AvatarImageView
+	/// Настраивает AvatarImageView
 	private func setupAvatarImageView() {
 		addSubview(avatarImageView)
 
@@ -54,6 +56,7 @@ class ContactView: UIView {
 	}
 
 	//MARK: -FullNameLabel
+	/// Настраивает лейбл с полным ФИО
 	private func setupFullNameLabel() {
 		addSubview(fullNameLabel)
 
@@ -67,6 +70,7 @@ class ContactView: UIView {
 	}
 
 	//MARK: -PhoneNumberLabel
+	/// Настраивает лейбл с телефоном
 	private func setupPhoneNumberLabel() {
 		addSubview(phoneNumberLabel)
 		phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -78,6 +82,7 @@ class ContactView: UIView {
 	}
 
 	//MARK: -RequestMoneyButton
+	/// Устанавливает кнопку Запроса денег
 	private func setupRequestMoneyButton() {
 		addSubview(requestMoneyButton)
 
@@ -91,6 +96,7 @@ class ContactView: UIView {
 	}
 
 	//MARK: -SendMoneyButton
+	/// Настраивает кнопку отправки денег
 	private func setupSendMoneyButton() {
 		addSubview(sendMoneyButton)
 

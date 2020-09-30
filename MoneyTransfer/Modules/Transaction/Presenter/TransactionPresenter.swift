@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Презентер модуля Transaction
 final class TransactionPresenter {
 
 	weak var view: TransactionViewInput?

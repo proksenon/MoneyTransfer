@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Роутер модуля Success
 final class SuccessOperationRouter: SuccessOperationRouterInput {
 
 	weak var viewController: UIViewController?

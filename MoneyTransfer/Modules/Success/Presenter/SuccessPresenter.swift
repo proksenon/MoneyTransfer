@@ -7,17 +7,24 @@
 //
 
 import Foundation
+/// Презентер модуля Success
 final class SuccessOperationPresenter {
 
 	weak var view: SuccessOperationViewInput?
 	var interactor: SuccessOperationInteractorInput?
 	var router: SuccessOperationRouterInput?
+	/// Название операции: transaction или request
 	private var operation: Operations?
 
 	init(view: SuccessOperationViewInput) {
 		self.view = view
 	}
 
+	/// Вычисляет старый баланс
+	/// - Parameters:
+	///   - balance: Новый баланс, после операции
+	///   - transaction: Сумма транзакции
+	/// - Returns: Баланс до транзакции
 	private func calculationOldBalance(balance: String, transaction: String)-> String {
 		let oldBalance = (Double(balance) ?? 0) + (Double(transaction) ?? 0)
 		return String(format: "%.2f", oldBalance)

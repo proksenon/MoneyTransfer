@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Protocol SuccessModuleOutput
 protocol SuccessOperationModuleOutput: class {
 
 }

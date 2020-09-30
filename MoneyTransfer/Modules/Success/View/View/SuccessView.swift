@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View модуля Success
 class SuccessView: UIView {
 
 	let treatmentImageView: UIImageView = UIImageView()
@@ -46,6 +47,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -TreatmentImageView
+	/// Настройка картинки ожидания
 	private func setupTreatmentImageView() {
 		addSubview(treatmentImageView)
 		treatmentImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,6 +61,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -StatusLabel
+	/// Настройка лейбла статуса операции
 	private func setupStatusLabel() {
 		addSubview(statusLabel)
 
@@ -72,6 +75,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -AtributeTransactionLabel
+	/// Настройка лейбла Атрибутов транзакции
 	private func setupAtributeTransactionLabel() {
 		addSubview(atributeTransactionLabel)
 
@@ -85,6 +89,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -AmountOfMoneyLabel
+	/// Настройка лейбла с суммой транзакции
 	private func setupAmountOfMoneyLabel() {
 		addSubview(amountOfMoneyLabel)
 
@@ -98,6 +103,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -OperationButton
+	/// Настройка кнопки выхода
 	private func setupExitButton() {
 		addSubview(operationButton)
 
@@ -111,6 +117,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -ChangeBalanceLabel
+	/// Настройка лейбла изменения баланса
 	private func setupChangeBalanceLabel() {
 		addSubview(changeBalanceLabel)
 
@@ -124,6 +131,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -BeforeTransactionBalanceLabel
+	/// Настройка лейбла со старым балансом
 	private func setupBeforeTransactionBalanceLabel() {
 		addSubview(beforeTransactionBalanceLabel)
 
@@ -138,6 +146,7 @@ class SuccessView: UIView {
 	}
 
 	//MARK: -CurrentBalanceLabel
+	/// Настройка лейбла с текущим балансом
 	private func setupCurrentBalanceLabel() {
 		addSubview(currentBalanceLabel)
 

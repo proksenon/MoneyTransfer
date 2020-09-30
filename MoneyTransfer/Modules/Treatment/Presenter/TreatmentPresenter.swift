@@ -7,12 +7,16 @@
 //
 
 import Foundation
+
+/// Презентер модуля treatment
 final class TreatmentPresenter {
 
 	weak var view: TreatmentViewInput?
 	var interactor: TreatmentInteractorInput?
 	var router: TreatmentRouterInput?
+	/// Сумма транзакции
 	private var amountOfTransaction: String = DefaultBalance.failBalance
+	/// Операция: transaction или request
 	private var operation: Operations?
 
 	init(view: TreatmentViewInput) {

@@ -73,10 +73,15 @@ extension MainPresenter: MainTableDataSourceOutput {
 		return persons.count
 	}
 
+	/// Функция получает IndexPath и возвращает по данному индексу структуру Person
+	/// - Parameter indexPath: IndexPath
+	/// - Returns: Структуру Person контакта человека
 	private func person(with indexPath: IndexPath)-> Person {
 		return persons[indexPath.row]
 	}
 
+	/// Если баланс небыл установлен возвращает начальный баланс
+	/// - Returns: Баланс человека
 	private func balance()-> Balance {
 		guard let interactor = interactor else { return Balance(balance: DefaultBalance.failBalance) }
 		if let balance = interactor.balance {

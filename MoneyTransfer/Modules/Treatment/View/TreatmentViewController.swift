@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// ViewController модуля treatment
 final class TreatmentViewController: UIViewController {
 
 	var output: TreatmentViewOutput?

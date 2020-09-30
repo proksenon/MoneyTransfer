@@ -10,6 +10,7 @@ import Foundation
 
 /// Модель баланса
 struct Balance: CellItemProtocol {
+	/// Identifier of cell
 	var identifier: String = Cells.CellsID.cardCell.rawValue
 
 	/// Текущий баланс

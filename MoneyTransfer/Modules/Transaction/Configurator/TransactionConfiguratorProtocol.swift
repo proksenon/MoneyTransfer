@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Протокол конфигуратора модуля Transaction
 protocol TransactionConfiguratorProtocol: class {
 	func configure(with viewController: TransactionViewController)
 }
