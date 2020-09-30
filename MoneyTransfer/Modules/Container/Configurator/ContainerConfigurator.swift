@@ -25,7 +25,11 @@ final class ContainerConfigurator: ContainerConfiguratorProtocol {
 		configureTreatmentViewController(with: viewController, presenter: presenter)
 		configureSuccessViewController(with: viewController, presenter: presenter)
 	}
-	
+
+	/// Конфигурирует модуль Contact
+	/// - Parameters:
+	///   - viewController: ContainerViewController
+	///   - presenter: ContainerPresenter
 	private func configureContactViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
 		let contactViewController = ContactViewController()
 		let configuratorContactModule = ContactConfigurator()
@@ -36,6 +40,10 @@ final class ContainerConfigurator: ContainerConfiguratorProtocol {
 		presenter.contactViewController = contactViewController
 	}
 
+	/// Конфигурирует модуль Transaction
+	/// - Parameters:
+	///   - viewController: ContainerViewController
+	///   - presenter: ContainerPresenter
 	private func configureTransactionViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
 		let transactionViewController = TransactionViewController()
 		let	transactionConfigurator = TransactionConfigurator()
@@ -46,6 +54,10 @@ final class ContainerConfigurator: ContainerConfiguratorProtocol {
 		presenter.transactionViewController = transactionViewController
 	}
 
+	/// Конфигурирует модуль Treatment
+	/// - Parameters:
+	///   - viewController: ContainerViewController
+	///   - presenter: ContainerPresenter
 	private func configureTreatmentViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
 		let treatmentViewController = TreatmentViewController()
 		let treatmentConfigurator = TreatmentConfigurator()
@@ -56,6 +68,10 @@ final class ContainerConfigurator: ContainerConfiguratorProtocol {
 		presenter.treatmentViewController = treatmentViewController
 	}
 
+	/// Конфигурирует модуль Success
+	/// - Parameters:
+	///   - viewController: ContainerViewController
+	///   - presenter: ContainerPresenter
 	private func configureSuccessViewController(with viewController: ContainerViewController, presenter: ContainerPresenter) {
 		let successViewController = SuccessOperationViewController()
 		let successConfigurator = SuccessOperationConfigurator()

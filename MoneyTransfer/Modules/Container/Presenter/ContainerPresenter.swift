@@ -44,17 +44,24 @@ final class ContainerPresenter {
 	weak var view: ContainerViewInput?
 	var interactor: ContainerInteractorInput?
 	var router: ContainerRouterInput?
+	/// Контакт человека
 	private var person: Person? {
 		didSet {
 			guard let person = person else { return }
 			setPersonAtContactView(with: person)
 		}
 	}
+	/// Показывается ли сейчас контроллер
 	private var isShow: Bool = false
+	/// Контроллер который должен показаться
 	private var isShowingController: ChildsController?
+	/// Сумма транзакции
 	private var amountMoneyForTransaction: String?
+	/// Баланс операции
 	private var balance: BalanceOperation?
+	/// Определяет нужно ли показать SuccessController
 	private var statusShow: Bool = true
+	/// Вид операции
 	private var operation: Operations?
 	var contactViewController: ContactViewController?
 	var transactionViewController: TransactionViewController?

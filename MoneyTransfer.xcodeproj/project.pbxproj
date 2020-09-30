@@ -1209,8 +1209,8 @@
 			isa = PBXGroup;
 			children = (
 				D59DB6C9250A56750068888D /* View */,
-				D5EAA5C0251E18F00025AC0F /* Interactor */,
 				D5EAA5C9251E190A0025AC0F /* Presenter */,
+				D5EAA5C0251E18F00025AC0F /* Interactor */,
 				D5EAA5D2251E19220025AC0F /* Router */,
 				D5EAA5B9251E18C20025AC0F /* Configurator */,
 			);

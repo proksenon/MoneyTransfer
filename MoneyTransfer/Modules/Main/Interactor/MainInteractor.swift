@@ -12,7 +12,9 @@ import Foundation
 final class MainInteractor: MainInteractorInput {
 
 	weak var output: MainInteractorOutput?
-	private let contactsManager: ContactServiceProtocol
+	/// Сервис по работе с контактами
+	private let contactsService: ContactServiceProtocol
+	/// Сервис по работе с UserDefaults
 	private let userDefaultsWork: UserDefaultsWorkProtocol
 	var balance: String? {
 		get {
@@ -27,12 +29,12 @@ final class MainInteractor: MainInteractorInput {
 		 contactsManager: ContactServiceProtocol = ContactService(),
 		 userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {
 		self.output = presenter
-		self.contactsManager = contactsManager
+		self.contactsService = contactsManager
 		self.userDefaultsWork = userDefaultsWork
 	}
 
 	func getContatcs(completion: @escaping ([Person])->Void) {
-		contactsManager.getContatcs { (persons) in
+		contactsService.getContatcs { (persons) in
 			completion(persons)
 		}
 	}

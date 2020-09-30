@@ -12,6 +12,7 @@ import Foundation
 final class TransactionInteractor {
 
 	weak var output: TransactionInteractorOutput?
+	/// Сервис по работе с UserDefaults
 	private let userDefaultsWork: UserDefaultsWorkProtocol
 
 	init(output: TransactionInteractorOutput, userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {

@@ -16,6 +16,7 @@ final class MainPresenter {
 	var router: MainRouterInput?
 	var mainTableDataSource: MainTableDataSource?
 	var mainTableDelegate: MainTableDelegate?
+	/// Список моделей контактов
 	private var persons: [Person] = []
 
 	init(view: MainViewInput) {

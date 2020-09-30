@@ -12,9 +12,5 @@ import Foundation
 protocol MainTableDataSourceOutput: AnyObject {
 	///  Возвращает количество контактов
 	func countOfPersons()->Int
-//	///	 Получает контакт
-//	func person(with indexPath: IndexPath)-> Person
-//	///  Получает баланс
-//	func balance()-> Balance
 	func itemCell(with indexPath: IndexPath)-> CellItemProtocol
 }

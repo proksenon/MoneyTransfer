@@ -14,7 +14,9 @@ final class MainViewController: UIViewController {
 	var output: MainViewOutput?
 	var moduleInput: MainMouduleInput?
 	let mainView: MainView = MainView()
+	/// Конфигуратор  модуля Main
 	private var configurator: MainConfiguratorProtocol
+	/// Кнопка скрола таблицы к 1 элементу
 	private var scrollAtTopButton: UIBarButtonItem?
 
 	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
@@ -93,6 +95,7 @@ extension MainViewController: MainViewInput {
 		mainView.dimmView.addGestureRecognizer(tapGesture)
 	}
 
+	/// Нажатие на dimmView
 	@objc private func tapGestureDone(){
 		guard let output = output else { return }
 		output.dissmissStatusOperation()

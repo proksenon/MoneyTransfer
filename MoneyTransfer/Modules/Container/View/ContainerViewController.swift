@@ -14,6 +14,7 @@ final class ContainerViewController: UIViewController {
 	var output: ContainerViewOutput?
 	var moduleInput: ContainerModuleInput?
 	var moduleOutput: MainMouduleInput?
+	/// View затемняющаая экран
 	private lazy var dimmView: UIView = {
 		let view = UIView()
 		view.backgroundColor = UIColor.black.withAlphaComponent(1)
@@ -41,6 +42,8 @@ extension ContainerViewController: ContainerViewInput {
 		view.insertSubview(dimmView, at: 1)
 	}
 
+	/// Изменяет видимость DimmView
+	/// - Parameter isShow: true-увеличивает видимость
 	private func dimmViewIsHidden(_ isShow: Bool) {
 		self.dimmView.alpha = isShow ? Alpha.mediumView : Alpha.withoutView
 	}
@@ -50,6 +53,7 @@ extension ContainerViewController: ContainerViewInput {
         dimmView.addGestureRecognizer(tapGesture)
 	}
 
+	/// Нажатие на DimmView, приводит к скрытию ChildController
 	@objc private func tapGestureDone(){
 		output?.togleTransaction(on: nil)
 	}

@@ -14,6 +14,7 @@ final class TransactionPresenter {
 	weak var view: TransactionViewInput?
 	var interactor: TransactionInteractorInput?
 	var router: TransactionRouterInput?
+	/// Вид операции
 	private var operation: Operations?
 
 	init(view: TransactionViewInput) {

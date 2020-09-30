@@ -12,6 +12,7 @@ import UIKit
 final class MainRouter: MainRouterInput {
 
 	weak var viewController: UIViewController?
+	/// Контроллер успешной операции
 	private var successViewController: SuccessOperationViewController?
 
 	init(viewController: MainViewController) {

@@ -96,6 +96,7 @@ extension TransactionViewController: TransactionViewInput {
 		transactionView.operationButton.isUserInteractionEnabled = isEnabled
 	}
 
+	/// Нажатие на кнопку операции
 	@IBAction private func operationButtonDidTapped() {
 		output?.setNewBalance()
 		moduleOutput?.transactionMoney(amount: output?.formatingTextField())
