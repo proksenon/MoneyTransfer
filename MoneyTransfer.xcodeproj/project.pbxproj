@@ -92,6 +92,8 @@
 		D59523C7252330AD00D50710 /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523C6252330AD00D50710 /* CellProtocol.swift */; };
 		D59523CB2523316D00D50710 /* CellItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523CA2523316D00D50710 /* CellItemProtocol.swift */; };
 		D59523D12523326800D50710 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523D02523326800D50710 /* Balance.swift */; };
+		D59523D625237C9200D50710 /* StyledLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523D525237C9200D50710 /* StyledLabel.swift */; };
+		D59523DD2523867C00D50710 /* ChildsLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59523DC2523867C00D50710 /* ChildsLabels.swift */; };
 		D59DB6B2250A47890068888D /* ContainerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */; };
 		D59DB6B3250A47890068888D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A6250A47880068888D /* ContainerViewController.swift */; };
 		D59DB6B4250A47890068888D /* ContainerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */; };
@@ -296,6 +298,8 @@
 		D59523C6252330AD00D50710 /* CellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
 		D59523CA2523316D00D50710 /* CellItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItemProtocol.swift; sourceTree = "<group>"; };
 		D59523D02523326800D50710 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		D59523D525237C9200D50710 /* StyledLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledLabel.swift; sourceTree = "<group>"; };
+		D59523DC2523867C00D50710 /* ChildsLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildsLabels.swift; sourceTree = "<group>"; };
 		D59DB6A5250A47880068888D /* ContainerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModuleOutput.swift; sourceTree = "<group>"; };
 		D59DB6A6250A47880068888D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D59DB6A7250A47880068888D /* ContainerInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInteractorInput.swift; sourceTree = "<group>"; };
@@ -444,10 +448,7 @@
 			children = (
 				D50F50FA24DD6F760042BAD2 /* AppDelegate.swift */,
 				D50F50FC24DD6F760042BAD2 /* SceneDelegate.swift */,
-				D5EAA4F9251CBD720025AC0F /* Constants */,
-				D5B0400424FD08B40023E5DE /* Entity */,
-				D59DB6C4250A48B90068888D /* Extension */,
-				D5B0400724FD09AD0023E5DE /* Services */,
+				D59523D92523844400D50710 /* Common */,
 				D59DB6CE250A56C80068888D /* Modules */,
 				D50F510024DD6F760042BAD2 /* Main.storyboard */,
 				D50F510324DD6F790042BAD2 /* Assets.xcassets */,
@@ -898,6 +899,34 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		D59523D4252379C700D50710 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D59523D525237C9200D50710 /* StyledLabel.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D59523D92523844400D50710 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D59523E02524780F00D50710 /* UI */,
+				D5EAA4F9251CBD720025AC0F /* Constants */,
+				D5B0400424FD08B40023E5DE /* Entity */,
+				D59523D4252379C700D50710 /* Helpers */,
+				D59DB6C4250A48B90068888D /* Extension */,
+				D5B0400724FD09AD0023E5DE /* Services */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D59523E02524780F00D50710 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		D59DB6BF250A47F50068888D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1305,6 +1334,7 @@
 				D5EAA51A251DC1F00025AC0F /* ChildsButton.swift */,
 				D5EAA51E251DC77D0025AC0F /* ChildsImageSize.swift */,
 				D5B83BFB251E65180095FA0B /* DefaultBalance.swift */,
+				D59523DC2523867C00D50710 /* ChildsLabels.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1529,6 +1559,7 @@
 				D5A0BF6B25079BE70080737E /* TransactionPresenter.swift in Sources */,
 				D5EAA5BC251E18E30025AC0F /* SuccessConfiguratorProtocol.swift in Sources */,
 				D5EAA5C5251E19050025AC0F /* SuccessInteractorInput.swift in Sources */,
+				D59523D625237C9200D50710 /* StyledLabel.swift in Sources */,
 				D59DB6D9250E34440068888D /* MainModuleOutput.swift in Sources */,
 				D59DB6C6250A48D40068888D /* ChildAddAndRemove.swift in Sources */,
 				D520452625050DCF007B746A /* ContactViewController.swift in Sources */,
@@ -1544,6 +1575,7 @@
 				D50F511224DD72EB0042BAD2 /* MainPresenter.swift in Sources */,
 				D5204528250511E0007B746A /* ContactConfigureProtocol.swift in Sources */,
 				D5EAA49B251B9B710025AC0F /* MainTableDelegateOutput.swift in Sources */,
+				D59523DD2523867C00D50710 /* ChildsLabels.swift in Sources */,
 				D5EAA51B251DC1F00025AC0F /* ChildsButton.swift in Sources */,
 				D5A0BFE2250A40F10080737E /* SuccessViewInput.swift in Sources */,
 				D5A0BF8225079DE00080737E /* TransactionInteractorOutput.swift in Sources */,

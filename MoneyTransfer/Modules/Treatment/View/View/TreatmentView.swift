@@ -11,9 +11,9 @@ import UIKit
 class TreatmentView: UIView {
 
 	let treatmentImageView: UIImageView = UIImageView()
-	let statusLabel: UILabel = UILabel()
-	let atributeTransactionLabel: UILabel = UILabel()
-	let amountOfMoneyLabel: UILabel = UILabel()
+	let statusLabel: StyledLabel = StyledLabel()
+	let atributeTransactionLabel: StyledLabel = StyledLabel()
+	let amountOfMoneyLabel: StyledLabel = StyledLabel()
 	let operationButton: UIButton = UIButton()
 
 	init() {
@@ -29,6 +29,7 @@ class TreatmentView: UIView {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+	
 	private enum Constants {
 		static let labelWidth: CGFloat = 300
 		static let topAnchor: CGFloat = 20
@@ -49,31 +50,40 @@ class TreatmentView: UIView {
 	//MARK: -StatusLabel
 	private func setupStatusLabel() {
 		addSubview(statusLabel)
+
+		statusLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([statusLabel.topAnchor.constraint(equalTo: treatmentImageView.bottomAnchor, constant: Constants.topAnchor),
 									 statusLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
+									 statusLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
+									 statusLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.mainLabelHeight)])
 
-		statusLabel.mainLabel(title: Labels.transferProcessing)
+		statusLabel.style = .mainLabelStyle(title: Labels.transferProcessing)
 	}
 
 	//MARK: -AtributeTransactionLabel
 	private func setupAtributeTransactionLabel() {
 		addSubview(atributeTransactionLabel)
+
+		atributeTransactionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([atributeTransactionLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: Constants.topAnchor),
 									 atributeTransactionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
+									 atributeTransactionLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
+									 atributeTransactionLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.subLabelHeight)])
 
-		atributeTransactionLabel.subLabel(title: Labels.transferAmount)
+		atributeTransactionLabel.style = .subLabelStyle(title: Labels.transferAmount)
 	}
 
 	//MARK: -AmountOfMoneyLabel
 	private func setupAmountOfMoneyLabel() {
 		addSubview(amountOfMoneyLabel)
+
+		amountOfMoneyLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([amountOfMoneyLabel.topAnchor.constraint(equalTo: atributeTransactionLabel.bottomAnchor, constant: Constants.topAnchor / 2),
 									 amountOfMoneyLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)])
+									 amountOfMoneyLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth),
+									 amountOfMoneyLabel.heightAnchor.constraint(equalToConstant: ChildsLabels.mainLabelHeight)])
 
-		amountOfMoneyLabel.mainLabel(title: "money")
+		amountOfMoneyLabel.style = .mainLabelStyle(title: "")
 	}
 
 	//MARK: -OperationButton
