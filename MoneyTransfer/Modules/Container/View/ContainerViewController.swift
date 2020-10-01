@@ -14,6 +14,8 @@ final class ContainerViewController: UIViewController {
 	var output: ContainerViewOutput?
 	var moduleInput: ContainerModuleInput?
 	var moduleOutput: MainMouduleInput?
+	/// Кнопка возвращает на кран контактов
+	private var backButton: UIBarButtonItem?
 	/// View затемняющаая экран
 	private lazy var dimmView: UIView = {
 		let view = UIView()
@@ -35,6 +37,15 @@ final class ContainerViewController: UIViewController {
 }
 //MARK: -ContainerViewInput
 extension ContainerViewController: ContainerViewInput {
+	func setBackButton() {
+		backButton = UIBarButtonItem(image: UIImage(systemName: Images.back), style: .done, target: self, action: #selector(backButtonDidTapped))
+		backButton?.tintColor = #colorLiteral(red: 0.6702015996, green: 0.6703162789, blue: 0.67018646, alpha: 0.812637544)
+		navigationItem.leftBarButtonItem = backButton
+	}
+
+	@IBAction func backButtonDidTapped() {
+		output?.dissmis()
+	}
 
 	//MARK: -DimmView
 	func setupDimmView() {

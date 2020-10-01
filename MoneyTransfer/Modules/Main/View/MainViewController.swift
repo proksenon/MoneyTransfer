@@ -39,7 +39,7 @@ final class MainViewController: UIViewController {
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
-		navigationTitleIsHidden(false)
+		navigationBarIsHidden(false)
 	}
 
 }
@@ -49,10 +49,6 @@ extension MainViewController: MainViewInput {
 	//MARK: -NavigationTitle
 	func setBalanceTitleWith(balance: String) {
 		self.title = Labels.currentBalance + " " + balance.moneyFormat()
-	}
-
-	func navigationTitleIsHidden(_ isHidden: Bool) {
-		navigationController?.navigationBar.alpha = Alpha.fullView
 	}
 
 	func navigationBarIsHidden(_ isHidden: Bool) {
@@ -68,6 +64,7 @@ extension MainViewController: MainViewInput {
 	//MARK: -TableView
 	func setScrollAtTopButton() {
 		scrollAtTopButton = UIBarButtonItem(image: UIImage(systemName: Images.back), style: .done, target: self, action: #selector(scrollAtTheTop))
+		scrollAtTopButton?.tintColor = #colorLiteral(red: 0, green: 0.7127409577, blue: 0.261533469, alpha: 1)
 	}
 
 	@IBAction func scrollAtTheTop() {

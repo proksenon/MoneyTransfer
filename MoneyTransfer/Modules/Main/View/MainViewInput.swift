@@ -19,8 +19,6 @@ protocol MainViewInput: class {
 	func navigationBarIsHidden(_ isHidden: Bool)
 	///  Устанавливает баланс в тайтл
 	func setBalanceTitleWith(balance: String)
-	///  Скрывает навигейшн тайтл
-	func navigationTitleIsHidden(_ isHidden: Bool)
 	///  Показывает или скрывает затемняющую вьюшку
 	func showDimmView(_ show: Bool)
 	///  Настраивает нажатие на затемняющую вьшку, что бы закрывать SuccessViewController

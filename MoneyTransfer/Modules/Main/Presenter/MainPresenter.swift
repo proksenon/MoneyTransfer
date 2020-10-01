@@ -61,7 +61,7 @@ extension MainPresenter: MainTableDelegateOutput {
 
 	func didChosePerson(indexPath: IndexPath) {
 		guard let view = view, let router = router else { return }
-		view.navigationTitleIsHidden(true)
+		view.navigationBarIsHidden(false)
 		router.pushContainer(with: persons[indexPath.row])
 	}
 

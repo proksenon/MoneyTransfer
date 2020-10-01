@@ -15,4 +15,6 @@ protocol ContainerViewInput: class {
 	func tapOutSite()
 	///  Анимирует переход
 	func showTransaction(show: Bool, showViewController: UIViewController, y: ViewSize?)
+	/// Настраивает кнопку Назад
+	func setBackButton()
 }

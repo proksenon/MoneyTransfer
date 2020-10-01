@@ -50,5 +50,6 @@ final class MainTableDelegate: NSObject, UITableViewDelegate {
 		if indexPath.section != 0 {
 			output.didChosePerson(indexPath: indexPath)
 		}
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 }

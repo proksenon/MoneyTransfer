@@ -17,4 +17,6 @@ protocol ContainerViewOutput: class {
 	func getBalance() ->BalanceOperation?
 	///  Показывает выводилась ли информация о успешной операции
 	func showStatus() -> Bool
+	/// Закрывает контейнер вью контроллер
+	func dissmis()
 }

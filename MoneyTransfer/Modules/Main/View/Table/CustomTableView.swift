@@ -16,7 +16,7 @@ final class CustomTableView: UITableView {
 		register(CustomTableViewCell.self, forCellReuseIdentifier: Cells.CellsID.defaultCell.rawValue)
 		register(CardTableViewCell.self, forCellReuseIdentifier: Cells.CellsID.cardCell.rawValue)
 		tableFooterView = UIView()
-		separatorStyle = .singleLine
+		separatorStyle = .none
 		backgroundColor = .white
 	}
 

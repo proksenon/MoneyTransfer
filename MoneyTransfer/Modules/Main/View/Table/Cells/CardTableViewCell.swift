@@ -41,7 +41,8 @@ final class CardTableViewCell: UITableViewCell, CellProtocol {
 		cardView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -Constants.defConstraint).isActive = true
 
 		cardView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-		cardView.decorate(with: [CornerRadiusDecorator(cornerRadius: 10), GradientViewDecorator(colors: [UIColor.gray.cgColor, UIColor.black.cgColor], frame: CGRect(x: 0, y: 0, width: ViewConstatns.width - Constants.defConstraint, height: 250))])
+		let frame = CGRect(x: 0, y: 0, width: ViewConstatns.width - Constants.defConstraint, height: 250)
+		cardView.decorate(with: [CornerRadiusDecorator(cornerRadius: 10), GradientViewDecorator(colors: [UIColor.gray.cgColor, UIColor.black.cgColor], frame: frame)])
 	}
 
 	/// Настройка лейбла Баланса

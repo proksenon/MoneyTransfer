@@ -116,7 +116,9 @@ final class ContainerPresenter {
 
 //MARK: -ContainerViewOutput
 extension ContainerPresenter: ContainerViewOutput {
-	func configureView() {}
+	func configureView() {
+		view?.setBackButton()
+	}
 
 	//MARK: -TogleTransaction
 	func togleTransaction(on vc: ChildsController?) {
@@ -182,7 +184,7 @@ extension ContainerPresenter: ContainerViewOutput {
 	}
 
 	//MARK: -Exit
-	private func dissmis() {
+	func dissmis() {
 		router?.dissmis()
 	}
 
