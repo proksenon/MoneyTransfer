@@ -68,8 +68,8 @@ extension ContainerViewController: ContainerViewInput {
 	@objc private func tapGestureDone(){
 		output?.togleTransaction(on: nil)
 	}
-
-	func showTransaction(show: Bool, showViewController: UIViewController, y: ViewSize? = nil) {
+	//MARK: -ShowTransaction
+	func showTransaction(show: Bool, view: UIView, y: ViewSize? = nil) {
 		if show {
 			UIView.animate(withDuration: Duration.fast,
 						   delay: 0,
@@ -78,11 +78,11 @@ extension ContainerViewController: ContainerViewInput {
 						   options: .curveEaseInOut,
 						   animations: {
 							self.dimmViewIsHidden(show)
-							var originY = self.view.frame.height - showViewController.view.frame.height + 20
+							var originY = self.view.frame.height - view.frame.height + 20
 							if let y = y {
 								originY -= y.size
 							}
-							showViewController.view.frame.origin.y = originY
+							view.frame.origin.y = originY
 						},
 						   completion: nil)
 		} else {
@@ -92,13 +92,50 @@ extension ContainerViewController: ContainerViewInput {
 						   initialSpringVelocity: 0,
 						   options: .curveEaseInOut,
 						   animations: {
-							showViewController.view.endEditing(true)
+							view.endEditing(true)
 							self.dimmViewIsHidden(show)
-							showViewController.view.frame.origin.y = self.view.frame.height
+							view.frame.origin.y = self.view.frame.height
 						},
 						   completion: nil)
 		}
 	}
+	//MARK: -UIPanGestureRecognizer
+	func setGesture(views: [UIView]) {
+		for view in views {
+			let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
+			view.addGestureRecognizer(gesture)
+		}
+	}
 
-	
+	/// Отслеживает gesture
+	@IBAction private func panGesture() {
+		output?.gestureDidUse()
+	}
+
+	/// Передвигает view
+	/// - Parameters:
+	///   - view: Передвигаемое view
+	///   - gesture: Recognaizer
+	private func translationMoveView(view: UIView, gesture: UIPanGestureRecognizer) {
+		let translation = gesture.translation(in: view)
+		let minY = view.frame.minY
+
+		if (minY + translation.y >= 0) && (minY + translation.y <= ViewConstatns.height) {
+			view.frame = CGRect(x: 0, y: minY + translation.y, width: view.frame.width, height: view.frame.height)
+			gesture.setTranslation(CGPoint.zero, in: view)
+		}
+	}
+
+	func moveView(with view: UIView) {
+		guard let gesture = view.gestureRecognizers?.first as? UIPanGestureRecognizer else { return }
+		translationMoveView(view: view, gesture: gesture)
+
+		if gesture.state == .ended {
+			if gesture.velocity(in: view).y >= 0  {
+				showTransaction(show: false, view: view, y: ViewSize(size: -view.frame.origin.y))
+			} else {
+				showTransaction(show: true, view: view, y: ViewSize(size: view.frame.height))
+			}
+		}
+	}
 }

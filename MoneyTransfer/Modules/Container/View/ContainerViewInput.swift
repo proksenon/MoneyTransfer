@@ -14,7 +14,13 @@ protocol ContainerViewInput: class {
 	///  Устанавливает тап по затемнению
 	func tapOutSite()
 	///  Анимирует переход
-	func showTransaction(show: Bool, showViewController: UIViewController, y: ViewSize?)
+	func showTransaction(show: Bool, view: UIView, y: ViewSize?)
 	/// Настраивает кнопку Назад
 	func setBackButton()
+	/// Устанавливает на childs контроллеры gesture
+	/// - Parameter views: Child Views
+	func setGesture(views: [UIView])
+	/// Двигает view
+	/// - Parameter view: Двигаемое view
+	func moveView(with view: UIView)
 }

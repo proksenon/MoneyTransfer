@@ -19,4 +19,6 @@ protocol ContainerViewOutput: class {
 	func showStatus() -> Bool
 	/// Закрывает контейнер вью контроллер
 	func dissmis()
+	///  Отправлят нужное child view на изменение координаты y
+	func gestureDidUse()
 }

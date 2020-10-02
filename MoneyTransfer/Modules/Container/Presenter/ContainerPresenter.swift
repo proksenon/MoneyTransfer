@@ -99,16 +99,16 @@ final class ContainerPresenter {
 		switch showVC {
 		case .transactionViewController:
 			guard let transactionViewController = transactionViewController else { return }
-			view.showTransaction(show: show, showViewController: transactionViewController, y: viewSize)
+			view.showTransaction(show: show, view: transactionViewController.view, y: viewSize)
 		case .treatmentViewController:
 			guard let treatmentViewController = treatmentViewController else { return }
 			if show {
 				succesOperation()
 			}
-			view.showTransaction(show: show, showViewController: treatmentViewController, y: viewSize)
+			view.showTransaction(show: show, view: treatmentViewController.view, y: viewSize)
 		case .successOperationViewController:
 			guard let successOperationViewController = successOperationViewController else { return }
-			view.showTransaction(show: show, showViewController: successOperationViewController, y: viewSize)
+			view.showTransaction(show: show, view: successOperationViewController.view, y: viewSize)
 		}
 	}
 
@@ -118,6 +118,22 @@ final class ContainerPresenter {
 extension ContainerPresenter: ContainerViewOutput {
 	func configureView() {
 		view?.setBackButton()
+	}
+
+	func gestureDidUse() {
+		switch isShowingController {
+		case .successOperationViewController:
+			guard let success = successOperationViewController else { return }
+			view?.moveView(with: success.view)
+		case .transactionViewController:
+			guard let transaction = transactionViewController else { return }
+			view?.moveView(with: transaction.view)
+		case .treatmentViewController:
+			guard let treatment = treatmentViewController else { return }
+			view?.moveView(with: treatment.view)
+		default:
+			return
+		}
 	}
 
 	//MARK: -TogleTransaction
@@ -202,6 +218,8 @@ extension ContainerPresenter: ContainerModuleInput {
 		setPersonAtContactView(with: person)
 		view.setupDimmView()
 		view.tapOutSite()
+		guard let transaction = transactionViewController, let treatment = treatmentViewController, let success = successOperationViewController else { return }
+		view.setGesture(views: [transaction.view, treatment.view, success.view])
 	}
 }
 

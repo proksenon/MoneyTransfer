@@ -30,8 +30,6 @@ final class TransactionViewController: UIViewController {
 }
 // MARK: -TransactionViewInput
 extension TransactionViewController: TransactionViewInput {
-
-
 	func setView() {
 		view.decorate(with: CornerRadiusDecorator(cornerRadius: 20))
 		view.backgroundColor = .white
