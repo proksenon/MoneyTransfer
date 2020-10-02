@@ -10,9 +10,13 @@ import UIKit
 @testable import  MoneyTransfer
 
 class ContainerViewInputSpy: ContainerViewInput {
+
 	var didSetupDimmView: Bool = false
 	var didTappedOutSite: Bool = false
 	var didShowTransaction: Bool = false
+	var didSetBackButton: Bool = false
+	var didSetGesture: Bool = false
+	var didmoveView: Bool = false
 
 	func setupDimmView() {
 		didSetupDimmView = true
@@ -22,8 +26,20 @@ class ContainerViewInputSpy: ContainerViewInput {
 		didTappedOutSite = true
 	}
 
-	func showTransaction(show: Bool, showViewController: UIViewController, y: ViewSize?) {
+	func showTransaction(show: Bool, view: UIView, y: ViewSize?) {
 		didShowTransaction = true
+	}
+
+	func setBackButton() {
+		didSetBackButton = true
+	}
+
+	func setGesture(views: [UIView]) {
+		didSetGesture = true
+	}
+
+	func moveView(with view: UIView) {
+		didmoveView = true
 	}
 
 

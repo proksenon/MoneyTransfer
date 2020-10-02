@@ -103,7 +103,7 @@ class MainPresenterTest: XCTestCase {
 
 		presenter.didChosePerson(indexPath: indexPath)
 
-		XCTAssert(view.didHiddenNavigationTitle)
+		XCTAssert(view.didHiddenNavigationBar)
 		XCTAssert(router.didpPushContainer)
 	}
 

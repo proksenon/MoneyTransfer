@@ -19,7 +19,6 @@ class MainViewInputSpy: MainViewInput {
 	var didHiddenNavigationBar: Bool = false
 	var didSetBalanceTitle: Bool = false
 	var didSetBalanceTitleWith: Bool = false
-	var didHiddenNavigationTitle: Bool = false
 	var didShowDimmView: Bool = false
 	var didSetTapOutSite: Bool = false
 	
@@ -51,10 +50,6 @@ class MainViewInputSpy: MainViewInput {
 
 	func setBalanceTitleWith(balance: String) {
 		didSetBalanceTitleWith = true
-	}
-
-	func navigationTitleIsHidden(_ isHidden: Bool) {
-		didHiddenNavigationTitle = true
 	}
 
 	func showDimmView(_ show: Bool) {

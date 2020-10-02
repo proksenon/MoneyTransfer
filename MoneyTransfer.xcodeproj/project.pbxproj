@@ -633,7 +633,6 @@
 			children = (
 				D53682AC25124B6F0077BDCB /* View */,
 				D53682AD25124B740077BDCB /* Presenter */,
-				D53682AE25124B8E0077BDCB /* Interactor */,
 				D53682AF25124BA20077BDCB /* Router */,
 				D53682B025124BBC0077BDCB /* Configurator */,
 			);
@@ -690,13 +689,6 @@
 				D5E85A832513A4CD0071F660 /* ContainerPresenterTests.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		D53682AE25124B8E0077BDCB /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		D53682AF25124BA20077BDCB /* Router */ = {
